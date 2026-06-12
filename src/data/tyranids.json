@@ -1,0 +1,200 @@
+{
+  "id": "tyranids",
+  "name": "Tiránidos",
+  "detachments": {
+    "Crusher Stampede": {
+      "overview": "Una marea de criaturas monstruosas desciende sobre el enemigo, su biomasa y ferocidad arrolladoras superan toda resistencia. El suelo tiembla bajo su avance.",
+      "abilities": [
+        { "name": "Unstoppable Momentum", "flavor": "Una vez en movimiento, nada salvo la aniquilación puede detener esta estampida.", "rule": "Las unidades Monster pueden declarar carga incluso si Avanzaron. +2 a las tiradas de Carga de unidades Monster." },
+        { "name": "Bio-Regeneration", "flavor": "La Mente Enjambre canaliza energía bioeléctrica para reparar a sus criaturas más grandes.", "rule": "Al inicio de tu fase de Mando, cada unidad Monster recupera hasta D3 heridas perdidas." }
+      ],
+      "strengths": [
+        "Movilidad y alcance de carga excepcionales para unidades Monster, ideal para alfa-strike cuerpo a cuerpo",
+        "Bio-Regeneration mantiene a las criaturas grandes relevantes durante toda la partida",
+        "Muy fuerte contra ejércitos sin buenas respuestas anti-monstruo"
+      ],
+      "weaknesses": [
+        "Las unidades de Infantry no se benefician de los bonos principales",
+        "Depende de tener varias unidades Monster en la lista para funcionar",
+        "Vulnerable a armas de daño mortal masivo que ignoran la regeneración"
+      ]
+    },
+    "Invasion Fleet": {
+      "overview": "El horror completo de una Flota de Invasión Tiránida es un evento sin parangón. Cada criatura sirve al propósito consumidor de la Mente Enjambre: la absorción de toda materia biológica.",
+      "abilities": [
+        { "name": "Synaptic Imperative", "flavor": "Cada criatura es un nodo en la vasta red neural de la Mente Enjambre.", "rule": "Si tu Warlord está en la mesa, en tu fase de Mando elegís un Imperativo Sináptico que beneficia a todas las unidades Tyranids hasta tu próximo turno." },
+        { "name": "Voracious Appetite", "flavor": "El enjambre no solo destruye — consume.", "rule": "Cada vez que una unidad Tyranids destruye una unidad enemiga, suma 1 a la Fuerza de todos los ataques Tyranids hasta el final de la partida." }
+      ],
+      "strengths": [
+        "Versatilidad máxima: el Imperativo Sináptico se adapta a la situación cada turno",
+        "Voracious Appetite hace que la lista escale en poder a medida que avanza la partida",
+        "Buen equilibrio entre todos los tipos de unidades Tyranids"
+      ],
+      "weaknesses": [
+        "Depende fuertemente de mantener al Warlord vivo y en la mesa",
+        "Voracious Appetite empieza sin efecto — débil en el turno 1",
+        "Sin un bono fijo, requiere buena planificación para elegir el Imperativo correcto"
+      ]
+    },
+    "Synaptic Nexus": {
+      "overview": "Una red de Sinapsis perfectamente coordinada mantiene a cada criatura del enjambre actuando como una sola voluntad, permitiendo maniobras imposibles para mentes individuales.",
+      "abilities": [
+        { "name": "Networked Synapse", "flavor": "Ninguna criatura está sola mientras la red sináptica permanezca intacta.", "rule": "Las unidades dentro del rango Sináptico de dos o más unidades Synapse pueden repetir tiradas de Battleshock fallidas y de Advance/Charge." },
+        { "name": "Adaptive Biology", "flavor": "El enjambre evoluciona en tiempo real según las amenazas detectadas.", "rule": "Una vez por partida, podés mejorar el Toughness o el Save de una unidad Tyranids en 1 hasta el final de la partida." }
+      ],
+      "strengths": [
+        "Gran resiliencia mental — Battleshock prácticamente no afecta al enjambre",
+        "Adaptive Biology permite reforzar a una unidad clave justo antes de un ataque importante",
+        "Buen soporte para listas con muchas unidades Synapse pequeñas y medianas"
+      ],
+      "weaknesses": [
+        "Si la red Sináptica se rompe (pérdida de unidades Synapse), el enjambre pierde cohesión",
+        "Adaptive Biology es un recurso de un solo uso por partida",
+        "Menos potencia ofensiva directa que Crusher Stampede o Invasion Fleet"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "hive-tyrant",
+      "name": "Hive Tyrant",
+      "pts": 220,
+      "type": "monster",
+      "role": "Líder",
+      "keywords": ["Monster", "Character", "Synapse", "Tyranids", "Fly"],
+      "stats": { "m": 8, "t": 10, "sv": 4, "w": 12, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Monstrous bone sabres (ranged)", "range": "18\"", "a": "6", "skill": "2+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "melee": [
+        { "name": "Monstrous bone sabres", "range": "Melee", "a": "8", "skill": "2+", "s": 10, "ap": -2, "d": "3" }
+      ],
+      "abilities": ["Synapse", "Shadow in the Warp", "Fly"],
+      "considerations": "Líder voador con Synapse que mantiene a todo el enjambre cercano libre de Battleshock, además de un perfil de combate cuerpo a cuerpo muy peligroso.",
+      "recommendations": "Eliminarlo rompe la red Sináptica local — armas con AP-2 y daño alto (D2-3) son ideales, ya que su Sv4+ no es excepcional pese a sus 12 heridas."
+    },
+    {
+      "id": "tyranid-warriors",
+      "name": "Tyranid Warriors",
+      "pts": 90,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Synapse", "Tyranids"],
+      "stats": { "m": 6, "t": 5, "sv": 4, "w": 3, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Devourer", "range": "18\"", "a": "3", "skill": "3+", "s": 6, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Monstrous scything talons", "range": "Melee", "a": "4", "skill": "3+", "s": 6, "ap": -1, "d": "1" }
+      ],
+      "abilities": ["Synapse"],
+      "considerations": "Unidad Synapse de tamaño medio, con buen volumen de disparo y combate cuerpo a cuerpo decente para su costo.",
+      "recommendations": "Eliminar las unidades Synapse cercanas hace que las unidades sin Synapse sean susceptibles a Battleshock — priorizalas si tu lista genera muchas bajas."
+    },
+    {
+      "id": "termagants",
+      "name": "Termagantes",
+      "pts": 55,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Tyranids"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 1, "ld": 8, "oc": 2 },
+      "ranged": [
+        { "name": "Fleshborer", "range": "18\"", "a": "1", "skill": "4+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Fleshborer (melee)", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Battleline"],
+      "considerations": "Cuerpo numeroso y barato que ocupa objetivos en gran número, normalmente respaldado por una unidad Synapse cercana.",
+      "recommendations": "No vale la pena gastar recursos premium; el fuego de volumen estándar las elimina con facilidad gracias a su T3/Sv5+."
+    },
+    {
+      "id": "carnifex",
+      "name": "Carnifex",
+      "pts": 165,
+      "type": "monster",
+      "role": "Especial",
+      "keywords": ["Monster", "Tyranids"],
+      "stats": { "m": 8, "t": 10, "sv": 3, "w": 10, "ld": 7, "oc": 3 },
+      "ranged": [
+        { "name": "Devourers (twin-linked)", "range": "18\"", "a": "6", "skill": "3+", "s": 6, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Monstrous scything talons", "range": "Melee", "a": "8", "skill": "3+", "s": 12, "ap": -2, "d": "3" }
+      ],
+      "abilities": ["Explodes (D3 mortal wounds)"],
+      "considerations": "Bestia de combate cuerpo a cuerpo con S12/AP-2/D3 capaz de destrozar vehículos medianos y unidades de élite por igual.",
+      "recommendations": "Armas con S8+ y AP-2 son necesarias para herirlo de forma fiable; evitá enfrentarlo en cuerpo a cuerpo sin respaldo."
+    },
+    {
+      "id": "genestealers",
+      "name": "Genestealers",
+      "pts": 115,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Tyranids"],
+      "stats": { "m": 8, "t": 4, "sv": 5, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Rending claws", "range": "Melee", "a": "4", "skill": "2+", "s": 4, "ap": -2, "d": "1", "keywords": ["Lethal Hits"] }
+      ],
+      "abilities": ["Lethal Hits", "Infiltrators", "Movement 8\"+Advance alto"],
+      "considerations": "Movimiento e infiltración extremos les permiten cargar desde el turno 1. Lethal Hits hace que críticos de impacto se conviertan en heridas automáticas.",
+      "recommendations": "Mantené unidades de respaldo cerca de tu línea de despliegue — su alcance de carga T1 es uno de los más altos del juego. Sv5+ y T4 los hace frágiles ante fuego de volumen."
+    },
+    {
+      "id": "zoanthropes",
+      "name": "Zoanthropes",
+      "pts": 90,
+      "type": "infantry",
+      "role": "Soporte",
+      "keywords": ["Infantry", "Synapse", "Psyker", "Tyranids", "Fly"],
+      "stats": { "m": 6, "t": 5, "sv": 4, "w": 4, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Warp blast", "range": "18\"", "a": "D6", "skill": "2+", "s": 8, "ap": -2, "d": "2", "keywords": ["Devastating Wounds"] }
+      ],
+      "melee": [
+        { "name": "Monstrous scything talons", "range": "Melee", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "1" }
+      ],
+      "abilities": ["Synapse", "Deep Strike", "Devastating Wounds"],
+      "considerations": "Devastating Wounds en su disparo principal ignora salvaciones y ARMADURA por completo en críticos de herida — peligroso para personajes y vehículos.",
+      "recommendations": "Eliminalos a distancia antes de que lleguen por Deep Strike a rango óptimo; su T5/Sv4+/4W los hace vulnerables a fuego de volumen medio."
+    },
+    {
+      "id": "tyrannofex",
+      "name": "Tyrannofex",
+      "pts": 210,
+      "type": "monster",
+      "role": "Especial",
+      "keywords": ["Monster", "Tyranids"],
+      "stats": { "m": 6, "t": 12, "sv": 3, "w": 14, "ld": 8, "oc": 3 },
+      "ranged": [
+        { "name": "Fleshborer hive", "range": "18\"", "a": "6", "skill": "4+", "s": 6, "ap": 0, "d": "1" },
+        { "name": "Rupture cannon", "range": "36\"", "a": "D6", "skill": "4+", "s": 14, "ap": -3, "d": "D6" }
+      ],
+      "melee": [
+        { "name": "Massive scything talon", "range": "Melee", "a": "6", "skill": "4+", "s": 14, "ap": -3, "d": "3" }
+      ],
+      "abilities": ["Explodes (D6 mortal wounds)"],
+      "considerations": "El Tyrannofex es una de las criaturas más resistentes del codex, con T12 y 14 heridas, además de un Rupture Cannon que amenaza a vehículos pesados a 36\".",
+      "recommendations": "Necesitás armas con S9+ y AP-3 o más para herirlo de forma consistente; es un objetivo de alta prioridad si tu lista carece de respuestas anti-T12."
+    },
+    {
+      "id": "hormagaunts",
+      "name": "Hormagantes",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Tyranids"],
+      "stats": { "m": 8, "t": 3, "sv": 5, "w": 1, "ld": 8, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Scything talons", "range": "Melee", "a": "3", "skill": "4+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Advance and Charge"],
+      "considerations": "Velocidad muy alta (M8\" + Advance and Charge) permite alcanzar el midfield y objetivos secundarios rápidamente.",
+      "recommendations": "Su T3/Sv5+/1W los hace extremadamente frágiles — fuego de volumen ligero los elimina sin problema antes de que carguen."
+    }
+  ]
+}

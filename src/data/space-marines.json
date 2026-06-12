@@ -1,0 +1,222 @@
+{
+  "id": "space-marines",
+  "name": "Space Marines",
+  "detachments": {
+    "Gladius Task Force": {
+      "overview": "Al inicio de tu fase de Mando, seleccionás una Combat Doctrine activa que potencia a todas tus unidades Adeptus Astartes hasta tu próximo turno. Cada doctrina solo puede usarse una vez por partida.",
+      "abilities": [
+        { "name": "Devastator Doctrine", "flavor": "Potencia de fuego abrumadora sobre objetivos clave.", "rule": "Las unidades pueden disparar en un turno en el que Avanzaron." },
+        { "name": "Tactical Doctrine", "flavor": "Versatilidad combinada con potencia de fuego.", "rule": "Las unidades pueden disparar y declarar carga en un turno en el que Retrocedieron." },
+        { "name": "Assault Doctrine", "flavor": "El golpe decisivo se entrega en combate cuerpo a cuerpo.", "rule": "Las unidades pueden declarar carga en un turno en el que Avanzaron." }
+      ],
+      "strengths": [
+        "Flexibilidad táctica vía Combat Doctrines que se adaptan cada turno de la partida",
+        "Buen equilibrio entre potencia de fuego a media distancia e impacto cuerpo a cuerpo",
+        "Las unidades Core reciben bonificadores progresivos a medida que avanza la partida"
+      ],
+      "weaknesses": [
+        "Depende de activar la doctrina correcta en el momento justo, lo cual castiga errores de secuenciación",
+        "No tiene bonus de movimiento o alcance extra como otros detachments más especializados",
+        "Si pierde unidades Core temprano, no puede aprovechar al máximo las doctrinas posteriores"
+      ]
+    },
+    "Spearhead Assault": {
+      "overview": "Tu ejército avanza con agresividad abrumadora. Las unidades Vehicle y Monster ganan bonificaciones adicionales al avanzar, convirtiendo la velocidad en poder de fuego puro.",
+      "abilities": [
+        { "name": "Armoured Advance", "flavor": "Columnas blindadas que avanzan sin vacilar.", "rule": "Vehicle y Monster no sufren penalización al disparar Assault tras Avanzar." },
+        { "name": "Shock and Awe", "flavor": "La fuerza repentina deja al enemigo sin respuesta.", "rule": "Una vez por ronda, repetí una tirada de Impacto, Herida o Daño de un Vehicle o Monster." }
+      ],
+      "strengths": [
+        "Vehículos y Monstruos pueden avanzar y disparar sin penalización, maximizando la movilidad ofensiva",
+        "Re-tiradas puntuales aumentan la consistencia del daño en momentos clave",
+        "Excelente para presionar objetivos rápidamente en misiones de despliegue amplio"
+      ],
+      "weaknesses": [
+        "Las unidades de Infantry no reciben los bonus principales del detachment",
+        "Depende de tener varios Vehicle/Monster en la lista para sacar provecho real",
+        "Vulnerable a armas anti-tanque concentradas si el avance se detiene"
+      ]
+    },
+    "Vanguard Spearhead": {
+      "overview": "Operando en las sombras antes del combate principal, las unidades Vanguard usan velocidad y sigilo para desorganizar las líneas enemigas desde el inicio.",
+      "abilities": [
+        { "name": "Guerrilla Tactics", "flavor": "Golpear, desaparecer, y nunca dejar que el enemigo te fije.", "rule": "Las unidades Infantry pueden desplegarse en Reservas Estratégicas sin ocupar un slot." },
+        { "name": "Lightning Withdrawal", "flavor": "Saber retirarse es tan importante como atacar.", "rule": "Una vez por turno, una unidad Infantry puede hacer un movimiento Normal después de disparar, incluso si Avanzó." }
+      ],
+      "strengths": [
+        "Gran flexibilidad de despliegue gracias a las Reservas Estratégicas sin coste de slots",
+        "Capacidad de golpear y repliegue reduce la exposición a contraataques",
+        "Fuerte en misiones con objetivos secundarios dispersos por el flanco"
+      ],
+      "weaknesses": [
+        "Unidades pequeñas en reserva pueden llegar tarde para defender objetivos primarios",
+        "Menor potencia de fuego sostenida comparado con detachments de asalto frontal",
+        "Sensible a oponentes con buena cobertura de mesa y detección temprana"
+      ]
+    },
+    "Anvil Siege Force": {
+      "overview": "El Anvil Siege Force se especializa en fortificar posiciones y desgastar al enemigo mediante fuego metódico e implacable. No se mueven — resisten.",
+      "abilities": [
+        { "name": "Immovable Object", "flavor": "Como el yunque que rompe todos los golpes.", "rule": "Unidades que no se movieron mejoran el AP de sus armas a distancia en 1 hasta el final del turno." },
+        { "name": "Siege Masters", "flavor": "Ninguna fortificación ha resistido la paciencia de estos maestros del asedio.", "rule": "Tiradas de Herida de 4+ contra edificios y fortificaciones siempre tienen éxito." }
+      ],
+      "strengths": [
+        "Fuego estático con AP mejorado castiga duro a unidades de armadura media-alta",
+        "Excelente para misiones de control de zona donde mantener posiciones es clave",
+        "Muy efectivo contra fortificaciones y emplazamientos"
+      ],
+      "weaknesses": [
+        "Movilidad muy reducida, malo en misiones de despliegue diagonal con objetivos lejanos",
+        "Vulnerable a ser flanqueado o aislado de los objetivos principales",
+        "Pierde su bonus principal si se ve forzado a reposicionarse"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "terminators",
+      "name": "Escuadra Terminator",
+      "pts": 200,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Terminator", "Core", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 5, "t": 5, "sv": 2, "w": 3, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Storm bolter", "range": "24\"", "a": "2", "skill": "3+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Power fist", "range": "Melee", "a": "3", "skill": "3+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Deep Strike", "Teleport Strike", "Feel No Pain 5+ (Storm Shield)"],
+      "considerations": "Salvación 2+ con invulnerable 4++ (con Storm Shield) los hace muy resistentes al fuego de bólter estándar. Pueden llegar por Deep Strike a cualquier punto del tablero.",
+      "recommendations": "Usá armas de alto AP (-2 o más) para ignorar su salvación y concentrá el fuego antes de que entren en combate cuerpo a cuerpo."
+    },
+    {
+      "id": "intercessors",
+      "name": "Intercessors",
+      "pts": 85,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Core", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 6, "t": 4, "sv": 3, "w": 2, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Bolt rifle", "range": "24\"", "a": "2", "skill": "3+", "s": 4, "ap": -1, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "3+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Oath of Moment (target priority)"],
+      "considerations": "Unidad Battleline barata y resiliente (T4, Sv3+, 2W) que ancla el midfield y aporta volumen de disparo a 24\".",
+      "recommendations": "Tratalas como objetivo secundario — su bajo costo significa que rara vez vale la pena gastar recursos premium en eliminarlas primero."
+    },
+    {
+      "id": "captain-term",
+      "name": "Capitán Terminator",
+      "pts": 110,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Terminator", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 5, "t": 5, "sv": 2, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Storm bolter", "range": "24\"", "a": "2", "skill": "2+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Relic weapon", "range": "Melee", "a": "5", "skill": "2+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Invulnerable Save 4++", "Leader (puede unirse a Terminators)", "Deep Strike"],
+      "considerations": "Líder duro con 6 heridas e invulnerable 4++. Si se une a una escuadra de Terminators, mejora su letalidad cuerpo a cuerpo significativamente.",
+      "recommendations": "Usá armas de fuego masivo para superar su invulnerable, o aislalo en combate con una unidad sacrificable antes de que llegue a tus líneas."
+    },
+    {
+      "id": "redemptor",
+      "name": "Dreadnought Redemptor",
+      "pts": 185,
+      "type": "vehicle",
+      "role": "Vehículo",
+      "keywords": ["Vehicle", "Dreadnought", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 8, "t": 11, "sv": 3, "w": 11, "ld": 6, "oc": 3 },
+      "ranged": [
+        { "name": "Heavy onslaught gatling cannon", "range": "24\"", "a": "12", "skill": "3+", "s": 6, "ap": 0, "d": "1" },
+        { "name": "Icarus rocket pod", "range": "48\"", "a": "4", "skill": "3+", "s": 7, "ap": -1, "d": "2" }
+      ],
+      "melee": [
+        { "name": "Redemptor fist", "range": "Melee", "a": "6", "skill": "3+", "s": 16, "ap": -3, "d": "3" }
+      ],
+      "abilities": ["Explodes (D6 mortal wounds)", "Smoke Launchers"],
+      "considerations": "Volumen de disparo masivo (12 ataques de bólter pesado) sumado a un puño que destroza vehículos pesados en cuerpo a cuerpo. T11 lo hace muy difícil de dañar para armas de S baja.",
+      "recommendations": "Necesitás armas con S8+ o AP-2+ para herirlo de forma consistente; priorizalo si tu lista carece de respuestas anti-vehículo pesado."
+    },
+    {
+      "id": "aggressors",
+      "name": "Aggressors",
+      "pts": 110,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Core", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 4, "t": 5, "sv": 3, "w": 3, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Auto boltstorm gauntlets", "range": "8\"", "a": "6", "skill": "3+", "s": 4, "ap": 0, "d": "1" },
+        { "name": "Fragstorm grenade launcher", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": -1, "d": "D3" }
+      ],
+      "melee": [
+        { "name": "Power fist", "range": "Melee", "a": "3", "skill": "4+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Fights First (cuando es cargada)", "Can shoot twice in Shooting phase"],
+      "considerations": "Volumen de disparo brutal a corta distancia (hasta 18 disparos por unidad de 3) que destroza infantería ligera y media.",
+      "recommendations": "Mantenelas a más de 8\" si es posible, o eliminalas a distancia antes de que entren en su rango óptimo."
+    },
+    {
+      "id": "impulsor",
+      "name": "Impulsor",
+      "pts": 75,
+      "type": "vehicle",
+      "role": "Transporte",
+      "keywords": ["Vehicle", "Transport", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 12, "t": 9, "sv": 3, "w": 7, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Twin storm bolter", "range": "24\"", "a": "4", "skill": "3+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [],
+      "abilities": ["Transport (6 modelos)", "Repulsor Field (-1 a impactar contra ataques a 12\")"],
+      "considerations": "Transporte rápido (M12\") que protege su carga con un campo defensivo que dificulta ser impactado a distancia.",
+      "recommendations": "Prioriza destruirlo antes de que descargue su carga en una posición ventajosa; armas de daño medio son suficientes dado su T9/Sv3+."
+    },
+    {
+      "id": "librarian",
+      "name": "Bibliotecario",
+      "pts": 70,
+      "type": "character",
+      "role": "Psíquico",
+      "keywords": ["Infantry", "Character", "Psyker", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 6, "t": 4, "sv": 3, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Force stave", "range": "Melee", "a": "4", "skill": "2+", "s": 6, "ap": -1, "d": "2" }
+      ],
+      "abilities": ["Smite", "Psychic Hood (deniega poderes psíquicos)"],
+      "considerations": "Aporta un ataque psíquico de daño mortal garantizado (Smite) y puede denegar poderes psíquicos enemigos.",
+      "recommendations": "Eliminalo a distancia si tu ejército depende de habilidades psíquicas — su Psychic Hood puede arruinar combos clave."
+    },
+    {
+      "id": "hellblasters",
+      "name": "Hellblasters",
+      "pts": 100,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Core", "Imperium", "Adeptus Astartes"],
+      "stats": { "m": 6, "t": 4, "sv": 3, "w": 2, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Plasma incinerator (standard)", "range": "24\"", "a": "2", "skill": "3+", "s": 8, "ap": -3, "d": "2", "keywords": ["Hazardous"] },
+        { "name": "Plasma incinerator (supercharge)", "range": "24\"", "a": "2", "skill": "3+", "s": 9, "ap": -3, "d": "3", "keywords": ["Hazardous"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Hazardous (riesgo de auto-bajas en supercarga)"],
+      "considerations": "AP-3 y D2/D3 a 24\" los convierte en una de las mejores respuestas anti-vehículo de infantería de Space Marines.",
+      "recommendations": "Son un objetivo prioritario para tu oponente — protegelos detrás de cobertura o de otras unidades para que lleguen a disparar varios turnos."
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "id": "necrons",
+  "name": "Necrons",
+  "detachments": {
+    "Awakened Dynasty": {
+      "overview": "La Dinastía Despierta surge de eones de letargo con un propósito singular: reclamar el dominio sobre la galaxia. Los Protocolos de Reanimación funcionan a máxima eficiencia, devolviendo a los caídos a la batalla una y otra vez.",
+      "abilities": [
+        { "name": "Reanimation Protocols", "flavor": "La muerte es un mero inconveniente para los Necrons.", "rule": "Al final de cada fase, por cada modelo destruido, tirar 1D6: con 4+ el modelo vuelve con 1 herida." },
+        { "name": "Dynastic Ambition", "flavor": "El regreso del Rey Silencioso reavivó rivalidades ancestrales.", "rule": "Una vez por partida, las tiradas de Reanimation Protocols tienen éxito con 3+ en lugar de 4+." }
+      ],
+      "strengths": [
+        "Reanimation Protocols saturan la capacidad de eliminar bajas del rival, generando desgaste a tu favor",
+        "Dynastic Ambition permite un turno de reanimación masiva en el momento crítico",
+        "Buen balance general entre infantería resiliente y soporte de vehículos"
+      ],
+      "weaknesses": [
+        "Las unidades sin la palabra clave Reanimation Protocols no se benefician del detachment",
+        "Daño mortal masivo o eliminación total de unidades evita la reanimación",
+        "No otorga bonos de movimiento, por lo que es relativamente lento para alcanzar objetivos"
+      ]
+    },
+    "Canoptek Court": {
+      "overview": "La Corte Canoptek despliega enjambres de constructos mecánicos para apoyar a los guerreros Necron. Estos autómatas incansables reparan, reconstruyen y reciclan a los caídos con fría eficiencia.",
+      "abilities": [
+        { "name": "Living Metal", "flavor": "El metal viviente Necron se autorrepara a un ritmo asombroso.", "rule": "Al inicio de tu fase de Mando, cada unidad Canoptek recupera hasta D3 heridas perdidas." },
+        { "name": "Scarab Swarm", "flavor": "Nubes de escarabajos despojan la carne y reclaman a los caídos.", "rule": "Las Canoptek Scarab Swarms pueden usar Reanimation Protocols para devolver modelos a unidades Necron a 6\"." }
+      ],
+      "strengths": [
+        "Las unidades Canoptek se autorreparán turno a turno, siendo muy difíciles de eliminar definitivamente",
+        "Buen soporte para personajes y vehículos clave gracias a la regeneración de heridas",
+        "Los Scarab Swarm extienden la reanimación a otras unidades cercanas"
+      ],
+      "weaknesses": [
+        "Beneficios limitados a unidades con la palabra clave Canoptek",
+        "Poco impacto ofensivo directo comparado con otros detachments",
+        "Depende de mantener varias unidades Canoptek juntas para maximizar el efecto"
+      ]
+    },
+    "Hyper Dynasty": {
+      "overview": "La velocidad por encima de todo. La Hyper Dynasty golpea antes de que el enemigo pueda reaccionar, aprovechando protocolos de asalto relampagueantes para abrumar posiciones antes de que lleguen refuerzos.",
+      "abilities": [
+        { "name": "Hyper-Phase Advance", "flavor": "Manipulación de tecnología de fase dimensional para movimientos a velocidad incomprensible.", "rule": "Al Avanzar, no se tira el dado de Avance: en su lugar se suman 6\" al Movimiento hasta el final de la fase." },
+        { "name": "Quantum Shielding", "flavor": "Campos de fuerza cuánticos que desvían el fuego entrante.", "rule": "La primera vez en cada fase que la unidad perdería una herida, tirar 1D6: con 5+ la herida no se pierde." }
+      ],
+      "strengths": [
+        "Movilidad excepcional para alcanzar objetivos y el midfield desde el turno 1",
+        "Quantum Shielding reduce el daño efectivo recibido en cada fase",
+        "Fuerte en misiones de despliegue diagonal o con objetivos dispersos"
+      ],
+      "weaknesses": [
+        "Quantum Shielding solo protege contra la primera herida de la fase, no detiene ráfagas grandes",
+        "Menos resiliente a largo plazo que detachments centrados en Reanimation Protocols",
+        "Avanzar agresivamente puede dejar unidades aisladas y expuestas a contraataques"
+      ]
+    },
+    "Starshatter Arsenal": {
+      "overview": "El Arsenal Starshatter pone el poder de fuego de la flota Necron al servicio de las fuerzas terrestres, sincronizando bombardeos orbitales con el avance de los guerreros de metal viviente.",
+      "abilities": [
+        { "name": "Orbital Bombardment", "flavor": "Las naves en órbita responden a las señales de los Crypteks en tierra.", "rule": "Una vez por partida, en tu fase de Disparo, una unidad puede infligir D3 mortales adicionales a un objetivo dentro del alcance." },
+        { "name": "Targeting Relay", "flavor": "Cada disparo es calculado por inteligencias ancestrales.", "rule": "Re-tiradas de 1 para impactar con armas a distancia de unidades Necrons dentro de 6\" de un Cryptek." }
+      ],
+      "strengths": [
+        "Daño mortal adicional vía Orbital Bombardment ignora salvaciones convencionales",
+        "Re-tiradas de 1 para impactar mejoran la consistencia del volumen de disparo",
+        "Fuerte en listas centradas en armas pesadas y vehículos de disparo"
+      ],
+      "weaknesses": [
+        "Orbital Bombardment es un recurso de un solo uso por partida",
+        "Poco enfoque en combate cuerpo a cuerpo o movilidad",
+        "Depende de mantener Crypteks vivos para maximizar las re-tiradas"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "warriors",
+      "name": "Guerreros Necron",
+      "pts": 90,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Core", "Necrons"],
+      "stats": { "m": 5, "t": 4, "sv": 4, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Gauss flayer", "range": "24\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 1"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Reanimation Protocols"],
+      "considerations": "Unidad Battleline barata que vuelve constantemente gracias a Reanimation Protocols, generando un desgaste sostenido difícil de revertir.",
+      "recommendations": "No malgastes armas de alto valor en ellos; usá fuego de volumen estándar y prioriza eliminar a los Crypteks que los acompañan para reducir su reanimación."
+    },
+    {
+      "id": "immortals",
+      "name": "Inmortales",
+      "pts": 90,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Core", "Necrons"],
+      "stats": { "m": 5, "t": 4, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Gauss blaster", "range": "18\"", "a": "2", "skill": "3+", "s": 5, "ap": -1, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Reanimation Protocols"],
+      "considerations": "Salvación 3+ y AP-1 en sus armas los hace más duraderos y peligrosos para infantería con armadura media que los Guerreros estándar.",
+      "recommendations": "Armas con AP-1 o mejor son necesarias para reducir su salvación; trátalos con prioridad media."
+    },
+    {
+      "id": "overlord",
+      "name": "Señor de la Cripta",
+      "pts": 85,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Necrons"],
+      "stats": { "m": 5, "t": 5, "sv": 3, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Staff of light", "range": "12\"", "a": "3", "skill": "2+", "s": 5, "ap": -2, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Voidblade", "range": "Melee", "a": "4", "skill": "2+", "s": 6, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Leader (puede unirse a Guerreros/Inmortales)", "My Will Be Done (otorga +1 to Hit a una unidad cercana)"],
+      "considerations": "Líder versátil que mejora la precisión de la unidad a la que se une y aporta daño cuerpo a cuerpo decente.",
+      "recommendations": "Eliminarlo reduce significativamente la efectividad ofensiva de la unidad escolta — priorizalo si tu arma puede herir T5/Sv3+ con eficacia."
+    },
+    {
+      "id": "doomsday-ark",
+      "name": "Doomsday Ark",
+      "pts": 195,
+      "type": "vehicle",
+      "role": "Vehículo",
+      "keywords": ["Vehicle", "Necrons"],
+      "stats": { "m": 10, "t": 10, "sv": 3, "w": 14, "ld": 6, "oc": 3 },
+      "ranged": [
+        { "name": "Doomsday cannon (modo alto)", "range": "48\"", "a": "1", "skill": "3+", "s": 16, "ap": -5, "d": "D6+6" },
+        { "name": "Doomsday cannon (modo bajo)", "range": "24\"", "a": "D6", "skill": "3+", "s": 8, "ap": -2, "d": "3" },
+        { "name": "Gauss flayer array", "range": "24\"", "a": "10", "skill": "4+", "s": 5, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Armoured bulk", "range": "Melee", "a": "3", "skill": "4+", "s": 8, "ap": -1, "d": "D3" }
+      ],
+      "abilities": ["Reanimation Protocols", "Hovering", "Living Metal"],
+      "considerations": "El cañón Doomsday en modo alto hace daño masivo a vehículos pesados con D6+6 y AP-5, pero requiere que la unidad no se haya movido el turno anterior.",
+      "recommendations": "Priorizalo en T1 con tu mejor arma anti-vehículo, o presionalo con movimiento rápido para forzarlo a reposicionarse y disparar en modo bajo."
+    },
+    {
+      "id": "c-tan",
+      "name": "C'tan Shard of the Nightbringer",
+      "pts": 250,
+      "type": "monster",
+      "role": "Especial",
+      "keywords": ["Monster", "Character", "Epic Hero", "Fly", "Necrons"],
+      "stats": { "m": 10, "t": 11, "sv": 3, "w": 16, "ld": 6, "oc": 4 },
+      "ranged": [
+        { "name": "Gaze of death", "range": "18\"", "a": "D3", "skill": "2+", "s": 12, "ap": -3, "d": "D6+3" }
+      ],
+      "melee": [
+        { "name": "Scythe – strike", "range": "Melee", "a": "6", "skill": "2+", "s": 14, "ap": -4, "d": "D6+2" },
+        { "name": "Scythe – sweep", "range": "Melee", "a": "14", "skill": "2+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Deadly Demise D6", "Deep Strike", "Feel No Pain 5+", "Reanimation Protocols", "Drain Life", "Necrodermis"],
+      "considerations": "Ignora completamente armaduras de 2+ con AP-4 en strike y el Gaze of Death hace D6+3 de daño con AP-3. Necrodermis reduce 1 punto de daño por ataque y Feel No Pain 5+ lo hace extremadamente difícil de eliminar.",
+      "recommendations": "Eliminalo en el primer turno usando toda la potencia de fuego disponible antes de que entre en combate cuerpo a cuerpo. Es vulnerable al sweep en respuesta — no lo cargues con unidades valiosas."
+    },
+    {
+      "id": "lychguard",
+      "name": "Lychguard",
+      "pts": 130,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Necrons", "Core"],
+      "stats": { "m": 5, "t": 5, "sv": 3, "w": 2, "ld": 6, "oc": 2 },
+      "ranged": [],
+      "melee": [
+        { "name": "Hyperphase sword", "range": "Melee", "a": "3", "skill": "3+", "s": 6, "ap": -3, "d": "2" },
+        { "name": "Warpscythe", "range": "Melee", "a": "3", "skill": "3+", "s": 8, "ap": -4, "d": "2" }
+      ],
+      "abilities": ["Reanimation Protocols", "Dispersion Shield (4++ inv)", "Bodyguard"],
+      "considerations": "Con salvación invulnerable 4++ y Reanimation Protocols son muy difíciles de eliminar con armas de alto AP. Protegen a personajes Necron cercanos con Bodyguard.",
+      "recommendations": "Usá armas de alto volumen de ataques en vez de pocas de alto daño — el 4++ mitiga el AP pero no los impactos múltiples."
+    },
+    {
+      "id": "cryptek",
+      "name": "Cryptek",
+      "pts": 50,
+      "type": "character",
+      "role": "Soporte",
+      "keywords": ["Infantry", "Character", "Necrons"],
+      "stats": { "m": 5, "t": 5, "sv": 4, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Staff of light", "range": "12\"", "a": "3", "skill": "4+", "s": 5, "ap": -2, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Staff of light (melee)", "range": "Melee", "a": "3", "skill": "4+", "s": 5, "ap": -2, "d": "1" }
+      ],
+      "abilities": ["Empowered by the C'tan (mejora Reanimation Protocols a 3+)"],
+      "considerations": "Mejora las tiradas de Reanimation Protocols de unidades cercanas a 3+, multiplicando el desgaste que tu lista debe superar.",
+      "recommendations": "Eliminarlo primero reduce drásticamente la tasa de reanimación de las unidades Necron que lo rodean."
+    },
+    {
+      "id": "ghost-ark",
+      "name": "Ghost Ark",
+      "pts": 145,
+      "type": "vehicle",
+      "role": "Transporte",
+      "keywords": ["Vehicle", "Transport", "Necrons"],
+      "stats": { "m": 10, "t": 9, "sv": 4, "w": 9, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Gauss flayer array", "range": "24\"", "a": "10", "skill": "4+", "s": 5, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Armoured bulk", "range": "Melee", "a": "3", "skill": "4+", "s": 6, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Hovering", "Repair Barge (repara modelos de Guerreros embarcados)", "Transport (10 modelos Infantry Necrons)"],
+      "considerations": "Transporta y repara unidades de Guerreros, devolviendo modelos destruidos al desembarcar, lo que aumenta aún más el desgaste necesario para eliminarlos.",
+      "recommendations": "Si podés, destruilo antes de que repare a su carga — su Sv4+ y T9 lo hacen vulnerable a armas anti-vehículo medias."
+    }
+  ]
+}

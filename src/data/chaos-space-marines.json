@@ -1,0 +1,201 @@
+{
+  "id": "chaos-space-marines",
+  "name": "Chaos Space Marines",
+  "detachments": {
+    "Raiders from the Warp": {
+      "overview": "Atacando desde forjas demoníacas y bastiones tocados por el warp, las hordas Chaos Space Marines descienden sobre el reino mortal con una imprevisibilidad aterradora, sus golpes potenciados por los Dioses Oscuros.",
+      "abilities": [
+        { "name": "Warp Surge", "flavor": "Las energías del warp inundan a los guerreros, otorgando una fuerza terrible.", "rule": "Una vez por partida, en la fase de Combate, suma 1 a las Características de Ataques y Fuerza de todas las unidades Chaos Space Marines." },
+        { "name": "Daemonic Possession", "flavor": "Algunos vehículos del Caos albergan demonios ligados.", "rule": "Los vehículos pueden disparar tras Retroceder, con -1 a Impactar al hacerlo." }
+      ],
+      "strengths": [
+        "Warp Surge otorga un pico de daño cuerpo a cuerpo devastador en el momento decisivo",
+        "Daemonic Possession da flexibilidad táctica a los vehículos para retirarse y seguir disparando",
+        "Buen equilibrio entre infantería resistente y soporte de vehículos poseídos"
+      ],
+      "weaknesses": [
+        "Warp Surge es un recurso de un solo uso por partida — su timing es crítico",
+        "Sin bonos de movimiento, por lo que avanza a ritmo estándar hacia los objetivos",
+        "Depende de mantener unidades Chaos Space Marines (no aliados) para los bonos clave"
+      ]
+    },
+    "Tide of Traitors": {
+      "overview": "Oleadas interminables de renegados y traidores se lanzan contra el enemigo, reforzadas constantemente por refuerzos que emergen de Reservas Estratégicas para sostener la presión.",
+      "abilities": [
+        { "name": "Endless Ranks", "flavor": "Por cada caído, diez más responden al llamado.", "rule": "Las unidades Infantry pueden ser devueltas a Reservas Estratégicas tras ser destruidas, una vez por partida por unidad." },
+        { "name": "Overwhelming Numbers", "flavor": "El número es su propia arma.", "rule": "+1 a las tiradas de Combat Attrition para unidades Chaos Space Marines Infantry." }
+      ],
+      "strengths": [
+        "Resiliencia a largo plazo gracias a unidades que pueden regresar desde reservas",
+        "Mejor resistencia a Battleshock con Overwhelming Numbers",
+        "Fuerte en partidas largas donde el desgaste favorece a quien tiene más cuerpos"
+      ],
+      "weaknesses": [
+        "Las unidades devueltas llegan vacías de equipo especial usado previamente",
+        "Poco impacto inmediato en los primeros turnos comparado con detachments de alfa-strike",
+        "Depende de listas con muchas unidades de Infantry baratas"
+      ]
+    },
+    "Pactbound Zealots": {
+      "overview": "Fanáticos unidos por un pacto de sangre con los Dioses Oscuros, estos guerreros ganan bendiciones cada vez que derraman sangre en nombre de su patrón.",
+      "abilities": [
+        { "name": "Dark Pact", "flavor": "Cada muerte alimenta el pacto.", "rule": "Cada vez que una unidad Chaos Space Marines destruye una unidad enemiga, gana un marcador de Pacto que otorga +1 a las tiradas de Herida hasta el final de la partida." },
+        { "name": "Zealous Devotion", "flavor": "El fanatismo no conoce el miedo.", "rule": "Las unidades con marcadores de Pacto no pueden ser obligadas a Fall Back." }
+      ],
+      "strengths": [
+        "Escala progresivamente — cuanto más dura la partida, más letal se vuelve la lista",
+        "Inmunidad a Fall Back forzado mantiene la presión ofensiva",
+        "Muy fuerte en misiones largas o de desgaste prolongado"
+      ],
+      "weaknesses": [
+        "Débil en los primeros turnos antes de acumular marcadores de Pacto",
+        "Si las unidades clave mueren temprano, pierden todo el progreso acumulado",
+        "Vulnerable a tácticas de alfa-strike que buscan eliminarlos antes de escalar"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "chaos-marines",
+      "name": "Chaos Space Marines (Legionarios)",
+      "pts": 80,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Core", "Chaos", "Heretic Astartes"],
+      "stats": { "m": 6, "t": 4, "sv": 3, "w": 2, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Bolt rifle", "range": "24\"", "a": "2", "skill": "3+", "s": 4, "ap": -1, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Astartes chainsword", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -1, "d": "1" }
+      ],
+      "abilities": ["Mark of Chaos (puede llevar marca de un Dios del Caos)"],
+      "considerations": "Battleline flexible y resistente que puede adaptarse según la marca de Caos elegida.",
+      "recommendations": "Tratalas como objetivo secundario; concentrate en las unidades de élite que acompañan a esta tropa."
+    },
+    {
+      "id": "chosen",
+      "name": "Chosen",
+      "pts": 100,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Chaos", "Heretic Astartes"],
+      "stats": { "m": 6, "t": 4, "sv": 3, "w": 2, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Plasma gun (supercharge)", "range": "24\"", "a": "1", "skill": "3+", "s": 9, "ap": -3, "d": "3", "keywords": ["Hazardous"] }
+      ],
+      "melee": [
+        { "name": "Power weapon", "range": "Melee", "a": "3", "skill": "3+", "s": 5, "ap": -2, "d": "1" }
+      ],
+      "abilities": ["Veterans of the Long War (re-tirada de 1s para impactar a unidades Imperium)"],
+      "considerations": "Unidad versátil de armas especiales que puede equiparse para amenazar tanto infantería como vehículos ligeros.",
+      "recommendations": "Eliminalas antes de que descarguen su volea de armas especiales — son frágiles ante fuego concentrado (T4/Sv3+/2W)."
+    },
+    {
+      "id": "terminators-csm",
+      "name": "Terminadores del Caos",
+      "pts": 195,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Terminator", "Chaos", "Heretic Astartes"],
+      "stats": { "m": 5, "t": 5, "sv": 2, "w": 3, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Combi-bolter", "range": "24\"", "a": "2", "skill": "3+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Chainfist", "range": "Melee", "a": "3", "skill": "4+", "s": 9, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Deep Strike", "Invulnerable Save 4++ (Combi-weapons)"],
+      "considerations": "Salvación 2+ con invulnerable disponible y chainfists capaces de abrir vehículos pesados en combate.",
+      "recommendations": "Necesitás AP-2 o más para reducir su salvación de forma efectiva; priorizalos si amenazan tus vehículos de soporte."
+    },
+    {
+      "id": "helbrute",
+      "name": "Helbrute",
+      "pts": 130,
+      "type": "vehicle",
+      "role": "Vehículo",
+      "keywords": ["Vehicle", "Daemon", "Chaos", "Heretic Astartes"],
+      "stats": { "m": 6, "t": 9, "sv": 3, "w": 9, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Reaper autocannon", "range": "36\"", "a": "4", "skill": "4+", "s": 7, "ap": -1, "d": "2" }
+      ],
+      "melee": [
+        { "name": "Power scourge", "range": "Melee", "a": "5", "skill": "4+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Explodes (D3 mortal wounds)", "Unwieldy (Hit rolls de 1 generan herida en la propia unidad)"],
+      "considerations": "Vehículo errático pero peligroso, capaz de combinar disparo de medio alcance con un golpe cuerpo a cuerpo considerable.",
+      "recommendations": "Su BS/WS de 4+ lo hace menos consistente — armas de daño medio bastan para neutralizarlo antes de que conecte en combate."
+    },
+    {
+      "id": "chaos-lord",
+      "name": "Chaos Lord en Terminator Armour",
+      "pts": 90,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Terminator", "Chaos", "Heretic Astartes"],
+      "stats": { "m": 5, "t": 5, "sv": 2, "w": 5, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Combi-bolter", "range": "24\"", "a": "2", "skill": "2+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Daemon weapon", "range": "Melee", "a": "6", "skill": "2+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Invulnerable Save 4++", "Leader (puede unirse a Terminadores)", "Aura de odio (re-tiradas de Hit roll de 1 a unidades cercanas)"],
+      "considerations": "Mejora la consistencia ofensiva de la unidad a la que se une y aporta un golpe cuerpo a cuerpo serio por sí mismo.",
+      "recommendations": "Eliminarlo quita la re-tirada de aura a la unidad escolta — usá francotiradores o fuego dirigido si es posible."
+    },
+    {
+      "id": "obliterators",
+      "name": "Obliterators",
+      "pts": 160,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Daemon", "Chaos", "Heretic Astartes"],
+      "stats": { "m": 5, "t": 5, "sv": 2, "w": 4, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Bile maw / Fleshmetal guns", "range": "24\"", "a": "3", "skill": "4+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "melee": [
+        { "name": "Power fist", "range": "Melee", "a": "3", "skill": "4+", "s": 8, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Deep Strike", "Disgustingly Resilient (Feel No Pain 5+)"],
+      "considerations": "Resistentes (T5/Sv2+/FNP5+) y con armas que amenazan tanto infantería de élite como vehículos ligeros-medios.",
+      "recommendations": "Necesitás daño concentrado de AP alto para superar su FNP; no los ignores si tu lista depende de vehículos T9-10."
+    },
+    {
+      "id": "rhino",
+      "name": "Rhino",
+      "pts": 75,
+      "type": "vehicle",
+      "role": "Transporte",
+      "keywords": ["Vehicle", "Transport", "Chaos", "Heretic Astartes"],
+      "stats": { "m": 12, "t": 9, "sv": 3, "w": 7, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Combi-bolter", "range": "24\"", "a": "2", "skill": "4+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "melee": [],
+      "abilities": ["Transport (12 modelos)", "Smoke Launchers"],
+      "considerations": "Transporte rápido y barato que puede entregar unidades de élite cerca del frente con relativa seguridad.",
+      "recommendations": "Daño medio es suficiente; priorizalo solo si transporta una amenaza de élite que querés retrasar."
+    },
+    {
+      "id": "cultists",
+      "name": "Chaos Cultists",
+      "pts": 55,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Chaos"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "melee": [
+        { "name": "Brutal assault weapon", "range": "Melee", "a": "2", "skill": "4+", "s": 4, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Cannon Fodder (cuerpo extra de OC barato)"],
+      "considerations": "Unidad numerosa y barata que ocupa objetivos con buen OC pese a su baja resiliencia individual.",
+      "recommendations": "No vale la pena gastar armas premium en ellos; el fuego de bólter estándar o el combate cuerpo a cuerpo básico los elimina con facilidad."
+    }
+  ]
+}
