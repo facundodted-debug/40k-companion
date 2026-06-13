@@ -1,0 +1,621 @@
+{
+  "id": "genestealer-cult",
+  "name": "Genestealer Cult",
+  "detachments": {
+    "Heroes of the Uprising": {
+      "overview": "El levantamiento depende de sus líderes. Este detachment pone a los personajes del culto al frente, otorgándoles ventajas que multiplican el impacto de cada Primus, Locus o Patriarca sobre la unidad que acompañan.",
+      "abilities": [
+        { "name": "Vanguard del Levantamiento", "flavor": "Cada líder es una chispa que enciende la revuelta.", "rule": "Las unidades que incluyen un personaje GREAT DEVOURER con la habilidad Leader obtienen +1 to Wound en CaC mientras estén a 6\" de un Objective Marker." },
+        { "name": "Sacrificio Calculado", "flavor": "El culto sabe cuándo perder un peón para ganar la partida.", "rule": "Una vez por partida, si una unidad con personaje líder es destruida, gana 1 CP adicional." }
+      ],
+      "strengths": [
+        "Maximiza el valor de las múltiples combinaciones de líderes del codex (Primus, Locus, Biophagus, etc.)",
+        "El bono de +1 to Wound cerca de objetivos premia el juego centrado en el control del centro de mesa",
+        "El CP extra por sacrificio ayuda a mantener el flujo de Stratagems en partidas largas"
+      ],
+      "weaknesses": [
+        "Depende de mantener vivos a los líderes el mayor tiempo posible para justificar la inversión de puntos",
+        "El bono solo aplica cerca de objetivos, perdiendo valor en despliegues muy dispersos",
+        "Poca sinergia con listas que priorizan unidades independientes sin líderes (Genestealers, Kelermorph, etc.)"
+      ]
+    },
+    "Purestrain Broodswarm": {
+      "overview": "Un enjambre puro de Genestealers emerge desde las sombras antes de que el enemigo pueda reaccionar. Este detachment prioriza la velocidad y el volumen de ataques cuerpo a cuerpo desde el turno 1.",
+      "abilities": [
+        { "name": "Instinto Depredador", "flavor": "La sangre del Patriarca corre fuerte en estas criaturas.", "rule": "Las unidades PURESTRAIN GENESTEALERS pueden re-tirar las tiradas de carga y obtienen +1 to Hit en CaC en el turno en que cargan." },
+        { "name": "Emergencia Sincronizada", "flavor": "Docenas de túneles convergen en el mismo instante.", "rule": "Hasta dos unidades con Cult Ambush pueden desplegarse desde Reserves en el mismo turno de mando, en lugar de solo una." }
+      ],
+      "strengths": [
+        "Re-tiradas de carga garantizan que el enjambre llegue al combate de forma consistente",
+        "El despliegue doble desde Cult Ambush permite golpear dos flancos simultáneamente",
+        "Extremadamente agresivo contra ejércitos que dependen de wall de unidades de soporte frágiles"
+      ],
+      "weaknesses": [
+        "Las Purestrain Genestealers siguen siendo frágiles (Sv5+) ante el fuego de reacción antes de cargar",
+        "Poco beneficio para unidades de vehículos o Acolyte Hybrids, que no aprovechan el bono específico",
+        "Un despliegue agresivo sin apoyo puede dejar al enjambre aislado y contraatacado"
+      ]
+    },
+    "Xenocult Masses": {
+      "overview": "La masa de Neófitos y trabajadores del culto inunda el campo de batalla. Este detachment recompensa llevar muchas unidades baratas de infantería que controlen objetivos por número.",
+      "abilities": [
+        { "name": "Multitud Insidiosa", "flavor": "Por cada uno que cae, diez más ocupan su lugar.", "rule": "Las unidades BATTLELINE con OC2 o más obtienen +1 a su Objective Control mientras estén a 3\" de otra unidad GREAT DEVOURER." },
+        { "name": "Infiltración Silenciosa", "flavor": "El culto ya estaba ahí, esperando la señal.", "rule": "Hasta tres unidades de infantería pueden desplegarse usando Infiltrators en lugar de su despliegue normal, aunque no tengan esa habilidad." }
+      ],
+      "strengths": [
+        "El bono de OC acumulativo convierte a los Neophyte Hybrids en una fuerza de control de objetivos casi inigualable",
+        "La infiltración extra para varias unidades genera presión inmediata sobre el midfield desde el turno 1",
+        "Listas con muchas unidades baratas se benefician enormemente del efecto de aglomeración"
+      ],
+      "weaknesses": [
+        "Requiere desplegar varias unidades cerca entre sí, lo que las hace vulnerables a armas de Blast",
+        "Poco impacto si la lista está orientada a pocas unidades grandes y caras (Aberrants, vehículos)",
+        "El bono de OC no compensa la baja resistencia de T3/T4 Sv5+ frente a fuego concentrado"
+      ]
+    },
+    "Biosanctic Broodsurge": {
+      "overview": "Los poderes psíquicos del culto se canalizan a través del Benefictus y sus acólitos, desatando descargas bio-psíquicas que desestabilizan al enemigo antes del asalto.",
+      "abilities": [
+        { "name": "Resonancia Psiónica", "flavor": "Mil mentes laten al unísono bajo el control de la Mente Devoradora.", "rule": "Las armas de las unidades GREAT DEVOURER con la palabra clave PSYCHIC obtienen Lethal Hits mientras estén a 12\" de una unidad con un personaje PSYKER." },
+        { "name": "Oleada de Terror", "flavor": "El miedo se propaga como una plaga psíquica.", "rule": "Una vez por partida, en tu fase de Mando, una unidad enemiga a 18\" de un personaje PSYKER del culto debe repetir su test de Battle-shock si lo supera." }
+      ],
+      "strengths": [
+        "Lethal Hits en armas pesadas (Mining Laser, Seismic Cannon) potencia enormemente el daño a distancia",
+        "La presión psíquica sobre Battle-shock puede neutralizar unidades clave del rival en momentos críticos",
+        "Sinergiza directamente con Benefictus, Magus y Patriarch, ya presentes en la mayoría de listas"
+      ],
+      "weaknesses": [
+        "Depende de mantener a los personajes PSYKER vivos y dentro de rango de las unidades de disparo",
+        "Aporta poco a listas centradas en combate cuerpo a cuerpo puro sin armas pesadas",
+        "El efecto de Battle-shock es de un solo uso por partida, limitando su impacto a un momento puntual"
+      ]
+    },
+    "Brood Brothers Auxillia": {
+      "overview": "Regimientos enteros de la Astra Militarum, corrompidos en secreto, marchan junto al culto. Este detachment integra el poder de fuego de la Guardia Imperial bajo el control del Genestealer Cult.",
+      "abilities": [
+        { "name": "Lealtad Dividida", "flavor": "Los soldados obedecen órdenes que no comprenden del todo.", "rule": "Las unidades de infantería pueden beneficiarse de Orders de oficiales aliados aunque no compartan la palabra clave de regimiento, una vez por fase." },
+        { "name": "Apoyo de Artillería Corrupta", "flavor": "Los cañones disparan donde el culto lo necesita.", "rule": "Una vez por partida, una unidad de artillería o vehículo aliado puede repetir todas las tiradas de impacto contra el objetivo marcado por un Sanctus o Jackal Alphus." }
+      ],
+      "strengths": [
+        "Permite combinar el volumen de fuego de tanques y artillería de la Guardia con la movilidad del culto",
+        "El re-roll total contra el blanco marcado puede eliminar amenazas de alto valor de un solo golpe",
+        "Diversifica el perfil de la lista, dificultando que el rival prepare una estrategia única"
+      ],
+      "weaknesses": [
+        "Requiere unidades aliadas de Astra Militarum, lo que reduce el espacio para unidades núcleo del culto",
+        "Las Orders cruzadas tienen alcance limitado y dependen de la cercanía de oficiales",
+        "El bono de artillería es de un solo uso, por lo que su timing debe planearse cuidadosamente"
+      ]
+    },
+    "Final Day": {
+      "overview": "Cuando la infiltración ya no es posible, el culto se alza en una revuelta total y desesperada. Final Day convierte cada unidad en una amenaza ofensiva, sacrificando sutileza por poder de fuego y de combate bruto.",
+      "abilities": [
+        { "name": "Día del Ajuste de Cuentas", "flavor": "No hay retirada; solo queda avanzar y destruir.", "rule": "Todas las unidades GREAT DEVOURER obtienen +1 to Hit en CaC en el turno en que el ejército alcanza Battle-shock en 2 o más unidades enemigas." },
+        { "name": "Última Oleada", "flavor": "Cada arma del arsenal del culto dispara al mismo tiempo.", "rule": "Una vez por partida, todas las unidades de infantería pueden disparar dos veces con sus armas Rapid Fire al activar este Stratagem gratuito." }
+      ],
+      "strengths": [
+        "El bono condicional a CaC puede activarse fácilmente si la lista incluye fuentes de Battle-shock (Clamavus, Benefictus)",
+        "La oleada de disparo extra es devastadora contra hordas de infantería ligera",
+        "Funciona muy bien con listas all-in agresivas que buscan resolver la partida rápido"
+      ],
+      "weaknesses": [
+        "Si el rival evita el Battle-shock, el bono principal de CaC nunca se activa",
+        "La oleada de disparo extra es de un solo uso, por lo que requiere un timing preciso",
+        "El enfoque agresivo deja pocas opciones de repliegue si la primera oleada falla"
+      ]
+    },
+    "Host of Ascension": {
+      "overview": "Los Aberrants y sus líderes ascienden a la cima de la cadena evolutiva del culto. Este detachment está diseñado alrededor de unidades de combate elite que se vuelven prácticamente inamovibles.",
+      "abilities": [
+        { "name": "Ascensión Genética", "flavor": "La mutación avanza hacia formas cada vez más letales.", "rule": "Las unidades ABERRANTS obtienen Feel No Pain 4+ en lugar de 5+ mientras estén lideradas por un personaje con la habilidad Leader." },
+        { "name": "Despertar del Poder Ancestral", "flavor": "El Patriarca recuerda formas de combate olvidadas hace eones.", "rule": "Una vez por partida, una unidad con un personaje GREAT DEVOURER puede ganar +1 to Wound y Sustained Hits 1 en CaC durante una fase de combate completa." }
+      ],
+      "strengths": [
+        "FNP 4+ en Aberrants liderados los convierte en una de las unidades más duraderas del juego",
+        "El bono de ascensión de una sola vez puede ser la diferencia en un combate decisivo contra una unidad élite rival",
+        "Excelente sinergia con Abominant, que ya otorga FNP 5+ y resurrección por sí solo"
+      ],
+      "weaknesses": [
+        "El detachment depende fuertemente de pocas unidades de combate caras, sin redundancia",
+        "Poco beneficio para listas centradas en disparo o en unidades de Neophyte Hybrids",
+        "Si la unidad de Aberrants es eliminada o aislada, gran parte del plan de la lista colapsa"
+      ]
+    },
+    "Outlander Claw": {
+      "overview": "Pequeñas células del culto operan lejos del núcleo principal, usando sigilo y velocidad para hostigar las líneas enemigas y negar el control de objetivos secundarios.",
+      "abilities": [
+        { "name": "Garra Errante", "flavor": "Atacan, desaparecen, y vuelven a atacar desde otro ángulo.", "rule": "Las unidades con STEALTH o Scouts obtienen +2\" de Movimiento y pueden ignorar penalizaciones por terreno difícil." },
+        { "name": "Presa Marcada", "flavor": "Una vez identificado el objetivo, no hay escapatoria.", "rule": "Cuando una unidad enemiga es objetivo de Precision por segunda vez en la partida, sufre un mortal adicional por cada arma que la haya impactado ese turno." }
+      ],
+      "strengths": [
+        "El bono de movimiento amplifica la ya alta movilidad de Atalan Jackals, Sanctus y Kelermorph",
+        "Presa Marcada premia el uso combinado de personajes con Precision contra el mismo objetivo",
+        "Ideal para listas de hostigamiento que buscan negar Secondaries y desgastar al rival por turnos"
+      ],
+      "weaknesses": [
+        "Requiere una proporción alta de unidades con STEALTH/Scouts, limitando la composición de la lista",
+        "El bono de Presa Marcada solo se activa tras impactos previos de Precision, lo cual no siempre es posible",
+        "Las unidades de hostigamiento suelen ser frágiles y vulnerables si quedan aisladas sin apoyo"
+      ]
+    },
+    "Xenocreed Congregation": {
+      "overview": "La fe ciega en la Mente Devoradora se canaliza a través de los líderes psíquicos del culto, amplificando sus poderes y protegiendo a la congregación bajo un velo de devoción fanática.",
+      "abilities": [
+        { "name": "Congregación Devota", "flavor": "Cada acólito reza al unísono, fortaleciendo el vínculo psíquico.", "rule": "Las unidades a 6\" de un personaje PSYKER obtienen Feel No Pain 6+ contra daño mortal." },
+        { "name": "Eco de la Mente Devoradora", "flavor": "La voluntad colectiva resuena más allá de lo posible.", "rule": "Las habilidades Psychic con rango definido de los personajes del culto obtienen +6\" de alcance." }
+      ],
+      "strengths": [
+        "El alcance extra de +6\" en habilidades psíquicas magnifica el impacto de Benefictus, Magus y Locus",
+        "FNP 6+ contra mortales ofrece protección extra barata a toda la lista, sin coste de puntos adicional",
+        "Encaja naturalmente con listas que ya priorizan personajes PSYKER (Magus, Benefictus, Patriarch)"
+      ],
+      "weaknesses": [
+        "FNP 6+ es un beneficio marginal, poco notable contra ataques de bajo volumen y alto daño",
+        "El alcance extra no compensa la fragilidad inherente de los personajes PSYKER del culto (T3, Sv5+)",
+        "Listas sin múltiples personajes PSYKER desplegados de forma dispersa no aprovechan el detachment al máximo"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "patriarch",
+      "name": "Patriarch",
+      "pts": 75,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Psyker", "Great Devourer", "Patriarch"],
+      "stats": { "m": 8, "t": 5, "sv": 4, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Patriarch's claws", "range": "Melee", "a": "5", "skill": "2+", "s": 6, "ap": -2, "d": "2", "keywords": ["Devastating Wounds", "Twin-linked"] }
+      ],
+      "abilities": ["Invulnerable Save 4+", "Deep Strike", "Infiltrators", "Leader", "Might From Beyond", "Cosmic Horror (Psychic)", "Psychic Familiar"],
+      "considerations": "El líder de combate más poderoso del codex. Inv 4+ y 6W lo hacen robusto. Puede ir solo o liderar Purestrain Genestealers. Cosmic Horror hace Battle-shock test al enemigo en CaC.",
+      "recommendations": "Ideal liderando Purestrain Genestealers con Deep Strike hacia unidades de alto valor. Usar Cosmic Horror para debilitar Ld rival antes de la carga. En listas sin Purestrain, puede ir independiente como Lone wolf."
+    },
+    {
+      "id": "magus",
+      "name": "Magus",
+      "pts": 50,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Psyker", "Great Devourer", "Magus"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Magus stave", "range": "Melee", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "D3", "keywords": ["Psychic"] }
+      ],
+      "abilities": ["Invulnerable Save 5+", "Deep Strike", "Leader", "Spiritual Leader", "Mind Control (Psychic)", "Psychic Familiar"],
+      "considerations": "Psyker de soporte barato. Spiritual Leader remueve Battle-shock una vez por batalla. Mind Control puede negar o debilitar disparos enemigos. Puede ir como segundo líder en unidades Acolyte/Neophyte.",
+      "recommendations": "Útil en listas que necesitan Battleshock denial. Acoplarlo a Neophytes grandes para Spiritual Leader. Con Psychic Familiar, Mind Control llega a 24\" — excelente para interferir disparos rivales a distancia."
+    },
+    {
+      "id": "primus",
+      "name": "Primus",
+      "pts": 70,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Primus"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Scoped needle pistol", "range": "18\"", "a": "1", "skill": "2+", "s": 1, "ap": 0, "d": "D3", "keywords": ["Anti-infantry 2+", "Ignores Cover", "Pistol"] }
+      ],
+      "melee": [
+        { "name": "Cult bonesword", "range": "Melee", "a": "5", "skill": "2+", "s": 5, "ap": -2, "d": "1" },
+        { "name": "Toxin injector claw", "range": "Melee", "a": "2", "skill": "2+", "s": 2, "ap": 0, "d": "D3", "keywords": ["Anti-infantry 2+", "Extra Attacks"] }
+      ],
+      "abilities": ["Invulnerable Save 5+", "Deep Strike", "Leader", "Cult Demagogue", "Decoys and Misdirection"],
+      "considerations": "Mejor líder ofensivo del ejército. +1 al Hit para toda la unidad (Cult Demagogue). Decoys permite redesplegar hasta 3 unidades después del despliegue rival — ventaja táctica masiva. Inv 5+ y 4W son frágiles.",
+      "recommendations": "Casi obligatorio en listas competitivas. Acoplar a Acolyte Hybrids o Hybrid Metamorphs. Usar Decoys para responder al despliegue rival o para hacer Infiltrate jugadas. Combina excelente con Locus y Biophagus."
+    },
+    {
+      "id": "abominant",
+      "name": "Abominant",
+      "pts": 85,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Abominant"],
+      "stats": { "m": 6, "t": 6, "sv": 5, "w": 5, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Power sledgehammer", "range": "Melee", "a": "4", "skill": "3+", "s": 12, "ap": -2, "d": "D6+1" }
+      ],
+      "abilities": ["Deep Strike", "Feel No Pain 5+", "Leader", "The Chosen One", "Regenerating Gene-mass"],
+      "considerations": "Líder exclusivo de Aberrants. FNP 5+ y Regenerating Gene-mass (resurrección en 2+ con heridas completas) lo hacen casi imposible de matar. The Chosen One permite a modelos destruidos pelear antes de ser removidos — sinergia brutal con Aberrants.",
+      "recommendations": "Siempre en una unidad de 10 Aberrants. La combinación es una de las más durables del codex. Power sledgehammer con S12 -2 D6+1 destruye casi cualquier vehículo. Prioridad alta en listas de combate."
+    },
+    {
+      "id": "acolyte-iconward",
+      "name": "Acolyte Iconward",
+      "pts": 50,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Grenades", "Great Devourer", "Acolyte Iconward"],
+      "stats": { "m": 6, "t": 4, "sv": 5, "w": 3, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Cult claws", "range": "Melee", "a": "4", "skill": "3+", "s": 4, "ap": -1, "d": "1" }
+      ],
+      "abilities": ["Deep Strike", "Leader", "Scouts 6\"", "Nexus of Devotion", "Summon the Cult"],
+      "considerations": "Nexus of Devotion da FNP 5+ a toda la unidad (FNP 4+ en Hybrid Metamorphs). Scouts 6\" otorga mobilidad extra al despliegue. Summon the Cult permite reposicionar markers de Cult Ambush — muy estratégico.",
+      "recommendations": "Casi obligatorio en Hybrid Metamorphs para FNP 4+. Combina con Locus en la misma unidad para máxima supervivencia. Puede ir como segundo líder (junto a Primus o Locus) en Acolytes que necesitan sobrevivir el turno rival."
+    },
+    {
+      "id": "benefictus",
+      "name": "Benefictus",
+      "pts": 70,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Psyker", "Great Devourer", "Benefictus"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Psionic Cascade (witchfire)", "range": "18\"", "a": "1", "skill": "3+", "s": 12, "ap": -3, "d": "D6+1", "keywords": ["Witchfire", "Ignores Cover", "Psychic"] },
+        { "name": "Psionic Cascade (focused witchfire)", "range": "18\"", "a": "2", "skill": "3+", "s": 12, "ap": -3, "d": "D6+1", "keywords": ["Witchfire", "Hazardous", "Ignores Cover", "Psychic"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "3+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Invulnerable Save 5+", "Deep Strike", "Leader", "Bio-horror Disruption (Psychic)", "Psionic Shield (Psychic)"],
+      "considerations": "Bio-horror Disruption añade Lethal Hits a las armas de distancia de la unidad — sinergia enorme con Neophytes con Mining Lasers. Psionic Cascade S12 -3 D6+1 puede destruir vehículos. Frágil por T3 W3.",
+      "recommendations": "Clave en Xenocreed Congregation. Acoplar a Neophytes con armas pesadas (Mining Lasers) para Lethal Hits en disparo. Usar focused witchfire con cuidado por Hazardous. Psionic Shield puede salvarlo en momentos críticos."
+    },
+    {
+      "id": "biophagus",
+      "name": "Biophagus",
+      "pts": 50,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Biophagus"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Chemical vials", "range": "6\"", "a": "1", "skill": "3+", "s": 1, "ap": -1, "d": "2", "keywords": ["Anti-infantry 2+"] }
+      ],
+      "melee": [
+        { "name": "Injector goad", "range": "Melee", "a": "1", "skill": "3+", "s": 2, "ap": 0, "d": "D3", "keywords": ["Anti-infantry 2+"] }
+      ],
+      "abilities": ["Deep Strike", "Leader", "Twisted Science", "Biological Warfare", "Alchemicus Familiar"],
+      "considerations": "Twisted Science da Lethal Hits a armas CaC de la unidad. Puede ir como segundo o tercer líder en unidades Acolyte/Neophyte/Aberrants. Increíblemente eficiente por solo 50pts.",
+      "recommendations": "Combinar con Primus: Cult Demagogue (+1 Hit) + Twisted Science (Lethal Hits CaC) en Acolyte Hybrids es devastador. Alchemicus Familiar da +1 al Wound contra Infantry una vez por batalla."
+    },
+    {
+      "id": "clamavus",
+      "name": "Clamavus",
+      "pts": 50,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Clamavus"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 3, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "3+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Deep Strike", "Leader", "Voice of New Truths", "Scrambler Array"],
+      "considerations": "Voice of New Truths fuerza Battle-shock test en unidades enemigas a 18\" una vez por turno. Scrambler Array niega despliegue de Reinforcements enemigos a 12\". Segundo/tercer líder económico.",
+      "recommendations": "Útil contra listas que dependen de Strategic Reserves (Drop Pods, GSC rival, etc). Combinar con Locus en la misma unidad: Battleshock del Clamavus + Fights First del Locus = combo poderoso al cargar."
+    },
+    {
+      "id": "jackal-alphus",
+      "name": "Jackal Alphus",
+      "pts": 55,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Mounted", "Character", "Grenades", "Great Devourer", "Jackal Alphus"],
+      "stats": { "m": 12, "t": 4, "sv": 5, "w": 4, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Cult sniper rifle", "range": "36\"", "a": "1", "skill": "3+", "s": 5, "ap": -2, "d": "3", "keywords": ["Heavy", "Precision"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "3", "skill": "3+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Leader", "Scouts 9\"", "Stealth", "Priority Target", "Master Outrider"],
+      "considerations": "Único personaje Mounted. Lidera Atalan Jackals. Priority Target marca un enemigo para re-roll Hit 1 de TODOS los modelos GSC — efecto de army-wide. Scouts 9\" y Master Outrider (move extra después de disparar) dan enorme flexibilidad.",
+      "recommendations": "Casi obligatorio si llevás Atalan Jackals. Priority Target sobre vehículos o personajes caros multiplica el daño de todo el ejército. Combinar disparando primero con Achilles Ridgerunners para Crossfire."
+    },
+    {
+      "id": "kelermorph",
+      "name": "Kelermorph",
+      "pts": 60,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Kelermorph"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Liberator autostubs", "range": "12\"", "a": "6", "skill": "2+", "s": 6, "ap": -2, "d": "1", "keywords": ["Devastating Wounds", "Pistol"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "3", "skill": "3+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Invulnerable Save 5+", "Deep Strike", "Lone Operative", "Heroic Fusillade", "Hypersensory Abilities"],
+      "considerations": "Lone Operative lo protege del sniper. 6 ataques a 2+ S6 -2 Devastating Wounds — mata personajes e infantería ligada fácilmente. Hypersensory le permite disparar en la fase de movimiento rival y reposicionarse.",
+      "recommendations": "Opera como unidad independiente. No necesita escolta. Ideal para flanquear y hostigar unidades frágiles. En Outlander Claw donde Stealth y mobilidad son centrales, es una pick excelente."
+    },
+    {
+      "id": "locus",
+      "name": "Locus",
+      "pts": 45,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Locus"],
+      "stats": { "m": 6, "t": 4, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Locus blades", "range": "Melee", "a": "5", "skill": "2+", "s": 5, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Invulnerable Save 4+", "Deep Strike", "Fights First", "Leader", "Sudden Assault", "Bodyguard"],
+      "considerations": "A 45pts es uno de los líderes más eficientes del codex. Otorga Fights First a toda la unidad (Sudden Assault). Bodyguard da FNP 4+ a otros líderes en la unidad. Inv 4+ personal. Locus blades son excelentes en combate.",
+      "recommendations": "Casi obligatorio en unidades de combate. La triple combo Locus + Primus + Biophagus en Acolyte Hybrids — Fights First + Cult Demagogue (+1 Hit) + Lethal Hits CaC — es una de las combinaciones más potentes del codex."
+    },
+    {
+      "id": "nexos",
+      "name": "Nexos",
+      "pts": 60,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Nexos"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "3+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Deep Strike", "Leader", "Battlefield Analysis", "Cult Infiltration"],
+      "considerations": "Battlefield Analysis reduce en 1CP cualquier Stratagem cuando la unidad es el target — enorme en listas que usan Stratagems de 2CP. Cult Infiltration mueve markers de Cult Ambush 6\" cada turno — control de posicionamiento superior.",
+      "recommendations": "Incluir si la lista depende de Stratagems de 2CP. En Host of Ascension donde el control de markers es central, Cult Infiltration es casi imprescindible. Puede ir solo o como tercer líder en una unidad."
+    },
+    {
+      "id": "reductus-saboteur",
+      "name": "Reductus Saboteur",
+      "pts": 65,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Grenades", "Great Devourer", "Reductus Saboteur"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Demolition charges", "range": "8\"", "a": "D6", "skill": "3+", "s": 9, "ap": -2, "d": "2", "keywords": ["Assault", "Blast", "One Shot"] },
+        { "name": "Remote explosives", "range": "24\"", "a": "D6+3", "skill": "3+", "s": 5, "ap": 0, "d": "1", "keywords": ["Blast", "Indirect Fire"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "3+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Invulnerable Save 5+", "Deep Strike", "Infiltrators", "Lone Operative", "Stealth", "Primed and Ready", "Planted Explosives"],
+      "considerations": "Lone Operative + Infiltrators + Stealth = casi imposible de eliminar en cobertura. Remote Explosives Blast con Indirect Fire excelente contra hordas ocultas. Planted Explosives D3+3 mortales puede sorprender al rival al moverse.",
+      "recommendations": "Especialista anti-horda y control de zona. Colocar en terreno difícil central con Remote Explosives. Primed and Ready usa el Grenade Stratagem gratis. Excelente value a 65pts como unidad independiente."
+    },
+    {
+      "id": "sanctus",
+      "name": "Sanctus",
+      "pts": 50,
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Great Devourer", "Sanctus"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Cult sniper rifle (anti-psyker)", "range": "36\"", "a": "1", "skill": "3+", "s": 7, "ap": -2, "d": "3", "keywords": ["Anti-psyker 2+", "Heavy", "Precision"] }
+      ],
+      "melee": [
+        { "name": "Sanctus bio-dagger", "range": "Melee", "a": "6", "skill": "2+", "s": 3, "ap": -2, "d": "2", "keywords": ["Anti-infantry 3+", "Precision"] },
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "3+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Invulnerable Save 5+", "Deep Strike", "Infiltrators", "Lone Operative", "Stealth", "Creeping Shadow", "Cloaked Assassin", "Psychic Spoor"],
+      "considerations": "Anti-psyker especializado con Precision para targetear personajes. Psychic Spoor permite re-roll Hit y Wound contra su prey desde turno 1. Puede equiparse con daga o rifle según necesidad. Lone Operative lo protege.",
+      "recommendations": "Incluir cuando el rival lleva muchos Psykers o personajes caros que no estén en la primera línea. Cloaked Assassin con daga lo hace inmune a Fire Overwatch. Ideal en Outlander Claw para aprovechar Stealth y Infiltrators."
+    },
+    {
+      "id": "neophyte-hybrids",
+      "name": "Neophyte Hybrids",
+      "pts": 65,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Grenades", "Great Devourer", "Neophyte Hybrids"],
+      "stats": { "m": 6, "t": 3, "sv": 5, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Hybrid firearm", "range": "24\"", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": ["Rapid Fire 1"] },
+        { "name": "Mining laser", "range": "24\"", "a": "1", "skill": "4+", "s": 12, "ap": -3, "d": "D6+1", "keywords": ["Heavy"] },
+        { "name": "Seismic cannon (low-frequency)", "range": "24\"", "a": "3", "skill": "4+", "s": 6, "ap": -1, "d": "2", "keywords": ["Heavy"] },
+        { "name": "Seismic cannon (high-frequency)", "range": "12\"", "a": "6", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Heavy"] },
+        { "name": "Flamer", "range": "12\"", "a": "D6", "skill": "Auto", "s": 4, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Torrent"] },
+        { "name": "Grenade launcher (frag)", "range": "24\"", "a": "D3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Blast"] },
+        { "name": "Grenade launcher (krak)", "range": "24\"", "a": "1", "skill": "4+", "s": 9, "ap": -2, "d": "D3" },
+        { "name": "Heavy stubber", "range": "36\"", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 3"] },
+        { "name": "Webber", "range": "12\"", "a": "D3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Blast", "Indirect Fire"] }
+      ],
+      "melee": [
+        { "name": "Chainsword", "range": "Melee", "a": "2", "skill": "4+", "s": 3, "ap": 0, "d": "1" },
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Deep Strike", "Cult Ambush", "A Plan Generations in the Making"],
+      "considerations": "Battleline principal para objetivos. OC2 los hace excelentes tomando y reteniendo. Con 20 modelos y Cult Ambush son muy resilientes y difíciles de desalojar. Con Benefictus, las armas pesadas ganan Lethal Hits.",
+      "recommendations": "Unidades de 20 para objetivos centrales con Benefictus o Magus. Unidades de 10 para flancos. Siempre incluir Mining Laser por squad cuando sea posible. A Plan Generations... da puntos extra por objetivos — planear el despliegue para aprovecharla."
+    },
+    {
+      "id": "acolyte-hybrids-autopistols",
+      "name": "Acolyte Hybrids (Autopistols)",
+      "pts": 65,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Grenades", "Great Devourer", "Acolyte Hybrids", "Acolyte Hybrids With Autopistols"],
+      "stats": { "m": 6, "t": 4, "sv": 5, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Cult claws and knife", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -1, "d": "1" },
+        { "name": "Heavy mining tool (anti-vehicle)", "range": "Melee", "a": "2", "skill": "3+", "s": 5, "ap": -2, "d": "3", "keywords": ["Anti-vehicle 4+"] },
+        { "name": "Leader's bio-weapons", "range": "Melee", "a": "5", "skill": "3+", "s": 5, "ap": -2, "d": "1" }
+      ],
+      "abilities": ["Deep Strike", "Cult Ambush", "Claimed for the Cult"],
+      "considerations": "T4 los hace más resistentes que Neophytes. OC2 con Cult Ambush = control de objetivos fuerte. Claimed for the Cult puede generar CP extra por objetivos controlados. Heavy Mining Tool anti-vehículo a 3 ataques S5 -2 D3.",
+      "recommendations": "La unidad estrella ofensiva. 10 modelos con Primus + Locus + Biophagus = Fights First + +1 Hit + Lethal Hits. Siempre incluir Heavy Mining Tools en unidades grandes. Deep Strike hacia objetivos centrales es la jugada principal."
+    },
+    {
+      "id": "acolyte-hybrids-hand-flamers",
+      "name": "Acolyte Hybrids (Hand Flamers)",
+      "pts": 70,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": ["Infantry", "Battleline", "Grenades", "Great Devourer", "Acolyte Hybrids", "Acolyte Hybrids With Hand Flamers"],
+      "stats": { "m": 6, "t": 4, "sv": 5, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Hand flamer", "range": "12\"", "a": "D6", "skill": "Auto", "s": 3, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Pistol", "Torrent"] },
+        { "name": "Demolition charges", "range": "8\"", "a": "D6", "skill": "5+", "s": 9, "ap": -2, "d": "2", "keywords": ["Assault", "Blast", "Hazardous", "One Shot"] }
+      ],
+      "melee": [
+        { "name": "Cult claws and knife", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -1, "d": "1" },
+        { "name": "Leader's bio-weapons", "range": "Melee", "a": "5", "skill": "3+", "s": 5, "ap": -2, "d": "1" }
+      ],
+      "abilities": ["Deep Strike", "Cult Ambush", "Industrialised Destruction"],
+      "considerations": "Industrialised Destruction re-roll Wound 1 siempre, full re-roll cerca de objetivos. Hand Flamers Torrent garantizan hits — ideal contra cobertura y hordas. Demolition Charges son un bonus anti-vehículo de un uso.",
+      "recommendations": "Variante anti-horda y cobertura. Ideal contra Marines en cobertura, hordas de Orks, o cualquier unidad que dependa de saves por cobertura. Igual de poderosa que la variante Autopistols en los matchups correctos."
+    },
+    {
+      "id": "hybrid-metamorphs",
+      "name": "Hybrid Metamorphs",
+      "pts": 70,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": ["Infantry", "Grenades", "Great Devourer", "Hybrid Metamorphs"],
+      "stats": { "m": 6, "t": 4, "sv": 5, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Autopistol", "range": "12\"", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Hand flamer", "range": "12\"", "a": "D6", "skill": "Auto", "s": 3, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Pistol", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Metamorph mutations – strike", "range": "Melee", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "2" },
+        { "name": "Metamorph mutations – sweep", "range": "Melee", "a": "5", "skill": "3+", "s": 4, "ap": -1, "d": "1" },
+        { "name": "Leader's bio-weapons", "range": "Melee", "a": "5", "skill": "3+", "s": 5, "ap": -1, "d": "2" }
+      ],
+      "abilities": ["Deep Strike", "Feel No Pain 5+", "Scouts 6\"", "Cult Ambush", "Brood Surge"],
+      "considerations": "OC1 (menos objetivos que Acolytes). FNP 5+ y Scouts 6\" para posicionamiento agresivo. Brood Surge mueve la unidad hacia el enemigo al recibir bajas — difícil de manejar para el rival. Sin Cult Icon son frágiles.",
+      "recommendations": "Unidad de asalto puro. Necesitan Acolyte Iconward como líder para FNP 4+. Usar Scouts 6\" + Deep Strike para despliegue flexible. Evitar exponerlos a disparos masivos. La variante con Hand Flamers maximiza daño al cargar."
+    },
+    {
+      "id": "aberrants",
+      "name": "Aberrants",
+      "pts": 135,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": ["Infantry", "Great Devourer", "Aberrants"],
+      "stats": { "m": 6, "t": 6, "sv": 5, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Aberrant weapons", "range": "Melee", "a": "3", "skill": "3+", "s": 7, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Deep Strike", "Feel No Pain 5+", "Cult Ambush", "Hulking Bodyguards"],
+      "considerations": "T6 FNP 5+ — los más resistentes como infantería. Con Abominant son prácticamente inmortales. Hulking Bodyguards protege al líder de ataques dirigidos (Precision). Costo por modelo es el más alto del codex.",
+      "recommendations": "La unidad de combate más dura. Siempre en grupo de 10 con Abominant. Excelentes para capturar y retener objetivos centrales gracias a su durabilidad. S7 -2 D2 puede amenazar vehículos medianos. Costoso — usar 1 unidad grande, no 2 pequeñas."
+    },
+    {
+      "id": "purestrain-genestealers",
+      "name": "Purestrain Genestealers",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": ["Infantry", "Great Devourer", "Purestrain Genestealers"],
+      "stats": { "m": 8, "t": 4, "sv": 5, "w": 2, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Cult claws and talons", "range": "Melee", "a": "4", "skill": "2+", "s": 4, "ap": -2, "d": "1" }
+      ],
+      "abilities": ["Invulnerable Save 5+", "Deep Strike", "Infiltrators", "Cult Ambush", "Swift and Deadly"],
+      "considerations": "M8\" + Infiltrators = los más rápidos del ejército. Swift and Deadly permite cargar después de Advance (M8\" + D6\" + 2D6\" carga = alcance monstruoso). Inv 5+ algo de durabilidad. Sin líder propio son frágiles en combate contra élites.",
+      "recommendations": "Flanqueo agresivo turno 1. Infiltrate cerca del enemigo, avanzar y cargar. 10 modelos a 4A WS2+ S4 -2 D1 = 40 ataques que destrozan infantería. Patriarch es la única opción de líder — normalmente van sin él."
+    },
+    {
+      "id": "atalan-jackals",
+      "name": "Atalan Jackals",
+      "pts": 85,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": ["Mounted", "Grenades", "Great Devourer", "Atalan Jackals"],
+      "stats": { "m": 12, "t": 4, "sv": 5, "w": 2, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Atalan small arms", "range": "12\"", "a": "2", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Heavy stubber", "range": "36\"", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Assault", "Rapid Fire 3"] },
+        { "name": "Mining laser", "range": "24\"", "a": "1", "skill": "4+", "s": 12, "ap": -3, "d": "D6+1" },
+        { "name": "Atalan incinerator", "range": "12\"", "a": "D6", "skill": "Auto", "s": 5, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent"] },
+        { "name": "Grenade launcher (frag)", "range": "24\"", "a": "D3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Blast"] },
+        { "name": "Grenade launcher (krak)", "range": "24\"", "a": "1", "skill": "4+", "s": 9, "ap": -2, "d": "D3" }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "4+", "s": 3, "ap": 0, "d": "1" },
+        { "name": "Atalan power weapon", "range": "Melee", "a": "2", "skill": "4+", "s": 4, "ap": -2, "d": "1" }
+      ],
+      "abilities": ["Scouts 9\"", "Stealth", "Cult Ambush", "Outrider Gangs", "Demolition Run"],
+      "considerations": "M12\" Mounted + Scouts 9\" = mayor alcance de movimiento del ejército. Demolition Run inflige mortales al final de cualquier movimiento Normal/Advance/Fall Back cerca de enemigos. Wolfquads tienen más armas pero W4 vs W2 de los Jackals.",
+      "recommendations": "Con Jackal Alphus son excelentes para flanquear y hostigar. Mining Laser en Wolfquads para anti-vehículo. Usar Scouts 9\" para dominar objetivos laterales en turno 1. Demolition Run en unidades de 10 puede acumular muchos mortales."
+    },
+    {
+      "id": "achilles-ridgerunners",
+      "name": "Achilles Ridgerunners",
+      "pts": 95,
+      "type": "vehicle",
+      "role": "Vehículo",
+      "keywords": ["Vehicle", "Great Devourer", "Achilles Ridgerunners"],
+      "stats": { "m": 12, "t": 7, "sv": 3, "w": 8, "ld": 7, "oc": 3 },
+      "ranged": [
+        { "name": "Heavy mining laser", "range": "36\"", "a": "D3", "skill": "4+", "s": 12, "ap": -3, "d": "D6+1", "keywords": ["Blast"] },
+        { "name": "Achilles missile launcher", "range": "36\"", "a": "3", "skill": "4+", "s": 9, "ap": -2, "d": "3" },
+        { "name": "Heavy mortar", "range": "48\"", "a": "D6+3", "skill": "4+", "s": 6, "ap": 0, "d": "1", "keywords": ["Blast", "Indirect Fire"] },
+        { "name": "Twin heavy stubber", "range": "36\"", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 3", "Twin-linked"] }
+      ],
+      "melee": [
+        { "name": "Armoured hull", "range": "Melee", "a": "3", "skill": "4+", "s": 5, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Deadly Demise 1", "Scouts 9\"", "Crossfire"],
+      "considerations": "T7 Sv3+ 8W = muy difícil de bajar con anti-infantería. Crossfire mejora el AP de ataques aliados GSC en 1 contra unidades que ya recibieron impactos. Heavy Mortar Indirect Fire para hordas detrás de cobertura. Scouts 9\" para posicionamiento temprano.",
+      "recommendations": "Incluir en parejas (2 modelos = 170pts) para maximizar Crossfire. Con Jackal Alphus Priority Target primero + Ridgerunners disparando = synergy brutal. El mejor vehículo de apoyo del codex — casi obligatorio en listas competitivas. Considerar Heavy Mortar contra hordas."
+    },
+    {
+      "id": "goliath-truck",
+      "name": "Goliath Truck",
+      "pts": 85,
+      "type": "vehicle",
+      "role": "Transporte",
+      "keywords": ["Vehicle", "Transport", "Dedicated Transport", "Great Devourer", "Goliath Truck"],
+      "stats": { "m": 12, "t": 9, "sv": 3, "w": 10, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Heavy stubber", "range": "36\"", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 3"] },
+        { "name": "Twin autocannon", "range": "48\"", "a": "2", "skill": "4+", "s": 9, "ap": -1, "d": "3", "keywords": ["Twin-linked"] },
+        { "name": "Demolition charge cache", "range": "8\"", "a": "D6", "skill": "5+", "s": 9, "ap": -2, "d": "2", "keywords": ["Assault", "Blast", "Hazardous"] }
+      ],
+      "melee": [
+        { "name": "Armoured hull", "range": "Melee", "a": "3", "skill": "4+", "s": 6, "ap": 0, "d": "1" }
+      ],
+      "abilities": ["Deadly Demise D3", "Firing Deck 6", "Fire Support", "Transport: 12 Genestealer Cults Infantry"],
+      "considerations": "T9 Sv3+ 10W — muy difícil de matar. Capacidad 12 Infantry es enorme (puede transportar 10 Acolytes + 2 líderes). Firing Deck 6 permite disparar desde adentro. Fire Support da re-roll Wound a las unidades que desembarcan contra la misma unidad atacada.",
+      "recommendations": "Ideal transportando 10 Acolytes con Primus + Locus. Fire Support + Cult Demagogue al desembarcar = devastador. A 85pts es el transporte más económico de T9 en el juego. Considerar 1 o 2 por lista en builds agresivos."
+    },
+    {
+      "id": "goliath-rockgrinder",
+      "name": "Goliath Rockgrinder",
+      "pts": 120,
+      "type": "vehicle",
+      "role": "Transporte",
+      "keywords": ["Vehicle", "Transport", "Great Devourer", "Goliath Rockgrinder"],
+      "stats": { "m": 12, "t": 10, "sv": 3, "w": 10, "ld": 7, "oc": 3 },
+      "ranged": [
+        { "name": "Heavy mining laser", "range": "36\"", "a": "D3", "skill": "4+", "s": 12, "ap": -3, "d": "D6+1", "keywords": ["Blast"] },
+        { "name": "Clearance incinerator", "range": "12\"", "a": "2D6", "skill": "Auto", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent"] },
+        { "name": "Heavy seismic cannon", "range": "24\"", "a": "4", "skill": "4+", "s": 8, "ap": -2, "d": "D3", "keywords": ["Rapid Fire 2"] },
+        { "name": "Heavy stubber", "range": "36\"", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 3"] },
+        { "name": "Demolition charge cache", "range": "8\"", "a": "D6", "skill": "5+", "s": 9, "ap": -2, "d": "2", "keywords": ["Assault", "Blast", "Hazardous"] }
+      ],
+      "melee": [
+        { "name": "Drilldozer blade", "range": "Melee", "a": "8", "skill": "3+", "s": 10, "ap": -2, "d": "2" }
+      ],
+      "abilities": ["Deadly Demise D3", "Firing Deck 6", "Grinding Clearance", "Transport: 6 Genestealer Cults Infantry"],
+      "considerations": "T10 prácticamente inmune a anti-infantería. Drilldozer Blade 8A S10 -2 D2 amenaza vehículos medianos en CaC. Grinding Clearance fuerza Desperate Escape a unidades que Fall Back del Engagement. Transporte de solo 6 modelos.",
+      "recommendations": "Perfil más agresivo y duro que el Truck. Transportar 5 Aberrants o 5 Hybrid Metamorphs hacia el frente. Clearance Incinerator excelente contra hordas al desembarcar. Complementa al Truck — listas con ambos tienen transporte de 18 Infantry."
+    }
+  ]
+}

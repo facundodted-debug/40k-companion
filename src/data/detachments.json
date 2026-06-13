@@ -1,0 +1,482 @@
+{
+  "_meta": {
+    "version": "11th-edition",
+    "source": "Warhammer Community Faction Packs (June 2026)",
+    "urls": [
+      "https://www.warhammer-community.com/en-gb/articles/2ekfivpk/new40k-download-new-space-marine-faction-packs-today/",
+      "https://www.warhammer-community.com/en-gb/articles/fchkklcq/new40k-download-new-xenos-faction-packs-today/",
+      "https://www.warhammer-community.com/en-gb/articles/2wzoc1fz/new40k-download-new-chaos-faction-packs-today/",
+      "https://www.warhammer-community.com/en-gb/articles/8nrrdlgr/new40k-download-new-imperial-faction-packs-today/"
+    ],
+    "notes": {
+      "dp": "You get 2 DP in 1,000pt games and 3 DP at 2,000pts. Detachment Points costs will be in the Munitorum Field Manual.",
+      "forceDispositions": ["Purge the Foe", "Priority Assets", "Disruption", "Reconnaissance", "Take and Hold"],
+      "isNew": "Detachments marked isNew:true are brand new in 11th edition"
+    }
+  },
+
+  "space-marines": {
+    "name": "Space Marines",
+    "category": "space-marines",
+    "detachments": [
+      { "name": "Fulguris Task Force",    "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Librarius Conclave",     "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Subversion Assets",      "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "1st Company Task Force", "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Anvil Siege Force",      "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Armoured Speartip",      "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Bastion Task Force",     "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Blade of Ultramar",      "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Ceramite Sentinels",     "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Emperor's Shield",       "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Firestorm Assault Force","dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Forgefather's Seekers",  "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Gladius Task Force",     "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Hammer of Avernii",      "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Headhunter Task Force",  "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Ironstorm Spearhead",    "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Orbital Assault Force",  "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Reclamation Force",      "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Shadowmark Talon",       "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Spearpoint Task Force",  "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Stormlance Task Force",  "dp": 3, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Vanguard Spearhead",     "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Righteous Crusaders",    "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Sons of Sanguinius",     "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "dark-angels": {
+    "name": "Dark Angels",
+    "category": "space-marines",
+    "detachments": [
+      { "name": "Dark Age Arsenal",        "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Darkflight Pursuit",      "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Interrogation Conclave",  "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Company of Hunters",      "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Inner Circle Task Force", "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Lion's Blade Task Force", "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Unforgiven Task Force",   "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Wrath of the Rock",       "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false }
+    ]
+  },
+
+  "blood-angels": {
+    "name": "Blood Angels",
+    "category": "space-marines",
+    "detachments": [
+      { "name": "Encarmine Speartip",      "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Legacy of Grace",         "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Wrath of the Doomed",     "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Angelic Inheritors",      "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Liberator Assault Group", "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Rage-cursed Onslaught",   "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "The Angelic Host",        "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "The Lost Brethren",       "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "space-wolves": {
+    "name": "Space Wolves",
+    "category": "space-marines",
+    "detachments": [
+      { "name": "Champions of Fenris",       "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Legends of Saga and Song",  "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Veterans of the Fang",      "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Saga of the Beastslayer",   "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Saga of the Bold",          "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Saga of the Great Wolf",    "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Saga of the Hunter",        "dp": 2, "forceDisposition": "Disruption",       "isNew": false }
+    ]
+  },
+
+  "black-templars": {
+    "name": "Black Templars",
+    "category": "space-marines",
+    "detachments": [
+      { "name": "Marshal's Household",    "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "The Living Miracle",     "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Wrathful Procession",    "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Companions of Vehemence","dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Godhammer Assault Force","dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Vindication Task Force", "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false }
+    ]
+  },
+
+  "deathwatch": {
+    "name": "Deathwatch",
+    "category": "space-marines",
+    "detachments": [
+      { "name": "Black Spear Task Force", "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false }
+    ]
+  },
+
+  "grey-knights": {
+    "name": "Grey Knights",
+    "category": "space-marines",
+    "detachments": [
+      { "name": "Argent Assault",          "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Fires of Purgation",      "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Immaterial Interdiction", "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Augurium Task Force",     "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Banishers",               "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Brotherhood Strike",      "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Hallowed Conclave",       "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Sanctic Spearhead",       "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Warpbane Task Force",     "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "necrons": {
+    "name": "Necrons",
+    "category": "xenos",
+    "detachments": [
+      { "name": "Hand of the Dynasty",    "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Skyshroud Spearhead",    "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "The Phaeron's Armoury",  "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Annihilation Legion",    "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Awakened Dynasty",       "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Canoptek Court",         "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Cryptek Conclave",       "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Cursed Legion",          "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Hypercrypt Legion",      "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Obeisance Phalanx",      "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Pantheon of Woe",        "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Starshatter Arsenal",    "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false }
+    ]
+  },
+
+  "tyranids": {
+    "name": "Tyranids",
+    "category": "xenos",
+    "detachments": [
+      { "name": "Ambush Predators",           "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Talons of the Norn Queen",   "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Warrior Bioform Onslaught",  "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Assimilation Swarm",         "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Crusher Stampede",           "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Invasion Fleet",             "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Subterranean Assault",       "dp": 3, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Synaptic Nexus",             "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Unending Swarm",             "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Vanguard Onslaught",         "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false }
+    ]
+  },
+
+  "orks": {
+    "name": "Orks",
+    "category": "xenos",
+    "detachments": [
+      { "name": "More Dakka!",      "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Rollin' Deff",     "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Taktikal Brigade", "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Blitz Brigade",    "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Bully Boyz",       "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Da Big Hunt",      "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Dread Mob",        "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Freebooter Krew",  "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Green Tide",       "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Kult of Speed",    "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Speedwaaagh!",     "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "War Horde",        "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false }
+    ]
+  },
+
+  "aeldari": {
+    "name": "Aeldari",
+    "category": "xenos",
+    "detachments": [
+      { "name": "Armoured Warhost",     "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Fateful Performance",  "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Path of the Outcast",  "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Twilight Flickers",    "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Aspect Host",          "dp": 3, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Corsair Coterie",      "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Devoted of Ynnead",    "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Eldritch Raiders",     "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Ghosts of the Webway", "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Guardian Battlehost",  "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Seer Council",         "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Serpent's Brood",      "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Spirit Conclave",      "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Warhost",              "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Windrider Host",       "dp": 2, "forceDisposition": "Disruption",       "isNew": false }
+    ]
+  },
+
+  "drukhari": {
+    "name": "Drukhari",
+    "category": "xenos",
+    "detachments": [
+      { "name": "Exhibition of Slaughter", "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Kabalite Agonysts",       "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Tools of Torment",        "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Covenite Coterie",        "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Kabalite Cartel",         "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Realspace Raiders",       "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Reaper's Wager",          "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Skysplinter Assault",     "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Spectacle of Spite",      "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "genestealer-cults": {
+    "name": "Genestealer Cults",
+    "category": "xenos",
+    "detachments": [
+      { "name": "Heroes of the Uprising",  "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Purestrain Broodswarm",   "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Xenocult Masses",         "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Biosanctic Broodsurge",   "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Brood Brothers Auxillia", "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Final Day",               "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Host of Ascension",       "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Outlander Claw",          "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Xenocreed Congregation",  "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false }
+    ]
+  },
+
+  "leagues-of-votann": {
+    "name": "Leagues of Votann",
+    "category": "xenos",
+    "detachments": [
+      { "name": "Armoured Trailblazers",  "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Farseekers",             "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Hearthguard Covenant",   "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Brandfast Oathband",     "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Dêlve Assault Shift",    "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Hearthband",             "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Hearthfyre Arsenal",     "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Mercenary Oathband",     "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Needgaârd Oathband",     "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Persecution Prospect",   "dp": 2, "forceDisposition": "Disruption",       "isNew": false }
+    ]
+  },
+
+  "tau-empire": {
+    "name": "T'au Empire",
+    "category": "xenos",
+    "detachments": [
+      { "name": "Advanced Acquisition Cadre",    "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Auxillary Cadre",               "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Experimental Prototype Cadre",  "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Kauyon",                         "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Kroot Hunting Pack",             "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Mont'ka",                        "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Retaliation Cadre",              "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "chaos-space-marines": {
+    "name": "Chaos Space Marines",
+    "category": "chaos",
+    "detachments": [
+      { "name": "Cabal of Chaos",           "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Devotees of Destruction",  "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Murdertalon Raiders",      "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Chaos Cult",               "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Creations of Bile",        "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Cult of the Arkifane",     "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Deceptors",                "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Dread Talons",             "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Fellhammer Siege-host",    "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Huron's Marauders",        "dp": 3, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Nightmare Hunt",           "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Pactbound Zealots",        "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Renegade Raiders",         "dp": 3, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Renegade Warband",         "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Soulforged Warpack",       "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Veterans of the Long War", "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Warpstrike Champions",     "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Raiders from the Warp",    "dp": 2, "forceDisposition": "Disruption",       "isNew": false }
+    ]
+  },
+
+  "world-eaters": {
+    "name": "World Eaters",
+    "category": "chaos",
+    "detachments": [
+      { "name": "Butchers of Khorne",    "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Brazen Engines",        "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Vessels of Wrath",      "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Berzerker Warband",     "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Cult of Blood",         "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Goretrack Onslaught",   "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Khorne Daemonkin",      "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Possessed Slaughterband","dp": 2, "forceDisposition": "Purge the Foe",   "isNew": false }
+    ]
+  },
+
+  "emperors-children": {
+    "name": "Emperor's Children",
+    "category": "chaos",
+    "detachments": [
+      { "name": "Elegant Brutes",          "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Frenzied Host",           "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Spectacle of Slaughter",  "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Carnival of Excess",      "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Coterie of the Conceited","dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Court of the Phoenician", "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Mercurial Host",          "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Peerless Bladesmen",      "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Rapid Evisceration",      "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Slaanesh's Chosen",       "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "death-guard": {
+    "name": "Death Guard",
+    "category": "chaos",
+    "detachments": [
+      { "name": "Paragons of Putrescence",  "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Contagion Engines",        "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Flyblown Host",            "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Champions of Contagion",   "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Death Lord's Chosen",      "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Mortarion's Hammer",       "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Shamblerot Vectorium",     "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Tallyband Summoners",      "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Virulent Vectorium",       "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false }
+    ]
+  },
+
+  "thousand-sons": {
+    "name": "Thousand Sons",
+    "category": "chaos",
+    "detachments": [
+      { "name": "Ritual of Regeneration",  "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Sekhetar Cohort",         "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Servants of Change",      "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Changehost of Deceit",    "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Grand Coven",             "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Hexwarp Thrallband",      "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Rubricae Phalanx",        "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Warpforged Cabal",        "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Warpmeld Pact",           "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "chaos-knights": {
+    "name": "Chaos Knights",
+    "category": "chaos",
+    "detachments": [
+      { "name": "Bastions of Tyranny",  "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Hunting Warpack",      "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Iconoclast Fiefdom",   "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Helhunt Lance",        "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Houndpack Lance",      "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Infernal Lance",       "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Lords of Dread",       "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Traitoris Lance",      "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "chaos-daemons": {
+    "name": "Chaos Daemons",
+    "category": "chaos",
+    "detachments": [
+      { "name": "Cavalcade of Chaos",  "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Lords of the Warp",   "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Warptide",            "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Blood Legion",        "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Daemonic Incursion",  "dp": 3, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Legion of Excess",    "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Plague Legion",       "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Scintillating Legion","dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Shadow Legion",       "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "astra-militarum": {
+    "name": "Astra Militarum",
+    "category": "imperium",
+    "detachments": [
+      { "name": "Abhuman Auxiliaries",  "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Bridgehead Strike",    "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Designation Force",    "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Armoured Infantry",    "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Combined Arms",        "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Grizzled Company",     "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Hammer of the Emperor","dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Mechanised Assault",   "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Recon Element",        "dp": 3, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Siege Regiment",       "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Steel Hammer",         "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "adepta-sororitas": {
+    "name": "Adepta Sororitas",
+    "category": "imperium",
+    "detachments": [
+      { "name": "Chorus of Condemnation", "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Sacred Champions",       "dp": 1, "forceDisposition": "Take and Hold",    "isNew": true  },
+      { "name": "Sanctified Orators",     "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Army of Faith",          "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Bringers of Flame",      "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Champions of Faith",     "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Hallowed Martyrs",       "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Penitent Host",          "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false }
+    ]
+  },
+
+  "adeptus-mechanicus": {
+    "name": "Adeptus Mechanicus",
+    "category": "imperium",
+    "detachments": [
+      { "name": "Cohort Acquisitus",       "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Lords of the Forge",      "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Luminen Auto-Choir",      "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Cohort Cybernetica",      "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Data-psalm Conclave",     "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Eradication Cohort",      "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Explorator Maniple",      "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Haloscreed Battle Clade", "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Rad-zone Corps",          "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Skitarii Hunter Cohort",  "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false }
+    ]
+  },
+
+  "imperial-knights": {
+    "name": "Imperial Knights",
+    "category": "imperium",
+    "detachments": [
+      { "name": "Dominus Foebreakers",      "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Questor Forgepact",        "dp": 1, "forceDisposition": "Disruption",       "isNew": true  },
+      { "name": "Throne-bonded Outriders",  "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Freeblade Company",        "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Gate Warden Lance",        "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Questoris Companions",     "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Spearhead-at-arms",        "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Valourstrike Lance",       "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  },
+
+  "adeptus-custodes": {
+    "name": "Adeptus Custodes",
+    "category": "imperium",
+    "detachments": [
+      { "name": "Might of the Moritoi",   "dp": 1, "forceDisposition": "Purge the Foe",    "isNew": true  },
+      { "name": "Silent Hunters",         "dp": 1, "forceDisposition": "Reconnaissance",   "isNew": true  },
+      { "name": "Tharanatoi Hammerblow",  "dp": 1, "forceDisposition": "Priority Assets",  "isNew": true  },
+      { "name": "Auric Champions",        "dp": 2, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Lions of the Emperor",   "dp": 2, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Null Maiden Vigil",      "dp": 2, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Shield Host",            "dp": 2, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Solar Spearhead",        "dp": 2, "forceDisposition": "Take and Hold",    "isNew": false },
+      { "name": "Talons of the Emperor",  "dp": 3, "forceDisposition": "Take and Hold",    "isNew": false }
+    ]
+  },
+
+  "imperial-agents": {
+    "name": "Imperial Agents",
+    "category": "imperium",
+    "detachments": [
+      { "name": "Imperialis Fleet",                 "dp": 3, "forceDisposition": "Disruption",       "isNew": false },
+      { "name": "Ordo Hereticus, Purgation Force",  "dp": 3, "forceDisposition": "Priority Assets",  "isNew": false },
+      { "name": "Ordo Malleus, Daemon Hunters",     "dp": 3, "forceDisposition": "Reconnaissance",   "isNew": false },
+      { "name": "Ordo Xenos, Alien Hunters",        "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false },
+      { "name": "Veiled Blade Elimination Force",   "dp": 3, "forceDisposition": "Purge the Foe",    "isNew": false }
+    ]
+  }
+}

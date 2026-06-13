@@ -1,0 +1,3331 @@
+{
+  "id": "tyranids",
+  "name": "Tyranids",
+  "detachments": {
+    "Invasion Fleet": {
+      "overview": "La doctrina más versátil de la Mente Devoradora: cada brood adopta un sub-bioma táctico que se adapta al campo de batalla. Invasion Fleet no privilegia un estilo de combate sobre otro, sino que permite que el ejército entero cambie de naturaleza según las necesidades de la misión. Es la opción equilibrada por excelencia, ideal para listas mixtas de disparo y combate.",
+      "abilities": [
+        {
+          "name": "Bioma Adaptativo",
+          "flavor": "Cada enjambre lleva en su ADN la memoria de mil guerras distintas.",
+          "rule": "Al inicio de la partida, elegí un sub-bioma para tu ejército que otorga un bono específico (por ejemplo, +1 to Hit en CaC, o Ignores Cover en disparo) a todas las unidades GREAT DEVOURER."
+        },
+        {
+          "name": "Sincronía del Enjambre",
+          "flavor": "La Mente Devoradora ajusta el flujo de batalla en tiempo real.",
+          "rule": "Una vez por turno de mando, una unidad SYNAPSE puede otorgar a una unidad GREAT DEVOURER amiga dentro de 6\" la posibilidad de re-tirar una tirada de impacto, herida o salvación."
+        }
+      ],
+      "strengths": [
+        "Extremadamente flexible: se adapta a cualquier matchup sin penalizar ningún estilo de juego",
+        "El bono de sub-bioma puede orientarse hacia disparo o cuerpo a cuerpo según la composición de la lista",
+        "Buen punto de entrada para listas balanceadas que no quieren comprometerse a un único plan"
+      ],
+      "weaknesses": [
+        "Al no especializarse, rara vez ofrece el techo de daño de los detachments más nicho",
+        "El bono de sub-bioma es fijo para toda la partida, por lo que hay que prever el matchup en el despliegue de listas",
+        "Compite en popularidad con detachments más explosivos en torneos de alto nivel"
+      ]
+    },
+    "Crusher Stampede": {
+      "overview": "Una estampida de monstruos y vehículos bio-orgánicos avanza arrasando todo a su paso. Crusher Stampede está construido alrededor de las unidades MONSTER y VEHICLE más grandes del codex, otorgándoles bonos de avance, daño en masa y resiliencia ante el fuego masivo del enemigo.",
+      "abilities": [
+        {
+          "name": "Avance Imparable",
+          "flavor": "Ni murallas ni trincheras detienen a la carne que camina.",
+          "rule": "Las unidades MONSTER y VEHICLE GREAT DEVOURER pueden mover a través de unidades enemigas de INFANTRY durante su Movement phase, y obtienen +1 to Wound contra unidades que estén Below Half-strength."
+        },
+        {
+          "name": "Pisoteo Bioorgánico",
+          "flavor": "El peso de un Carnifex es argumento suficiente.",
+          "rule": "Cuando una unidad MONSTER o VEHICLE GREAT DEVOURER destruye una unidad enemiga en CaC, las unidades enemigas dentro de 6\" deben hacer un test de Battle-shock."
+        }
+      ],
+      "strengths": [
+        "Maximiza el daño de Carnifexes, Hive Tyrants, Trygons y otros bioformas pesadas",
+        "El bono contra unidades debilitadas acelera el colapso de líneas enemigas ya desgastadas",
+        "La presión psicológica de Pisoteo Bioorgánico puede generar Battle-shocks en cadena"
+      ],
+      "weaknesses": [
+        "Aporta poco a listas centradas en hordas de infantería ligera (Termagants, Hormagaunts)",
+        "Las unidades grandes son blancos prioritarios para armas anti-monstruo del rival",
+        "Requiere invertir muchos puntos en pocas unidades, reduciendo la redundancia táctica"
+      ]
+    },
+    "Unending Swarm": {
+      "overview": "La auténtica esencia del Gran Devorador: oleadas interminables de Termagants, Hormagaunts y Gargoyles emergen sin cesar para abrumar al enemigo por puro número. Unending Swarm convierte a la infantería barata en un recurso prácticamente infinito, generando refuerzos gratuitos turno tras turno.",
+      "abilities": [
+        {
+          "name": "Eclosión Continua",
+          "flavor": "Por cada gaunt que cae, una vaina madura en las sombras.",
+          "rule": "Al final de tu turno, podés devolver al campo de batalla, desde Reserves sin costo de puntos, una unidad TERMAGANTS, HORMAGAUNTS o GARGOYLES previamente destruida con la mitad de sus modelos originales."
+        },
+        {
+          "name": "Marea Insondable",
+          "flavor": "El horizonte se llena de quitina y garras.",
+          "rule": "Las unidades BATTLELINE GREAT DEVOURER obtienen +1 a su Objective Control mientras estén dentro de 6\" de otra unidad BATTLELINE GREAT DEVOURER."
+        }
+      ],
+      "strengths": [
+        "La regeneración gratuita de unidades BATTLELINE genera un desgaste casi imposible de revertir para el rival",
+        "El bono de OC acumulativo asegura el control de objetivos en el midgame y lategame",
+        "Sinergiza perfectamente con Tervigon, que ya genera Termagants adicionales"
+      ],
+      "weaknesses": [
+        "Depende de llevar gran cantidad de unidades BATTLELINE baratas, limitando el espacio para élites",
+        "La regeneración solo aplica a unidades destruidas por completo, no a bajas parciales",
+        "Las unidades regeneradas vuelven con la mitad de los modelos, lo que reduce su impacto inmediato"
+      ]
+    },
+    "Assimilation Swarm": {
+      "overview": "El Enjambre de Asimilación devora la biomasa del enemigo para acelerar su propia evolución. Cada unidad eliminada, cada HARVESTER que se alimenta, otorga tokens de Biomasa que potencian al ejército Tyranid en momentos clave de la partida.",
+      "abilities": [
+        {
+          "name": "Cosecha de Biomasa",
+          "flavor": "Nada se desperdicia en la Mente Devoradora; todo se consume y se transforma.",
+          "rule": "Cada vez que una unidad enemiga es destruida por una unidad con la palabra clave HARVESTER, ganás 1 token de Biomasa (máximo 6). Gastá 3 tokens para que una unidad GREAT DEVOURER obtenga Feel No Pain 5+ hasta el final de la partida."
+        },
+        {
+          "name": "Metamorfosis Acelerada",
+          "flavor": "La carne se reorganiza, más letal con cada festín.",
+          "rule": "Gastá 1 token de Biomasa al inicio de la fase de Combate para otorgar a una unidad HARVESTER +1 to Wound en CaC durante esa fase."
+        }
+      ],
+      "strengths": [
+        "Las unidades HARVESTER (Pyrovores, Haruspex, Ripper Swarms, Norn Assimilator) ganan un propósito extra al limpiar al enemigo",
+        "Los tokens de Biomasa ofrecen recursos flexibles que se adaptan al momento de la partida",
+        "El FNP acumulado puede hacer que unidades clave sobrevivan asaltos decisivos"
+      ],
+      "weaknesses": [
+        "Requiere eliminar unidades enemigas activamente para generar tokens, penalizando inicios lentos",
+        "Sin suficientes unidades HARVESTER en la lista, el motor de tokens se queda corto",
+        "Los bonos dependen de gastar tokens en el momento correcto — mal timing desperdicia el recurso"
+      ]
+    },
+    "Vanguard Onslaught": {
+      "overview": "Las formas de avanzada del Enjambre se infiltran y aparecen desde todas direcciones antes de que el enemigo pueda reaccionar. Vanguard Onslaught privilegia unidades VANGUARD INVADER, premiando el despliegue agresivo, el Infiltrate y el Deep Strike para presionar desde el turno 1.",
+      "abilities": [
+        {
+          "name": "Vanguardia Sincronizada",
+          "flavor": "El primer contacto con el enemigo ya es una emboscada.",
+          "rule": "Las unidades VANGUARD INVADER pueden desplegarse usando Infiltrators, y aquellas que ya tienen Infiltrators ganan +2\" de Movement en el primer turno de juego."
+        },
+        {
+          "name": "Golpe Relámpago",
+          "flavor": "Cuando aparecen, ya es demasiado tarde para reaccionar.",
+          "rule": "Las unidades VANGUARD INVADER que lleguen vía Deep Strike pueden hacer un Charge incluso si llegaron este mismo turno, ignorando la restricción habitual de Advance."
+        }
+      ],
+      "strengths": [
+        "Permite presionar objetivos y flancos enemigos desde el turno 1 con múltiples amenazas simultáneas",
+        "El Charge tras Deep Strike convierte a las unidades VANGUARD INVADER en amenazas inmediatas, no solo posicionales",
+        "Excelente contra listas lentas o de disparo estático que dependen de su despliegue inicial"
+      ],
+      "weaknesses": [
+        "Las unidades desplegadas agresivamente quedan expuestas a contraataques si no logran eliminar su objetivo",
+        "Poco beneficio para unidades sin la palabra clave VANGUARD INVADER (Hive Guard, Tyrannofex, etc.)",
+        "Requiere jugadores que sepan calcular distancias de Charge tras Deep Strike con precisión"
+      ]
+    },
+    "Synaptic Nexus": {
+      "overview": "La red sináptica del Enjambre se expande y amplifica, conectando cada mente menor con la voluntad colectiva de la Mente Devoradora. Synaptic Nexus potencia a los psíquicos y a las unidades SYNAPSE, extendiendo su alcance y multiplicando sus efectos sobre el resto del ejército.",
+      "abilities": [
+        {
+          "name": "Resonancia Sináptica",
+          "flavor": "Un pensamiento se convierte en orden, una orden se convierte en instinto colectivo.",
+          "rule": "Las unidades SYNAPSE GREAT DEVOURER aumentan su Synapse Range en 6\" y las unidades PSYKER GREAT DEVOURER pueden manifestar una habilidad Psychic adicional por turno."
+        },
+        {
+          "name": "Voluntad Unificada",
+          "flavor": "Cuando una mente flaquea, mil más la sostienen.",
+          "rule": "Una vez por turno de mando, una unidad GREAT DEVOURER que falle un test de Battle-shock dentro del Synapse Range de una unidad amiga puede repetir ese test."
+        }
+      ],
+      "strengths": [
+        "El alcance extendido de Synapse mantiene a más unidades libres de Battle-shock simultáneamente",
+        "Las habilidades psíquicas adicionales potencian a Zoanthropes, Neurotyrant y Maleceptor de forma directa",
+        "La repetición de tests de Battle-shock reduce drásticamente el riesgo de perder unidades por moral"
+      ],
+      "weaknesses": [
+        "Depende de mantener una red de unidades SYNAPSE bien distribuida por el tablero",
+        "Si las unidades SYNAPSE clave son eliminadas, el resto del ejército pierde rápidamente sus bonos",
+        "Poco impacto directo en el daño bruto comparado con detachments más agresivos"
+      ]
+    },
+    "Warrior Bioform Onslaught": {
+      "overview": "Los Tyranid Warriors, columna vertebral intermedia del Enjambre, toman el centro del escenario. Este nuevo detachment está diseñado alrededor de bloques de Warriors —tanto de disparo como de combate— liderados por Tyranid Primes, transformándolos en un núcleo de presión constante y sinergias acumulativas.",
+      "abilities": [
+        {
+          "name": "Legado del Linaje Guerrero",
+          "flavor": "Cada Warrior lleva en su carne la memoria de generaciones de combate.",
+          "rule": "Las unidades TYRANID WARRIORS obtienen +1 to Hit en la fase en la que un personaje con Warrior Lineage esté dentro de su Synapse Range."
+        },
+        {
+          "name": "Cadena de Mando Bioforme",
+          "flavor": "Cuando un Warrior cae, otro asume el mando sin pausa.",
+          "rule": "Si el personaje líder de una unidad TYRANID WARRIORS es eliminado, otro modelo de la unidad gana la palabra clave Leader y sus habilidades hasta el final de la partida."
+        }
+      ],
+      "strengths": [
+        "Maximiza el rendimiento de las dos variantes de Tyranid Warriors (melee y ranged) en una misma lista",
+        "El bono de +1 to Hit acumulado con Warrior Lineage hace que los bloques de Warriors sean letales",
+        "La cadena de mando reduce el impacto de perder al líder ante Precision o focus fire"
+      ],
+      "weaknesses": [
+        "Detachment nuevo y nicho — poco beneficio si la lista no incluye múltiples unidades de Warriors",
+        "Los Warriors siguen siendo T5 Sv4+, vulnerables a fuego masivo de volumen medio",
+        "Requiere posicionar a los Tyranid Primes con cuidado para mantener el Synapse Range activo"
+      ]
+    },
+    "Subterranean Assault": {
+      "overview": "Desde las profundidades del planeta, los Burrowers del Enjambre emergen directamente bajo las líneas enemigas. Subterranean Assault está construido alrededor de Trygon, Mawloc, The Red Terror y otras unidades BURROWER, que aparecen mucho más cerca del enemigo de lo normal y castigan a quienes intentan escapar.",
+      "abilities": [
+        {
+          "name": "Túneles Convergentes",
+          "flavor": "La tierra misma conspira contra el enemigo.",
+          "rule": "Las unidades BURROWER pueden hacer Deep Strike a 3\" del enemigo en lugar de 9\", siempre que no terminen su movimiento dentro del Engagement Range."
+        },
+        {
+          "name": "Emboscada desde Abajo",
+          "flavor": "El suelo se abre y la pesadilla emerge.",
+          "rule": "Cuando una unidad BURROWER entra al campo de batalla desde Reserves, una unidad enemiga dentro de 6\" sufre D3 mortales y debe hacer un test de Battle-shock."
+        }
+      ],
+      "strengths": [
+        "La distancia reducida de Deep Strike permite cargar inmediatamente al llegar al tablero",
+        "El daño y Battle-shock de Emboscada desde Abajo castiga a unidades de soporte y artillería desplegadas en la retaguardia",
+        "Las múltiples unidades BURROWER del codex (Trygon, Mawloc, The Red Terror, Raveners) se potencian mutuamente"
+      ],
+      "weaknesses": [
+        "Depende fuertemente de llevar varias unidades con la palabra clave BURROWER",
+        "Las unidades en Reserves no contribuyen al control de objetivos hasta que aparecen",
+        "Un despliegue agresivo sin apoyo puede dejar a los Burrowers aislados tras el impacto inicial"
+      ]
+    },
+    "Talons of the Norn Queen": {
+      "overview": "Una nueva casta de élite, liderada por el Swarmlord, encarna la voluntad pura de la Reina de las Garras. Talons of the Norn Queen es un detachment nuevo centrado en monstruos sinápticos de alto valor, que combina protección psíquica, letalidad en combate y un liderazgo absoluto sobre el campo de batalla.",
+      "abilities": [
+        {
+          "name": "Garras de la Reina",
+          "flavor": "Cuando la Reina ordena, sus garras más afiladas responden primero.",
+          "rule": "Las unidades MONSTER SYNAPSE obtienen Devastating Wounds en sus armas de CaC mientras estén dentro de 12\" de una unidad con la palabra clave EPIC HERO."
+        },
+        {
+          "name": "Escudo de la Mente Colectiva",
+          "flavor": "Ninguna mente menor sufre sola mientras la Reina vigila.",
+          "rule": "Una vez por turno de mando, una unidad MONSTER SYNAPSE puede otorgar Feel No Pain 5+ a una unidad amiga GREAT DEVOURER dentro de 9\"."
+        }
+      ],
+      "strengths": [
+        "Devastating Wounds en monstruos sinápticos como Hive Tyrant, Norn Emissary o Maleceptor multiplica su output de daño",
+        "El FNP otorgado a distancia ayuda a proteger unidades de soporte críticas sin sacrificar posicionamiento",
+        "El Swarmlord como ancla del detachment encaja naturalmente con listas de monstruos de alto valor"
+      ],
+      "weaknesses": [
+        "Detachment nuevo y muy dependiente de tener múltiples unidades MONSTER SYNAPSE en la lista",
+        "El bono de Devastating Wounds requiere mantener unidades EPIC HERO cerca del frente, exponiéndolas",
+        "Poca sinergia con listas centradas en hordas de infantería barata"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "broodlord",
+      "name": "Broodlord",
+      "pts": 80,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Broodlord"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 5,
+        "sv": 4,
+        "w": 6,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Broodlord claws and talons",
+          "range": "Melee",
+          "a": "5",
+          "skill": "2+",
+          "s": 6,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Devastating Wounds",
+            "Twin-linked"
+          ]
+        }
+      ],
+      "abilities": [
+        "Infiltrators",
+        "Leader",
+        "Synapse",
+        "Vanguard Predator (líder)",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "Líder de combate de Genestealers. INV 4+ y 6W lo hacen resiliente para ser INFANTRY. Devastating Wounds + Twin-Linked garantiza daño consistente. Solo puede liderar Genestealers.",
+      "recommendations": "Siempre en una unidad de 10 Genestealers. Su Vanguard Predator (como líder) saca mejor partido de los re-rolls cerca de objetivos. Ideal para Deep Strike o Infiltrate hacia unidades de alto valor del rival."
+    },
+    {
+      "id": "the-swarmlord",
+      "name": "The Swarmlord",
+      "pts": 220,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Monster",
+        "Character",
+        "Psyker",
+        "Epic Hero",
+        "Great Devourer",
+        "Synapse",
+        "The Swarmlord"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 10,
+        "sv": 2,
+        "w": 10,
+        "ld": 7,
+        "oc": 3
+      },
+      "ranged": [
+        {
+          "name": "Synaptic pulse",
+          "range": "18\"",
+          "a": "D6+3",
+          "skill": "Auto",
+          "s": 5,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Psychic",
+            "Torrent"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Bone sabres",
+          "range": "Melee",
+          "a": "8",
+          "skill": "2+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Twin-linked"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Leader",
+        "Shadow in the Warp",
+        "Synapse",
+        "Will of the Hive Mind",
+        "Hive Commander",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "El personaje más poderoso del codex. EPIC HERO — solo 1 por lista. Hive Commander da 1 uso extra de Stratagem por turno (2CP máx). Lanza Bone Sabres con 8 ataques A3 Twin-Linked a WS2+. Lidera Tyrant Guard.",
+      "recommendations": "El centro de la lista. Acoplar a 6 Tyrant Guard para máxima supervivencia (FNP 5+ gracias a Guardian Organism). Hive Commander es una de las mejores habilidades del juego — prioridad en listas de alto CP."
+    },
+    {
+      "id": "hive-tyrant",
+      "name": "Hive Tyrant",
+      "pts": 195,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Monster",
+        "Character",
+        "Psyker",
+        "Great Devourer",
+        "Synapse",
+        "Hive Tyrant"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 10,
+        "sv": 2,
+        "w": 10,
+        "ld": 7,
+        "oc": 3
+      },
+      "ranged": [
+        {
+          "name": "Heavy venom cannon",
+          "range": "36\"",
+          "a": "D3",
+          "skill": "2+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Blast"
+          ]
+        },
+        {
+          "name": "Stranglethorn cannon",
+          "range": "36\"",
+          "a": "D6+1",
+          "skill": "2+",
+          "s": 7,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Blast"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Monstrous bonesword and lash whip",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Twin-linked"
+          ]
+        },
+        {
+          "name": "Monstrous scything talons",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Extra Attacks"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Leader",
+        "Shadow in the Warp",
+        "Synapse",
+        "Will of the Hive Mind",
+        "Onslaught (Aura, Psychic)",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "La opción terrestre. Onslaught (Aura) da Assault + Lethal Hits a armas de disparo aliadas cercanas — enorme synergy con unidades shooty. Opción de HVC o Stranglethorn lo hace versatil en ranged. Lidera Tyrant Guard.",
+      "recommendations": "Con Onslaught cerca de Warriors Ranged o Hive Guard, se vuelve un multiplicador de daño masivo. Default con bonesword es más consistente en melee. Stranglethorn es mejor anti-infantería, HVC anti-monstruos/vehículos."
+    },
+    {
+      "id": "winged-hive-tyrant",
+      "name": "Winged Hive Tyrant",
+      "pts": 170,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Monster",
+        "Character",
+        "Psyker",
+        "Fly",
+        "Great Devourer",
+        "Synapse",
+        "Vanguard Invader",
+        "Hive Tyrant",
+        "Winged Hive Tyrant"
+      ],
+      "stats": {
+        "m": 12,
+        "t": 9,
+        "sv": 2,
+        "w": 10,
+        "ld": 7,
+        "oc": 3
+      },
+      "ranged": [
+        {
+          "name": "Heavy venom cannon",
+          "range": "36\"",
+          "a": "D3",
+          "skill": "2+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Blast"
+          ]
+        },
+        {
+          "name": "Stranglethorn cannon",
+          "range": "36\"",
+          "a": "D6+1",
+          "skill": "2+",
+          "s": 7,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Blast"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Monstrous bonesword and lash whip",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Twin-linked"
+          ]
+        },
+        {
+          "name": "Monstrous scything talons",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Extra Attacks"
+          ]
+        },
+        {
+          "name": "Tyrant talons",
+          "range": "Melee",
+          "a": "5",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Deep Strike",
+        "Shadow in the Warp",
+        "Synapse",
+        "Will of the Hive Mind",
+        "Paroxysm (Psychic)",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "Versión voladora y más ágil del Hive Tyrant. Sin LEADER — opera como unidad autónoma. M12\" + Deep Strike + FLY lo hacen increíblemente móvil. T9 en vez de T10 (ligeramente más frágil). Paroxysm resta 1A al enemigo en Fight phase.",
+      "recommendations": "Ideal como amenaza independiente de alto impacto. Deep Strike para aparecer en flancos y trabar unidades peligrosas. No tiene Onslaught como el terrestre — su rol es más agresivo y disruptivo. Combina bien con Vanguard Onslaught."
+    },
+    {
+      "id": "neurotyrant",
+      "name": "Neurotyrant",
+      "pts": 105,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Monster",
+        "Character",
+        "Psyker",
+        "Fly",
+        "Great Devourer",
+        "Synapse",
+        "Neurotyrant"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 8,
+        "sv": 4,
+        "w": 9,
+        "ld": 7,
+        "oc": 3
+      },
+      "ranged": [
+        {
+          "name": "Psychic Scream",
+          "range": "18\"",
+          "a": "2D6",
+          "skill": "Auto",
+          "s": 5,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Ignores Cover",
+            "Psychic",
+            "Torrent"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Neurotyrant claws and lashes",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Synapse",
+        "Shadow in the Warp",
+        "Neuroparasite Swarm",
+        "Synaptic Bonds",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "El psíquico de soporte más económico del codex. Sus habilidades amplifican el Synapse range y debilitan al enemigo. Lidera Neurogaunts, Tyrant Guard, o Zoanthropes. Torrent en ranged garantiza hits aunque sea poca S.",
+      "recommendations": "Mejor liderando Zoanthropes para sinergias psíquicas. Con Synaptic Bonds en Synaptic Nexus detachment, los beneficios se multiplican. Su disparo torrent sirve para limpiar infantería ligera antes de cargar."
+    },
+    {
+      "id": "tervigon",
+      "name": "Tervigon",
+      "pts": 160,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Monster",
+        "Character",
+        "Great Devourer",
+        "Synapse",
+        "Tervigon"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 11,
+        "sv": 2,
+        "w": 16,
+        "ld": 7,
+        "oc": 5
+      },
+      "ranged": [
+        {
+          "name": "Stinger salvoes",
+          "range": "24\"",
+          "a": "8",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Massive scything talons – strike",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 9,
+          "ap": -2,
+          "d": "D6"
+        },
+        {
+          "name": "Massive scything talons – sweep",
+          "range": "Melee",
+          "a": "8",
+          "skill": "3+",
+          "s": 7,
+          "ap": -1,
+          "d": "2"
+        },
+        {
+          "name": "Massive crushing claws",
+          "range": "Melee",
+          "a": "4",
+          "skill": "4+",
+          "s": 12,
+          "ap": -3,
+          "d": "D6+1"
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Spawn Termagants",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "La incubadora de Termagants. T11 SV2+ con 16W es extremadamente duro. OC5 sin ser Titánico es excelente para objetivos. Spawn Termagants genera unidades gratis cada turno. CHARACTER standalone — no lidera unidades externas.",
+      "recommendations": "Fundamental en Unending Swarm para multiplicar Termagants. Colocar en un objetivo central y usar Spawn para generar cuerpos. Con Stinger Salvoes puede shootear mientras genera. Massive crushing claws si querés anti-vehículo."
+    },
+    {
+      "id": "deathleaper",
+      "name": "Deathleaper",
+      "pts": 80,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Epic Hero",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Deathleaper"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 6,
+        "sv": 3,
+        "w": 7,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Lictor claws and talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Precision"
+          ]
+        }
+      ],
+      "abilities": [
+        "Infiltrators",
+        "Lone Operative",
+        "Stealth",
+        "EPIC HERO",
+        "It's After Me!",
+        "Pheromone Trail",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "EPIC HERO solo — no puede ser WARLORD. Precision permite targear personajes dentro de unidades. Lone Operative + Stealth + INV 4+ lo hace difícil de matar. No lidera unidades. Mejor cazador de personajes del ejército.",
+      "recommendations": "Deploy con Infiltrators para presionar al rival desde turno 1. Precision es su superpoder — targear líderes rivales dentro de sus unidades. Usar Pheromone Trail para traer refuerzos cerca de posiciones clave del rival."
+    },
+    {
+      "id": "neurolictor",
+      "name": "Neurolictor",
+      "pts": 70,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Synapse",
+        "Neurolictor"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 5,
+        "sv": 4,
+        "w": 7,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Piercing claws and talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 6,
+          "ap": -2,
+          "d": "1",
+          "keywords": [
+            "Precision"
+          ]
+        }
+      ],
+      "abilities": [
+        "Infiltrators",
+        "Lone Operative",
+        "Stealth",
+        "Synapse",
+        "Feeder Tendrils",
+        "Neural Disruption",
+        "Psychological Saboteur (Aura)",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "Sin keyword CHARACTER pero funciona como personaje autónomo. Lone Operative + Stealth + INV 4+ para 70pts es un excelente deal. Psychological Saboteur (Aura) aplica -1 Ld a enemigos cercanos y puede forzar battle-shock. SYNAPSE keyword lo hace doble útil.",
+      "recommendations": "Perfecto en Vanguard Onslaught para presionar flancos desde turno 1. Psychological Saboteur es una aura brutal — ponerlo cerca de unidades que el rival quiere hacer avanzar. Precision del arma permite targear modelos específicos en unidades."
+    },
+    {
+      "id": "old-one-eye",
+      "name": "Old One Eye",
+      "pts": 150,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Monster",
+        "Character",
+        "Epic Hero",
+        "Great Devourer",
+        "Old One Eye"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 9,
+        "sv": 2,
+        "w": 9,
+        "ld": 8,
+        "oc": 3
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Massive scything talons – strike",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 14,
+          "ap": -3,
+          "d": "D6+1"
+        },
+        {
+          "name": "Massive scything talons – sweep",
+          "range": "Melee",
+          "a": "12",
+          "skill": "3+",
+          "s": 6,
+          "ap": -1,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise 1",
+        "Feel No Pain 5+",
+        "EPIC HERO",
+        "Lidera Carnifexes",
+        "Regeneration"
+      ],
+      "considerations": "EPIC HERO que lidera Carnifexes. FNP 5+ sin INV save — muy duro para su costo. Sin SYNAPSE (importante). S14 AP-3 en strike mode destruye prácticamente cualquier cosa. Regeneration recupera heridas en comando.",
+      "recommendations": "Siempre en Carnifexes para maximizar el bono de líder. Strike con S14 es absurdo contra vehículos; sweep con 12 ataques limpia infantería. Usar en Crusher Stampede donde los monstruos brillan más."
+    },
+    {
+      "id": "parasite-of-mortrex",
+      "name": "Parasite of Mortrex",
+      "pts": 80,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Fly",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Parasite of Mortrex"
+      ],
+      "stats": {
+        "m": 12,
+        "t": 5,
+        "sv": 4,
+        "w": 5,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Barbed ovipositor",
+          "range": "Melee",
+          "a": "1",
+          "skill": "2+",
+          "s": 3,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Anti-infantry 3+",
+            "Extra Attacks"
+          ]
+        },
+        {
+          "name": "Clawed limbs",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 5,
+          "ap": -1,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Implant Attack",
+        "Lone Operative",
+        "Synapse",
+        "Vanguard Invader"
+      ],
+      "considerations": "Modelo frágil (T5 SV4+) pero con M12\" y FLY es muy móvil. Barbed ovipositor genera Ripper Swarms al matar modelos de infantería. Anti-infantry 3+ en el ovipositor lo hace muy eficiente vs infantería. Lone Operative para protegerlo.",
+      "recommendations": "Usar en listas que quieren generar Ripper Swarms gratis para capturar objetivos. M12 FLY permite alcanzar objetivos difíciles. No usar como personaje de combate principal — muy frágil. Mejor en Vanguard Onslaught para llegar rápido."
+    },
+    {
+      "id": "the-red-terror",
+      "name": "The Red Terror",
+      "pts": 130,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Monster",
+        "Character",
+        "Epic Hero",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Burrower",
+        "The Red Terror"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 8,
+        "sv": 3,
+        "w": 9,
+        "ld": 8,
+        "oc": 3
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Gaping maw",
+          "range": "Melee",
+          "a": "1",
+          "skill": "2+",
+          "s": 5,
+          "ap": 0,
+          "d": "D3+2",
+          "keywords": [
+            "Extra Attacks",
+            "Devastating Wounds",
+            "Precision"
+          ]
+        },
+        {
+          "name": "Scything talons",
+          "range": "Melee",
+          "a": "12",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deep Strike",
+        "EPIC HERO",
+        "Burrower",
+        "Swallow Whole"
+      ],
+      "considerations": "EPIC HERO. Gaping maw con Extra Attacks + Devastating Wounds + Precision es un arma única — puede targear personajes con mortales. 12 ataques con scything talons a S7 AP-2 es enorme. M10\" + BURROWER para máxima movilidad.",
+      "recommendations": "Devastador contra listas con personajes costosos — Precision del Gaping maw los targea directamente. En Subterranean Assault es especialmente poderoso por BURROWER. Combinar con Trygon o Mawloc para múltiples amenazas subterráneas."
+    },
+    {
+      "id": "tyranid-prime-lash-whip",
+      "name": "Tyranid Prime with Lash Whip",
+      "pts": 65,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Great Devourer",
+        "Synapse",
+        "Tyranid Prime"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 5,
+        "sv": 3,
+        "w": 6,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Rending claw",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 8,
+          "ap": -2,
+          "d": "3"
+        },
+        {
+          "name": "Lash whip",
+          "range": "Melee",
+          "a": "8",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": [
+            "Extra Attacks"
+          ]
+        },
+        {
+          "name": "Scything talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 6,
+          "ap": -2,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Synapse",
+        "Warrior Lineage (Aura)"
+      ],
+      "considerations": "Líder de Hormagaunts, Termagants, y Warriors (ambas variantes). M10\" lo hace especialmente bueno con unidades rápidas. Lash whip da 8 ataques adicionales Extra Attacks — ataca con todo junto. Muy bueno rapport calidad/precio para 65pts.",
+      "recommendations": "Ideal con Hormagaunts para un bloque de CaC veloz y difícil de ignorar. Warrior Lineage da synapse bonus a toda la unidad. Rending claw S8 AP-2 D3 es excelente para matar personajes o monsters medianos."
+    },
+    {
+      "id": "winged-tyranid-prime",
+      "name": "Winged Tyranid Prime",
+      "pts": 65,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Fly",
+        "Great Devourer",
+        "Synapse",
+        "Vanguard Invader",
+        "Tyranid Prime"
+      ],
+      "stats": {
+        "m": 12,
+        "t": 5,
+        "sv": 4,
+        "w": 6,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Prime talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 6,
+          "ap": -1,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Synapse",
+        "Vanguard Invader",
+        "Warrior Lineage (Aura)"
+      ],
+      "considerations": "Versión voladora del Prime para Gargoyles y Warriors. M12\" + FLY es su gran ventaja. SV4+ lo hace más frágil que el de tierra pero el arma es consistente. 65pts por líder volador con SYNAPSE es muy buen valor.",
+      "recommendations": "Siempre con Gargoyles para dar SYNAPSE y el bono de líder a esa unidad móvil. Con Warriors ranged permite un bloque de disparo volador de alto valor. Warrior Lineage amplía synapse range del bloque."
+    },
+    {
+      "id": "hyperadapted-raveners",
+      "name": "Hyperadapted Raveners",
+      "pts": 165,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Synapse",
+        "Burrowers",
+        "Raveners"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 5,
+        "sv": 4,
+        "w": 6,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Venom bolt",
+          "range": "12\"",
+          "a": "D6+3",
+          "skill": "Auto",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": [
+            "Assault",
+            "Ignores Cover",
+            "Torrent"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Ravener Prime claws (primero)",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Anti-monster 5+",
+            "Anti-vehicle 5+",
+            "Twin-linked"
+          ]
+        },
+        {
+          "name": "Ravener heavy claws",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Anti-monster 5+",
+            "Anti-vehicle 5+",
+            "Twin-linked"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "Burrowers",
+        "Adaptive Biology",
+        "Lidera Raveners"
+      ],
+      "considerations": "Unidad mixta de 5 modelos: 1 Ravener Prime (CHARACTER/SYNAPSE W:3) + 4 Raveners (W:6). Puede liderar una unidad de Raveners separada. Armas Anti-monster/Anti-vehicle 5+ + Twin-linked hacen excelente daño a targets grandes. Torrent Venom Bolt antes de cargar.",
+      "recommendations": "Potencialmente la mejor unidad anti-monster del ejército. Usar Venom Bolt antes de cargar para ablandar al target. En Subterranean Assault con Burrowers, las sinergias con Deep Strike son devastadoras. Combinar con Raveners regulares para maximizar el impacto."
+    },
+    {
+      "id": "termagants",
+      "name": "Termagants",
+      "pts": 60,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": [
+        "Infantry",
+        "Battleline",
+        "Great Devourer",
+        "Endless Multitude",
+        "Termagants"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 3,
+        "sv": 5,
+        "w": 1,
+        "ld": 8,
+        "oc": 2
+      },
+      "ranged": [
+        {
+          "name": "Fleshborer",
+          "range": "18\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Assault"
+          ]
+        },
+        {
+          "name": "Devourer",
+          "range": "18\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 4,
+          "ap": 0,
+          "d": "1"
+        },
+        {
+          "name": "Spinefists",
+          "range": "12\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Assault",
+            "Pistol",
+            "Twin-linked"
+          ]
+        },
+        {
+          "name": "Shardlauncher",
+          "range": "24\"",
+          "a": "D3",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Blast",
+            "Heavy"
+          ]
+        },
+        {
+          "name": "Spike rifle",
+          "range": "30\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": [
+            "Heavy"
+          ]
+        },
+        {
+          "name": "Strangleweb",
+          "range": "12\"",
+          "a": "D6",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Assault",
+            "Devastating Wounds",
+            "Torrent"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chitinous claws and teeth",
+          "range": "Melee",
+          "a": "1",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Endless Multitude"
+      ],
+      "considerations": "Battleline núcleo del ejército. OC2 por model hace que 20 unidades controlen 40 OC — enorme. Con Tervigon generan refuerzos gratis. Muchas opciones de armas: Devourer para más volumen, Spike Rifle para AP, Strangleweb para limpiar hordas.",
+      "recommendations": "El bloque base de la mayoría de listas. 20 Termagants con Fleshborers + Tervigon liderando es clásico. Strangleweb Devastating Wounds limpia Necrons y FNP. En Unending Swarm se vuelven casi inagotables. OC2 los hace buenos holders de objetivos."
+    },
+    {
+      "id": "hormagaunts",
+      "name": "Hormagaunts",
+      "pts": 65,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": [
+        "Infantry",
+        "Battleline",
+        "Great Devourer",
+        "Endless Multitude",
+        "Hormagaunts"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 3,
+        "sv": 5,
+        "w": 1,
+        "ld": 8,
+        "oc": 2
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Hormagaunt talons",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 3,
+          "ap": -1,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Endless Multitude",
+        "Bounding Leap"
+      ],
+      "considerations": "La horda de CaC más rápida del codex. M10\" + Bounding Leap (Advance y Charge en el mismo turno) les da alcances brutales. OC2 sirven tanto para hold de objetivos como para travar al rival. 3 ataques AP-1 cada uno — buenos en masa.",
+      "recommendations": "En bloques de 20 son una amenaza real de turno 1. Tyranid Prime con Lash Whip los hace letales. En Crusher Stampede con las Stampede abilities aplanan prácticamente cualquier infantería. La velocidad es su superpoder — presionar al rival desde el inicio."
+    },
+    {
+      "id": "gargoyles",
+      "name": "Gargoyles",
+      "pts": 85,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": [
+        "Infantry",
+        "Battleline",
+        "Fly",
+        "Great Devourer",
+        "Endless Multitude",
+        "Vanguard Invader",
+        "Gargoyles"
+      ],
+      "stats": {
+        "m": 12,
+        "t": 3,
+        "sv": 6,
+        "w": 1,
+        "ld": 8,
+        "oc": 2
+      },
+      "ranged": [
+        {
+          "name": "Fleshborer",
+          "range": "18\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Assault"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Blinding venom",
+          "range": "Melee",
+          "a": "1",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "Endless Multitude",
+        "Winged Swarm"
+      ],
+      "considerations": "Battleline voladora y muy móvil. M12\" + FLY + Deep Strike da alcances extremos. SV6+ los hace muy frágiles pero son baratos y abundantes. Winged Swarm permite un Normal Move de 6\" extra después de disparar. Muy buenos en Vanguard Onslaught.",
+      "recommendations": "Con Winged Tyranid Prime como líder, son una amenaza genuina de flanqueo aéreo. Winged Swarm los hace increíblemente difíciles de atrapar — disparan y se mueven fuera de carga. 20 modelos con Deep Strike pueden aparecer en cualquier lugar y amenazar objetivos."
+    },
+    {
+      "id": "genestealers",
+      "name": "Genestealers",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Genestealers"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 4,
+        "sv": 5,
+        "w": 2,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Genestealer claws and talons",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Scouts 8\"",
+        "Synapse",
+        "Vanguard Predator",
+        "Invulnerable Save 5+"
+      ],
+      "considerations": "La unidad de CaC más eficiente por punto del ejército. WS2+ con 4A AP-2 cada uno es brutal. Scouts 8\" para presión desde el inicio. Vanguard Predator re-roll 1s al Hit siempre; también re-roll 1s al Wound cerca de objetivos. INV 5+ para algo de durabilidad.",
+      "recommendations": "Clásico con Broodlord liderando 10 modelos. Scouts para posicionarse agresivamente. Usar con Vanguard Onslaught o Invasion Fleet. Re-rolls cerca de objetivos hace que sean excelentes para tomar y retener puntos mientras eliminan lo que los defiende."
+    },
+    {
+      "id": "lictor",
+      "name": "Lictor",
+      "pts": 60,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Lictor"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 6,
+        "sv": 4,
+        "w": 6,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Lictor claws and talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Precision"
+          ]
+        }
+      ],
+      "abilities": [
+        "Infiltrators",
+        "Lone Operative",
+        "Stealth",
+        "Synapse",
+        "Pheromone Trail",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "Sin CHARACTER keyword. Lone Operative + INV 4+ + Stealth lo hace muy difícil de eliminar. Precision permite targear personajes. Pheromone Trail es su habilidad clave: permite desplegar una unidad en reserva más cerca del tablero.",
+      "recommendations": "Usar principalmente por Pheromone Trail para traer Raveners, Deep Strike units, o Warriors detrás de las líneas enemigas. También como bloqueador de objetivos con Lone Operative. Generalmente funciona mejor como 1-2 modelos de utilidad, no como combatiente principal."
+    },
+    {
+      "id": "von-ryans-leapers",
+      "name": "Von Ryan's Leapers",
+      "pts": 70,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Von Ryan's Leapers"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 5,
+        "sv": 4,
+        "w": 3,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Leaper's talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Infiltrators",
+        "Stealth",
+        "Synapse",
+        "Pouncing Leap",
+        "Invulnerable Save 6+"
+      ],
+      "considerations": "Infiltrators baratos con M10\" y Stealth. Pouncing Leap es una Heroic Intervention gratuita de hasta 6\" — pueden intervenir en las fases de carga del rival sin costo. INV 6+ es modesta pero algo de protección. T5 y SV4+ son decentes para 3 models a 70pts.",
+      "recommendations": "Excelentes como bloqueadores agresivos. Infiltrar cerca de unidades rivales clave para usar Pouncing Leap y perturbar activaciones. 6 modelos dan más masa pero a veces 3 + Pouncing Leap es suficiente para trabar unidades peligrosas."
+    },
+    {
+      "id": "tyranid-warriors-melee",
+      "name": "Tyranid Warriors (Melee)",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Synapse",
+        "Tyranid Warriors"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 5,
+        "sv": 4,
+        "w": 3,
+        "ld": 7,
+        "oc": 2
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Tyranid Warrior claws and talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "1",
+          "keywords": [
+            "Twin-linked"
+          ]
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Warrior Instincts"
+      ],
+      "considerations": "SYNAPSE fuera de CHARACTER. Bloque de CaC con Twin-linked garantiza consistencia. W3 y OC2 los hace durables como objetivos holders. Pueden ser liderados por ambas variantes del Tyranid Prime. El variant melee sacrifica disparos por mayor impacto en CaC.",
+      "recommendations": "Con Prime con Lash Whip como líder, los 6 Warriors hacen una cantidad absurda de ataques. Su SYNAPSE es invaluable — dan bubble de sinapse a toda el área. Warrior Bioform Onslaught detachment los hace especialmente buenos con sus stratageems dedicados."
+    },
+    {
+      "id": "tyranid-warriors-ranged",
+      "name": "Tyranid Warriors (Ranged)",
+      "pts": 65,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Synapse",
+        "Tyranid Warriors"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 5,
+        "sv": 4,
+        "w": 3,
+        "ld": 7,
+        "oc": 2
+      },
+      "ranged": [
+        {
+          "name": "Devourer",
+          "range": "18\"",
+          "a": "5",
+          "skill": "4+",
+          "s": 4,
+          "ap": 0,
+          "d": "1"
+        },
+        {
+          "name": "Deathspitter",
+          "range": "24\"",
+          "a": "3",
+          "skill": "4+",
+          "s": 5,
+          "ap": -1,
+          "d": "1"
+        },
+        {
+          "name": "Spinefists",
+          "range": "12\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Assault",
+            "Pistol",
+            "Twin-linked"
+          ]
+        },
+        {
+          "name": "Barbed strangler",
+          "range": "36\"",
+          "a": "D6",
+          "skill": "4+",
+          "s": 5,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Blast"
+          ]
+        },
+        {
+          "name": "Venom cannon",
+          "range": "36\"",
+          "a": "D3",
+          "skill": "4+",
+          "s": 8,
+          "ap": -2,
+          "d": "D3",
+          "keywords": [
+            "Blast"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Tyranid Warrior claws and talons",
+          "range": "Melee",
+          "a": "5",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Warrior Instincts"
+      ],
+      "considerations": "Versión de disparo. Deathspitter es el sweet spot: alcance 24\", AP-1, 3A. Venom cannon es excelente anti-armadura con Blast D3 D3. Con Hive Tyrant + Onslaught, sus armas ganan Assault + Lethal Hits — multiplicador brutal.",
+      "recommendations": "Con Winged Tyranid Prime lideando y Hive Tyrant como general, los Ranged Warriors con Deathspitters o Venom Cannons son una de las unidades de disparo más eficientes del ejército. Venom cannon Blast golpea multiple targets. Usar Synaptic Nexus para potenciar Psykers aliados."
+    },
+    {
+      "id": "raveners",
+      "name": "Raveners",
+      "pts": 125,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Burrowers",
+        "Raveners"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 5,
+        "sv": 4,
+        "w": 3,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Ravener claws and talons",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Twin-linked"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "Burrowers",
+        "Death From Below"
+      ],
+      "considerations": "5 modelos fijos a 125pts. Twin-linked AP-2 D2 es consistente. Death From Below permite retirarse a Strategic Reserves al final del turno del rival si no están trabados — pueden reposicionarse indefinidamente. Excelentes con Hyperadapted Raveners como líder.",
+      "recommendations": "La movilidad táctica de Death From Below es su superpoder. Usar para hacer flanqueos repetidos: aparecer, golpear, retirarse a reserves, aparecer en otro flanco. En Subterranean Assault son devastadores. Hyperadapted Raveners como líder los convierte en cazadores de élite."
+    },
+    {
+      "id": "zoanthropes",
+      "name": "Zoanthropes",
+      "pts": 100,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": [
+        "Infantry",
+        "Psyker",
+        "Fly",
+        "Great Devourer",
+        "Synapse",
+        "Zoanthropes"
+      ],
+      "stats": {
+        "m": 5,
+        "t": 5,
+        "sv": 5,
+        "w": 3,
+        "ld": 7,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Warp Blast – witchfire",
+          "range": "24\"",
+          "a": "D3",
+          "skill": "3+",
+          "s": 7,
+          "ap": -2,
+          "d": "D3",
+          "keywords": [
+            "Blast",
+            "Psychic"
+          ]
+        },
+        {
+          "name": "Warp Blast – focused witchfire",
+          "range": "24\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 12,
+          "ap": -3,
+          "d": "D6+1",
+          "keywords": [
+            "Lethal Hits",
+            "Psychic"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chitinous claws and teeth",
+          "range": "Melee",
+          "a": "2",
+          "skill": "5+",
+          "s": 3,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Shadow in the Warp",
+        "Spirit Leech (Aura, Psychic)",
+        "Warp Field (Aura, Psychic)",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "Composición especial: 1 Neurothrope + 2-5 Zoanthropes. El modo focused witchfire con S12 AP-3 D6+1 es perfecto para matar vehículos o monstruos. Warp Field da INV 6+ a Tyranids aliados cercanos. Spirit Leech hace daño mortal cuando el enemigo falla Battle-shock.",
+      "recommendations": "En Synaptic Nexus son especialmente potentes — todas las habilidades psíquicas se amplifican. 6 modelos con Neurotyrant como líder es una batería psíquica de alto impacto. Warp Field protege a toda la burbuja cercana — excelente para proteger Termagants o Warriors."
+    },
+    {
+      "id": "hive-guard",
+      "name": "Hive Guard",
+      "pts": 90,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Hive Guard"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 7,
+        "sv": 3,
+        "w": 4,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Shockcannon",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 7,
+          "ap": -1,
+          "d": "3",
+          "keywords": [
+            "Anti-vehicle 2+"
+          ]
+        },
+        {
+          "name": "Impaler cannon",
+          "range": "36\"",
+          "a": "4",
+          "skill": "4+",
+          "s": 5,
+          "ap": -1,
+          "d": "1",
+          "keywords": [
+            "Heavy",
+            "Indirect Fire"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chitinous claws and teeth",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Defensive Stance"
+      ],
+      "considerations": "La artillería de infantería del ejército. Shockcannon Anti-vehicle 2+ es perfecto para matar vehículos con consistencia. Impaler cannon Indirect Fire dispara sin línea de visión — invaluable. T7 SV3+ W4 los hace durables para infantería. Sin SYNAPSE keyword propio.",
+      "recommendations": "Impaler cannon con Indirect Fire es el rol más único — dispara desde detrás de cover. 6 modelos con Impaler cannons son devastadores contra infantería anidada. Shockcannon es mejor para vehículos. Defensive Stance hace de ellos excelentes reactores en Fire Overwatch."
+    },
+    {
+      "id": "biovores",
+      "name": "Biovores",
+      "pts": 50,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Biovores"
+      ],
+      "stats": {
+        "m": 5,
+        "t": 6,
+        "sv": 3,
+        "w": 5,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Spore Mine launcher",
+          "range": "48\"",
+          "a": "D3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Blast",
+            "Devastating Wounds",
+            "Heavy",
+            "Indirect Fire"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chitin-barbed limbs",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise 1",
+        "Synapse",
+        "Seed Spore Mines"
+      ],
+      "considerations": "Artillería barata con Indirect Fire y Devastating Wounds. Seed Spore Mines: en vez de disparar, genera una unidad de Spore Mines en cualquier punto del tablero dentro de 48\" — denial gratuito. 3 modelos a 150pts es excelente valor para artillería.",
+      "recommendations": "El rol de generación de Spore Mines es frecuentemente más valioso que disparar. Usar para crear zonas de denial en tablero que el rival debe evitar o perder modelos. Con 3 Biovores podés generar hasta 3 Spore Mines por turno — area denial masivo."
+    },
+    {
+      "id": "tyrant-guard",
+      "name": "Tyrant Guard",
+      "pts": 80,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Tyrant Guard"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 8,
+        "sv": 3,
+        "w": 4,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Scything talons and rending claws",
+          "range": "Melee",
+          "a": "5",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "1"
+        },
+        {
+          "name": "Bone cleaver, lash whip and rending claws",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "2"
+        },
+        {
+          "name": "Crushing claws and rending claws",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Twin-linked"
+          ]
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Guardian Organism"
+      ],
+      "considerations": "Bodyguard de Hive Tyrant/Swarmlord. Guardian Organism da FNP 5+ al CHARACTER que lidera — hace al Swarmlord prácticamente inmortal. T8 SV3+ W4 los hace extremadamente durables para INFANTRY. Las opciones de armas cambian el perfil: crushing claws para anti-armadura, talons para anti-infantería.",
+      "recommendations": "Con 6 modelos + Swarmlord/Hive Tyrant, es el bloque más duro del ejército. FNP 5+ en el personaje más el buffer de heridas de 6 Tyrant Guard = combinación muy difícil de eliminar. Guardian Organism debe siempre estar activo — no dejar al líder fuera de la unidad."
+    },
+    {
+      "id": "barbgaunts",
+      "name": "Barbgaunts",
+      "pts": 55,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Barbgaunts"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 4,
+        "sv": 4,
+        "w": 2,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Barblauncher",
+          "range": "24\"",
+          "a": "D6",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Blast",
+            "Heavy"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chitinous claws and teeth",
+          "range": "Melee",
+          "a": "1",
+          "skill": "4+",
+          "s": 4,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Synapse",
+        "Disruption Bombardment"
+      ],
+      "considerations": "Disruption Bombardment aplica -2M y -2 a Advance/Charge al target de infantería hasta el siguiente turno del rival. Es una de las mejores habilidades de control del ejército. T4 SV4+ W2 es más duro de lo que parece. Blast + Heavy para máximo impacto.",
+      "recommendations": "Usar para slowing unidades rápidas del rival: Marines con Jump Packs, Cavalry, Beasts. El debuff de movimiento afecta charges — pueden hacer que el rival no alcance sus targets. 10 modelos maximizan el área cubierta y la probabilidad de hits con Blast."
+    },
+    {
+      "id": "neurogaunts",
+      "name": "Neurogaunts",
+      "pts": 45,
+      "type": "infantry",
+      "role": "Tropa",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Endless Multitude",
+        "Neurogaunts"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 3,
+        "sv": 6,
+        "w": 1,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Chitinous claws and teeth",
+          "range": "Melee",
+          "a": "1",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Synapse (condicional)",
+        "Endless Multitude",
+        "Neurocytes"
+      ],
+      "considerations": "La unidad más barata del ejército: 22 models a 90pts. Neurocytes da SYNAPSE keyword mientras estén dentro de Synapse Range de otra unidad Tyranids — muy condicional pero útil. 1-2 Nodebeasts incluidos en la composición. Útiles como bubble-wrap masivo para proteger personajes.",
+      "recommendations": "Ideal como cheap screen para proteger monstruos/personajes costosos. Con Neurotyrant liderando, los beneficios de Synapse se amplifican. En Unending Swarm, la generación de unidades gratis los hace prácticamente infinitos. Su bajo OC1 los limita para hold de objetivos en masa."
+    },
+    {
+      "id": "pyrovores",
+      "name": "Pyrovores",
+      "pts": 40,
+      "type": "infantry",
+      "role": "Especial",
+      "keywords": [
+        "Infantry",
+        "Great Devourer",
+        "Harvester",
+        "Pyrovores"
+      ],
+      "stats": {
+        "m": 5,
+        "t": 6,
+        "sv": 3,
+        "w": 5,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Flamespurt",
+          "range": "12\"",
+          "a": "D6+1",
+          "skill": "Auto",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": [
+            "Ignores Cover",
+            "Torrent",
+            "Twin-linked"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chitin-barbed limbs",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise 1",
+        "Synapse",
+        "HARVESTER",
+        "Burning Spray"
+      ],
+      "considerations": "Lanzallamas especialistas. Torrent garantiza que todos los dados impactan. Ignores Cover + Twin-linked = muy confiables. Burning Spray niega Benefit of Cover al target hasta fin de fase — abre al resto del ejército. T6 SV3+ W5 son extremadamente duros para su costo.",
+      "recommendations": "Excelentes contra infantería que se esconde detrás de cover. Burning Spray primero, luego el resto del ejército dispara al target sin cover. Con 3 modelos a 105pts, son una de las mejores unidades de disparo especializado. Combinar con Hive Guard para zona de control."
+    },
+    {
+      "id": "venomthropes",
+      "name": "Venomthropes",
+      "pts": 70,
+      "type": "infantry",
+      "role": "Soporte",
+      "keywords": [
+        "Infantry",
+        "Fly",
+        "Great Devourer",
+        "Venomthropes"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 5,
+        "sv": 4,
+        "w": 3,
+        "ld": 8,
+        "oc": 1
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Toxic lashes",
+          "range": "Melee",
+          "a": "5",
+          "skill": "3+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Anti-infantry 2+"
+          ]
+        }
+      ],
+      "abilities": [
+        "Stealth",
+        "Synapse",
+        "Foul Spores (Aura)"
+      ],
+      "considerations": "Buffers de cobertura. Foul Spores (Aura) da Benefit of Cover a Tyranids aliados dentro de 6\" contra disparos — neutraliza la ventaja táctica de muchos ejércitos de disparo. También da Stealth a no-Monsters cercanos. FLY + Stealth los hace difíciles de golpear.",
+      "recommendations": "Posicionar entre el enemigo y las unidades clave del ejército. 6 modelos cubren una burbuja más grande. Críticos en misiones de hold donde las unidades aliadas necesitan aguantar disparos. Anti-infantry 2+ de sus ataques los hace sorprendentemente buenos contra infantería ligera."
+    },
+    {
+      "id": "norn-emissary",
+      "name": "Norn Emissary",
+      "pts": 260,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Psyker",
+        "Great Devourer",
+        "Synapse",
+        "Norn Emissary"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 11,
+        "sv": 2,
+        "w": 16,
+        "ld": 7,
+        "oc": 5
+      },
+      "ranged": [
+        {
+          "name": "Psychic Tendril – neuroparasite",
+          "range": "18\"",
+          "a": "2",
+          "skill": "2+",
+          "s": 8,
+          "ap": -2,
+          "d": "D3",
+          "keywords": [
+            "Precision",
+            "Psychic"
+          ]
+        },
+        {
+          "name": "Psychic Tendril – neuroblast",
+          "range": "18\"",
+          "a": "D6",
+          "skill": "2+",
+          "s": 6,
+          "ap": -2,
+          "d": "1",
+          "keywords": [
+            "Blast",
+            "Psychic"
+          ]
+        },
+        {
+          "name": "Psychic Tendril – neurolance",
+          "range": "18\"",
+          "a": "2",
+          "skill": "2+",
+          "s": 12,
+          "ap": -3,
+          "d": "D6",
+          "keywords": [
+            "Melta 2",
+            "Psychic"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Monstrous scything talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 9,
+          "ap": -2,
+          "d": "3"
+        },
+        {
+          "name": "Monstrous rending claws",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Extra Attacks"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D6",
+        "Shadow in the Warp",
+        "Synapse",
+        "Singular Purpose",
+        "Unnatural Resilience (FNP 4+ vs MWs)",
+        "Damaged 1-5: -1 Hit",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "El más poderoso del dúo Norn. INV 4+ + FNP 4+ vs mortales lo hace excepcionalmente duro. Singular Purpose: al inicio, elije un enemigo (reroll todos los dados contra él) o un objetivo (FNP 5+ y OC15 mientras lo controla). Tres modos de Psychic Tendril para versatilidad total.",
+      "recommendations": "Con Singular Purpose en un objetivo clave, se vuelve virtualmente inmovible (OC15, FNP 5+). Neurolance Melta 2 para destruir vehículos a media distancia. Neuroparasite Precision para matar personajes dentro de unidades. Fundamental en cualquier lista de monstruos."
+    },
+    {
+      "id": "norn-assimilator",
+      "name": "Norn Assimilator",
+      "pts": 275,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Synapse",
+        "Harvester",
+        "Norn Assimilator"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 11,
+        "sv": 2,
+        "w": 16,
+        "ld": 7,
+        "oc": 5
+      },
+      "ranged": [
+        {
+          "name": "Toxinjector Harpoon",
+          "range": "12\"",
+          "a": "2",
+          "skill": "2+",
+          "s": 12,
+          "ap": -3,
+          "d": "D6+1",
+          "keywords": [
+            "Harpooned"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Monstrous scything talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 9,
+          "ap": -2,
+          "d": "3"
+        },
+        {
+          "name": "Toxinjector harpoon (melee)",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 12,
+          "ap": -3,
+          "d": "D6+1",
+          "keywords": [
+            "Extra Attacks"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D6",
+        "Shadow in the Warp",
+        "Synapse",
+        "Singular Purpose",
+        "Harpoon Barbs",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "La versión cazadora del dúo Norn. Sin INV save pero HARVESTER keyword. Harpoon Barbs: cuando el enemigo hace Fall Back desde su engagement range, D6 mortales en 2+ — casi imposible escapar. HARPOONED en el disparo también +2 al charge roll contra el target.",
+      "recommendations": "Especializado en matar monstruos y vehículos enemigos. S12 AP-3 D6+1 en melee y ranged es devastador. Harpoon Barbs castiga cualquier intento de escape — mantener en CaC con unidades de alto valor. Sin INV es más frágil que el Emissary — necesita escolta o cobertura."
+    },
+    {
+      "id": "psychophage",
+      "name": "Psychophage",
+      "pts": 110,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Harvester",
+        "Smoke",
+        "Psychophage"
+      ],
+      "stats": {
+        "m": 12,
+        "t": 9,
+        "sv": 3,
+        "w": 10,
+        "ld": 8,
+        "oc": 3
+      },
+      "ranged": [
+        {
+          "name": "Psychoclastic torrent",
+          "range": "12\"",
+          "a": "D6",
+          "skill": "Auto",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": [
+            "Ignores Cover",
+            "Torrent"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Talons and betentacled maw",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 6,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Anti-psyker 4+",
+            "Devastating Wounds"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise 1",
+        "Feel No Pain 5+",
+        "Synapse",
+        "SMOKE",
+        "Bio-stimulus",
+        "Feeding Frenzy"
+      ],
+      "considerations": "Anti-psyker 4+ + Devastating Wounds es una combinación brutal contra Psykers y unidades con FNP. FNP 5+ + SMOKE lo hace más durable. Bio-stimulus da AP-1 a Tyranids aliados contra el target disparado — amplificador enorme. M12\" para alcanzar rápido.",
+      "recommendations": "Counter natural de ejércitos psíquicos (Thousand Sons, Grey Knights, Aeldari). Bio-stimulus hace que todo el ejército golpee más duro al target que disparó — activar antes de que carguen tus Warriors o Carnifexes. FNP 5+ permite aguantar más de lo esperado por su TV."
+    },
+    {
+      "id": "harpy",
+      "name": "Harpy",
+      "pts": 215,
+      "type": "monster",
+      "role": "Vehículo",
+      "keywords": [
+        "Monster",
+        "Fly",
+        "Aircraft",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Harpy"
+      ],
+      "stats": {
+        "m": "20+",
+        "t": 9,
+        "sv": 3,
+        "w": 12,
+        "ld": 8,
+        "oc": 0
+      },
+      "ranged": [
+        {
+          "name": "Stinger salvoes",
+          "range": "24\"",
+          "a": "8",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        },
+        {
+          "name": "Twin stranglethorn cannon",
+          "range": "36\"",
+          "a": "D6+1",
+          "skill": "2+",
+          "s": 7,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Blast",
+            "Twin-linked"
+          ]
+        },
+        {
+          "name": "Twin heavy venom cannon",
+          "range": "36\"",
+          "a": "D3",
+          "skill": "3+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Blast",
+            "Twin-linked"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Scything wings",
+          "range": "Melee",
+          "a": "4",
+          "skill": "4+",
+          "s": 7,
+          "ap": -1,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Hover",
+        "Synapse",
+        "Spore Mine Cysts",
+        "Damaged 1-4: -1 Hit"
+      ],
+      "considerations": "Aeronave de apoyo con OC0 — no puede hold objetivos. Spore Mine Cysts: al terminar cada Normal Move, puede infligir mortales a unidades que sobrevoló O generar una unidad de Spore Mines. Twin stranglethorn cannon es la opción de anti-infantería. Hover permite que no sea AIRCRAFT durante tu turno.",
+      "recommendations": "Con Hover activado puede quedarse quieto y actuar como artillería. Spore Mine generation es especialmente valiosa en listas de area denial. Twin heavy venom cannon para anti-vehículos. Vanguard Onslaught detachment maximiza su agresividad desde el inicio."
+    },
+    {
+      "id": "hive-crone",
+      "name": "Hive Crone",
+      "pts": 200,
+      "type": "monster",
+      "role": "Vehículo",
+      "keywords": [
+        "Monster",
+        "Fly",
+        "Aircraft",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Hive Crone"
+      ],
+      "stats": {
+        "m": "20+",
+        "t": 9,
+        "sv": 3,
+        "w": 12,
+        "ld": 8,
+        "oc": 0
+      },
+      "ranged": [
+        {
+          "name": "Drool cannon",
+          "range": "12\"",
+          "a": "2D6",
+          "skill": "Auto",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": [
+            "Torrent"
+          ]
+        },
+        {
+          "name": "Stinger salvoes",
+          "range": "24\"",
+          "a": "8",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        },
+        {
+          "name": "Tentaclids",
+          "range": "36\"",
+          "a": "4",
+          "skill": "3+",
+          "s": 7,
+          "ap": 0,
+          "d": "2",
+          "keywords": [
+            "Anti-vehicle 4+",
+            "Devastating Wounds"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Scything wings",
+          "range": "Melee",
+          "a": "4",
+          "skill": "4+",
+          "s": 7,
+          "ap": -1,
+          "d": "2"
+        },
+        {
+          "name": "Thorax spur",
+          "range": "Melee",
+          "a": "1",
+          "skill": "3+",
+          "s": 10,
+          "ap": -3,
+          "d": "D6",
+          "keywords": [
+            "Anti-fly 2+",
+            "Extra Attacks"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Hover",
+        "Synapse",
+        "Airborne Predator",
+        "Damaged 1-4: -1 Hit"
+      ],
+      "considerations": "Anti-aéreo especialista del ejército. Airborne Predator da +1 al Hit vs unidades FLY. Tentaclids Anti-vehicle 4+ + Devastating Wounds destruyen vehículos voladores. Thorax spur Anti-fly 2+ en melee es perfecto. Torrent en drool cannon sin line of sight issues.",
+      "recommendations": "El mejor counter a otros AIRCRAFT del juego. Con Hover + Thorax Spur puede bajar aeronaves en CaC. Drool cannon Torrent limpia infantería liviana en zona de aterrizaje. Contra listas sin FLY, los Tentaclids aún funcionan bien contra vehículos pesados."
+    },
+    {
+      "id": "trygon",
+      "name": "Trygon",
+      "pts": 140,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Burrower",
+        "Trygon"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 10,
+        "sv": 3,
+        "w": 14,
+        "ld": 8,
+        "oc": 4
+      },
+      "ranged": [
+        {
+          "name": "Bio-electric pulse",
+          "range": "12\"",
+          "a": "6",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Sustained Hits 2"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Trygon scything talons",
+          "range": "Melee",
+          "a": "12",
+          "skill": "3+",
+          "s": 9,
+          "ap": -2,
+          "d": "3"
+        }
+      ],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "Burrower",
+        "Subterranean Tunnels",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "El clásico horror de las profundidades. Subterranean Tunnels permite Deep Strike a solo 6\" del enemigo en vez de 9\". 12 ataques WS3+ S9 AP-2 D3 es brutal. Bio-electric pulse con Sustained Hits 2 genera muchos hits contra infantería. T10 SV3+ W14 con OC4.",
+      "recommendations": "Subterranean Tunnels es su característica clave — aparece MUCHO más cerca que otros Deep Strikers. Usar en Subterranean Assault para maximizar sinergias de BURROWER. El bio-electric pulse antes de cargar puede limpiar alguna escolta. 12 ataques a T10 es una amenaza para prácticamente cualquier unidad."
+    },
+    {
+      "id": "mawloc",
+      "name": "Mawloc",
+      "pts": 135,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Burrower",
+        "Mawloc"
+      ],
+      "stats": {
+        "m": 10,
+        "t": 10,
+        "sv": 3,
+        "w": 14,
+        "ld": 8,
+        "oc": 4
+      },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Distensible jaw",
+          "range": "Melee",
+          "a": "1",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "D3+2",
+          "keywords": [
+            "Anti-infantry 4+",
+            "Devastating Wounds",
+            "Extra Attacks"
+          ]
+        },
+        {
+          "name": "Mawloc scything talons",
+          "range": "Melee",
+          "a": "16",
+          "skill": "3+",
+          "s": 8,
+          "ap": -2,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "Burrower",
+        "Terror From The Deep",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "Terror From The Deep: al hacer Deep Strike, cada unidad enemiga dentro de 12\" recibe D3 mortales (2-4) o 3 mortales + Battle-shock (5+). 16 ataques WS3+ S8 AP-2 es brutal contra infantería numerosa. Más ofensivo que el Trygon contra hordas.",
+      "recommendations": "Deep Striker diseñado para destruir infantería numerosa. Terror From The Deep es devastador — aterrizar en el centro de múltiples unidades enemigas para repartir mortales a todas. 16 ataques S8 AP-2 aplanan cualquier horda. Usar con Trygon para presión subterránea doble."
+    },
+    {
+      "id": "tyrannofex",
+      "name": "Tyrannofex",
+      "pts": 200,
+      "type": "monster",
+      "role": "Vehículo",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Tyrannofex"
+      ],
+      "stats": {
+        "m": 9,
+        "t": 12,
+        "sv": 2,
+        "w": 16,
+        "ld": 8,
+        "oc": 5
+      },
+      "ranged": [
+        {
+          "name": "Fleshborer hive",
+          "range": "24\"",
+          "a": "20",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Heavy",
+            "Sustained Hits 1",
+            "Twin-linked"
+          ]
+        },
+        {
+          "name": "Acid spray",
+          "range": "18\"",
+          "a": "D6+6",
+          "skill": "Auto",
+          "s": 6,
+          "ap": -2,
+          "d": "2",
+          "keywords": [
+            "Torrent"
+          ]
+        },
+        {
+          "name": "Rupture cannon",
+          "range": "48\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 18,
+          "ap": -4,
+          "d": "D6+6",
+          "keywords": [
+            "Heavy"
+          ]
+        },
+        {
+          "name": "Stinger salvoes",
+          "range": "24\"",
+          "a": "8",
+          "skill": "3+",
+          "s": 5,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Powerful limbs",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 8,
+          "ap": 0,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D6",
+        "Synapse",
+        "Resilient Organism",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "El monstruo de disparo definitivo. T12 SV2+ W16 es prácticamente indestructible. Rupture cannon con S18 AP-4 D6+6 destruye cualquier TITANIC. Fleshborer hive: 20 ataques Twin-linked con Sustained Hits 1 limpia hordas. Resilient Organism: 1 vez por batalla, un ataque hace 0 de daño.",
+      "recommendations": "Rupture cannon para listas con Titans o vehículos pesados — S18 ignora prácticamente cualquier save. Fleshborer hive para meta con muchas hordas. Acid spray si el rival tiene mucha infantería cercana. Su durabilidad hace que sea casi imposible de eliminar en un turno."
+    },
+    {
+      "id": "exocrine",
+      "name": "Exocrine",
+      "pts": 140,
+      "type": "monster",
+      "role": "Vehículo",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Exocrine"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 10,
+        "sv": 3,
+        "w": 14,
+        "ld": 8,
+        "oc": 4
+      },
+      "ranged": [
+        {
+          "name": "Bio-plasmic cannon",
+          "range": "36\"",
+          "a": "D6+3",
+          "skill": "3+",
+          "s": 9,
+          "ap": -3,
+          "d": "3",
+          "keywords": [
+            "Blast",
+            "Heavy"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Powerful limbs",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 7,
+          "ap": 0,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Synapse",
+        "Symbiotic Targeting",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "Sniper de largo alcance. Bio-plasmic cannon Blast Heavy con S9 AP-3 D3 a 36\" es una de las mejores armas de disparo del codex. Symbiotic Targeting: después de disparar, re-roll 1s al Hit para Tyranids aliados que ataquen al mismo target hasta fin de fase — multiplicador enorme.",
+      "recommendations": "Activar Symbiotic Targeting antes de que disparen tus Hive Guard o Warriors para máximo efecto. Dos Exocrines es una combinación muy popular: ambos apuntan al mismo target, el segundo con re-rolls gracias al primero. T10 SV3+ lo hace lo suficientemente durable para aguantar."
+    },
+    {
+      "id": "haruspex",
+      "name": "Haruspex",
+      "pts": 125,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Harvester",
+        "Haruspex"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 11,
+        "sv": 3,
+        "w": 14,
+        "ld": 8,
+        "oc": 4
+      },
+      "ranged": [
+        {
+          "name": "Grasping tongue",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 6,
+          "ap": -2,
+          "d": "D6+1",
+          "keywords": [
+            "Precision"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Ravenous maw",
+          "range": "Melee",
+          "a": "14",
+          "skill": "3+",
+          "s": 7,
+          "ap": -1,
+          "d": "2"
+        },
+        {
+          "name": "Shovelling claws",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 14,
+          "ap": -2,
+          "d": "D6+1",
+          "keywords": [
+            "Extra Attacks"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Synapse",
+        "HARVESTER",
+        "Grisly Spectacle",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "Una máquina de CaC masiva. 14 ataques + 4 extra ataques = 18 ataques totales. S14 AP-2 en shovelling claws destruye prácticamente cualquier cosa. Grisly Spectacle: si destruye una unidad en CaC, las unidades enemigas cercanas deben hacer Battle-shock. Grasping tongue Precision a 12\".",
+      "recommendations": "Con Bio-stimulus del Psychophage, sus ataques ganan AP-1 extra — los Shovelling claws pasan a ser AP-3. Grisly Spectacle en cascada: destruir una unidad causa chain de Battle-shocks. HARVESTER en Assimilation Swarm lo hace especialmente potente con sus stratageems."
+    },
+    {
+      "id": "maleceptor",
+      "name": "Maleceptor",
+      "pts": 170,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Psyker",
+        "Great Devourer",
+        "Synapse",
+        "Maleceptor"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 11,
+        "sv": 3,
+        "w": 14,
+        "ld": 7,
+        "oc": 4
+      },
+      "ranged": [
+        {
+          "name": "Psychic overload",
+          "range": "18\"",
+          "a": "D6+3",
+          "skill": "3+",
+          "s": 10,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Blast",
+            "Psychic"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Massive scything talons – strike",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 9,
+          "ap": -2,
+          "d": "D6+1"
+        },
+        {
+          "name": "Massive scything talons – sweep",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 7,
+          "ap": -1,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Shadow in the Warp",
+        "Synapse",
+        "Encephalic Diffusion (Aura, Psychic)",
+        "Damaged 1-5: -1 Hit",
+        "Invulnerable Save 4+"
+      ],
+      "considerations": "El debuffer por excelencia. Encephalic Diffusion (Aura): -1 al Hit para enemigos dentro de 6\"; si están below half-strength, también -1 al Wound. INV 4+ lo hace más durable. Psychic overload Blast S10 AP-2 D3 es excelente contra monsters/vehículos.",
+      "recommendations": "Posicionar agresivamente cerca de las unidades de elite rivales para activar el debuff de hit. Con Shadow in the Warp también debilita ejércitos psíquicos. En Synaptic Nexus, sus habilidades psíquicas se potencian con las stratageems dedicadas. Excelente counter a unidades de melee de alto impacto."
+    },
+    {
+      "id": "toxicrene",
+      "name": "Toxicrene",
+      "pts": 150,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Toxicrene"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 11,
+        "sv": 3,
+        "w": 14,
+        "ld": 8,
+        "oc": 4
+      },
+      "ranged": [
+        {
+          "name": "Massive toxic lashes",
+          "range": "9\"",
+          "a": "2D6",
+          "skill": "3+",
+          "s": 6,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Anti-infantry 2+"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Massive toxic lashes",
+          "range": "Melee",
+          "a": "12",
+          "skill": "3+",
+          "s": 6,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Anti-infantry 2+"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Synapse",
+        "Grasping Tendrils",
+        "Hypertoxic Miasma (Aura)",
+        "Damaged 1-5: -1 Hit"
+      ],
+      "considerations": "Especialista en control y anti-infantería. Hypertoxic Miasma (Aura): cada Movement phase, D6 mortales a cada unidad enemiga dentro de 6\" (escala: 2-3: 1MW, 4-5: D3MW, 6: D6MW). Grasping Tendrils: 3+ para evitar que el rival haga Fall Back. Anti-infantry 2+ en todas las armas.",
+      "recommendations": "Posicionar en medio de bloques de infantería enemiga para maximizar Hypertoxic Miasma. Grasping Tendrils obliga al rival a luchar hasta morir. Con Maleceptor debuffando hits y Toxicrene impidiendo Fall Back, la infantería rival queda atrapada y destruida."
+    },
+    {
+      "id": "carnifexes",
+      "name": "Carnifexes",
+      "pts": 90,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Carnifexes"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 9,
+        "sv": 2,
+        "w": 8,
+        "ld": 8,
+        "oc": 3
+      },
+      "ranged": [
+        {
+          "name": "Bio-plasma",
+          "range": "12\"",
+          "a": "D3",
+          "skill": "4+",
+          "s": 7,
+          "ap": -2,
+          "d": "1",
+          "keywords": [
+            "Assault",
+            "Blast"
+          ]
+        },
+        {
+          "name": "Deathspitters with slimer maggots",
+          "range": "24\"",
+          "a": "6",
+          "skill": "4+",
+          "s": 7,
+          "ap": -2,
+          "d": "1"
+        },
+        {
+          "name": "Devourers with brainleech worms",
+          "range": "18\"",
+          "a": "12",
+          "skill": "4+",
+          "s": 6,
+          "ap": 0,
+          "d": "1"
+        },
+        {
+          "name": "Heavy venom cannon",
+          "range": "36\"",
+          "a": "D3",
+          "skill": "4+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Blast"
+          ]
+        },
+        {
+          "name": "Spine banks",
+          "range": "6\"",
+          "a": "5",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Assault"
+          ]
+        },
+        {
+          "name": "Stranglethorn cannon",
+          "range": "36\"",
+          "a": "D6+1",
+          "skill": "4+",
+          "s": 7,
+          "ap": -1,
+          "d": "2",
+          "keywords": [
+            "Blast"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Carnifex scything talons",
+          "range": "Melee",
+          "a": "6",
+          "skill": "4+",
+          "s": 9,
+          "ap": -2,
+          "d": "3"
+        },
+        {
+          "name": "Carnifex extra scything talons",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 9,
+          "ap": -2,
+          "d": "3",
+          "keywords": [
+            "Extra Attacks"
+          ]
+        },
+        {
+          "name": "Carnifex crushing claws",
+          "range": "Melee",
+          "a": "4",
+          "skill": "4+",
+          "s": 12,
+          "ap": -3,
+          "d": "D6+1"
+        },
+        {
+          "name": "Chitinous claws and teeth",
+          "range": "Melee",
+          "a": "4",
+          "skill": "4+",
+          "s": 6,
+          "ap": 0,
+          "d": "1"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise 1",
+        "Synapse",
+        "Blistering Assault"
+      ],
+      "considerations": "La clásica unidad de golpe contundente. Blistering Assault: al tomar heridas de disparo, hacer un Normal Move de D6+2\" hacia el rival — reacción defensiva/agresiva. Con Old One Eye de líder, tienen FNP y buff de golpe. Crushing claws S12 AP-3 destruye prácticamente cualquier objetivo.",
+      "recommendations": "Old One Eye como líder convierte 2 Carnifexes en una combinación devastadora. En Crusher Stampede los MONSTRUOS tienen reglas de Stampede que los hacen aún más potentes. Blistering Assault contra ejércitos de disparo pesado puede resultar en charges inesperadas. Deathspitters para versatilidad ranged."
+    },
+    {
+      "id": "screamer-killer",
+      "name": "Screamer-Killer",
+      "pts": 125,
+      "type": "monster",
+      "role": "Élite",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Screamer-killer"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 9,
+        "sv": 2,
+        "w": 10,
+        "ld": 8,
+        "oc": 3
+      },
+      "ranged": [
+        {
+          "name": "Bio-plasmic scream",
+          "range": "18\"",
+          "a": "D6+3",
+          "skill": "4+",
+          "s": 8,
+          "ap": -2,
+          "d": "1",
+          "keywords": [
+            "Assault",
+            "Blast"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Screamer-killer talons",
+          "range": "Melee",
+          "a": "10",
+          "skill": "3+",
+          "s": 10,
+          "ap": -2,
+          "d": "3"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise 1",
+        "Synapse",
+        "Death Scream"
+      ],
+      "considerations": "Carnifex especializado. Death Scream: después de disparar, el target debe hacer Battle-shock con -1 — debuffer pasivo. Bio-plasmic scream con Assault permite disparar y cargar en el mismo turno. 10 ataques WS3+ S10 AP-2 D3 es devastador. Una sola miniatura a 125pts.",
+      "recommendations": "Combo excelente: disparar Bio-plasmic scream (forzar Battle-shock con -1), luego cargar con 10 ataques S10. Con Battle-shock en -1, el rival puede fallar el test y perder habilidades. En Crusher Stampede con sus bonos de MONSTER es especialmente potente. Barato comparado a otros monstruos de similar poder."
+    },
+    {
+      "id": "spore-mines",
+      "name": "Spore Mines",
+      "pts": 55,
+      "type": "special",
+      "role": "Especial",
+      "keywords": [
+        "Beast",
+        "Fly",
+        "Great Devourer",
+        "Spore Mines"
+      ],
+      "stats": {
+        "m": 4,
+        "t": 1,
+        "sv": 7,
+        "w": 1,
+        "ld": 8,
+        "oc": 0
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "Bio-minefield",
+        "Floating Death"
+      ],
+      "considerations": "Area denial ultra-barato. Bio-minefield: el rival no puede Advance dentro de 6\". Floating Death: al terminar cualquier Move (propio o rival) dentro de 3\", el model se destruye e inflige 1MW (2-5) o D3MW (6). OC0 — no sirven para objetivos. Generados gratis por Biovores/Harpy.",
+      "recommendations": "Usar para bloquear rutas de Advance del rival y crear zonas de peligro. Generados por Biovores son completamente gratis — el costo en lista es solo si los toman como refuerzo. Colocar en pasillos clave del tablero para forzar caminos alternativos. El rival DEBE lidiar con ellos o recibir daño continuamente."
+    },
+    {
+      "id": "mucolid-spores",
+      "name": "Mucolid Spores",
+      "pts": 30,
+      "type": "special",
+      "role": "Especial",
+      "keywords": [
+        "Beast",
+        "Fly",
+        "Great Devourer",
+        "Mucolid Spores"
+      ],
+      "stats": {
+        "m": 4,
+        "t": 4,
+        "sv": 7,
+        "w": 3,
+        "ld": 8,
+        "oc": 0
+      },
+      "ranged": [],
+      "melee": [],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "Bio-minefield",
+        "Floating Death (mejorado)"
+      ],
+      "considerations": "Versión más grande y peligrosa de las Spore Mines. Floating Death mejorado: D3MW (2-5) o D6MW (6) — significativamente más dañino. T4 W3 vs T1 W1 los hace mucho más difíciles de eliminar con disparos casual. Generados gratis por Sporocyst.",
+      "recommendations": "Más impactantes que las Spore Mines regulares para zona de denial. El daño D3-D6 puede realmente dañar unidades medianas. Sporocyst los genera gratis cada turno de disparo. OC0 significa que solo tienen valor de área de control psicológica y mortal, no de objetivos."
+    },
+    {
+      "id": "ripper-swarms",
+      "name": "Ripper Swarms",
+      "pts": 25,
+      "type": "special",
+      "role": "Especial",
+      "keywords": [
+        "Swarm",
+        "Great Devourer",
+        "Harvester",
+        "Ripper Swarms"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 2,
+        "sv": 6,
+        "w": 4,
+        "ld": 8,
+        "oc": 0
+      },
+      "ranged": [
+        {
+          "name": "Spinemaws",
+          "range": "6\"",
+          "a": "4",
+          "skill": "5+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Pistol"
+          ]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chitinous claws and teeth",
+          "range": "Melee",
+          "a": "6",
+          "skill": "5+",
+          "s": 2,
+          "ap": 0,
+          "d": "1",
+          "keywords": [
+            "Sustained Hits 1"
+          ]
+        }
+      ],
+      "abilities": [
+        "Deep Strike",
+        "Synapse",
+        "HARVESTER",
+        "Chitinous Horrors (Aura)"
+      ],
+      "considerations": "La unidad más barata del ejército en términos absolutos. Chitinous Horrors (Aura): mientras estén en Engagement Range de una unidad enemiga, sus modelos tienen su OC reducido a la mitad. OC0 propios — perfectos como harrass screen. Generados por Parasite of Mortrex.",
+      "recommendations": "Usar para reducir el OC de unidades objectives holders del rival — pueden cambiar completamente el control de un objetivo sin pelear. 3 modelos a 50pts es increíblemente eficiente para este role. HARVESTER en Assimilation Swarm los hace valiosos para ganar tokens. Deep Strike para aparecer en objetivos clave."
+    },
+    {
+      "id": "sporocyst",
+      "name": "Sporocyst",
+      "pts": 145,
+      "type": "monster",
+      "role": "Especial",
+      "keywords": [
+        "Monster",
+        "Great Devourer",
+        "Sporocyst"
+      ],
+      "stats": {
+        "m": 0,
+        "t": 10,
+        "sv": 3,
+        "w": 10,
+        "ld": 8,
+        "oc": 0
+      },
+      "ranged": [
+        {
+          "name": "Sporocyst bio-weapons",
+          "range": "24\"",
+          "a": "10",
+          "skill": "4+",
+          "s": 5,
+          "ap": -1,
+          "d": "2"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Flensing whips",
+          "range": "Melee",
+          "a": "6",
+          "skill": "4+",
+          "s": 7,
+          "ap": -1,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Synapse",
+        "Seed Mucolids",
+        "Hive Defences"
+      ],
+      "considerations": "Fortaleza estática (M: —, OC 0). Seed Mucolids: en vez de disparar, genera 1 Mucolid Spore en cualquier punto dentro de 18\". Hive Defences: puede ser target de Fire Overwatch Stratagem a 0CP cada turno. T10 SV3+ W10 es muy duro para una torreta. Desplegado durante setup, no como refuerzo.",
+      "recommendations": "Excelente generador pasivo de Mucolid Spores — uno por turno gratis. Posicionar en terreno dificultoso que cubra líneas de avance clave. Sus 10 ataques de disparo son decentes para un turret. En listas de control y attrition, generar Mucolids constantemente crea una zona infranqueable."
+    },
+    {
+      "id": "tyrannocyte",
+      "name": "Tyrannocyte",
+      "pts": 105,
+      "type": "vehicle",
+      "role": "Transporte",
+      "keywords": [
+        "Monster",
+        "Fly",
+        "Transport",
+        "Dedicated Transport",
+        "Great Devourer",
+        "Vanguard Invader",
+        "Tyrannocyte"
+      ],
+      "stats": {
+        "m": 8,
+        "t": 9,
+        "sv": 3,
+        "w": 10,
+        "ld": 8,
+        "oc": 2
+      },
+      "ranged": [
+        {
+          "name": "Tyrannocyte bio-weapons",
+          "range": "24\"",
+          "a": "5",
+          "skill": "4+",
+          "s": 5,
+          "ap": -1,
+          "d": "2"
+        }
+      ],
+      "melee": [
+        {
+          "name": "Flensing whips",
+          "range": "Melee",
+          "a": "6",
+          "skill": "4+",
+          "s": 7,
+          "ap": -1,
+          "d": "2"
+        }
+      ],
+      "abilities": [
+        "Deadly Demise D3",
+        "Deep Strike",
+        "Synapse",
+        "Aerial Seeding"
+      ],
+      "considerations": "El único transporte del ejército. Capacidad: 20 INFANTRY o 1 MONSTER (W≤12). Aerial Seeding: DEBE empezar en Reserves, pero no cuenta para el límite máximo de Reserves. Puede desplegar en turno 1-3 independientemente de misión. Las unidades embarcadas deben desembarcar a 9\" del rival.",
+      "recommendations": "Útil para traer Termagants, Hormagaunts o Zoanthropes directamente en el tablero sin límite de reserves. También puede traer monstruos medianos (W≤12). La flexibilidad de turno 1-3 sin límite de reserves es excepcional. Combinar con Deep Strike units para maximizar la presión múltiple."
+    }
+  ]
+}
