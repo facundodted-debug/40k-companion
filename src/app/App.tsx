@@ -187,7 +187,7 @@ export default function App() {
   const [onboarded, setOnboarded] = useState(false);
   const [activeTab, setActiveTab] = useState<ActiveTab>(0);
   const [screen, setScreen] = useState<Screen>('home');
-  const [rivalFaction, setRivalFaction] = useState<{ name: string; color: string; abbr: string } | null>(null);
+  const [rivalFaction, setRivalFaction] = useState<{ id: string; name: string; color: string; abbr: string } | null>(null);
   const [rivalDetachment, setRivalDetachment] = useState<string | undefined>();
   const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
   const [boardItems, setBoardItems] = useState<PlaceableItem[]>([]);
@@ -270,6 +270,8 @@ export default function App() {
       case 'matchup-result':
         return rivalFaction ? (
           <MatchupResultScreen
+            ownList={activeList}
+            rivalFactionId={rivalFaction.id}
             rivalFaction={rivalFaction}
             rivalDetachment={rivalDetachment}
             onBack={() => navigate('matchup-config')}
@@ -287,6 +289,7 @@ export default function App() {
         return (
           <DeploymentBoardScreen
             mission={selectedMission}
+            lists={listStore.lists}
             onBack={() => navigate('mission-select')}
             onSelectMission={() => navigate('mission-select')}
             onStartSimulation={(items) => { setBoardItems(items); navigate('turn-simulation'); }}

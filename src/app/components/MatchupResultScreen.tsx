@@ -1,15 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { Shield, AlertTriangle, Target, ChevronDown, ArrowRight, RefreshCw, Skull, Swords } from 'lucide-react';
-import { SAMPLE_LIST } from './shared';
+import React, { useState, useEffect, useMemo } from 'react';
+import { Shield, AlertTriangle, Target, ChevronDown, RefreshCw, Skull, Swords } from 'lucide-react';
 import { ScreenHeader, FactionBadge } from './ScreenHeader';
+import { OpponentUnit, UnitWeapon, ArmyList } from './shared';
+import { SavedList } from '../../store/lists';
+import { analyzeMatchup } from '../../engine/matchup';
 
 interface RivalFaction { name: string; color: string; abbr: string; }
 
 interface MatchupResultScreenProps {
+  ownList: SavedList | null;
+  rivalFactionId: string;
   rivalFaction: RivalFaction;
   rivalDetachment?: string;
   onBack: () => void;
   onNewMatchup: () => void;
+}
+
+function isArmyList(list: SavedList): list is ArmyList {
+  return 'faction' in list && 'keyUnits' in list;
 }
 
 // ── Loading state ──────────────────────────────────────────────────────────────
@@ -70,78 +78,6 @@ function LoadingState() {
 }
 
 // ── Opponent key units ─────────────────────────────────────────────────────────
-
-interface UnitWeapon {
-  name: string;
-  range: string;
-  a: string;
-  skill: string;
-  s: string;
-  ap: string;
-  d: string;
-}
-
-interface OpponentUnit {
-  name: string;
-  pts: number;
-  keywords: string[];
-  stats: { m: string; t: number; sv: string; w: number; ld: string; oc: number };
-  ranged: UnitWeapon[];
-  melee: UnitWeapon[];
-  abilities: string[];
-  considerations: string;
-  recommendations: string;
-}
-
-const OPPONENT_UNITS: OpponentUnit[] = [
-  {
-    name: "C'tan Shard of the Nightbringer",
-    pts: 340,
-    keywords: ['Monster', 'Character', 'Epic Hero', 'Fly'],
-    stats: { m: '10"', t: 11, sv: '3+', w: 16, ld: '6+', oc: 4 },
-    ranged: [
-      { name: 'Gaze of death', range: '18"', a: 'D3', skill: '2+', s: '12', ap: '-3', d: 'D6+3' },
-    ],
-    melee: [
-      { name: 'Scythe – strike', range: 'Melee', a: '6', skill: '2+', s: '14', ap: '-4', d: 'D6+2' },
-      { name: 'Scythe – sweep', range: 'Melee', a: '14', skill: '2+', s: '8', ap: '-2', d: '2' },
-    ],
-    abilities: ['Deadly Demise D6', 'Deep Strike', 'Feel No Pain 5+', 'Reanimation Protocols', 'Drain Life', 'Necrodermis'],
-    considerations: 'Ignora completamente tu armadura de 2+ con AP-4 en strike y el Gaze of death hace D6+3 de daño con AP-3. El Necrodermis reduce 1 punto de daño por ataque y el Feel No Pain 5+ lo hace extremadamente difícil de eliminar. Con 16 heridas y salvación de 3+, necesitás concentrar todo el fuego de la lista en un solo turno.',
-    recommendations: 'Eliminalo en el primer turno usando toda tu potencia de fuego disponible antes de que entre en combate cuerpo a cuerpo. Los Terminators en cuerpo a cuerpo son vulnerables al sweep (14 ataques A2). Usá el Oath of Moment sobre él en T1 y apuntá con el Redemptor Dreadnought.',
-  },
-  {
-    name: 'Doomsday Ark',
-    pts: 195,
-    keywords: ['Vehicle', 'Necrons'],
-    stats: { m: '10"', t: 10, sv: '3+', w: 14, ld: '6+', oc: 3 },
-    ranged: [
-      { name: 'Doomsday cannon – high', range: '48"', a: '1', skill: '3+', s: '16', ap: '-5', d: 'D6+6' },
-      { name: 'Doomsday cannon – low', range: '24"', a: 'D6', skill: '3+', s: '8', ap: '-2', d: '3' },
-      { name: 'Gauss flayer array', range: '24"', a: '10', skill: '4+', s: '5', ap: '0', d: '1' },
-    ],
-    melee: [
-      { name: 'Armoured bulk', range: 'Melee', a: '3', skill: '4+', s: '8', ap: '-1', d: 'D3' },
-    ],
-    abilities: ['Reanimation Protocols', 'Hovering', 'Living Metal'],
-    considerations: 'El Doomsday cannon en modo alto hace daño masivo a vehículos pesados con D6+6 y AP-5. A distancia larga puede eliminar un Dreadnought de un disparo. Si se queda quieto el turno anterior, dispara en modo alto — evitá darte en rango corto.',
-    recommendations: 'Priorizalo en T1 con el Gladiator o el Redemptor. En modo alto necesita no moverse, así que presionalo con movimiento rápido para forzarlo a reposicionarse y disparar en modo bajo. Un Chaplain en Land Raider puede acercarse rápido.',
-  },
-  {
-    name: 'Lychguard',
-    pts: 130,
-    keywords: ['Infantry', 'Necrons', 'Core'],
-    stats: { m: '5"', t: 5, sv: '3+', w: 2, ld: '6+', oc: 2 },
-    ranged: [],
-    melee: [
-      { name: 'Hyperphase sword', range: 'Melee', a: '3', skill: '3+', s: '6', ap: '-3', d: '2' },
-      { name: 'Warpscythe', range: 'Melee', a: '3', skill: '3+', s: '8', ap: '-4', d: '2' },
-    ],
-    abilities: ['Reanimation Protocols', 'Dispersion Shield (4++ inv)', 'Bodyguard'],
-    considerations: 'Con salvación invulnerable 4++ y Reanimation Protocols son muy difíciles de eliminar con armas AP altas. Protegen a personajes Necron cercanos con Bodyguard, haciéndolos objetivos prioritarios antes de atacar al personaje.',
-    recommendations: 'Usá armas de alto volumen de ataques en vez de pocas de alto daño — el 4++ mitiga el AP pero no los impactos múltiples. Los Intercessors con rifles de asalto generan muchas tiradas para superar el FNP.',
-  },
-];
 
 function StatCell({ label, value }: { label: string; value: string | number }) {
   return (
@@ -288,24 +224,6 @@ function OpponentUnitAccordion({ unit }: { unit: OpponentUnit }) {
 
 // ── Main result screen ─────────────────────────────────────────────────────────
 
-const STRENGTHS = [
-  'Armadura 2+ te protege del fuego de AG estándar.',
-  'Volumen de fuego a media distancia domina el midfield.',
-  'Gladius Doctrine permite adaptarte cada turno.',
-];
-
-const WEAKNESSES = [
-  'Protocolos de Reanimación saturan tu capacidad de bajas.',
-  'El C\'tan ignora tu armadura — debés eliminarlo en turno 1.',
-  'Without Number recupera unidades eliminadas.',
-];
-
-const GAMEPLAN = [
-  'Rush central en T1: tomá 2 objetivos primarios antes del T2.',
-  'Terminators como bloqueadores — forzalos a gastar CP en respuestas.',
-  'Concentrá el fuego del Redemptor en el Doomsday Ark.',
-];
-
 interface BlockProps {
   icon: React.ReactNode;
   label: string;
@@ -349,9 +267,20 @@ function AnalysisBlock({ icon, label, color, bgColor, borderColor, items }: Bloc
   );
 }
 
-export function MatchupResultScreen({ rivalFaction, rivalDetachment, onBack, onNewMatchup }: MatchupResultScreenProps) {
+export function MatchupResultScreen({ ownList, rivalFactionId, rivalFaction, rivalDetachment, onBack, onNewMatchup }: MatchupResultScreenProps) {
   const [loading, setLoading] = useState(true);
-  const ownList = SAMPLE_LIST;
+
+  const analysis = useMemo(() => analyzeMatchup({
+    ownList: ownList && isArmyList(ownList) ? ownList : null,
+    rivalFactionId,
+    rivalDetachment,
+  }), [ownList, rivalFactionId, rivalDetachment]);
+
+  const ownDisplay = ownList && isArmyList(ownList)
+    ? { abbr: ownList.faction.abbr, name: ownList.name, detachmentName: ownList.detachment.name }
+    : ownList
+      ? { abbr: '???', name: ownList.armyName, detachmentName: ownList.detachmentName ?? '—' }
+      : { abbr: '???', name: 'Sin lista', detachmentName: '—' };
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 2800);
@@ -386,12 +315,12 @@ export function MatchupResultScreen({ rivalFaction, rivalDetachment, onBack, onN
             style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.07)' }}
           >
             <div className="flex items-center gap-2">
-              <FactionBadge abbr={ownList.faction.abbr} color="var(--own)" size="sm" />
+              <FactionBadge abbr={ownDisplay.abbr} color="var(--own)" size="sm" />
               <div>
                 <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: 'var(--foreground)', lineHeight: 1 }}>
-                  {ownList.name}
+                  {ownDisplay.name}
                 </p>
-                <p style={{ fontSize: 10, color: 'var(--muted-foreground)' }}>{ownList.detachment.name}</p>
+                <p style={{ fontSize: 10, color: 'var(--muted-foreground)' }}>{ownDisplay.detachmentName}</p>
               </div>
             </div>
             <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, fontWeight: 700, color: 'var(--muted-foreground)', letterSpacing: '0.08em' }}>VS</span>
@@ -416,7 +345,7 @@ export function MatchupResultScreen({ rivalFaction, rivalDetachment, onBack, onN
               color="#2db57c"
               bgColor="rgba(45,181,124,0.1)"
               borderColor="rgba(45,181,124,0.25)"
-              items={STRENGTHS}
+              items={analysis.strengths}
             />
             <AnalysisBlock
               icon={<AlertTriangle size={16} />}
@@ -424,7 +353,7 @@ export function MatchupResultScreen({ rivalFaction, rivalDetachment, onBack, onN
               color="#e84040"
               bgColor="rgba(232,64,64,0.1)"
               borderColor="rgba(232,64,64,0.25)"
-              items={WEAKNESSES}
+              items={analysis.weaknesses}
             />
             <AnalysisBlock
               icon={<Target size={16} />}
@@ -432,7 +361,7 @@ export function MatchupResultScreen({ rivalFaction, rivalDetachment, onBack, onN
               color="#6e45e2"
               bgColor="rgba(110,69,226,0.1)"
               borderColor="rgba(110,69,226,0.25)"
-              items={GAMEPLAN}
+              items={analysis.gameplan}
             />
           </div>
 
@@ -445,7 +374,12 @@ export function MatchupResultScreen({ rivalFaction, rivalDetachment, onBack, onN
               </span>
             </div>
             <div className="flex flex-col gap-2">
-              {OPPONENT_UNITS.map((unit, i) => (
+              {analysis.opponentUnits.length === 0 && (
+                <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.5 }}>
+                  Sin datos detallados de unidades para esta facción todavía.
+                </p>
+              )}
+              {analysis.opponentUnits.map((unit, i) => (
                 <OpponentUnitAccordion key={i} unit={unit} />
               ))}
             </div>

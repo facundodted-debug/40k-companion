@@ -4,7 +4,7 @@ import { FACTION_DATA } from '../data';
 import { DataUnit, FactionData, WeaponProfile } from '../data/types';
 
 export interface MatchupInput {
-  ownList: ArmyList;
+  ownList: ArmyList | null;
   rivalFactionId: string;
   rivalDetachment?: string;
 }
@@ -100,11 +100,12 @@ export function analyzeMatchup(input: MatchupInput): MatchupOutput {
     : rivalDetachmentNames[0];
   const rivalDet = rivalDetName ? rivalData?.detachments[rivalDetName] : undefined;
 
-  const ownData = getFactionData(ownList.faction.id);
-  const ownDet = getDetachmentDescription(ownList.detachment.name);
-  const ownUnitsData = ownList.keyUnits
+  const ownData = ownList ? getFactionData(ownList.faction.id) : undefined;
+  const ownDet = getDetachmentDescription(ownList?.detachment.name ?? '');
+  const ownUnitsData = (ownList?.keyUnits ?? [])
     .map(u => ownData?.units.find(d => d.id === u.id))
     .filter((u): u is DataUnit => !!u);
+  const ownDetachmentName = ownList?.detachment.name ?? 'tu detachment';
 
   // ── Top rival units by points ──────────────────────────────────────────────
   const opponentUnits = [...rivalUnitsAll]
@@ -117,7 +118,7 @@ export function analyzeMatchup(input: MatchupInput): MatchupOutput {
 
   // Own detachment abilities as advantages
   for (const ability of ownDet.abilities.slice(0, 2)) {
-    strengths.push(`${ownList.detachment.name} — ${ability.name}: ${ability.rule}`);
+    strengths.push(`${ownDetachmentName} — ${ability.name}: ${ability.rule}`);
   }
 
   // Anti-tank: rival has high T units, own list has high S / high AP weapons
@@ -157,10 +158,14 @@ export function analyzeMatchup(input: MatchupInput): MatchupOutput {
 
   // Generic fallback strengths from own detachment description
   if (strengths.length < 4 && ownDet.abilities.length > 2) {
-    strengths.push(`${ownList.detachment.name} — ${ownDet.abilities[2].name}: ${ownDet.abilities[2].rule}`);
+    strengths.push(`${ownDetachmentName} — ${ownDet.abilities[2].name}: ${ownDet.abilities[2].rule}`);
   }
   while (strengths.length < 4) {
-    strengths.push(`Tu lista (${ownList.name}, ${ownList.totalPoints} pts) tiene un buen equilibrio de roles para adaptarse a este matchup.`);
+    if (ownList) {
+      strengths.push(`Tu lista (${ownList.name}, ${ownList.totalPoints} pts) tiene un buen equilibrio de roles para adaptarse a este matchup.`);
+    } else {
+      strengths.push('Guardá una lista propia para ver fortalezas específicas de tu ejército en este matchup.');
+    }
   }
 
   // ── Debilidades ─────────────────────────────────────────────────────────────
@@ -215,12 +220,12 @@ export function analyzeMatchup(input: MatchupInput): MatchupOutput {
 
   // Use own detachment ability as plan action
   if (ownDet.abilities.length > 0) {
-    gameplan.push(`Secuenciá tu turno para sacar el máximo provecho de ${ownDet.abilities[0].name} (${ownList.detachment.name}).`);
+    gameplan.push(`Secuenciá tu turno para sacar el máximo provecho de ${ownDet.abilities[0].name} (${ownDetachmentName}).`);
   }
 
   // Unit role mix plan
-  const vehicleCount = ownList.keyUnits.filter(u => u.type === 'vehicle' || u.type === 'monster').length;
-  const infantryCount = ownList.keyUnits.filter(u => u.type === 'infantry').length;
+  const vehicleCount = (ownList?.keyUnits ?? []).filter(u => u.type === 'vehicle' || u.type === 'monster').length;
+  const infantryCount = (ownList?.keyUnits ?? []).filter(u => u.type === 'infantry').length;
   if (vehicleCount > 0 && infantryCount > 0) {
     gameplan.push(`Usá tus unidades de Vehicle/Monster para abrir brechas mientras la infantería avanza para tomar y mantener objetivos.`);
   } else if (infantryCount > 0) {

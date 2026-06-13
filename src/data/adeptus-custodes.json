@@ -1,10 +1,449 @@
 {
-    "id":  "adeptus-custodes",
-    "name":  "Adeptus Custodes",
-    "detachments":  {
-
-                    },
-    "units":  [
-
-              ]
+  "_meta": {
+    "source": "Wahapedia (10th edition, version 1.0)",
+    "faction": "Adeptus Custodes",
+    "lastUpdated": "2026-06-12",
+    "notes": "Stats de 10th edition. No incluye unidades FW ni Legends. Detachment details son stub — ver detachments.json para DP y Force Disposition. ptsOptions es el costo real por tamaño de unidad; pts es el costo base (mínimo). Unidades ANATHEMA PSYKANA son Sisters of Silence y pertenecen a la sub-facción correspondiente."
+  },
+  "id": "adeptus-custodes",
+  "name": "Adeptus Custodes",
+  "detachments": {},
+  "units": [
+    {
+      "id": "trajann-valoris",
+      "name": "Trajann Valoris",
+      "pts": 140,
+      "ptsOptions": [{ "models": 1, "cost": 140 }],
+      "type": "character",
+      "role": "melee-character",
+      "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "SUPREME COMMANDER", "TRAJANN VALORIS"],
+      "baseMm": "40",
+      "stats": { "m": 6, "t": 6, "sv": 2, "w": 7, "ld": 5, "oc": 2, "inv": 4, "fnp": 5 },
+      "ranged": [
+        { "name": "Eagle's Scream", "range": 24, "a": 2, "skill": 2, "s": 5, "ap": -2, "d": "3", "keywords": ["ASSAULT"] }
+      ],
+      "melee": [
+        { "name": "Watcher's Axe", "range": 0, "a": 6, "skill": 2, "s": 10, "ap": -2, "d": "3", "keywords": [] }
+      ],
+      "abilities": ["Deep Strike", "Feel No Pain 5+", "Leader", "Captain-General", "Moment Shackle"],
+      "leadsUnits": ["Custodian Guard", "Custodian Wardens"],
+      "considerations": "El SUPREME COMMANDER de Custodes. Ld 5+ y 7W con FNP 5+. Moment Shackle permite usar una Stratagem de forma gratuita una vez por batalla. Muy caro para un líder de escuadrón, pero su SUPREME COMMANDER permite incluirlo sin contar para el límite de CHARACTER.",
+      "recommendations": "Ideal liderando Custodian Wardens con el hacha para maximizar su potencial ofensivo. Moment Shackle es mejor usado en una Stratagem de 2CP en un momento crítico. Considerar solo en listas de alto costo con Talons of the Emperor."
+    },
+    {
+      "id": "valerian",
+      "name": "Valerian",
+      "pts": 110,
+      "ptsOptions": [{ "models": 1, "cost": 110 }],
+      "type": "character",
+      "role": "melee-character",
+      "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "VALERIAN"],
+      "baseMm": "40",
+      "stats": { "m": 6, "t": 6, "sv": 2, "w": 6, "ld": 6, "oc": 2, "inv": 4, "fnp": 6 },
+      "ranged": [
+        { "name": "Gnosis", "range": 24, "a": 3, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] }
+      ],
+      "melee": [
+        { "name": "Gnosis", "range": 0, "a": 7, "skill": 2, "s": 8, "ap": -3, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Deep Strike", "Feel No Pain 6+", "Leader", "Golden Laurels", "Hero of Lion's Gate"],
+      "leadsUnits": ["Custodian Guard", "Custodian Wardens"],
+      "considerations": "Debe usarse siempre junto a Aleya — forman pareja canónica. Golden Laurels da +1 a Ld y OC al escuadrón que lidera. Hero of Lion's Gate da re-roll de wound de 1 si la unidad no se movió. EPIC HERO — no puede llevar Enhancements.",
+      "recommendations": "Emparejarlo con Aleya para obtener sus habilidades combinadas en Talons of the Emperor. Liderar Custodian Wardens estacionarios para aprovechar Hero of Lion's Gate. Sólido y temático aunque ligeramente menos eficiente que el Shield-Captain genérico."
+    },
+    {
+      "id": "aleya",
+      "name": "Aleya",
+      "pts": 65,
+      "ptsOptions": [{ "models": 1, "cost": 65 }],
+      "type": "character",
+      "role": "melee-character",
+      "keywords": ["INFANTRY", "CHARACTER", "EPIC HERO", "ANATHEMA PSYKANA", "ALEYA"],
+      "baseMm": "32",
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 4, "ld": 6, "oc": 1, "inv": 5, "fnp": 5 },
+      "ranged": [],
+      "melee": [
+        { "name": "Somnus", "range": 0, "a": 4, "skill": 2, "s": 6, "ap": -3, "d": "3", "keywords": ["ANTI-PSYKER 5+", "DEVASTATING WOUNDS"] }
+      ],
+      "abilities": ["Feel No Pain 5+", "Leader", "Scouts 6\"", "Tactical Perception", "Tenacious Spirit", "Daughter of the Abyss"],
+      "leadsUnits": ["Prosecutors", "Vigilators", "Witchseekers"],
+      "considerations": "La líder ANATHEMA PSYKANA más poderosa del codex. FNP 5+ y FNP 3+ vs ataques psíquicos y mortales. Scouts 6\" y Tactical Perception le da FIGHTS FIRST mientras lidera. T3 W4 la hace frágil si se queda sola.",
+      "recommendations": "Liderar Witchseekers para combinar Scouts 6\" y TORRENT en ronda 1. Siempre emparejada con Valerian si se juega Talons of the Emperor. Excelente contra ejércitos psíquicos (Grey Knights, Thousand Sons)."
+    },
+    {
+      "id": "blade-champion",
+      "name": "Blade Champion",
+      "pts": 120,
+      "ptsOptions": [{ "models": 1, "cost": 120 }],
+      "type": "character",
+      "role": "melee-character",
+      "keywords": ["INFANTRY", "CHARACTER", "BLADE CHAMPION"],
+      "baseMm": "40",
+      "stats": { "m": 6, "t": 6, "sv": 2, "w": 6, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [],
+      "melee": [
+        { "name": "Vaultsword – Behemor", "range": 0, "a": 6, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": ["PRECISION"] },
+        { "name": "Vaultsword – Hurricanus", "range": 0, "a": 9, "skill": 2, "s": 5, "ap": -1, "d": "1", "keywords": ["SUSTAINED HITS 1"] },
+        { "name": "Vaultsword – Victus", "range": 0, "a": 5, "skill": 2, "s": 6, "ap": -3, "d": "3", "keywords": ["DEVASTATING WOUNDS"] }
+      ],
+      "abilities": ["Deep Strike", "Leader", "Swift Onslaught", "Martial Inspiration"],
+      "leadsUnits": ["Custodian Guard", "Custodian Wardens"],
+      "considerations": "Especialista en CaC con tres modos de Vaultsword. Behemor para matar CHARACTERS (PRECISION), Hurricanus para hordas (SUSTAINED HITS 1), Victus para blindaje pesado (DEVASTATING WOUNDS). Swift Onslaught permite re-roll de carga. Martial Inspiration permite cargar después de avanzar al escuadrón.",
+      "recommendations": "Liderar Custodian Wardens con Castellan axes para una unidad CaC extremadamente versátil. Swift Onslaught + Deep Strike para cargas confiables. Elegir modo según el rival cada turno — no hay penalidad por cambiar entre modos."
+    },
+    {
+      "id": "shield-captain",
+      "name": "Shield-Captain",
+      "pts": 120,
+      "ptsOptions": [{ "models": 1, "cost": 120 }],
+      "type": "character",
+      "role": "melee-character",
+      "keywords": ["INFANTRY", "CHARACTER", "SHIELD-CAPTAIN"],
+      "baseMm": "40",
+      "stats": { "m": 6, "t": 6, "sv": 2, "w": 6, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [
+        { "name": "Guardian spear", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] },
+        { "name": "Castellan axe", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] },
+        { "name": "Pyrithite spear", "range": 12, "a": 1, "skill": 2, "s": 9, "ap": -4, "d": "D6", "keywords": ["MELTA 2"] },
+        { "name": "Sentinel blade", "range": 12, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT", "PISTOL"] }
+      ],
+      "melee": [
+        { "name": "Guardian spear", "range": 0, "a": 7, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Castellan axe", "range": 0, "a": 6, "skill": 2, "s": 9, "ap": -1, "d": "3", "keywords": [] },
+        { "name": "Pyrithite spear", "range": 0, "a": 7, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Sentinel blade", "range": 0, "a": 7, "skill": 2, "s": 6, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto: Guardian spear. Puede reemplazar por Castellan axe, Pyrithite spear o Sentinel blade. Puede llevar Praesidium shield (+1W, llega a 7W).",
+      "abilities": ["Deep Strike", "Leader", "Master of the Stances", "Strategic Mastery"],
+      "leadsUnits": ["Custodian Guard", "Custodian Wardens"],
+      "considerations": "El líder de línea más flexible del codex. Master of the Stances da bonificaciones según el Ka'tah activo. Strategic Mastery da +1CP al inicio de la batalla — básicamente descuento inmediato. Praesidium shield lo lleva a 7W sin costo de pts adicional.",
+      "recommendations": "El líder más eficiente punto por punto para Custodian Guard. Siempre tomar Praesidium shield. Guardian spear para balance ranged/CaC, Castellan axe para listas agresivas anti-vehículo. Enhancement-friendly a diferencia de los EPIC HERO."
+    },
+    {
+      "id": "shield-captain-allarus",
+      "name": "Shield-Captain in Allarus Terminator Armour",
+      "pts": 130,
+      "ptsOptions": [{ "models": 1, "cost": 130 }],
+      "type": "character",
+      "role": "melee-character",
+      "keywords": ["INFANTRY", "CHARACTER", "TERMINATOR", "SHIELD-CAPTAIN"],
+      "baseMm": "40",
+      "stats": { "m": 5, "t": 7, "sv": 2, "w": 7, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [
+        { "name": "Balistus grenade launcher", "range": 18, "a": "D6", "skill": 2, "s": 4, "ap": -1, "d": "1", "keywords": ["BLAST"] },
+        { "name": "Guardian spear", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] },
+        { "name": "Castellan axe", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] }
+      ],
+      "melee": [
+        { "name": "Guardian spear", "range": 0, "a": 7, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Castellan axe", "range": 0, "a": 6, "skill": 2, "s": 9, "ap": -1, "d": "3", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto: balistus grenade launcher + guardian spear. Puede reemplazar guardian spear por castellan axe.",
+      "abilities": ["Deep Strike", "Leader", "Auramite and Adamantine", "Strategic Mastery"],
+      "leadsUnits": ["Allarus Custodians"],
+      "considerations": "T7 2+ 4++ con 7W — uno de los líderes más durables del codex. Auramite and Adamantine da re-roll de saves de 1 al escuadrón cuando lidera. Strategic Mastery da +1CP. Solo puede liderar Allarus Custodians.",
+      "recommendations": "Prácticamente obligatorio si llevás Allarus Custodians. Su durabilidad eleva la supervivencia de todo el escuadrón. Castellan axe para maximizar daño anti-vehículo. Guardian spear si necesitás el ranged ASSAULT más equilibrado."
+    },
+    {
+      "id": "shield-captain-jetbike",
+      "name": "Shield-Captain on Dawneagle Jetbike",
+      "pts": 150,
+      "ptsOptions": [{ "models": 1, "cost": 150 }],
+      "type": "character",
+      "role": "cavalry-character",
+      "keywords": ["MOUNTED", "CHARACTER", "FLY", "SHIELD-CAPTAIN"],
+      "baseMm": "75x42",
+      "stats": { "m": 12, "t": 7, "sv": 2, "w": 8, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [
+        { "name": "Salvo launcher", "range": 24, "a": 1, "skill": 2, "s": 10, "ap": -3, "d": "D6+1", "keywords": ["TWIN-LINKED"] },
+        { "name": "Vertus hurricane bolter", "range": 18, "a": 3, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["RAPID FIRE 3", "TWIN-LINKED"] }
+      ],
+      "melee": [
+        { "name": "Interceptor lance", "range": 0, "a": 6, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": ["LANCE"] }
+      ],
+      "wargearNotes": "Por defecto: salvo launcher + interceptor lance. Puede reemplazar salvo launcher por vertus hurricane bolter.",
+      "abilities": ["Leader", "Sweeping Advance", "Strategic Mastery"],
+      "leadsUnits": ["Vertus Praetors"],
+      "considerations": "M12 FLY con 8W T7 2+ 4++. El único líder disponible para Vertus Praetors. Sweeping Advance da re-roll de Hit en ranged después de avanzar. Salvo launcher TWIN-LINKED da daño anti-vehículo muy consistente.",
+      "recommendations": "Esencial en cualquier lista con Vertus Praetors. Salvo launcher para anti-vehículo, hurricane bolter para acumular heridas en infantería. Usar Sweeping Advance para combinar movimiento y disparo sin penalidad. Ideal en Solar Spearhead o Lions of the Emperor."
+    },
+    {
+      "id": "knight-centura",
+      "name": "Knight-Centura",
+      "pts": 55,
+      "ptsOptions": [{ "models": 1, "cost": 55 }],
+      "type": "character",
+      "role": "melee-character",
+      "keywords": ["INFANTRY", "CHARACTER", "ANATHEMA PSYKANA", "KNIGHT-CENTURA"],
+      "baseMm": "32",
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 4, "ld": 6, "oc": 1, "inv": 5 },
+      "ranged": [
+        { "name": "Master-crafted boltgun", "range": 24, "a": 1, "skill": 2, "s": 4, "ap": 0, "d": "2", "keywords": ["RAPID FIRE 1"] },
+        { "name": "Witchseeker flamer", "range": 12, "a": "D6", "skill": -1, "s": 4, "ap": 0, "d": "1", "keywords": ["IGNORES COVER", "TORRENT"] }
+      ],
+      "melee": [
+        { "name": "Executioner greatblade", "range": 0, "a": 3, "skill": 2, "s": 5, "ap": -2, "d": "2", "keywords": ["ANTI-PSYKER 5+", "DEVASTATING WOUNDS"] },
+        { "name": "Close combat weapon", "range": 0, "a": 3, "skill": 2, "s": 3, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto: executioner greatblade. Puede reemplazar por master-crafted boltgun o witchseeker flamer.",
+      "abilities": ["Leader", "Scouts 6\"", "Seeker's Instincts", "Daughter of the Abyss", "Corner the Quarry"],
+      "leadsUnits": ["Prosecutors", "Vigilators", "Witchseekers"],
+      "considerations": "Líder barato y versátil para Sisters of Silence. Seeker's Instincts da +2\" de movimiento y +2 a avance/carga. Corner the Quarry permite disparar o cargar después de Consolidation. T3 W4 sin FNP propio — muy frágil si queda expuesta.",
+      "recommendations": "La opción más económica (55pts) para dar liderazgo a Sisters of Silence. Útil como segundo líder barato cuando Aleya ya está ocupada. Con Witchseekers el witchseeker flamer TORRENT puede ser devastador en ronda 1 gracias a Scouts 6\"."
+    },
+    {
+      "id": "custodian-guard",
+      "name": "Custodian Guard",
+      "pts": 160,
+      "ptsOptions": [
+        { "models": 4, "cost": 160 },
+        { "models": 5, "cost": 200 }
+      ],
+      "type": "battleline",
+      "role": "melee-infantry",
+      "keywords": ["INFANTRY", "BATTLELINE", "CUSTODIAN GUARD"],
+      "baseMm": "40",
+      "stats": { "m": 6, "t": 6, "sv": 2, "w": 3, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [
+        { "name": "Guardian spear", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] },
+        { "name": "Sentinel blade", "range": 12, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT", "PISTOL"] }
+      ],
+      "melee": [
+        { "name": "Guardian spear", "range": 0, "a": 5, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Misericordia", "range": 0, "a": 5, "skill": 2, "s": 5, "ap": -2, "d": "1", "keywords": [] },
+        { "name": "Sentinel blade", "range": 0, "a": 5, "skill": 2, "s": 6, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto todos con Guardian spear. Cualquier modelo puede reemplazar Guardian spear por Sentinel blade + Misericordia. Un modelo puede llevar Praesidium shield (+1W). Un modelo puede llevar Vexilla Imperialis (+1 OC a la unidad).",
+      "abilities": ["Deep Strike", "Stand Vigil", "Sentinel Storm"],
+      "considerations": "La unidad de línea del codex. T6 2+ 4++ con OC:2 los hace excelentes en objetivos. Stand Vigil da re-roll de saves cuando están en su propio objetivo. Sentinel Storm inflige D3 mortales al enemigo que les carga. BATTLELINE — cuenta para requisitos de Force Disposition.",
+      "recommendations": "La base de cualquier lista Custodes. Llevar 2-3 unidades de 4-5 modelos. Un modelo con Praesidium shield y uno con Vexilla maximizan durabilidad y control de objetivo. Liderarlos con Shield-Captain (el más eficiente) o Blade Champion para potencia CaC extra."
+    },
+    {
+      "id": "allarus-custodians",
+      "name": "Allarus Custodians",
+      "pts": 110,
+      "ptsOptions": [
+        { "models": 2, "cost": 110 },
+        { "models": 3, "cost": 165 },
+        { "models": 5, "cost": 275 },
+        { "models": 6, "cost": 330 }
+      ],
+      "type": "infantry",
+      "role": "elite-infantry",
+      "keywords": ["INFANTRY", "TERMINATOR", "ALLARUS CUSTODIANS"],
+      "baseMm": "40",
+      "stats": { "m": 5, "t": 7, "sv": 2, "w": 4, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [
+        { "name": "Balistus grenade launcher", "range": 18, "a": "D6", "skill": 2, "s": 4, "ap": -1, "d": "1", "keywords": ["BLAST"] },
+        { "name": "Guardian spear", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] },
+        { "name": "Castellan axe", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] }
+      ],
+      "melee": [
+        { "name": "Guardian spear", "range": 0, "a": 5, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Castellan axe", "range": 0, "a": 4, "skill": 2, "s": 9, "ap": -1, "d": "3", "keywords": [] },
+        { "name": "Misericordia", "range": 0, "a": 5, "skill": 2, "s": 5, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto: balistus grenade launcher + guardian spear. Pueden reemplazar guardian spear por castellan axe.",
+      "abilities": ["Deep Strike", "Slayers of Tyrants", "From Golden Light"],
+      "considerations": "Terminadores Custodes: T7 2+ 4++ con 4W cada uno. Slayers of Tyrants da re-roll de wound contra CHARACTER, MONSTER y VEHICLE. From Golden Light los devuelve a Reservas Estratégicas una vez por batalla. Lentos (M5) pero casi imatables.",
+      "recommendations": "Ideales para Deep Strike sobre objetivos centrales o flanquear vehículos con Castellan axes. From Golden Light permite reciclarlos para capturar otro objetivo en etapas tardías. Liderar con Shield-Captain in Allarus para máxima durabilidad. 3 modelos es el punto dulce eficiencia/costo."
+    },
+    {
+      "id": "custodian-wardens",
+      "name": "Custodian Wardens",
+      "pts": 210,
+      "ptsOptions": [
+        { "models": 4, "cost": 210 },
+        { "models": 5, "cost": 260 }
+      ],
+      "type": "infantry",
+      "role": "elite-infantry",
+      "keywords": ["INFANTRY", "CUSTODIAN WARDENS"],
+      "baseMm": "40",
+      "stats": { "m": 6, "t": 6, "sv": 2, "w": 3, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [
+        { "name": "Guardian spear", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] },
+        { "name": "Castellan axe", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["ASSAULT"] }
+      ],
+      "melee": [
+        { "name": "Guardian spear", "range": 0, "a": 5, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Castellan axe", "range": 0, "a": 4, "skill": 2, "s": 9, "ap": -1, "d": "3", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto todos con Guardian spear. Pueden reemplazar por Castellan axe.",
+      "abilities": ["Deep Strike", "Resolute Will", "Living Fortress"],
+      "considerations": "Versión ofensiva del Custodian Guard, más caros pero con mejores reglas de supervivencia. Resolute Will reduce daño recibido cuando el líder está presente y S del atacante supera T de la unidad. Living Fortress da FNP 4+ una vez por batalla. Castellan axes (S9 AP-1 D3) son devastadoras contra vehículos.",
+      "recommendations": "La unidad de élite ofensiva del codex. Con Castellan axes y un líder como Blade Champion o Trajann, generan ataques S9 devastadores. Living Fortress para sobrevivir una andanada crítica. 4 modelos es suficiente; 5 si sobran los puntos."
+    },
+    {
+      "id": "vertus-praetors",
+      "name": "Vertus Praetors",
+      "pts": 150,
+      "ptsOptions": [
+        { "models": 2, "cost": 150 },
+        { "models": 3, "cost": 225 }
+      ],
+      "type": "cavalry",
+      "role": "fast-cavalry",
+      "keywords": ["MOUNTED", "FLY", "VERTUS PRAETORS"],
+      "baseMm": "75x42",
+      "stats": { "m": 12, "t": 7, "sv": 2, "w": 5, "ld": 6, "oc": 2, "inv": 4 },
+      "ranged": [
+        { "name": "Salvo launcher", "range": 24, "a": 1, "skill": 2, "s": 10, "ap": -3, "d": "D6+1", "keywords": ["TWIN-LINKED"] },
+        { "name": "Vertus hurricane bolter", "range": 18, "a": 3, "skill": 2, "s": 4, "ap": -1, "d": "2", "keywords": ["RAPID FIRE 3", "TWIN-LINKED"] }
+      ],
+      "melee": [
+        { "name": "Interceptor lance", "range": 0, "a": 5, "skill": 2, "s": 7, "ap": -2, "d": "2", "keywords": ["LANCE"] }
+      ],
+      "wargearNotes": "Por defecto: salvo launcher + interceptor lance. Pueden reemplazar salvo launcher por vertus hurricane bolter.",
+      "abilities": ["Turbo-boost", "Quicksilver Execution"],
+      "considerations": "La caballería voladora de Custodes. M12 FLY con T7 2+ 4++. Salvo launcher TWIN-LINKED da daño anti-vehículo consistente. Quicksilver Execution: por cada modelo que vuela sobre una unidad, tira D6 — en 2+ inflige 2 mortales. Turbo-boost da +6\" al avance.",
+      "recommendations": "Ideales para flanqueo agresivo y Purge the Foe. Salvo launcher contra MONSTER/VEHICLE, hurricane bolters para acumular heridas contra infantería. 3 modelos para Quicksilver Execution más impactante. Liderar con Shield-Captain on Dawneagle Jetbike."
+    },
+    {
+      "id": "prosecutors",
+      "name": "Prosecutors",
+      "pts": 40,
+      "ptsOptions": [
+        { "models": 4, "cost": 40 },
+        { "models": 5, "cost": 50 },
+        { "models": 9, "cost": 75 },
+        { "models": 10, "cost": 85 }
+      ],
+      "type": "battleline",
+      "role": "ranged-infantry",
+      "keywords": ["INFANTRY", "BATTLELINE", "ANATHEMA PSYKANA", "PROSECUTORS"],
+      "baseMm": "32",
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Boltgun", "range": 24, "a": 1, "skill": 3, "s": 4, "ap": 0, "d": "1", "keywords": ["RAPID FIRE 1"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": 0, "a": 2, "skill": 3, "s": 3, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Daughters of the Abyss", "Purity of Execution"],
+      "considerations": "La línea más barata del codex. T3 W1 sin invuln — muy frágiles. Purity of Execution da PRECISION + DEVASTATING WOUNDS en ranged contra PSYKER. OC:2 les da buen control de objetivo para su precio. BATTLELINE y ANATHEMA PSYKANA — esenciales para Null Maiden Vigil y Talons of the Emperor.",
+      "recommendations": "Usarlas en zonas seguras como objetivos baratos. En listas Talons of the Emperor son fundamentales para cumplir la condición ANATHEMA PSYKANA. 10 modelos a 85pts es una de las compras más eficientes del codex para controlar puntos traseros."
+    },
+    {
+      "id": "vigilators",
+      "name": "Vigilators",
+      "pts": 45,
+      "ptsOptions": [
+        { "models": 4, "cost": 45 },
+        { "models": 5, "cost": 55 },
+        { "models": 9, "cost": 90 },
+        { "models": 10, "cost": 100 }
+      ],
+      "type": "infantry",
+      "role": "melee-infantry",
+      "keywords": ["INFANTRY", "ANATHEMA PSYKANA", "VIGILATORS"],
+      "baseMm": "32",
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 6, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Executioner greatblade", "range": 0, "a": 2, "skill": 3, "s": 5, "ap": -2, "d": "2", "keywords": ["ANTI-PSYKER 5+", "DEVASTATING WOUNDS"] }
+      ],
+      "abilities": ["Daughters of the Abyss", "Deft Parry"],
+      "considerations": "CaC ANATHEMA PSYKANA con espadas que liquidan psíquicos con DEVASTATING WOUNDS. Deft Parry da -1 a Hit de ataques melee contra ellas. OC:1 las hace menos útiles en objetivos que Prosecutors. Sin invuln — frágiles ante disparo.",
+      "recommendations": "Útiles contra ejércitos con muchos PSYKER (Grey Knights, Thousand Sons). Deft Parry las hace sorprendentemente durables en CaC para ser T3 W1. Con Aleya y Scouts 6\" pueden flanquear para eliminar casters enemigos en turno 1-2."
+    },
+    {
+      "id": "witchseekers",
+      "name": "Witchseekers",
+      "pts": 45,
+      "ptsOptions": [
+        { "models": 4, "cost": 45 },
+        { "models": 5, "cost": 55 },
+        { "models": 9, "cost": 90 },
+        { "models": 10, "cost": 100 }
+      ],
+      "type": "infantry",
+      "role": "ranged-infantry",
+      "keywords": ["INFANTRY", "ANATHEMA PSYKANA", "WITCHSEEKERS"],
+      "baseMm": "32",
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Witchseeker flamer", "range": 12, "a": "D6", "skill": -1, "s": 4, "ap": 0, "d": "1", "keywords": ["IGNORES COVER", "TORRENT"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": 0, "a": 2, "skill": 3, "s": 3, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Scouts 6\"", "Daughters of the Abyss", "Sanctified Flames"],
+      "considerations": "Flamers ANATHEMA PSYKANA con Scouts 6\" de base. TORRENT ignora distancia mínima, IGNORES COVER elimina todas las salvas. Sanctified Flames obliga a Battle-shock test al enemigo impactado. Sin invuln — vulnerables ante cualquier disparo de vuelta.",
+      "recommendations": "Las más agresivas de las Sisters. Scouts 6\" + TORRENT permite flanquear y disparar con total libertad. Con Aleya como líder (también Scouts 6\") se mueven 12\" antes del turno 1. 10 modelos para máximo número de dados de flamers."
+    },
+    {
+      "id": "venerable-contemptor",
+      "name": "Venerable Contemptor Dreadnought",
+      "pts": 170,
+      "ptsOptions": [{ "models": 1, "cost": 170 }],
+      "type": "vehicle",
+      "role": "walker",
+      "keywords": ["VEHICLE", "WALKER", "VENERABLE CONTEMPTOR DREADNOUGHT"],
+      "baseMm": "60",
+      "stats": { "m": 6, "t": 9, "sv": 2, "w": 10, "ld": 6, "oc": 3, "inv": 5 },
+      "ranged": [
+        { "name": "Combi-bolter", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": 0, "d": "1", "keywords": ["RAPID FIRE 2"] },
+        { "name": "Multi-melta", "range": 18, "a": 2, "skill": 2, "s": 9, "ap": -4, "d": "D6", "keywords": ["MELTA 2"] },
+        { "name": "Kheres-pattern assault cannon", "range": 24, "a": 6, "skill": 2, "s": 7, "ap": -1, "d": "1", "keywords": ["DEVASTATING WOUNDS"] }
+      ],
+      "melee": [
+        { "name": "Contemptor combat weapon", "range": 0, "a": 5, "skill": 2, "s": 12, "ap": -2, "d": "3", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto: combi-bolter + multi-melta + Contemptor combat weapon. Puede reemplazar combi-bolter por Kheres-pattern assault cannon.",
+      "abilities": ["Deadly Demise D3", "Unyielding Ancient"],
+      "damagedAbility": "1-5 heridas restantes: -1 a Hit rolls en todos los ataques.",
+      "considerations": "Dreadnought Custodes con T9 2+ 5++ y 10W. Unyielding Ancient: cuando es destruido, tira D6 — en 2+ regresa con esa cantidad de heridas (una vez por batalla). Multi-melta para vehículos, Kheres cannon para élite con DEVASTATING WOUNDS. OC:3 da presencia en objetivos.",
+      "recommendations": "Excelente en listas que necesitan potencia anti-vehículo a pie. Multi-melta es su arma principal. Unyielding Ancient lo hace muy difícil de eliminar para rivales que no planean el two-shot. Con OC:3 puede tomar objetivos mientras dispara."
+    },
+    {
+      "id": "venerable-land-raider",
+      "name": "Venerable Land Raider",
+      "pts": 220,
+      "ptsOptions": [{ "models": 1, "cost": 220 }],
+      "type": "vehicle",
+      "role": "heavy-transport",
+      "keywords": ["VEHICLE", "IMPERIUM", "TRANSPORT", "SMOKE", "VENERABLE LAND RAIDER"],
+      "baseMm": "large-oval",
+      "stats": { "m": 10, "t": 12, "sv": 2, "w": 16, "ld": 6, "oc": 5 },
+      "ranged": [
+        { "name": "Godhammer lascannon", "range": 48, "a": 2, "skill": 2, "s": 12, "ap": -3, "d": "D6+1", "keywords": [] },
+        { "name": "Hunter-killer missile", "range": 48, "a": 1, "skill": 2, "s": 14, "ap": -3, "d": "D6", "keywords": ["ONE SHOT"] },
+        { "name": "Storm bolter", "range": 24, "a": 2, "skill": 2, "s": 4, "ap": 0, "d": "1", "keywords": ["RAPID FIRE 2"] },
+        { "name": "Twin heavy bolter", "range": 36, "a": 3, "skill": 2, "s": 5, "ap": -1, "d": "2", "keywords": ["SUSTAINED HITS 1", "TWIN-LINKED"] }
+      ],
+      "melee": [
+        { "name": "Armoured tracks", "range": 0, "a": 6, "skill": 4, "s": 8, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto: 2 godhammer lascannons + twin heavy bolter + armoured tracks. Puede agregar 1 hunter-killer missile y/o 1 storm bolter.",
+      "abilities": ["Deadly Demise D6", "Assault Ramp"],
+      "damagedAbility": "1-5 heridas restantes: -1 a Hit rolls en todos los ataques.",
+      "transport": { "capacity": 6, "restriction": "ADEPTUS CUSTODES INFANTRY" },
+      "considerations": "El transporte más poderoso del codex. T12 2+ 16W sin invuln. Assault Ramp permite a la unidad que desembarca después de un Normal Move aún declarar carga ese turno. 2 lascannons dan daño anti-vehículo consistente a 48\". OC:5 es una presencia de objetivo brutal.",
+      "recommendations": "Perfecto para entregar Custodian Guard o Allarus Custodians en el corazón del rival con carga garantizada. A 220pts es caro pero combina disparo de largo alcance y entrega de tropas en simultáneo. Hunter-killer para un disparo S14 devastador en turno 1."
+    },
+    {
+      "id": "anathema-psykana-rhino",
+      "name": "Anathema Psykana Rhino",
+      "pts": 75,
+      "ptsOptions": [{ "models": 1, "cost": 75 }],
+      "type": "vehicle",
+      "role": "dedicated-transport",
+      "keywords": ["VEHICLE", "TRANSPORT", "DEDICATED TRANSPORT", "SMOKE", "IMPERIUM", "ANATHEMA PSYKANA", "RHINO"],
+      "baseMm": "standard-tank",
+      "stats": { "m": 12, "t": 9, "sv": 3, "w": 10, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Hunter-killer missile", "range": 48, "a": 1, "skill": 2, "s": 14, "ap": -3, "d": "D6", "keywords": ["ONE SHOT"] },
+        { "name": "Storm bolter", "range": 24, "a": 2, "skill": 3, "s": 4, "ap": 0, "d": "1", "keywords": ["RAPID FIRE 2"] }
+      ],
+      "melee": [
+        { "name": "Armoured tracks", "range": 0, "a": 3, "skill": 4, "s": 6, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "wargearNotes": "Por defecto: storm bolter + armoured tracks. Puede agregar 1 hunter-killer missile.",
+      "abilities": ["Deadly Demise D3", "Firing Deck 2", "Daughters of the Abyss", "Self Repair"],
+      "transport": { "capacity": 12, "restriction": "ANATHEMA PSYKANA INFANTRY" },
+      "considerations": "Rhino de Sisters of Silence. Firing Deck 2 permite que 2 modelos embarcados disparen. Self Repair recupera 1W por turno al inicio del Command phase. Daughters of the Abyss da FNP 3+ vs ataques psíquicos y mortales. Solo transporta ANATHEMA PSYKANA — no puede llevar Custodes normales.",
+      "recommendations": "Esencial en listas con muchas Sisters of Silence para reposicionarlas rápido. Con Firing Deck 2, Witchseekers dentro pueden disparar flamers TORRENT antes de desembarcar. Self Repair lo hace muy durable para su costo. Ideal en Null Maiden Vigil o Talons of the Emperor."
+    }
+  ]
 }

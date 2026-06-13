@@ -1,5 +1,27 @@
 export type UnitType = 'infantry' | 'vehicle' | 'monster' | 'character' | 'special';
 
+export interface UnitWeapon {
+  name: string;
+  range: string;
+  a: string;
+  skill: string;
+  s: string;
+  ap: string;
+  d: string;
+}
+
+export interface OpponentUnit {
+  name: string;
+  pts: number;
+  keywords: string[];
+  stats: { m: string; t: number; sv: string; w: number; ld: string; oc: number };
+  ranged: UnitWeapon[];
+  melee: UnitWeapon[];
+  abilities: string[];
+  considerations: string;
+  recommendations: string;
+}
+
 export type Faction = {
   id: string;
   name: string;

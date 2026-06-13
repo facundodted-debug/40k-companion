@@ -3,7 +3,9 @@ import { Play, ZoomIn, ZoomOut, Map, X, ChevronDown } from 'lucide-react';
 import { Mission } from './shared';
 import { ScreenHeader } from './ScreenHeader';
 import { MISSION_MAPS } from './missionMaps';
-import { useListStore } from '../../store/lists';
+import { SavedList } from '../../store/lists';
+import { ArmySelect } from './ArmySelect';
+import { listToBoardItems } from '../lib/listToBoardItems';
 
 const BW = 600, BH = 440;
 const OWN_COLOR = '#3d7ef0';
@@ -303,21 +305,21 @@ function LoadingState() {
 // ── Main screen ────────────────────────────────────────────────────────────────
 interface DeploymentBoardScreenProps {
   mission: Mission | null;
+  lists: SavedList[];
   onBack: () => void;
   onSelectMission: () => void;
   onStartSimulation: (items: PlaceableItem[]) => void;
 }
 
-export function DeploymentBoardScreen({ mission, onBack, onSelectMission, onStartSimulation }: DeploymentBoardScreenProps) {
+export function DeploymentBoardScreen({ mission, lists, onBack, onSelectMission, onStartSimulation }: DeploymentBoardScreenProps) {
   const [boardState, setBoardState] = useState<'empty' | 'loading' | 'ready'>('empty');
   const [scale, setScale] = useState(1);
   const [items, setItems] = useState<PlaceableItem[]>([]);
   const [draggingId, setDraggingId] = useState<string | null>(null);
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [modal, setModal] = useState<Side | null>(null);
-  const [selectedListId, setSelectedListId] = useState<string>('');
+  const [selectedList, setSelectedList] = useState<SavedList | null>(null);
   const svgRef = useRef<SVGSVGElement>(null);
-  const { lists } = useListStore();
 
   useEffect(() => {
     if (mission) {
@@ -363,6 +365,11 @@ export function DeploymentBoardScreen({ mission, onBack, onSelectMission, onStar
     const cx = 300 + (Math.random() - 0.5) * 120;
     const cy = side === 'own' ? 360 + (Math.random() - 0.5) * 60 : 80 + (Math.random() - 0.5) * 60;
     setItems(prev => [...prev, { id, baseSize, count, side, x: cx, y: cy, rotation: 0 }]);
+  }, []);
+
+  const handleSelectList = useCallback((list: SavedList) => {
+    setSelectedList(list);
+    setItems(prev => [...prev.filter(it => it.side !== 'own'), ...listToBoardItems(list, 'own')]);
   }, []);
 
   const rotateItem = useCallback((id: string, delta: number) => {
@@ -490,14 +497,11 @@ export function DeploymentBoardScreen({ mission, onBack, onSelectMission, onStar
             <p style={{ fontSize: 13, color: 'var(--foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 8 }}>
               Seleccioná una de tus listas
             </p>
-            <SelectField
-              label=""
-              value={selectedListId}
-              onChange={setSelectedListId}
-              options={[
-                { value: '', label: lists.length ? 'Elegí una lista' : 'No hay listas guardadas' },
-                ...lists.map(l => ({ value: l.id, label: `${l.name} (${l.totalPoints} pts)` })),
-              ]}
+            <ArmySelect
+              lists={lists}
+              selected={selectedList}
+              onSelect={handleSelectList}
+              placeholder={lists.length ? 'Elegí una lista' : 'No hay listas guardadas'}
             />
             <p style={{ fontSize: 11, color: 'var(--muted-foreground)', textAlign: 'center', margin: '4px 0 12px', textTransform: 'uppercase', letterSpacing: '0.06em', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}>
               o generá las unidades
