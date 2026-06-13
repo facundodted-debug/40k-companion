@@ -5,24 +5,16 @@ import { OpponentUnit, UnitWeapon, ArmyList } from './shared';
 import { SavedList } from '../../store/lists';
 import { analyzeMatchup } from '../../engine/matchup';
 
-interface RivalFaction { name: string; color: string; abbr: string; }
-
 interface MatchupResultScreenProps {
   ownList: SavedList | null;
-  rivalFactionId: string;
-  rivalFaction: RivalFaction;
-  rivalDetachment?: string;
+  rivalList: SavedList | null;
   onBack: () => void;
   onNewMatchup: () => void;
 }
 
-function isArmyList(list: SavedList): list is ArmyList {
-  return 'faction' in list && 'keyUnits' in list;
-}
-
 // ── Loading state ──────────────────────────────────────────────────────────────
 
-function LoadingState() {
+function LoadingState({ ownName, rivalName }: { ownName: string; rivalName: string }) {
   const steps = ['Analizando sinergia…', 'Calculando ventajas…', 'Generando plan de juego…'];
   const [stepIdx, setStepIdx] = useState(0);
   const [progress, setProgress] = useState(0);
@@ -69,9 +61,9 @@ function LoadingState() {
 
       <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.6 }}>
         Cruzando datos de{' '}
-        <span style={{ color: 'var(--own)' }}>Space Marines</span>
+        <span style={{ color: 'var(--own)' }}>{ownName}</span>
         {' '}vs{' '}
-        <span style={{ color: '#e84040' }}>rival</span>
+        <span style={{ color: '#e84040' }}>{rivalName}</span>
       </p>
     </div>
   );
@@ -267,20 +259,16 @@ function AnalysisBlock({ icon, label, color, bgColor, borderColor, items }: Bloc
   );
 }
 
-export function MatchupResultScreen({ ownList, rivalFactionId, rivalFaction, rivalDetachment, onBack, onNewMatchup }: MatchupResultScreenProps) {
+function isArmyList(list: SavedList): list is ArmyList {
+  return 'faction' in list && 'keyUnits' in list;
+}
+
+export function MatchupResultScreen({ ownList, rivalList, onBack, onNewMatchup }: MatchupResultScreenProps) {
   const [loading, setLoading] = useState(true);
 
-  const analysis = useMemo(() => analyzeMatchup({
-    ownList: ownList && isArmyList(ownList) ? ownList : null,
-    rivalFactionId,
-    rivalDetachment,
-  }), [ownList, rivalFactionId, rivalDetachment]);
+  const analysis = useMemo(() => analyzeMatchup({ ownList, rivalList }), [ownList, rivalList]);
 
-  const ownDisplay = ownList && isArmyList(ownList)
-    ? { abbr: ownList.faction.abbr, name: ownList.name, detachmentName: ownList.detachment.name }
-    : ownList
-      ? { abbr: '???', name: ownList.armyName, detachmentName: ownList.detachmentName ?? '—' }
-      : { abbr: '???', name: 'Sin lista', detachmentName: '—' };
+  const ownAbbr = ownList && isArmyList(ownList) ? ownList.faction.abbr : '???';
 
   useEffect(() => {
     const t = setTimeout(() => setLoading(false), 2800);
@@ -306,7 +294,7 @@ export function MatchupResultScreen({ ownList, rivalFactionId, rivalFaction, riv
       />
 
       {loading ? (
-        <LoadingState />
+        <LoadingState ownName={analysis.ownName} rivalName={analysis.rivalName} />
       ) : (
         <div className="flex-1 overflow-y-auto">
           {/* VS header */}
@@ -315,27 +303,38 @@ export function MatchupResultScreen({ ownList, rivalFactionId, rivalFaction, riv
             style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.07)' }}
           >
             <div className="flex items-center gap-2">
-              <FactionBadge abbr={ownDisplay.abbr} color="var(--own)" size="sm" />
+              <FactionBadge abbr={ownAbbr} color="var(--own)" size="sm" />
               <div>
                 <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: 'var(--foreground)', lineHeight: 1 }}>
-                  {ownDisplay.name}
+                  {analysis.ownName}
                 </p>
-                <p style={{ fontSize: 10, color: 'var(--muted-foreground)' }}>{ownDisplay.detachmentName}</p>
+                <p style={{ fontSize: 10, color: 'var(--muted-foreground)' }}>{analysis.ownDetachmentName}</p>
               </div>
             </div>
             <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, fontWeight: 700, color: 'var(--muted-foreground)', letterSpacing: '0.08em' }}>VS</span>
             <div className="flex items-center gap-2 flex-row-reverse">
-              <FactionBadge abbr={rivalFaction.abbr} color={rivalFaction.color} size="sm" />
+              <FactionBadge abbr={analysis.rivalAbbr} color={analysis.rivalColor} size="sm" />
               <div className="text-right">
                 <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: 'var(--foreground)', lineHeight: 1 }}>
-                  {rivalFaction.name}
+                  {analysis.rivalName}
                 </p>
                 <p style={{ fontSize: 10, color: 'var(--muted-foreground)' }}>
-                  {rivalDetachment || 'Detachment desconocido'}
+                  {analysis.rivalDetachmentName}
                 </p>
               </div>
             </div>
           </div>
+
+          {!analysis.ownDataAvailable && (
+            <p className="mx-4 mt-3" style={{ fontSize: 12, color: 'var(--muted-foreground)', lineHeight: 1.5 }}>
+              De momento no hay información sobre {analysis.ownName}.
+            </p>
+          )}
+          {!analysis.rivalDataAvailable && (
+            <p className="mx-4 mt-3" style={{ fontSize: 12, color: 'var(--muted-foreground)', lineHeight: 1.5 }}>
+              De momento no hay información sobre {analysis.rivalName}.
+            </p>
+          )}
 
           {/* Analysis blocks */}
           <div className="flex flex-col gap-3 px-4 mt-4">
@@ -376,7 +375,7 @@ export function MatchupResultScreen({ ownList, rivalFactionId, rivalFaction, riv
             <div className="flex flex-col gap-2">
               {analysis.opponentUnits.length === 0 && (
                 <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.5 }}>
-                  Sin datos detallados de unidades para esta facción todavía.
+                  De momento no hay información sobre {analysis.rivalName}.
                 </p>
               )}
               {analysis.opponentUnits.map((unit, i) => (

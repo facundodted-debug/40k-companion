@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Play, ZoomIn, ZoomOut, Map, X, ChevronDown } from 'lucide-react';
+import { Play, ZoomIn, ZoomOut, Map, X, ChevronDown, ChevronUp } from 'lucide-react';
 import { Mission } from './shared';
 import { ScreenHeader } from './ScreenHeader';
 import { MISSION_MAPS } from './missionMaps';
@@ -23,6 +23,7 @@ export interface PlaceableItem {
   x: number;
   y: number;
   rotation: number;
+  label?: string;
 }
 
 // SVG radius per base size (board: ~10 SVG units ≈ 1 inch, so 1mm ≈ 0.4 units)
@@ -78,6 +79,12 @@ export function TokenShape({ item, dragging }: { item: PlaceableItem; dragging?:
       <g opacity={opacity}>
         <ellipse rx={OVAL_RX + 4} ry={OVAL_RY + 4} fill={color + '10'} />
         <ellipse rx={OVAL_RX} ry={OVAL_RY} fill={fill} stroke={color} strokeWidth={1.5} />
+        {item.label && (
+          <text textAnchor="middle" dominantBaseline="central" fontSize={11} fontFamily="Barlow Condensed, sans-serif" fontWeight="700" fill={color} transform={`rotate(${-item.rotation})`}
+            style={{ paintOrder: 'stroke' }} stroke="#0d0e12" strokeWidth={2}>
+            {item.label}
+          </text>
+        )}
       </g>
     );
   }
@@ -89,6 +96,12 @@ export function TokenShape({ item, dragging }: { item: PlaceableItem; dragging?:
       <g opacity={opacity}>
         <circle r={r + 4} fill={color + '10'} />
         <circle r={r} fill={fill} stroke={color} strokeWidth={1.5} />
+        {item.label && (
+          <text textAnchor="middle" dominantBaseline="central" fontSize={Math.max(r * 0.85, 7)} fontFamily="Barlow Condensed, sans-serif" fontWeight="700" fill={color} transform={`rotate(${-item.rotation})`}
+            style={{ paintOrder: 'stroke' }} stroke="#0d0e12" strokeWidth={2}>
+            {item.label}
+          </text>
+        )}
       </g>
     );
   }
@@ -107,6 +120,12 @@ export function TokenShape({ item, dragging }: { item: PlaceableItem; dragging?:
       {dots.map(([dx, dy], i) => (
         <circle key={i} cx={dx} cy={dy} r={r} fill={fill} stroke={color} strokeWidth={1} />
       ))}
+      {item.label && (
+        <text textAnchor="middle" dominantBaseline="central" fontSize={Math.max(Math.min(bw, bh) * 0.32, 8)} fontFamily="Barlow Condensed, sans-serif" fontWeight="700" fill={color} transform={`rotate(${-item.rotation})`}
+          style={{ paintOrder: 'stroke' }} stroke="#0d0e12" strokeWidth={2}>
+          {item.label}
+        </text>
+      )}
     </g>
   );
 }
@@ -319,6 +338,7 @@ export function DeploymentBoardScreen({ mission, lists, onBack, onSelectMission,
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [modal, setModal] = useState<Side | null>(null);
   const [selectedList, setSelectedList] = useState<SavedList | null>(null);
+  const [selectorExpanded, setSelectorExpanded] = useState(true);
   const svgRef = useRef<SVGSVGElement>(null);
 
   useEffect(() => {
@@ -494,44 +514,56 @@ export function DeploymentBoardScreen({ mission, lists, onBack, onSelectMission,
 
           {/* Bottom bar */}
           <div className="px-4 pb-4 pt-2">
-            <p style={{ fontSize: 13, color: 'var(--foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', marginBottom: 8 }}>
-              Seleccioná una de tus listas
-            </p>
-            <ArmySelect
-              lists={lists}
-              selected={selectedList}
-              onSelect={handleSelectList}
-              placeholder={lists.length ? 'Elegí una lista' : 'No hay listas guardadas'}
-            />
-            <p style={{ fontSize: 11, color: 'var(--muted-foreground)', textAlign: 'center', margin: '4px 0 12px', textTransform: 'uppercase', letterSpacing: '0.06em', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}>
-              o generá las unidades
-            </p>
-            <div className="flex gap-3 mb-3">
-              <button
-                onClick={() => setModal('rival')}
-                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg"
-                style={{ background: 'rgba(232,64,64,0.12)', border: '1px solid rgba(232,64,64,0.35)', color: RIVAL_COLOR, fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase' }}
-              >
-                <svg width="14" height="14" viewBox="-7 -7 14 14">
-                  <circle r={6} fill="rgba(232,64,64,0.25)" stroke="#e84040" strokeWidth="1.5" />
-                  <line x1={-3} y1={0} x2={3} y2={0} stroke="#e84040" strokeWidth="1.5" strokeLinecap="round" />
-                  <line x1={0} y1={-3} x2={0} y2={3} stroke="#e84040" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-                Oponente
-              </button>
-              <button
-                onClick={() => setModal('own')}
-                className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg"
-                style={{ background: 'rgba(61,126,240,0.12)', border: '1px solid rgba(61,126,240,0.35)', color: OWN_COLOR, fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase' }}
-              >
-                <svg width="14" height="14" viewBox="-7 -7 14 14">
-                  <circle r={6} fill="rgba(61,126,240,0.25)" stroke="#3d7ef0" strokeWidth="1.5" />
-                  <line x1={-3} y1={0} x2={3} y2={0} stroke="#3d7ef0" strokeWidth="1.5" strokeLinecap="round" />
-                  <line x1={0} y1={-3} x2={0} y2={3} stroke="#3d7ef0" strokeWidth="1.5" strokeLinecap="round" />
-                </svg>
-                Propio
-              </button>
-            </div>
+            <button
+              onClick={() => setSelectorExpanded(e => !e)}
+              className="w-full flex items-center justify-between"
+              style={{ marginBottom: selectorExpanded ? 8 : 12 }}
+            >
+              <p style={{ fontSize: 13, color: 'var(--foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', margin: 0 }}>
+                Seleccioná una de tus listas
+              </p>
+              {selectorExpanded ? <ChevronDown size={16} style={{ color: 'var(--muted-foreground)' }} /> : <ChevronUp size={16} style={{ color: 'var(--muted-foreground)' }} />}
+            </button>
+
+            {selectorExpanded && (
+              <>
+                <ArmySelect
+                  lists={lists}
+                  selected={selectedList}
+                  onSelect={handleSelectList}
+                  placeholder={lists.length ? 'Elegí una lista' : 'No hay listas guardadas'}
+                />
+                <p style={{ fontSize: 11, color: 'var(--muted-foreground)', textAlign: 'center', margin: '4px 0 12px', textTransform: 'uppercase', letterSpacing: '0.06em', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600 }}>
+                  o generá las unidades
+                </p>
+                <div className="flex gap-3 mb-3">
+                  <button
+                    onClick={() => setModal('rival')}
+                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg"
+                    style={{ background: 'rgba(232,64,64,0.12)', border: '1px solid rgba(232,64,64,0.35)', color: RIVAL_COLOR, fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase' }}
+                  >
+                    <svg width="14" height="14" viewBox="-7 -7 14 14">
+                      <circle r={6} fill="rgba(232,64,64,0.25)" stroke="#e84040" strokeWidth="1.5" />
+                      <line x1={-3} y1={0} x2={3} y2={0} stroke="#e84040" strokeWidth="1.5" strokeLinecap="round" />
+                      <line x1={0} y1={-3} x2={0} y2={3} stroke="#e84040" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                    Oponente
+                  </button>
+                  <button
+                    onClick={() => setModal('own')}
+                    className="flex-1 flex items-center justify-center gap-2 py-3 rounded-lg"
+                    style={{ background: 'rgba(61,126,240,0.12)', border: '1px solid rgba(61,126,240,0.35)', color: OWN_COLOR, fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase' }}
+                  >
+                    <svg width="14" height="14" viewBox="-7 -7 14 14">
+                      <circle r={6} fill="rgba(61,126,240,0.25)" stroke="#3d7ef0" strokeWidth="1.5" />
+                      <line x1={-3} y1={0} x2={3} y2={0} stroke="#3d7ef0" strokeWidth="1.5" strokeLinecap="round" />
+                      <line x1={0} y1={-3} x2={0} y2={3} stroke="#3d7ef0" strokeWidth="1.5" strokeLinecap="round" />
+                    </svg>
+                    Propio
+                  </button>
+                </div>
+              </>
+            )}
 
             <button
               onClick={() => onStartSimulation(items)}

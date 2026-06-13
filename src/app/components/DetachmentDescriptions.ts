@@ -232,3 +232,7 @@ export const DETACHMENT_DESCRIPTIONS: Record<string, DetachmentDescription> = {
 export function getDetachmentDescription(name: string): DetachmentDescription {
   return DETACHMENT_DESCRIPTIONS[name] ?? DETACHMENT_DESCRIPTIONS['__default__'];
 }
+
+export function hasDetachmentDescription(name: string): boolean {
+  return name in DETACHMENT_DESCRIPTIONS;
+}

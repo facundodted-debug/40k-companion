@@ -35,38 +35,57 @@ function nearestSupportedCount(n: number): number {
   return SUPPORTED_COUNTS.reduce((best, c) => Math.abs(c - n) < Math.abs(best - n) ? c : best, SUPPORTED_COUNTS[0]);
 }
 
-// Distribuye unidades en una grilla a partir del despliegue propio/rival del tablero.
-export function listToBoardItems(list: SavedList, side: Side): PlaceableItem[] {
-  const items: PlaceableItem[] = [];
-  const baseX = 300;
-  const baseY = side === 'own' ? 360 : 80;
-  const rowStep = side === 'own' ? 40 : -40;
+// Genera siglas legibles a partir del nombre de una unidad (ej. "Red Terror" -> "RT").
+function abbreviate(name: string): string {
+  const words = name.trim().split(/\s+/).filter(Boolean);
+  if (words.length >= 2) {
+    return words.map(w => w[0]).join('').toUpperCase().slice(0, 4);
+  }
+  return name.slice(0, 3).toUpperCase();
+}
 
-  const place = (i: number, baseSize: BaseSize, count: number, key: string) => {
-    items.push({
-      id: `${side}-${key}-${i}-${Date.now()}`,
-      baseSize,
-      count,
-      side,
-      x: baseX + ((i % 4) - 1.5) * 90,
-      y: baseY + Math.floor(i / 4) * rowStep,
-      rotation: 0,
-    });
-  };
+const BW = 600, BH = 440;
+
+// Distribuye unidades en una grilla centrada en el tablero (despliegue propio/rival).
+export function listToBoardItems(list: SavedList, side: Side): PlaceableItem[] {
+  const entries: { baseSize: BaseSize; count: number; key: string; label: string }[] = [];
 
   if (isArmyList(list)) {
-    list.keyUnits.forEach((unit, i) => {
+    list.keyUnits.forEach(unit => {
       const cfg = UNIT_TYPE_MAP[unit.type] ?? UNIT_TYPE_MAP.infantry;
-      place(i, cfg.baseSize, cfg.count, unit.id);
+      entries.push({ baseSize: cfg.baseSize, count: cfg.count, key: unit.id, label: abbreviate(unit.shortName || unit.name) });
     });
   } else {
-    list.units.forEach((unit, i) => {
+    list.units.forEach(unit => {
       const cfg = unit.baseType ? BASE_TYPE_MAP[unit.baseType] : undefined;
       const baseSize: BaseSize = cfg?.baseSize ?? '32';
       const count = cfg?.useModels ? nearestSupportedCount(unit.models) : 1;
-      place(i, baseSize, count, unit.name.replace(/\s+/g, '-'));
+      entries.push({ baseSize, count, key: unit.name.replace(/\s+/g, '-'), label: abbreviate(unit.name) });
     });
   }
 
-  return items;
+  const cols = 4;
+  const colSpacing = BW / (cols + 1);
+  const numRows = Math.max(1, Math.ceil(entries.length / cols));
+
+  // Banda de despliegue: mitad propia (cerca de y=BH) o rival (cerca de y=0), con margen.
+  const margin = 30;
+  const bandStart = side === 'own' ? BH / 2 + margin : margin;
+  const bandEnd = side === 'own' ? BH - margin : BH / 2 - margin;
+  const rowStep = numRows > 1 ? (bandEnd - bandStart) / (numRows - 1) : 0;
+
+  return entries.map((entry, i) => {
+    const col = i % cols;
+    const row = Math.floor(i / cols);
+    return {
+      id: `${side}-${entry.key}-${i}-${Date.now()}`,
+      baseSize: entry.baseSize,
+      count: entry.count,
+      side,
+      x: colSpacing * (col + 1),
+      y: bandStart + row * rowStep,
+      rotation: 0,
+      label: entry.label,
+    };
+  });
 }

@@ -308,7 +308,7 @@ function ListPreview({ list, onConfirm }: { list: ImportedList; onConfirm: () =>
 // ── Import modal (HTML) ────────────────────────────────────────────────────────
 type ModalPhase = 'input' | 'processing' | 'preview' | 'error';
 
-function HtmlImportModal({ onImport, onClose }: { onImport: (list: ImportedList) => void; onClose: () => void }) {
+export function HtmlImportModal({ onImport, onClose }: { onImport: (list: ImportedList) => void; onClose: () => void }) {
   const [phase, setPhase] = useState<ModalPhase>('input');
   const [html, setHtml] = useState('');
   const [step, setStep] = useState(0);

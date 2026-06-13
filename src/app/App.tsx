@@ -187,8 +187,7 @@ export default function App() {
   const [onboarded, setOnboarded] = useState(false);
   const [activeTab, setActiveTab] = useState<ActiveTab>(0);
   const [screen, setScreen] = useState<Screen>('home');
-  const [rivalFaction, setRivalFaction] = useState<{ id: string; name: string; color: string; abbr: string } | null>(null);
-  const [rivalDetachment, setRivalDetachment] = useState<string | undefined>();
+  const [rivalList, setRivalList] = useState<SavedList | null>(null);
   const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
   const [boardItems, setBoardItems] = useState<PlaceableItem[]>([]);
   const [activeList, setActiveList] = useState<SavedList | null>(null);
@@ -241,23 +240,29 @@ export default function App() {
             lists={listStore.lists}
             ownList={activeList}
             onSelectOwnList={setActiveList}
+            rivalList={rivalList}
+            onSelectRivalList={setRivalList}
+            onImportList={listStore.addList}
             onBack={() => { setActiveTab(0); navigate('home'); }}
-            onAnalyze={(faction, detachment) => {
-              setRivalFaction(faction);
-              setRivalDetachment(detachment);
+            onAnalyze={(rival) => {
+              setRivalList(rival);
               if (activeList) {
                 const ownAbbr = isArmyList(activeList) ? activeList.faction.abbr : (activeList.factionName?.slice(0, 3).toUpperCase() ?? '???');
                 const ownColor = isArmyList(activeList) ? activeList.faction.color : '#6e45e2';
                 const ownName = isArmyList(activeList) ? activeList.name : activeList.armyName;
+                const rivalAbbr = isArmyList(rival) ? rival.faction.abbr : (rival.factionName?.slice(0, 3).toUpperCase() ?? '???');
+                const rivalColor = isArmyList(rival) ? rival.faction.color : '#e84040';
+                const rivalName = isArmyList(rival) ? rival.name : rival.armyName;
+                const rivalDetachmentName = isArmyList(rival) ? rival.detachment.name : rival.detachmentName;
                 matchupStore.addRecord({
                   ownListId: activeList.id,
                   ownListName: ownName,
                   ownFactionAbbr: ownAbbr,
                   ownFactionColor: ownColor,
-                  rivalName: faction.name,
-                  rivalAbbr: faction.abbr,
-                  rivalColor: faction.color,
-                  rivalDetachment: detachment,
+                  rivalName,
+                  rivalAbbr,
+                  rivalColor,
+                  rivalDetachment: rivalDetachmentName,
                   strengthsCount: 3,
                   weaknessesCount: 2,
                   actionsCount: 4,
@@ -268,12 +273,10 @@ export default function App() {
           />
         );
       case 'matchup-result':
-        return rivalFaction ? (
+        return rivalList ? (
           <MatchupResultScreen
             ownList={activeList}
-            rivalFactionId={rivalFaction.id}
-            rivalFaction={rivalFaction}
-            rivalDetachment={rivalDetachment}
+            rivalList={rivalList}
             onBack={() => navigate('matchup-config')}
             onNewMatchup={() => navigate('matchup-config')}
           />

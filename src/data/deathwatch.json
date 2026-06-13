@@ -1,10 +1,715 @@
 {
-    "id":  "deathwatch",
-    "name":  "Deathwatch",
-    "detachments":  {
-
-                    },
-    "units":  [
-
-              ]
+  "id": "deathwatch",
+  "name": "Deathwatch",
+  "detachments": {
+    "Black Spear Task Force": {
+      "overview": "La única doctrina disponible para la Deathwatch refleja su naturaleza única: guerreros de élite reclutados de casi todos los Capítulos del Astartes, unidos para cazar y exterminar xenos. El Black Spear Task Force se centra en la versatilidad táctica absoluta a través de los Mission Tactics, que cambian cada turno para adaptar el estilo de combate del ejército a las amenazas presentes. Además, los Kill Teams pueden ser teletransportados a cualquier punto del campo de batalla gracias a la tecnología avanzada de la Vigilancia Negra.",
+      "abilities": [
+        {
+          "name": "Mission Tactics – Furor",
+          "flavor": "Cuando la marea xenos se acerca, la Deathwatch transforma cada disparo en una masacre.",
+          "rule": "Mientras esta táctica está activa, todas las armas equipadas por unidades ADEPTUS ASTARTES de tu ejército tienen la regla [SUSTAINED HITS 1]. Solo puede seleccionarse una vez por batalla."
+        },
+        {
+          "name": "Mission Tactics – Malleus",
+          "flavor": "Incluso el titán más colosal tiene un punto débil archivado en los anales de la Deathwatch.",
+          "rule": "Mientras esta táctica está activa, todas las armas equipadas por unidades ADEPTUS ASTARTES de tu ejército tienen la regla [LETHAL HITS]. Solo puede seleccionarse una vez por batalla."
+        },
+        {
+          "name": "Mission Tactics – Purgatus",
+          "flavor": "La Deathwatch apunta a los comandantes con un único disparo letal, decapitando al enemigo antes de que reaccione.",
+          "rule": "Mientras esta táctica está activa, cada vez que una unidad ADEPTUS ASTARTES de tu ejército hace un ataque, si obtiene un Critical Hit, ese ataque tiene la regla [PRECISION]. Solo puede seleccionarse una vez por batalla."
+        },
+        {
+          "name": "Municiones Especiales",
+          "flavor": "Las arcas de municiones de la Deathwatch contienen más variantes de proyectil que la mayoría de los ejércitos han visto en toda su historia.",
+          "rule": "Via Stratagemas de 1CP: Hellfire Rounds (bolt weapons ganan ANTI-INFANTRY 4+ y ANTI-MONSTER 5+), Kraken Rounds (mejora AP y range +6\" de bolt weapons), Dragonfire Rounds (bolt weapons ganan ASSAULT e IGNORES COVER). Cada unidad solo puede beneficiarse de un tipo por fase."
+        }
+      ],
+      "strengths": [
+        "Los Mission Tactics cambian cada turno, permitiendo adaptar el ejército en tiempo real a hordas (Furor), monstruos (Malleus) o personajes (Purgatus)",
+        "Las municiones especiales en Stratagemas de 1CP son de las mejores del juego: Hellfire Rounds convierte bolt weapons en cazadoras de infantería y monstruos simultáneamente",
+        "Site-to-Site Teleportation permite reubicar hasta dos Kill Teams al final del turno enemigo, creando una flexibilidad de posicionamiento única en el juego",
+        "Adaptive Tactics permite darle a una unidad específica una Táctica diferente a la del ejército, habilitando múltiples estrategias simultáneas",
+        "Kill Team como regla de ejército unifica la mecánica de T para unidades mixtas, simplificando la interacción y maximizando la sinergia"
+      ],
+      "weaknesses": [
+        "Ejército de Elite con pocas unidades — cada baja importa mucho más que en ejércitos de horda",
+        "Los Kill Teams requieren 10 modelos fijos, lo que limita la flexibilidad en el armado de lista",
+        "Sin regeneración ni reglas de supervivencia pasivas — la supervivencia depende de Armour of Contempt (1CP) y buen posicionamiento",
+        "El pool de datasheets es muy reducido: 6 unidades únicas de Deathwatch más acceso a personajes SM genéricos",
+        "Los Mission Tactics solo pueden usarse una vez por batalla cada uno, por lo que el orden de activación importa y un mal timing es irreversible"
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "watch-master",
+      "name": "Watch Master",
+      "pts": 95,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Grenades",
+        "Imperium",
+        "Captain",
+        "Watch Master"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 4,
+        "sv": 2,
+        "w": 5,
+        "ld": 6,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Vigil spear",
+          "range": "24\"",
+          "a": "2",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "melee": [
+        {
+          "name": "Vigil spear",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 6,
+          "ap": -2,
+          "d": "D3",
+          "keywords": ["Lance"]
+        }
+      ],
+      "abilities": [
+        "Invulnerable Save 4+",
+        "Leader",
+        "Mission Tactics",
+        "Oath of Moment",
+        "Strategic Knowledge",
+        "Watch Master"
+      ],
+      "considerations": "El comandante supremo de la Deathwatch. Sv 2+ con INV 4+ y 5W lo hacen muy durable. Strategic Knowledge permite al escuadrón liderado disparar y cargar incluso tras avanzar o retirarse — enorme ventaja táctica. Watch Master reduce el costo de una Stratagem en 1CP una vez por battle round. CAPTAIN keyword desbloquea Enhancements.",
+      "recommendations": "Liderar Deathwatch Veterans o Fortis Kill Team. Strategic Knowledge es una de las mejores habilidades de líder del codex Space Marines — combinada con Furor Tactics transforma el escuadrón en una amenaza que nunca pierde la iniciativa. Considerar The Tome of Ectoclades para double Oath of Moment."
+    },
+    {
+      "id": "watch-captain-artemis",
+      "name": "Watch Captain Artemis",
+      "pts": 65,
+      "type": "character",
+      "role": "Líder",
+      "keywords": [
+        "Infantry",
+        "Character",
+        "Epic Hero",
+        "Grenades",
+        "Imperium",
+        "Captain",
+        "Watch Captain Artemis"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 4,
+        "sv": 3,
+        "w": 4,
+        "ld": 6,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Hellfire Extremis",
+          "range": "12\"",
+          "a": "D6",
+          "skill": "N/A",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Anti-Infantry 4+", "Devastating Wounds", "Ignores Cover", "Torrent"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Master-crafted power weapon",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Invulnerable Save 4+",
+        "Feel No Pain 6+",
+        "Leader",
+        "Mission Tactics",
+        "Oath of Moment",
+        "Tactical Instinct",
+        "Unstoppable Champion"
+      ],
+      "considerations": "EPIC HERO barato (65pts). Hellfire Extremis es un flamer ANTI-INFANTRY 4+ con DEVASTATING WOUNDS — letal contra infantería ligera. Tactical Instinct da LETHAL HITS a todas las armas del escuadrón liderado mientras lo acompaña. Unstoppable Champion: la primera vez que es destruido, sobrevive en 2+ con 1W. EPIC HERO — no puede llevar Enhancements.",
+      "recommendations": "Líder extremadamente eficiente en puntos. En Deathwatch Veterans con mix de armas, LETHAL HITS de Tactical Instinct es permanentemente activo sin gastar la Mission Tactic. Hellfire Extremis antes del CaC puede eliminar infantería ligera que intente trabar al escuadrón. Segunda opción de líder ideal junto al Watch Master."
+    },
+    {
+      "id": "deathwatch-veterans",
+      "name": "Deathwatch Veterans",
+      "pts": 100,
+      "type": "infantry",
+      "role": "Línea",
+      "keywords": [
+        "Infantry",
+        "Battleline",
+        "Grenades",
+        "Imperium",
+        "Kill Team",
+        "Deathwatch Veterans"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 4,
+        "sv": 3,
+        "w": 2,
+        "ld": 6,
+        "oc": 2
+      },
+      "ranged": [
+        {
+          "name": "Boltgun",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        },
+        {
+          "name": "Combi-weapon",
+          "range": "24\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Anti-Infantry 4+", "Devastating Wounds", "Rapid Fire 1"]
+        },
+        {
+          "name": "Deathwatch shotgun",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "2",
+          "keywords": ["Assault"]
+        },
+        {
+          "name": "Frag cannon",
+          "range": "18\"",
+          "a": "D3",
+          "skill": "4+",
+          "s": 7,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Blast", "Heavy", "Rapid Fire D3"]
+        },
+        {
+          "name": "Infernus heavy bolter – heavy bolter",
+          "range": "36\"",
+          "a": "3",
+          "skill": "4+",
+          "s": 5,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Heavy", "Sustained Hits 1"]
+        },
+        {
+          "name": "Infernus heavy bolter – heavy flamer",
+          "range": "12\"",
+          "a": "D6",
+          "skill": "N/A",
+          "s": 5,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Ignores Cover", "Torrent"]
+        },
+        {
+          "name": "Stalker-pattern boltgun",
+          "range": "24\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Heavy", "Precision"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Black Shield blades",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Twin-linked"]
+        },
+        {
+          "name": "Close combat weapon",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        },
+        {
+          "name": "Deathwatch thunder hammer",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 10,
+          "ap": -2,
+          "d": "3",
+          "keywords": ["Devastating Wounds"]
+        },
+        {
+          "name": "Power weapon",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        },
+        {
+          "name": "Xenophase blade",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Devastating Wounds"]
+        }
+      ],
+      "abilities": [
+        "Mission Tactics",
+        "Oath of Moment",
+        "Death to the Alien",
+        "Astartes Shield (wargear): Invulnerable Save 4+"
+      ],
+      "considerations": "La unidad de línea del codex. Death to the Alien: re-roll Hit de 1 siempre, re-roll Hit completo contra cualquier objetivo sin keyword IMPERIUM o CHAOS. Enorme flexibilidad de armamento — mix de flamers, frag cannons, stalker boltguns y thunder hammers. Astartes Shield da INV 4+ al portador (1 por cada 5 modelos). Puntos: 5 modelos 100pts / 10 modelos 190pts.",
+      "recommendations": "El núcleo de cualquier lista Deathwatch. Mezclar 1 frag cannon + 1 stalker boltgun + 1 thunder hammer por cada 5 modelos para máxima versatilidad. Death to the Alien los convierte en una amenaza ofensiva contra xenos sin gastar CP adicional. Liderar con Watch Master (Strategic Knowledge) para disparar y cargar tras avanzar."
+    },
+    {
+      "id": "fortis-kill-team",
+      "name": "Fortis Kill Team",
+      "pts": 180,
+      "type": "infantry",
+      "role": "Élite",
+      "keywords": [
+        "Infantry",
+        "Grenades",
+        "Imperium",
+        "Tacticus",
+        "Kill Team",
+        "Fortis Kill Team"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 4,
+        "sv": 3,
+        "w": 2,
+        "ld": 6,
+        "oc": 2
+      },
+      "ranged": [
+        {
+          "name": "Deathwatch bolt rifle",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Assault", "Heavy", "Lethal Hits"]
+        },
+        {
+          "name": "Plasma incinerator – standard",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 7,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Assault", "Heavy"]
+        },
+        {
+          "name": "Plasma incinerator – supercharge",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 8,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Assault", "Hazardous", "Heavy"]
+        },
+        {
+          "name": "Pyreblaster",
+          "range": "12\"",
+          "a": "D6",
+          "skill": "N/A",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Ignores Cover", "Torrent"]
+        },
+        {
+          "name": "Superfrag rocket launcher",
+          "range": "48\"",
+          "a": "D6+1",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Blast", "Heavy"]
+        },
+        {
+          "name": "Superkrak rocket launcher",
+          "range": "48\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 10,
+          "ap": -2,
+          "d": "D6+1",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Vengor launcher",
+          "range": "48\"",
+          "a": "D6",
+          "skill": "2+",
+          "s": 7,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Blast", "Heavy", "Indirect Fire"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Astartes chainsword",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        },
+        {
+          "name": "Power fist",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        },
+        {
+          "name": "Power weapon",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        },
+        {
+          "name": "Thunder hammer",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Devastating Wounds"]
+        }
+      ],
+      "abilities": [
+        "Mission Tactics",
+        "Oath of Moment",
+        "Fortis Doctrines"
+      ],
+      "considerations": "El Kill Team Primaris versátil. Fortis Doctrines: +1 Hit contra unidades debilitadas (below Starting Strength), y +1 Hit +1 Wound contra unidades Below Half-strength — el bono se acumula progresivamente. Deathwatch bolt rifle con LETHAL HITS, ASSAULT y HEAVY garantiza impactos y permite disparar tras avanzar. Vengor launcher (Indirect Fire) da alcance y versatilidad. Fijo en 10 modelos.",
+      "recommendations": "El Kill Team de línea más equilibrado. Fortis Doctrines lo convierte en una máquina de eliminar unidades ya dañadas — apuntar a objetivos previamente heridos por otros elementos del ejército. Mix de pyreblasters para CaC cercano, superkrak para vehículos y bolt rifles para todo lo demás. Liderar con Watch Master para disparar y cargar tras avanzar."
+    },
+    {
+      "id": "spectrus-kill-team",
+      "name": "Spectrus Kill Team",
+      "pts": 180,
+      "type": "infantry",
+      "role": "Exploración",
+      "keywords": [
+        "Infantry",
+        "Smoke",
+        "Grenades",
+        "Imperium",
+        "Phobos",
+        "Kill Team",
+        "Spectrus Kill Team"
+      ],
+      "stats": {
+        "m": 6,
+        "t": 4,
+        "sv": 3,
+        "w": 2,
+        "ld": 6,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Deathwatch marksman bolt carbine",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Heavy", "Lethal Hits"]
+        },
+        {
+          "name": "Deathwatch occulus bolt carbine",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Ignores Cover", "Lethal Hits"]
+        },
+        {
+          "name": "Deathwatch bolt carbine",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Precision"]
+        },
+        {
+          "name": "Bolt sniper rifle",
+          "range": "36\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "3",
+          "keywords": ["Heavy", "Precision"]
+        },
+        {
+          "name": "Las fusil",
+          "range": "36\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 9,
+          "ap": -3,
+          "d": "D6",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Instigator bolt carbine",
+          "range": "24\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Heavy"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Close combat weapon",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        },
+        {
+          "name": "Combat knife",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Precision"]
+        },
+        {
+          "name": "Paired combat blades",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Sustained Hits 1"]
+        }
+      ],
+      "abilities": [
+        "Infiltrators",
+        "Scouts 6\"",
+        "Mission Tactics",
+        "Oath of Moment",
+        "Spectrus Doctrines",
+        "Helix Gauntlet (wargear): Feel No Pain 6+",
+        "Infiltrator Comms Array (wargear): 1CP en 5+ al ser target de Stratagem"
+      ],
+      "considerations": "El Kill Team de reconocimiento y hostigamiento. Infiltrators + Scouts 6\" permiten desplegarse agresivamente desde turno 1. Spectrus Doctrines: al final del turno enemigo, si están a más de 6\" de todos los enemigos, pueden retirarse a Strategic Reserves — casi imposibles de eliminar si se manejan bien. PHOBOS y múltiples armas con PRECISION hacen al líder adjunto muy vulnerable.",
+      "recommendations": "Ideal para hostigamiento, control de objetivos lejanos y presión psicológica. La habilidad de volver a Reserves en respuesta es única en el juego — usarla para evitar el CaC enemigo y reaparecer en otro flanco. Bolt sniper rifle o las fusil para sniper. Occulus bolt carbines para ignorar cobertura. Considerar Infiltrator Comms Array para recuperar CP en partidas intensivas."
+    },
+    {
+      "id": "indomitor-kill-team",
+      "name": "Indomitor Kill Team",
+      "pts": 265,
+      "type": "infantry",
+      "role": "Soporte pesado",
+      "keywords": [
+        "Infantry",
+        "Grenades",
+        "Imperium",
+        "Gravis",
+        "Kill Team",
+        "Indomitor Kill Team"
+      ],
+      "stats": {
+        "m": 5,
+        "t": 6,
+        "sv": 3,
+        "w": 3,
+        "ld": 6,
+        "oc": 1
+      },
+      "ranged": [
+        {
+          "name": "Deathwatch heavy bolt rifle",
+          "range": "30\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Assault", "Heavy", "Lethal Hits"]
+        },
+        {
+          "name": "Deathwatch heavy bolter",
+          "range": "36\"",
+          "a": "3",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "3",
+          "keywords": ["Assault", "Heavy", "Lethal Hits", "Sustained Hits 1"]
+        },
+        {
+          "name": "Melta rifle",
+          "range": "18\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 9,
+          "ap": -4,
+          "d": "D6",
+          "keywords": ["Heavy", "Melta 2"]
+        },
+        {
+          "name": "Multi-melta",
+          "range": "18\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 9,
+          "ap": -4,
+          "d": "D6",
+          "keywords": ["Heavy", "Melta 2"]
+        },
+        {
+          "name": "Auto boltstorm gauntlets",
+          "range": "18\"",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Twin-linked"]
+        },
+        {
+          "name": "Flamestorm gauntlets",
+          "range": "12\"",
+          "a": "D6+1",
+          "skill": "N/A",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Ignores Cover", "Torrent", "Twin-linked"]
+        },
+        {
+          "name": "Fragstorm grenade launcher",
+          "range": "18\"",
+          "a": "D6",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Blast"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Close combat weapon",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        },
+        {
+          "name": "Twin power fists",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Twin-linked"]
+        }
+      ],
+      "abilities": [
+        "Mission Tactics",
+        "Oath of Moment",
+        "Indomitor Doctrines"
+      ],
+      "considerations": "El Kill Team más durable (T6 W3 GRAVIS). Indomitor Doctrines: +2S a todos los ataques ranged contra el objetivo más cercano, o en cualquier ataque melee tras una carga. Melta rifles a BS 3+ son devastadores. Deathwatch heavy bolter con LETHAL HITS + SUSTAINED HITS 1 es excepcional contra infantería. Slow (M5) pero con alcance de 30-36\" en las armas principales. Fijo en 10 modelos, 265pts.",
+      "recommendations": "El puntal de fuego pesado del ejército. Posicionar centralmente para aprovechar los rangos largos y no tener que moverse. Indomitor Doctrines hace al objetivo más cercano altamente vulnerable — usarlo para concentrar fuego masivo en una unidad prioritaria. Multi-melta o melta rifles para eliminar vehículos con Malleus Tactics activa es una combinación letal. Liderar con Captain in Gravis Armour (SM genérico) si se usa."
+    }
+  ]
 }
