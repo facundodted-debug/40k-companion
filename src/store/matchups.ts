@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from 'react';
+import { api } from '../lib/api';
 
-const STORAGE_KEY = '40k-matchup-history';
 const MAX_RECORDS = 20;
 
 export interface MatchupRecord {
@@ -19,34 +19,24 @@ export interface MatchupRecord {
   actionsCount: number;
 }
 
-function loadHistory(): MatchupRecord[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as MatchupRecord[]) : [];
-  } catch {
-    return [];
-  }
-}
-
 export function useMatchupHistory() {
-  const [history, setHistory] = useState<MatchupRecord[]>(() => loadHistory());
+  const [history, setHistory] = useState<MatchupRecord[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(history));
-  }, [history]);
+    api.getMatchups<MatchupRecord>()
+      .then(setHistory)
+      .catch(() => setHistory([]))
+      .finally(() => setLoading(false));
+  }, []);
 
   const addRecord = useCallback((record: Omit<MatchupRecord, 'id' | 'date'>) => {
-    setHistory(prev => {
-      const newRecord: MatchupRecord = {
-        ...record,
-        id: crypto.randomUUID(),
-        date: new Date().toISOString(),
-      };
-      return [newRecord, ...prev].slice(0, MAX_RECORDS);
-    });
+    api.addMatchup<MatchupRecord>(record)
+      .then(saved => setHistory(prev => [saved, ...prev].slice(0, MAX_RECORDS)))
+      .catch(() => {});
   }, []);
 
   const lastMatchup = history[0] ?? null;
 
-  return { history, addRecord, lastMatchup };
+  return { history, loading, addRecord, lastMatchup };
 }

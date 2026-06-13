@@ -1,9 +1,14 @@
-import { useState, useEffect, useRef } from 'react';
-import { ChevronRight, BookOpen, Code2, X, CheckCircle, AlertCircle, ChevronDown, Crown, Sparkles } from 'lucide-react';
-import { SAMPLE_LIST, ArmyList, FACTIONS } from './shared';
+import { useState } from 'react';
+import { ChevronRight, BookOpen, Code2, X, CheckCircle, AlertCircle, ChevronDown, Crown, Sparkles, Zap } from 'lucide-react';
+import { ArmyList } from './shared';
 import { ScreenHeader } from './ScreenHeader';
 import { FactionBadge } from './ScreenHeader';
 import { isArmyListText, parseArmyListText, ImportedList, ParsedUnit } from '../lib/armyListParser';
+import { SavedList, useListStore } from '../../store/lists';
+
+function isArmyList(list: SavedList): list is ArmyList {
+  return 'faction' in list && 'keyUnits' in list;
+}
 
 // ── HTML parser ────────────────────────────────────────────────────────────────
 const SKIP_PREFIXES = [
@@ -439,7 +444,7 @@ function ModalShell({ title, source, onClose, children }: {
 }
 
 // ── Imported list card ─────────────────────────────────────────────────────────
-function ImportedListCard({ list }: { list: ImportedList }) {
+function ImportedListCard({ list, onMatchup }: { list: ImportedList; onMatchup: () => void }) {
   const [expanded, setExpanded] = useState(false);
   const totalModels = list.units.reduce((s, u) => s + u.models, 0);
   const sourceColor = 'var(--primary)';
@@ -507,6 +512,13 @@ function ImportedListCard({ list }: { list: ImportedList }) {
           ))}
         </div>
       )}
+
+      <div className="p-3" style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <button onClick={onMatchup} className="w-full flex items-center justify-center gap-2 py-2 rounded"
+          style={{ background: 'var(--primary)', color: 'white', fontFamily: "'Barlow Condensed', sans-serif", fontSize: 12, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' }}>
+          Analizar matchup <ChevronRight size={13} />
+        </button>
+      </div>
     </div>
   );
 }
@@ -569,67 +581,45 @@ function ListCard({ list, onMatchup }: { list: ArmyList; onMatchup: () => void }
   );
 }
 
-const MOCK_LIST_2: ArmyList = {
-  id: 'list-2',
-  name: 'Awakened Force',
-  faction: FACTIONS[2],
-  detachment: { id: 'awakened', name: 'Awakened Dynasty', factionId: 'necrons' },
-  keyUnits: [
-    { id: 'warriors', name: 'Guerreros Necron', shortName: 'GUE', type: 'infantry', points: 90, factionId: 'necrons', role: 'Tropa' },
-    { id: 'overlord', name: 'Señor de la Cripta', shortName: 'OVR', type: 'character', points: 85, factionId: 'necrons', role: 'Líder' },
-    { id: 'c-tan', name: "C'tan Shard", shortName: "C'TN", type: 'monster', points: 250, factionId: 'necrons', role: 'Especial' },
-  ],
-  totalPoints: 1850,
-};
-
 // ── Screen ─────────────────────────────────────────────────────────────────────
 interface MyListsScreenProps {
   onCreateList: () => void;
-  onGoMatchup: (list: ArmyList) => void;
+  onGoMatchup: (list: SavedList) => void;
+  listStore: ReturnType<typeof useListStore>;
 }
 
-type ViewState = 'loading' | 'filled';
 type ModalType = 'html' | null;
 
-export function MyListsScreen({ onGoMatchup }: MyListsScreenProps) {
-  const [viewState, setViewState] = useState<ViewState>('loading');
-  const [importedLists, setImportedLists] = useState<ImportedList[]>([]);
+export function MyListsScreen({ onGoMatchup, listStore }: MyListsScreenProps) {
+  const { lists, loading, addList } = listStore;
   const [modal, setModal] = useState<ModalType>(null);
-  const existingLists = [SAMPLE_LIST, MOCK_LIST_2];
-
-  useEffect(() => {
-    const t = setTimeout(() => setViewState('filled'), 900);
-    return () => clearTimeout(t);
-  }, []);
 
   const handleImport = (list: ImportedList) => {
-    setImportedLists(prev => [list, ...prev]);
+    addList(list);
   };
-
-  const totalLists = existingLists.length + importedLists.length;
 
   return (
     <div className="flex flex-col h-full" style={{ position: 'relative' }}>
       <ScreenHeader
         title="Mis Listas"
-        subtitle={viewState === 'filled' ? `${totalLists} ejércitos guardados` : undefined}
+        subtitle={!loading ? `${lists.length} ejércitos guardados` : undefined}
       />
 
-      {viewState === 'loading' && (
+      {loading && (
         <div className="flex flex-col gap-3 p-4 overflow-y-auto">
           <SkeletonCard /><SkeletonCard /><SkeletonCard />
         </div>
       )}
 
-      {viewState === 'filled' && (
+      {!loading && lists.length === 0 && <EmptyState />}
+
+      {!loading && lists.length > 0 && (
         <div className="flex-1 overflow-y-auto">
           <div className="flex flex-col gap-3 p-4 pb-28">
-            {/* Imported lists first */}
-            {importedLists.map(l => <ImportedListCard key={l.id} list={l} />)}
-
-            {/* Existing mock lists */}
-            {existingLists.map(l => (
-              <ListCard key={l.id} list={l} onMatchup={() => onGoMatchup(l)} />
+            {lists.map(l => (
+              isArmyList(l)
+                ? <ListCard key={l.id} list={l} onMatchup={() => onGoMatchup(l)} />
+                : <ImportedListCard key={l.id} list={l} onMatchup={() => onGoMatchup(l)} />
             ))}
           </div>
         </div>

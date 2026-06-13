@@ -1,35 +1,35 @@
 import { useCallback, useEffect, useState } from 'react';
 import { ArmyList } from '../app/components/shared';
+import { ImportedList } from '../app/lib/armyListParser';
+import { api } from '../lib/api';
 
-const STORAGE_KEY = '40k-lists';
-
-function loadLists(): ArmyList[] {
-  try {
-    const raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? (JSON.parse(raw) as ArmyList[]) : [];
-  } catch {
-    return [];
-  }
-}
+export type SavedList = ArmyList | ImportedList;
 
 export function useListStore() {
-  const [lists, setLists] = useState<ArmyList[]>(() => loadLists());
+  const [lists, setLists] = useState<SavedList[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(lists));
-  }, [lists]);
+    api.getLists<SavedList>()
+      .then(setLists)
+      .catch(() => setLists([]))
+      .finally(() => setLoading(false));
+  }, []);
 
-  const addList = useCallback((list: ArmyList) => {
+  const addList = useCallback((list: SavedList) => {
     setLists(prev => [...prev, list]);
+    api.saveList(list).catch(() => {});
   }, []);
 
   const removeList = useCallback((id: string) => {
     setLists(prev => prev.filter(l => l.id !== id));
+    api.deleteList(id).catch(() => {});
   }, []);
 
-  const updateList = useCallback((list: ArmyList) => {
+  const updateList = useCallback((list: SavedList) => {
     setLists(prev => prev.map(l => (l.id === list.id ? list : l)));
+    api.saveList(list).catch(() => {});
   }, []);
 
-  return { lists, addList, removeList, updateList };
+  return { lists, loading, addList, removeList, updateList };
 }

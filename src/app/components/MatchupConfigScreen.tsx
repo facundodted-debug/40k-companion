@@ -1,42 +1,53 @@
 import { useState } from 'react';
 import { ChevronRight, ChevronDown, Check, X } from 'lucide-react';
-import { SAMPLE_LIST, ArmyList, FACTIONS } from './shared';
 import { ScreenHeader } from './ScreenHeader';
 import { motion, AnimatePresence } from 'motion/react';
 import { FACTION_CATEGORIES, FactionAccordion, SubFaction, FactionCategory } from './FactionData';
+import { SavedList } from '../../store/lists';
+import { DETACHMENTS as DETACHMENTS_DATA } from '../../data';
 
-// ── Mock army lists ────────────────────────────────────────────────────────────
+function isArmyList(list: SavedList): list is import('./shared').ArmyList {
+  return 'faction' in list && 'keyUnits' in list;
+}
 
-const MOCK_LISTS: ArmyList[] = [
-  SAMPLE_LIST,
-  {
-    id: 'list-2',
-    name: 'Awakened Force',
-    faction: FACTIONS[2],
-    detachment: { id: 'awakened', name: 'Awakened Dynasty', factionId: 'necrons' },
-    keyUnits: [],
-    totalPoints: 1850,
-  },
-  {
-    id: 'list-3',
-    name: 'Vanguard Assault',
-    faction: FACTIONS[0],
-    detachment: { id: 'vanguard', name: 'Vanguard Spearhead', factionId: 'space-marines' },
-    keyUnits: [],
-    totalPoints: 2000,
-  },
-];
+function getListDisplay(list: SavedList) {
+  if (isArmyList(list)) {
+    return {
+      name: list.name,
+      detachmentName: list.detachment.name,
+      totalPoints: list.totalPoints,
+      color: list.faction.color,
+    };
+  }
+  return {
+    name: list.armyName,
+    detachmentName: list.detachmentName ?? '—',
+    totalPoints: list.totalPoints ?? 0,
+    color: '#6e45e2',
+  };
+}
+
+// ── Real detachment data lookup ───────────────────────────────────────────────
+
+function getDetachmentNames(subfaction: SubFaction): string[] {
+  const entry = (DETACHMENTS_DATA as Record<string, { detachments: { name: string }[] }>)[subfaction.id];
+  if (entry?.detachments?.length) {
+    return entry.detachments.map(d => d.name);
+  }
+  return subfaction.detachments;
+}
 
 // ── Army list select ───────────────────────────────────────────────────────────
 
 interface ArmySelectProps {
-  lists: ArmyList[];
-  selected: ArmyList | null;
-  onSelect: (list: ArmyList) => void;
+  lists: SavedList[];
+  selected: SavedList | null;
+  onSelect: (list: SavedList) => void;
 }
 
 function ArmySelect({ lists, selected, onSelect }: ArmySelectProps) {
   const [open, setOpen] = useState(false);
+  const selectedDisplay = selected ? getListDisplay(selected) : null;
 
   return (
     <div style={{ position: 'relative' }}>
@@ -49,19 +60,19 @@ function ArmySelect({ lists, selected, onSelect }: ArmySelectProps) {
           transition: 'all 0.15s',
         }}
       >
-        {selected ? (
+        {selectedDisplay ? (
           <>
-            <div style={{ width: 3, alignSelf: 'stretch', borderRadius: 2, background: selected.faction.color, flexShrink: 0 }} />
+            <div style={{ width: 3, alignSelf: 'stretch', borderRadius: 2, background: selectedDisplay.color, flexShrink: 0 }} />
             <div className="flex-1 min-w-0">
               <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: 'var(--foreground)', lineHeight: 1.2, marginBottom: 1 }}>
-                {selected.name}
+                {selectedDisplay.name}
               </p>
               <p style={{ fontSize: 11, color: 'var(--muted-foreground)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
-                {selected.detachment.name}
+                {selectedDisplay.detachmentName}
               </p>
             </div>
             <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 13, fontWeight: 700, color: '#3d7ef0', flexShrink: 0 }}>
-              {selected.totalPoints} pts
+              {selectedDisplay.totalPoints} pts
             </span>
           </>
         ) : (
@@ -95,8 +106,14 @@ function ArmySelect({ lists, selected, onSelect }: ArmySelectProps) {
               boxShadow: '0 12px 40px rgba(0,0,0,0.6)',
             }}
           >
+            {lists.length === 0 && (
+              <div className="px-3 py-3" style={{ fontSize: 12, color: 'var(--muted-foreground)' }}>
+                Sin listas guardadas. Importá una desde "Mis Listas".
+              </div>
+            )}
             {lists.map((list, idx) => {
               const isSel = selected?.id === list.id;
+              const display = getListDisplay(list);
               return (
                 <button
                   key={list.id}
@@ -108,16 +125,16 @@ function ArmySelect({ lists, selected, onSelect }: ArmySelectProps) {
                     transition: 'background 0.1s',
                   }}
                 >
-                  <div style={{ width: 3, alignSelf: 'stretch', borderRadius: 2, background: list.faction.color, flexShrink: 0 }} />
+                  <div style={{ width: 3, alignSelf: 'stretch', borderRadius: 2, background: display.color, flexShrink: 0 }} />
                   <div className="flex-1 min-w-0">
                     <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 14, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: isSel ? '#3d7ef0' : 'var(--foreground)', lineHeight: 1.2, marginBottom: 1 }}>
-                      {list.name}
+                      {display.name}
                     </p>
-                    <p style={{ fontSize: 11, color: 'var(--muted-foreground)' }}>{list.detachment.name}</p>
+                    <p style={{ fontSize: 11, color: 'var(--muted-foreground)' }}>{display.detachmentName}</p>
                   </div>
                   <div className="flex flex-col items-end gap-0.5">
                     <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 13, fontWeight: 700, color: 'var(--accent)' }}>
-                      {list.totalPoints} pts
+                      {display.totalPoints} pts
                     </span>
                     {isSel && <Check size={12} style={{ color: '#3d7ef0' }} />}
                   </div>
@@ -134,13 +151,13 @@ function ArmySelect({ lists, selected, onSelect }: ArmySelectProps) {
 // ── Detachment selector ────────────────────────────────────────────────────────
 
 interface DetachmentSelectorProps {
-  subfaction: SubFaction;
+  detachmentNames: string[];
   categoryColor: string;
   selected: string;
   onSelect: (det: string) => void;
 }
 
-function DetachmentSelector({ subfaction, categoryColor, selected, onSelect }: DetachmentSelectorProps) {
+function DetachmentSelector({ detachmentNames, categoryColor, selected, onSelect }: DetachmentSelectorProps) {
   return (
     <div
       className="rounded-xl overflow-hidden"
@@ -165,7 +182,7 @@ function DetachmentSelector({ subfaction, categoryColor, selected, onSelect }: D
         {!selected && <Check size={13} style={{ color: 'var(--muted-foreground)' }} />}
       </button>
 
-      {subfaction.detachments.map((det, i) => {
+      {detachmentNames.map((det, i) => {
         const isSel = selected === det;
         return (
           <button
@@ -174,7 +191,7 @@ function DetachmentSelector({ subfaction, categoryColor, selected, onSelect }: D
             className="w-full flex items-center gap-3 px-4 py-2.5 text-left"
             style={{
               background: isSel ? categoryColor + '18' : 'transparent',
-              borderBottom: i < subfaction.detachments.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
+              borderBottom: i < detachmentNames.length - 1 ? '1px solid rgba(255,255,255,0.04)' : 'none',
               transition: 'background 0.12s',
             }}
           >
@@ -197,12 +214,14 @@ function DetachmentSelector({ subfaction, categoryColor, selected, onSelect }: D
 // ── Main screen ────────────────────────────────────────────────────────────────
 
 interface MatchupConfigScreenProps {
+  lists: SavedList[];
+  ownList: SavedList | null;
+  onSelectOwnList: (list: SavedList) => void;
   onBack: () => void;
   onAnalyze: (rivalFaction: { name: string; color: string; abbr: string }, rivalDetachment?: string) => void;
 }
 
-export function MatchupConfigScreen({ onBack, onAnalyze }: MatchupConfigScreenProps) {
-  const [ownList, setOwnList] = useState<ArmyList | null>(MOCK_LISTS[0]);
+export function MatchupConfigScreen({ lists, ownList, onSelectOwnList, onBack, onAnalyze }: MatchupConfigScreenProps) {
   const [openAccordion, setOpenAccordion] = useState<string | null>(null);
   const [selectedSubfaction, setSelectedSubfaction] = useState<SubFaction | null>(null);
   const [selectedCategory, setSelectedCategory] = useState<FactionCategory | null>(null);
@@ -228,7 +247,7 @@ export function MatchupConfigScreen({ onBack, onAnalyze }: MatchupConfigScreenPr
             <p style={{ fontSize: 11, color: 'var(--muted-foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', marginBottom: 8 }}>
               Tu ejército
             </p>
-            <ArmySelect lists={MOCK_LISTS} selected={ownList} onSelect={setOwnList} />
+            <ArmySelect lists={lists} selected={ownList} onSelect={onSelectOwnList} />
           </section>
 
           {/* VS divider */}
@@ -282,7 +301,7 @@ export function MatchupConfigScreen({ onBack, onAnalyze }: MatchupConfigScreenPr
                 transition={{ duration: 0.2 }}
               >
                 <DetachmentSelector
-                  subfaction={selectedSubfaction}
+                  detachmentNames={getDetachmentNames(selectedSubfaction)}
                   categoryColor={selectedCategory.color}
                   selected={selectedDetachment}
                   onSelect={setSelectedDetachment}

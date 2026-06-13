@@ -1,15 +1,26 @@
-import { Swords, Map, Clock, ChevronRight, Zap } from 'lucide-react';
-import { SAMPLE_LIST } from './shared';
+import { Swords, Map, Clock, ChevronRight, Zap, BookOpen, History } from 'lucide-react';
+import { ArmyList } from './shared';
 import { FactionBadge } from './ScreenHeader';
+import { SavedList } from '../../store/lists';
+import { MatchupRecord } from '../../store/matchups';
+
+function isArmyList(list: SavedList): list is ArmyList {
+  return 'faction' in list && 'keyUnits' in list;
+}
 
 interface HomeScreenProps {
+  lists: SavedList[];
+  listsLoading: boolean;
+  lastMatchup: MatchupRecord | null;
+  matchupsLoading: boolean;
   onGoMatchup: () => void;
   onGoLists: () => void;
   onGoPractica: () => void;
 }
 
-export function HomeScreen({ onGoMatchup, onGoLists, onGoPractica }: HomeScreenProps) {
-  const list = SAMPLE_LIST;
+export function HomeScreen({ lists, listsLoading, lastMatchup, matchupsLoading, onGoMatchup, onGoLists, onGoPractica }: HomeScreenProps) {
+  const activeList = lists[0];
+  const activeArmyList = activeList && isArmyList(activeList) ? activeList : null;
 
   return (
     <div className="flex flex-col gap-0 h-full overflow-y-auto pb-4">
@@ -33,7 +44,7 @@ export function HomeScreen({ onGoMatchup, onGoLists, onGoPractica }: HomeScreenP
           Listo para<br />el combate
         </h1>
         <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.5 }}>
-          Último acceso hace 2 días · Turno 3 pendiente
+          {lists.length > 0 ? `${lists.length} ejércitos guardados` : 'Importá tu primera lista para empezar'}
         </p>
       </div>
 
@@ -82,41 +93,58 @@ export function HomeScreen({ onGoMatchup, onGoLists, onGoPractica }: HomeScreenP
           <p style={{ fontSize: 11, color: 'var(--muted-foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
             Último matchup
           </p>
-          <div className="flex items-center gap-1" style={{ color: 'var(--muted-foreground)', fontSize: 11 }}>
-            <Clock size={11} />
-            <span>hace 2 días</span>
-          </div>
-        </div>
-        <button
-          onClick={onGoMatchup}
-          className="w-full rounded-lg p-4 text-left"
-          style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.07)' }}
-        >
-          <div className="flex items-center justify-between mb-3">
-            <div className="flex items-center gap-2">
-              <FactionBadge abbr="SM" color="#3d7ef0" size="sm" />
-              <span style={{ color: 'var(--muted-foreground)', fontSize: 12 }}>vs</span>
-              <FactionBadge abbr="NEC" color="#2d9e4f" size="sm" />
+          {lastMatchup && (
+            <div className="flex items-center gap-1" style={{ color: 'var(--muted-foreground)', fontSize: 11 }}>
+              <Clock size={11} />
+              <span>{new Date(lastMatchup.date).toLocaleDateString('es-AR', { day: 'numeric', month: 'short' })}</span>
             </div>
-            <ChevronRight size={14} style={{ color: 'var(--muted-foreground)' }} />
+          )}
+        </div>
+        {!matchupsLoading && !lastMatchup && (
+          <div
+            className="w-full rounded-lg p-4 flex items-center gap-3"
+            style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <div className="flex items-center justify-center rounded-xl" style={{ width: 40, height: 40, background: 'var(--muted)', flexShrink: 0 }}>
+              <History size={18} style={{ color: 'var(--muted-foreground)' }} />
+            </div>
+            <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.5 }}>
+              Todavía no analizaste ningún matchup. Configurá uno para empezar.
+            </p>
           </div>
-          <div className="flex gap-2">
-            {[
-              { label: 'Fortalezas', color: '#2db57c', count: 3 },
-              { label: 'Debilidades', color: '#e84040', count: 2 },
-              { label: 'Acciones', color: '#6e45e2', count: 4 },
-            ].map(b => (
-              <div
-                key={b.label}
-                className="flex items-center gap-1.5 px-2 py-1 rounded"
-                style={{ background: b.color + '15', border: `1px solid ${b.color}33` }}
-              >
-                <span style={{ color: b.color, fontSize: 11, fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700 }}>{b.count}</span>
-                <span style={{ color: b.color, fontSize: 10, opacity: 0.8, fontFamily: "'Barlow Condensed', sans-serif" }}>{b.label}</span>
+        )}
+        {lastMatchup && (
+          <button
+            onClick={onGoMatchup}
+            className="w-full rounded-lg p-4 text-left"
+            style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <div className="flex items-center justify-between mb-3">
+              <div className="flex items-center gap-2">
+                <FactionBadge abbr={lastMatchup.ownFactionAbbr} color={lastMatchup.ownFactionColor} size="sm" />
+                <span style={{ color: 'var(--muted-foreground)', fontSize: 12 }}>vs</span>
+                <FactionBadge abbr={lastMatchup.rivalAbbr} color={lastMatchup.rivalColor} size="sm" />
               </div>
-            ))}
-          </div>
-        </button>
+              <ChevronRight size={14} style={{ color: 'var(--muted-foreground)' }} />
+            </div>
+            <div className="flex gap-2">
+              {[
+                { label: 'Fortalezas', color: '#2db57c', count: lastMatchup.strengthsCount },
+                { label: 'Debilidades', color: '#e84040', count: lastMatchup.weaknessesCount },
+                { label: 'Acciones', color: '#6e45e2', count: lastMatchup.actionsCount },
+              ].map(b => (
+                <div
+                  key={b.label}
+                  className="flex items-center gap-1.5 px-2 py-1 rounded"
+                  style={{ background: b.color + '15', border: `1px solid ${b.color}33` }}
+                >
+                  <span style={{ color: b.color, fontSize: 11, fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700 }}>{b.count}</span>
+                  <span style={{ color: b.color, fontSize: 10, opacity: 0.8, fontFamily: "'Barlow Condensed', sans-serif" }}>{b.label}</span>
+                </div>
+              ))}
+            </div>
+          </button>
+        )}
       </div>
 
       {/* Active list */}
@@ -125,44 +153,86 @@ export function HomeScreen({ onGoMatchup, onGoLists, onGoPractica }: HomeScreenP
           <p style={{ fontSize: 11, color: 'var(--muted-foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
             Lista activa
           </p>
-          <button onClick={onGoLists} style={{ color: 'var(--primary)', fontSize: 11, fontFamily: "'Barlow Condensed', sans-serif" }}>Ver todas</button>
+          {lists.length > 0 && (
+            <button onClick={onGoLists} style={{ color: 'var(--primary)', fontSize: 11, fontFamily: "'Barlow Condensed', sans-serif" }}>Ver todas</button>
+          )}
         </div>
-        <div
-          className="rounded-lg p-4"
-          style={{ background: 'var(--card)', border: `1px solid ${list.faction.color}33` }}
-        >
-          <div className="flex items-center justify-between mb-2">
-            <FactionBadge abbr={list.faction.abbr} color={list.faction.color} />
-            <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 13, fontWeight: 700, color: 'var(--accent)' }}>
-              {list.totalPoints} PTS
-            </span>
-          </div>
-          <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: 'var(--foreground)', marginBottom: 4 }}>
-            {list.name}
-          </p>
-          <p style={{ fontSize: 12, color: 'var(--muted-foreground)' }}>{list.detachment.name}</p>
-          <div className="flex flex-wrap gap-1.5 mt-3">
-            {list.keyUnits.map(u => (
-              <span
-                key={u.id}
-                style={{
-                  background: list.faction.color + '15',
-                  border: `1px solid ${list.faction.color}30`,
-                  color: list.faction.color,
-                  borderRadius: 3,
-                  padding: '2px 6px',
-                  fontSize: 10,
-                  fontFamily: "'Barlow Condensed', sans-serif",
-                  fontWeight: 600,
-                  letterSpacing: '0.03em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                {u.shortName}
+
+        {!listsLoading && !activeList && (
+          <button
+            onClick={onGoLists}
+            className="w-full rounded-lg p-4 flex items-center gap-3 text-left"
+            style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <div className="flex items-center justify-center rounded-xl" style={{ width: 40, height: 40, background: 'var(--muted)', flexShrink: 0 }}>
+              <BookOpen size={18} style={{ color: 'var(--muted-foreground)' }} />
+            </div>
+            <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.5 }}>
+              Sin listas guardadas. Importá una desde "Mis Listas" para verla acá.
+            </p>
+          </button>
+        )}
+
+        {activeArmyList && (
+          <div
+            className="rounded-lg p-4"
+            style={{ background: 'var(--card)', border: `1px solid ${activeArmyList.faction.color}33` }}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <FactionBadge abbr={activeArmyList.faction.abbr} color={activeArmyList.faction.color} />
+              <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 13, fontWeight: 700, color: 'var(--accent)' }}>
+                {activeArmyList.totalPoints} PTS
               </span>
-            ))}
+            </div>
+            <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: 'var(--foreground)', marginBottom: 4 }}>
+              {activeArmyList.name}
+            </p>
+            <p style={{ fontSize: 12, color: 'var(--muted-foreground)' }}>{activeArmyList.detachment.name}</p>
+            <div className="flex flex-wrap gap-1.5 mt-3">
+              {activeArmyList.keyUnits.map(u => (
+                <span
+                  key={u.id}
+                  style={{
+                    background: activeArmyList.faction.color + '15',
+                    border: `1px solid ${activeArmyList.faction.color}30`,
+                    color: activeArmyList.faction.color,
+                    borderRadius: 3,
+                    padding: '2px 6px',
+                    fontSize: 10,
+                    fontFamily: "'Barlow Condensed', sans-serif",
+                    fontWeight: 600,
+                    letterSpacing: '0.03em',
+                    textTransform: 'uppercase',
+                  }}
+                >
+                  {u.shortName}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {activeList && !activeArmyList && (
+          <div
+            className="rounded-lg p-4"
+            style={{ background: 'var(--card)', border: '1px solid rgba(255,255,255,0.07)' }}
+          >
+            <div className="flex items-center justify-between mb-2">
+              <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', color: 'var(--primary)', background: 'rgba(110,69,226,0.12)', border: '1px solid rgba(110,69,226,0.25)', borderRadius: 3, padding: '2px 6px' }}>
+                Importada
+              </span>
+              {activeList.totalPoints && (
+                <span style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 13, fontWeight: 700, color: 'var(--accent)' }}>
+                  {activeList.totalPoints} PTS
+                </span>
+              )}
+            </div>
+            <p style={{ fontFamily: "'Barlow Condensed', sans-serif", fontSize: 15, fontWeight: 700, letterSpacing: '0.03em', textTransform: 'uppercase', color: 'var(--foreground)', marginBottom: 4 }}>
+              {activeList.armyName}
+            </p>
+            {activeList.factionName && <p style={{ fontSize: 12, color: 'var(--muted-foreground)' }}>{activeList.factionName}</p>}
+          </div>
+        )}
       </div>
     </div>
   );
