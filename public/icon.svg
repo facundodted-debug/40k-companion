@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192">
+  <rect width="192" height="192" fill="#0d0e12"/>
+  <!-- Hexágono estilo 40K -->
+  <polygon points="96,20 148,50 148,110 96,140 44,110 44,50"
+    fill="none" stroke="#6e45e2" stroke-width="4"/>
+  <polygon points="96,38 132,58 132,98 96,118 60,98 60,58"
+    fill="none" stroke="#6e45e2" stroke-width="2" opacity="0.5"/>
+  <!-- Cruz central -->
+  <line x1="96" y1="55" x2="96" y2="105" stroke="#f0920e" stroke-width="4"/>
+  <line x1="71" y1="80" x2="121" y2="80" stroke="#f0920e" stroke-width="4"/>
+</svg>
