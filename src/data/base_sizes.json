@@ -145,7 +145,7 @@
       { "name": "Carnifex",                    "baseMm": "80mm", "models": 1,  "baseType": "solo-100"},
       { "name": "Screamer-Killer",             "baseMm": "80mm", "models": 1,  "baseType": "solo-100"},
       { "name": "Old One Eye",                 "baseMm": "80mm", "models": 1,  "baseType": "solo-100"},
-      { "name": "Psychophage",                 "baseMm": "80mm", "models": 1,  "baseType": "solo-100"},
+      { "name": "Psychophage",                 "baseMm": "90x52mm oval", "models": 1,  "baseType": "oval"},
       { "name": "Mawloc",                      "baseMm": "60mm", "models": 1,  "baseType": "solo-60" },
       { "name": "Trygon",                      "baseMm": "60mm", "models": 1,  "baseType": "solo-60" },
       { "name": "Trygon Prime",                "baseMm": "60mm", "models": 1,  "baseType": "solo-60" },
