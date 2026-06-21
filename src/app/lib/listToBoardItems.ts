@@ -16,13 +16,22 @@ const BASE_TYPE_MAP: Record<string, { baseSize: BaseSize; useModels: boolean }> 
   'unit-10': { baseSize: '32', useModels: true },
   'unit-11': { baseSize: '32', useModels: true },
   'oval': { baseSize: '105x70', useModels: false },
-  'rect-s': { baseSize: '60', useModels: false },
-  'rect-l': { baseSize: '100', useModels: false },
+  'rect-s': { baseSize: 'rect-s', useModels: false },
+  'rect-l': { baseSize: 'rect-l', useModels: false },
 };
+
+// base_sizes.json colapsa todos los óvalos bajo baseType:"oval" — el tamaño real
+// (motos 75×42mm, jetbikes 90×52mm, etc.) está en el texto libre de baseMm.
+function ovalSizeFromMm(baseMm: string | undefined): BaseSize {
+  const m = baseMm?.match(/(\d+)\s*x\s*(\d+)\s*mm/i);
+  if (!m) return '105x70';
+  const key = `${m[1]}x${m[2]}` as BaseSize;
+  return (['75x42', '90x52', '105x70'] as BaseSize[]).includes(key) ? key : '75x42';
+}
 
 const UNIT_TYPE_MAP: Record<string, { baseSize: BaseSize; count: number }> = {
   infantry: { baseSize: '32', count: 5 },
-  vehicle: { baseSize: '100', count: 1 },
+  vehicle: { baseSize: 'rect-s', count: 1 },
   monster: { baseSize: '100', count: 1 },
   character: { baseSize: '40', count: 1 },
   special: { baseSize: '60', count: 1 },
@@ -58,7 +67,7 @@ export function listToBoardItems(list: SavedList, side: Side): PlaceableItem[] {
   } else {
     list.units.forEach(unit => {
       const cfg = unit.baseType ? BASE_TYPE_MAP[unit.baseType] : undefined;
-      const baseSize: BaseSize = cfg?.baseSize ?? '32';
+      const baseSize: BaseSize = unit.baseType === 'oval' ? ovalSizeFromMm(unit.baseMm) : (cfg?.baseSize ?? '32');
       const count = cfg?.useModels ? nearestSupportedCount(unit.models) : 1;
       entries.push({ baseSize, count, key: unit.name.replace(/\s+/g, '-'), label: abbreviate(unit.name) });
     });

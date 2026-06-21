@@ -12,7 +12,7 @@ const OWN_COLOR = '#3d7ef0';
 const RIVAL_COLOR = '#e84040';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
-export type BaseSize = '25' | '32' | '40' | '50' | '60' | '100' | '105x70';
+export type BaseSize = '25' | '32' | '40' | '50' | '60' | '100' | '105x70' | '75x42' | '90x52' | 'rect-s' | 'rect-l';
 export type Side = 'own' | 'rival';
 
 export interface PlaceableItem {
@@ -26,11 +26,33 @@ export interface PlaceableItem {
   label?: string;
 }
 
-// SVG radius per base size (board: ~10 SVG units ≈ 1 inch, so 1mm ≈ 0.4 units)
-const BASE_RADII: Record<string, number> = {
-  '25': 5, '32': 6, '40': 8, '50': 10, '60': 12, '100': 20,
+// Geometría real por tipo de base (board: ~0.2 unidades SVG por mm de diámetro/lado,
+// así un círculo de 40mm da radio 8). Las bases ovaladas/rectangulares usan sus
+// proporciones reales en mm en vez de aproximarse a un círculo.
+interface BaseGeometry {
+  shape: 'circle' | 'oval' | 'rect';
+  rx: number;
+  ry: number;
+}
+
+const BASE_GEOMETRY: Record<BaseSize, BaseGeometry> = {
+  '25': { shape: 'circle', rx: 5, ry: 5 },
+  '32': { shape: 'circle', rx: 6.4, ry: 6.4 },
+  '40': { shape: 'circle', rx: 8, ry: 8 },
+  '50': { shape: 'circle', rx: 10, ry: 10 },
+  '60': { shape: 'circle', rx: 12, ry: 12 },
+  '100': { shape: 'circle', rx: 20, ry: 20 },
+  '105x70': { shape: 'oval', rx: 21, ry: 14 },
+  '90x52': { shape: 'oval', rx: 18, ry: 10.4 },
+  '75x42': { shape: 'oval', rx: 15, ry: 8.4 },
+  // Vehículos: chasis chico (Rhino/Razorback ~70×110mm) y grande (Land Raider ~92×183mm)
+  'rect-s': { shape: 'rect', rx: 7, ry: 11 },
+  'rect-l': { shape: 'rect', rx: 9, ry: 18 },
 };
-const OVAL_RX = 21, OVAL_RY = 14;
+
+function baseGeometryFor(baseSize: BaseSize): BaseGeometry {
+  return BASE_GEOMETRY[baseSize] ?? BASE_GEOMETRY['40'];
+}
 
 // Row layouts for each supported mini count
 const ROW_LAYOUTS: Record<number, number[]> = {
@@ -59,8 +81,9 @@ function computeDots(count: number, spacing: number): [number, number][] {
 }
 
 export function getItemRadius(item: PlaceableItem): number {
-  if (item.baseSize === '105x70') return Math.max(OVAL_RX, OVAL_RY) + 6;
-  const r = BASE_RADII[item.baseSize] ?? 8;
+  const geo = baseGeometryFor(item.baseSize);
+  if (geo.shape !== 'circle') return Math.max(geo.rx, geo.ry) + 6;
+  const r = geo.rx;
   if (item.count <= 1) return r + 6;
   const spacing = r * 2 + 2;
   const dots = computeDots(item.count, spacing);
@@ -69,35 +92,50 @@ export function getItemRadius(item: PlaceableItem): number {
 }
 
 // ── Token shape ────────────────────────────────────────────────────────────────
+// Una sola miniatura/vehículo se dibuja con la geometría real de su base (círculo,
+// óvalo o rectángulo); las escuadras de varias miniaturas siguen usando el
+// contenedor punteado con un punto circular por modelo (no hay datos de base por
+// modelo individual dentro de la escuadra, así que un punto por miniatura alcanza).
 export function TokenShape({ item, dragging }: { item: PlaceableItem; dragging?: boolean }) {
   const color = item.side === 'own' ? OWN_COLOR : RIVAL_COLOR;
   const fill = color + '30';
   const opacity = dragging ? 0.55 : 1;
-
-  if (item.baseSize === '105x70') {
-    return (
-      <g opacity={opacity}>
-        <ellipse rx={OVAL_RX + 4} ry={OVAL_RY + 4} fill={color + '10'} />
-        <ellipse rx={OVAL_RX} ry={OVAL_RY} fill={fill} stroke={color} strokeWidth={1.5} />
-        {item.label && (
-          <text textAnchor="middle" dominantBaseline="central" fontSize={11} fontFamily="Barlow Condensed, sans-serif" fontWeight="700" fill={color} transform={`rotate(${-item.rotation})`}
-            style={{ paintOrder: 'stroke' }} stroke="#0d0e12" strokeWidth={2}>
-            {item.label}
-          </text>
-        )}
-      </g>
-    );
-  }
-
-  const r = BASE_RADII[item.baseSize] ?? 8;
+  const geo = baseGeometryFor(item.baseSize);
 
   if (item.count <= 1) {
+    const labelFontSize = geo.shape === 'rect'
+      ? Math.max(Math.min(geo.rx, geo.ry) * 0.85, 7)
+      : Math.max(Math.min(geo.rx, geo.ry) * 0.85, 7);
+
+    let shapeEl;
+    if (geo.shape === 'oval') {
+      shapeEl = (
+        <>
+          <ellipse rx={geo.rx + 4} ry={geo.ry + 4} fill={color + '10'} />
+          <ellipse rx={geo.rx} ry={geo.ry} fill={fill} stroke={color} strokeWidth={1.5} />
+        </>
+      );
+    } else if (geo.shape === 'rect') {
+      shapeEl = (
+        <>
+          <rect x={-geo.rx - 4} y={-geo.ry - 4} width={(geo.rx + 4) * 2} height={(geo.ry + 4) * 2} rx={3} fill={color + '10'} />
+          <rect x={-geo.rx} y={-geo.ry} width={geo.rx * 2} height={geo.ry * 2} rx={2} fill={fill} stroke={color} strokeWidth={1.5} />
+        </>
+      );
+    } else {
+      shapeEl = (
+        <>
+          <circle r={geo.rx + 4} fill={color + '10'} />
+          <circle r={geo.rx} fill={fill} stroke={color} strokeWidth={1.5} />
+        </>
+      );
+    }
+
     return (
       <g opacity={opacity}>
-        <circle r={r + 4} fill={color + '10'} />
-        <circle r={r} fill={fill} stroke={color} strokeWidth={1.5} />
+        {shapeEl}
         {item.label && (
-          <text textAnchor="middle" dominantBaseline="central" fontSize={Math.max(r * 0.85, 7)} fontFamily="Barlow Condensed, sans-serif" fontWeight="700" fill={color} transform={`rotate(${-item.rotation})`}
+          <text textAnchor="middle" dominantBaseline="central" fontSize={labelFontSize} fontFamily="Barlow Condensed, sans-serif" fontWeight="700" fill={color} transform={`rotate(${-item.rotation})`}
             style={{ paintOrder: 'stroke' }} stroke="#0d0e12" strokeWidth={2}>
             {item.label}
           </text>
@@ -106,6 +144,7 @@ export function TokenShape({ item, dragging }: { item: PlaceableItem; dragging?:
     );
   }
 
+  const r = geo.shape === 'circle' ? geo.rx : Math.min(geo.rx, geo.ry);
   const spacing = r * 2 + 2;
   const dots = computeDots(item.count, spacing);
   const maxX = Math.max(...dots.map(([dx]) => Math.abs(dx)));
@@ -204,7 +243,11 @@ const BASE_SIZE_OPTIONS: { value: BaseSize; label: string }[] = [
   { value: '50',    label: '50mm' },
   { value: '60',    label: '60mm' },
   { value: '100',   label: '100mm' },
-  { value: '105x70', label: '105×70mm (oval)' },
+  { value: '75x42', label: '75×42mm (óvalo, motos)' },
+  { value: '90x52', label: '90×52mm (óvalo, jetbikes)' },
+  { value: '105x70', label: '105×70mm (óvalo grande)' },
+  { value: 'rect-s', label: 'Rectangular chico (Rhino, Razorback)' },
+  { value: 'rect-l', label: 'Rectangular grande (Land Raider)' },
 ];
 
 const COUNT_OPTIONS = [1, 2, 3, 4, 5, 6, 10, 11, 20].map(n => ({
@@ -220,8 +263,9 @@ function UnitSelectModal({ side, onAdd, onClose }: {
   const [baseSize, setBaseSize] = useState<BaseSize>('32');
   const [count, setCount] = useState(1);
 
-  const isOval = baseSize === '105x70';
-  const effectiveCount = isOval ? 1 : count;
+  // Óvalos y rectángulos son siempre 1 miniatura/vehículo por token
+  const isSingleModelOnly = baseGeometryFor(baseSize).shape !== 'circle';
+  const effectiveCount = isSingleModelOnly ? 1 : count;
   const color = side === 'own' ? OWN_COLOR : RIVAL_COLOR;
 
   const previewItem: PlaceableItem = {
@@ -268,7 +312,7 @@ function UnitSelectModal({ side, onAdd, onClose }: {
           value={effectiveCount}
           onChange={v => setCount(parseInt(v))}
           options={COUNT_OPTIONS}
-          disabled={isOval}
+          disabled={isSingleModelOnly}
           color={color}
         />
 

@@ -1,10 +1,2788 @@
 {
-    "id":  "aeldari",
-    "name":  "Aeldari",
-    "detachments":  {
-
-                    },
-    "units":  [
-
-              ]
+  "id": "aeldari",
+  "name": "Aeldari",
+  "detachments": {
+    "Warhost": {
+      "overview": "El Warhost es el destacamento estándar Aeldari, centrado en la fluidez de movimiento y la perfección marcial. Maximiza el sistema de Battle Focus, permitiendo a las unidades explotar al máximo las 6 Maniobras Ágiles disponibles en 11ª edición.",
+      "abilities": [
+        {
+          "name": "Martial Grace",
+          "flavor": "Los guerreros Aeldari se mueven con una gracia sobrenatural, aprovechando cada momento de concentración en combate.",
+          "rule": "Al inicio de cada fase de Mando, gana 1 token de Battle Focus. Cuando uses Swift as Wind, añadí 1\" al avance. Cuando uses una Maniobra Ágil con D6, podés añadir +1 al resultado."
+        }
+      ],
+      "strengths": [
+        "Generación garantizada de 1 token de Battle Focus por turno, asegurando acceso constante a Maniobras Ágiles para reposicionamiento táctico sin depender de otros recursos.",
+        "El bonus de +1\" a Swift as Wind permite alejarse de combate o alcanzar posiciones clave con mayor facilidad, especialmente útil para unidades de cuerpo a cuerpo que necesitan salir de rango.",
+        "El +1 a las Maniobras Ágiles con D6 convierte resultados mediocres en buenos, dando mayor fiabilidad a todo el sistema de Battle Focus durante la partida."
+      ],
+      "weaknesses": [
+        "El destacamento no otorga bonos ofensivos directos; depende de la destreza innata de las unidades Aeldari para hacer daño, siendo menos atractivo contra rivales con alta resistencia.",
+        "El sistema de Battle Focus requiere gestión activa de tokens en cada turno, lo que puede ser abrumador para jugadores nuevos con la facción Aeldari.",
+        "Sin reglas específicas para potenciar una subfacción concreta, el Warhost es generalista y puede ser superado en eficiencia por destacamentos especializados como el Aspect Host o el Windrider Host."
+      ]
+    },
+    "Windrider Host": {
+      "overview": "El Windrider Host aprovecha la supremacía de los jinetes del viento Aeldari, dominando el campo con unidades montadas que entran y salen del combate a voluntad. Ideal para jugadas rápidas de objetivos y ataques sorpresa desde reservas.",
+      "abilities": [
+        {
+          "name": "Ride the Wind",
+          "flavor": "Los jinetes de motos estelares surcan el campo de batalla como el viento, imposibles de fijar en posición.",
+          "rule": "Las unidades con palabras clave MOUNTED y VYPER pueden colocarse en Reservas Estratégicas al inicio de la batalla sin coste de puntos de reserva. Una vez por turno, podés redesplegar una de estas unidades que esté en el campo de batalla a una posición nueva válida."
+        }
+      ],
+      "strengths": [
+        "Permite relegar unidades montadas a reservas sin coste de puntos, dando máxima flexibilidad táctica para elegir el momento óptimo de entrada al campo de batalla.",
+        "El redespliegue por turno permite rescatar unidades amenazadas o crear presión en nuevos flancos de forma continua, siendo casi imposible de silenciar completamente.",
+        "Excelente para dominar objetivos secundarios y desgastar al rival con unidades rápidas que nunca permanecen expuestas demasiado tiempo al fuego enemigo."
+      ],
+      "weaknesses": [
+        "Totalmente dependiente de unidades MOUNTED; pierde efectividad significativa si el rival elimina las motos estelares en los primeros turnos antes de que puedan actuar.",
+        "Las unidades montadas Aeldari son relativamente frágiles para su coste en puntos; perder varias en una fase de disparo puede colapsar el plan de juego entero.",
+        "Poco efectivo contra ejércitos con gran cantidad de disparos de alta potencia o con reglas que penalizan las unidades en reservas estratégicas."
+      ]
+    },
+    "Spirit Conclave": {
+      "overview": "El Spirit Conclave une las fuerzas Wraith con los Spiritseers para crear un ejército implacable de constructos etéreos. Los tokens de Vengeful Dead permiten potenciar las unidades Wraith contra objetivos marcados por el dolor de los caídos.",
+      "abilities": [
+        {
+          "name": "Shepherds of the Dead",
+          "flavor": "Los Spiritseers guían las almas de los caídos, canalizando su voluntad inextinguible hacia los constructos Wraith.",
+          "rule": "Las unidades enemigas pueden recibir marcadores Vengeful Dead cuando son dañadas por unidades WRAITH. Las unidades WRAITH amigas ganan +1 para Impactar y +1 para Herir cuando atacan a unidades con marcadores Vengeful Dead. Los Spiritseers tienen el aura Spirit Guides que otorga beneficios adicionales a unidades WRAITH cercanas."
+        }
+      ],
+      "strengths": [
+        "Los constructos Wraith son naturalmente resistentes (T7+); el bono de +1H/+1W los convierte en devastadores contra objetivos designados, combinando durabilidad y potencia ofensiva.",
+        "El sistema de tokens crea sinergia directa entre Spiritseers y unidades Wraith, premiando listas enfocadas en constructos y castigando duramente al rival por no eliminarlos.",
+        "Excelente capacidad de aguante general: las unidades Wraith absorben cantidades enormes de daño mientras el Spiritseer las potencia desde posiciones seguras."
+      ],
+      "weaknesses": [
+        "Las unidades Wraith son lentas (M6-8\") lo que dificulta cubrir el tablero y reaccionar rápido a amenazas múltiples o misiones que requieren mucha movilidad.",
+        "El destacamento es muy específico en su composición; unidades no-Wraith pierden mucho valor relativo sin las sinergias del Spirit Conclave, limitando la flexibilidad de lista.",
+        "Vulnerable a ataques que infligen Heridas Mortales en masa, que ignoran la alta Dureza de los constructos Wraith y pueden desmantelar la lista rápidamente."
+      ]
+    },
+    "Guardian Battlehost": {
+      "overview": "El Guardian Battlehost pone a los Guardianes y Vengadores en el centro de la estrategia, potenciando su capacidad ofensiva en y alrededor de los objetivos. Ideal para listas que buscan controlar territorio con infantería de línea apoyada por artillería ligera.",
+      "abilities": [
+        {
+          "name": "Defend at All Costs",
+          "flavor": "Los defensores del Craftworld luchan con fiereza inusitada cuando protegen sus lugares sagrados de la profanación.",
+          "rule": "Los Dire Avengers, Guardian Defenders, Guardian Support y War Walkers ganan +1 para Impactar mientras estén a 6\" de un objetivo que controlen."
+        }
+      ],
+      "strengths": [
+        "Los Guardian Defenders y Dire Avengers con +1 para Impactar se convierten en una amenaza seria mientras defienden puntos de victoria, multiplicando su valor relativo en puntos.",
+        "Las Plataformas de Armas Pesadas de los Guardian Defenders (Bright Lances, Starcannons) brillan con mayor precisión, maximizando el potencial de fuego antitanque de la lista.",
+        "Los War Walkers también ganan el bono ofensivo, creando una línea defensiva combinada que puede castigar duramente al rival por intentar tomar los objetivos."
+      ],
+      "weaknesses": [
+        "Los Guardianes siguen siendo frágiles (T3 Sv4+); el bono ofensivo no compensa su baja supervivencia bajo fuego intenso o cargas de élite enemiga.",
+        "El destacamento obliga a mantenerse relativamente estático cerca de objetivos, contradiciendo la naturaleza ágil y movediza que define el juego Aeldari en general.",
+        "Poco efectivo en partidas donde los objetivos cambian de manos frecuentemente o el rival tiene mucha movilidad para evitar los puntos de disparo establecidos."
+      ]
+    },
+    "Ghosts of the Webway": {
+      "overview": "Los Ghosts of the Webway son un destacamento Harlequin que convierte a los Troupes en Battleline letales con acceso privilegiado al Webway. El Asalto Acrobático permite pasar a través de unidades enemigas durante la carga, creando ángulos de ataque imposibles.",
+      "abilities": [
+        {
+          "name": "Acrobatic Onslaught",
+          "flavor": "Los Arlequines fluyen a través del combate como agua a través de las grietas de la realidad, sin nada que pueda detenerlos.",
+          "rule": "Las unidades TROUPE son consideradas BATTLELINE con OC 2. Durante una carga, las unidades de este destacamento pueden mover a través de unidades enemigas (no pueden terminar su movimiento encima de ellas ni dentro de 1\" sin estar en engagement)."
+        }
+      ],
+      "strengths": [
+        "Los Troupes como BATTLELINE con OC 2 son una propuesta de valor excepcional: controlan objetivos mientras causan daño masivo en cuerpo a cuerpo con sus estadísticas de élite.",
+        "La capacidad de pasar a través de unidades enemigas durante la carga abre ataques que serían imposibles para otras facciones, alcanzando unidades protegidas por pantallas.",
+        "Los Arlequines son extremadamente rápidos (M8) y mortales en cuerpo a cuerpo con Klaives y Caress, haciendo del destacamento una pesadilla táctica de gestionar para el rival."
+      ],
+      "weaknesses": [
+        "Los Arlequines tienen Sv 6+ sin armadura real; dependen de su salvaguarda invulnerable de 4+ para sobrevivir, siendo muy vulnerables a ataques que ignoran invulns o con alto volumen.",
+        "El destacamento es extremadamente frágil; perder unidades clave de Troupes en una sola fase de disparo puede colapsar toda la estrategia de control de objetivos.",
+        "Bajo poder de disparo general; el destacamento depende casi exclusivamente del cuerpo a cuerpo y la movilidad para ganar, lo que lo hace predecible para rivales experimentados."
+      ]
+    },
+    "Devoted of Ynnead": {
+      "overview": "Los Devoted of Ynnead canalizan la fuerza de la muerte para potenciar su ejército. Requiere que Yvraine o La Yncarne sea el Señor de la Guerra. Un destacamento de alta complejidad y gran potencial ofensivo escalable con cada baja infligida.",
+      "abilities": [
+        {
+          "name": "Strength from Death",
+          "flavor": "En el nombre de Ynnead, cada alma cosechada alimenta la resurrección de la fuerza Aeldari y debilita el velo entre vida y muerte.",
+          "rule": "Lethal Intent: las unidades amigas YNNARI ganan Lethal Hits (6s para impactar = herida automática). Surge: cuando destruís una unidad rival, gana 1 token de Surge. Reprisal: gastá tokens de Surge para activar efectos especiales en fases posteriores. Requiere Yvraine o La Yncarne como Warlord."
+        }
+      ],
+      "strengths": [
+        "La mecánica de Surge crea un efecto de bola de nieve devastador: cuanto más destruís, más poderoso se vuelve tu ejército en los turnos posteriores de la partida.",
+        "Lethal Hits en unidades YNNARI mejora significativamente la eficiencia de las élites Aeldari tanto en disparo como en cuerpo a cuerpo, especialmente con armas de alto volumen.",
+        "Yvraine y La Yncarne son piezas centrales poderosas que multiplican el valor del destacamento con sus habilidades propias de resurreción y daño mortal."
+      ],
+      "weaknesses": [
+        "Extremadamente dependiente del Warlord (Yvraine o La Yncarne); si caen en turnos tempranos, el destacamento pierde su motor central y se derrumba estratégicamente.",
+        "Requiere destruir unidades enemigas para activar Surge, lo que puede ser difícil contra ejércitos muy resistentes o con unidades muy pequeñas que no generan tokens.",
+        "Alta complejidad de juego: gestionar tokens de Surge, Lethal Hits y los personajes Ynnari simultáneamente requiere mucha experiencia con la facción y sus interacciones."
+      ]
+    },
+    "Seer Council": {
+      "overview": "El Seer Council usa Strands of Fate (regla LEGENDS en 11ª edición), permitiendo tirar 6D6 al inicio de la batalla y usar estos dados de Destino para sustituir cualquier tirada. Un destacamento de control y predicción enfocado en los poderes Psíquicos Aeldari.",
+      "abilities": [
+        {
+          "name": "Strands of Fate",
+          "flavor": "Los Videntes entretejen los hilos del futuro, manipulando el destino para que favorezca al Craftworld sobre todos los demás.",
+          "rule": "(LEGENDS) Al inicio de la batalla, tirá 6D6. Estos son tus dados de Destino. Una vez por fase, podés gastar un dado de Destino para sustituir cualquier tirada con el valor del dado de Destino. Podés re-tirar un dado de Destino que resulte en 1, aunque solo una vez por dado."
+        }
+      ],
+      "strengths": [
+        "Los dados de Destino eliminan la aleatoriedad en momentos absolutamente críticos: garantizá saves importantes, heridas decisivas o ataques clave cuando más importa ganarlos.",
+        "Excelente con unidades de alto valor puntual; un dado de Destino bien gastado puede multiplicar el impacto de un personaje o unidad élite en varios puntos de victoria.",
+        "La mecánica de re-tirar 1s da seguridad extra al pool, maximizando los dados útiles disponibles durante toda la batalla para situaciones de alta importancia."
+      ],
+      "weaknesses": [
+        "Es una regla LEGENDS en 11ª edición, lo que puede generar restricciones en torneos o partidas competitivas según el acuerdo previo con el rival o el formato del evento.",
+        "El pool de 6 dados es limitado; una vez agotados, el destacamento pierde su herramienta principal de manipulación del destino y pasa a ser un destacamento muy básico.",
+        "Alto techo de habilidad: saber cuándo y cómo gastar los dados de Destino requiere mucha experiencia leyendo el juego y anticipando los momentos críticos correctos."
+      ]
+    },
+    "Aspect Host": {
+      "overview": "El Aspect Host potencia a los Guerreros de Aspecto (Aspect Warriors), las élites de combate del Craftworld. Cada Templo de Aspecto representa el dominio total de una faceta de la guerra, y este destacamento los lleva al límite de su letal potencial.",
+      "abilities": [
+        {
+          "name": "Path of the Warrior",
+          "flavor": "Cada Guerrero de Aspecto ha abrazado completamente su camino de guerra, perfeccionando cada movimiento hasta la maestría absoluta y terrible.",
+          "rule": "Las unidades ASPECT WARRIOR ganan bonificaciones en combate según su Templo de Aspecto activo. Cuando varios modelos del mismo Templo operan en coordinación, se potencian mutuamente. Los personajes PHOENIX LORD añaden sus bonos únicos a las unidades de su Templo cercanas."
+        }
+      ],
+      "strengths": [
+        "Los Guerreros de Aspecto son ya de por sí élites muy especializadas; el destacamento maximiza sus capacidades únicas en sus roles designados, potenciando cada Templo al máximo.",
+        "Los Phoenix Lords actúan como multiplicadores de fuerza para sus respectivos Templos, creando combos devastadores entre líder y seguidores del mismo camino de guerra.",
+        "La especialización extrema por Templo permite crear amenazas en múltiples frentes simultáneos, con cada Aspecto cubriendo un aspecto diferente del combate de forma óptima."
+      ],
+      "weaknesses": [
+        "Requiere construir la lista alrededor de múltiples tipos de Guerreros de Aspecto especializados, lo que puede resultar en falta de cohesión táctica o exceso de nicho.",
+        "Sin masa de infantería: los Aspect Warriors son caros en puntos y pocos en número, haciéndolos vulnerables a pérdidas que deshacen la cohesión del plan de juego.",
+        "La alta especialización significa que si el rival adapta su táctica a los Templos presentes, ciertos Aspectos pueden quedar inutilizados durante momentos clave de la partida."
+      ]
+    },
+    "Corsair Coterie": {
+      "overview": "La Corsair Coterie representa a los piratas del espacio Aeldari, guerreros que abandonaron el camino del Craftworld para una vida de rapiña. Especializado en infiltración, reservas y combate ágil con unidades Corsair que golpean desde ángulos inesperados.",
+      "abilities": [
+        {
+          "name": "Relentless Raiders",
+          "flavor": "Los Corsarios atacan sin descanso, siempre desde los ángulos más inesperados, nunca dando tregua al rival ni un momento de respiro.",
+          "rule": "Las unidades CORSAIR pueden desplegar usando reglas especiales de infiltración y reservas. Las unidades CORSAIR en reservas pueden entrar al juego con mayor flexibilidad de posicionamiento que las reglas estándar, apareciendo en flancos y posiciones clave para crear presión máxima."
+        }
+      ],
+      "strengths": [
+        "La infiltración y flexibilidad en reservas permiten crear presión inmediata en múltiples puntos desde el inicio, perturbando el plan de despliegue del rival antes de que se consolide.",
+        "Los Corsair Voidscarred son versátiles y bien equipados para múltiples roles, dando flexibilidad táctica real para adaptarse a diferentes situaciones durante la partida.",
+        "Ideal para partidas de objetivos secundarios donde la movilidad y el posicionamiento inicial dan ventaja temprana crucial difícil de remontar para el rival."
+      ],
+      "weaknesses": [
+        "Los Corsarios son relativamente frágiles comparados con las élites del Craftworld; dependen totalmente del posicionamiento favorable para sobrevivir y operar efectivamente.",
+        "El destacamento pierde potencia significativa si el rival tiene mucho fuego de reacción, reglas de Overwatch efectivas, o habilidades que penalizan las unidades en reservas.",
+        "La estrategia de infiltración es predecible para rivales experimentados que sabrán proteger sus flancos vulnerables desde el despliegue inicial, reduciendo el impacto."
+      ]
+    },
+    "Eldritch Raiders": {
+      "overview": "Los Eldritch Raiders combinan las fuerzas Corsair con el liderazgo del Príncipe Corsario Yriel. Un destacamento de alto daño que combina movimiento agresivo con ataques coordinados entre unidades de élite endurecidas por incontables batallas.",
+      "abilities": [
+        {
+          "name": "Yriel's Own",
+          "flavor": "Bajo el mando del Príncipe Yriel, los Raiders se convierten en la fuerza naval más temida y brutal de todo el espacio conocido.",
+          "rule": "Las unidades CORSAIR ganan bonos en cuerpo a cuerpo y disparo cuando atacan en coordinación. Veterans of the Void: las unidades CORSAIR que hayan sobrevivido al fuego enemigo en un turno anterior ganan bonos adicionales de combate en su siguiente activación."
+        }
+      ],
+      "strengths": [
+        "Alto potencial de daño sostenido cuando las unidades Corsair trabajan en conjunto coordinado contra objetivos prioritarios, creando picos de daño difíciles de absorber.",
+        "Veterans of the Void recompensa la supervivencia, creando unidades progresivamente más letales cuanto más tiempo permanecen activas en el campo de batalla.",
+        "Yriel como pieza central única multiplica la efectividad de toda la lista Corsair con su presencia física y sus reglas de liderazgo exclusivas para esta facción pirata."
+      ],
+      "weaknesses": [
+        "Dependiente de mantener múltiples unidades Corsair vivas para maximizar sinergias, lo que es muy difícil bajo fuego intenso concentrado de ejércitos de élite enemigos.",
+        "Alta presión en los primeros turnos: si el rival elimina varias unidades Corsair rápido antes de que Veterans of the Void se active, el destacamento pierde su principal ventaja.",
+        "Menos efectivo que otros destacamentos en control de objetivos puro; está más orientado al exterminio y la acción que a la toma y defensa metódica de terreno."
+      ]
+    },
+    "Serpent's Brood": {
+      "overview": "El Serpent's Brood es un destacamento que potencia las unidades Psíquicas y de Wraith mediante los Dones de la Serpiente Celestial. Enfocado en sinergias entre Videntes y constructos Wraith, con bonos únicos que transforman cada unidad seleccionada.",
+      "abilities": [
+        {
+          "name": "Boons of the Brood",
+          "flavor": "La Serpiente Celestial bendice a sus campeones con visiones del futuro y con la fuerza primigenia de las estrellas más antiguas.",
+          "rule": "Al inicio de la batalla, podés otorgar Dones de la Serpiente a unidades ASURYANI con la palabra clave PSYKER o WRAITH. Cada Don otorga una habilidad especial única que mejora las capacidades de combate de la unidad designada durante toda la batalla."
+        }
+      ],
+      "strengths": [
+        "Los Dones de la Serpiente crean unidades únicas potenciadas con capacidades no estándar que pueden sorprender al rival con interacciones que no anticipaba en el despliegue.",
+        "Excelente sinergia entre Psíquicos (Farseers, Warlocks) y constructos Wraith, creando una lista cohesiva donde cada componente potencia a los demás de forma natural.",
+        "Permite personalizar el ejército con Dones adaptados a la estrategia del día, dando flexibilidad tanto en la construcción de lista como en la ejecución táctica real."
+      ],
+      "weaknesses": [
+        "El destacamento es muy específico en requisitos: unidades que no sean PSYKER o WRAITH no se benefician de los Dones de la Serpiente, limitando la diversidad de composición.",
+        "Requiere inversión significativa en múltiples unidades especializadas que juntas resultan muy costosas en puntos, reduciendo la masa total de la lista.",
+        "Si el rival elimina los Psíquicos clave en turnos tempranos, los constructos Wraith pierden el apoyo sínergico que los potencia y quedan operando a medio rendimiento."
+      ]
+    },
+    "Armoured Warhost": {
+      "overview": "El Armoured Warhost (nuevo en 11ª edición) se centra en las tripulaciones experimentadas de los vehículos Aeldari. Los tanques y transportes del Craftworld operan con precisión sobrehumana bajo las reglas de Skilled Crews, convirtiéndolos en plataformas de disparo letales.",
+      "abilities": [
+        {
+          "name": "Skilled Crews",
+          "flavor": "Cada tripulante ha dedicado décadas perfeccionando el arte sublime de pilotar las máquinas de guerra sagradas del Craftworld.",
+          "rule": "Las unidades VEHICLE ASURYANI ganan bonificaciones a sus tiradas de disparo y movimiento. Los vehículos que permanezcan estacionarios en su turno de disparo ganan acceso a perfiles de disparo mejorados con mayor potencia y precisión."
+        }
+      ],
+      "strengths": [
+        "Los tanques Aeldari (Fire Prism, Falcon, Wave Serpent) ya son excelentes en su rol; Skilled Crews los lleva a otro nivel de efectividad letal que el rival debe gestionar activamente.",
+        "El bono por permanecer estacionario premia la artillería defensiva, creando zonas de control devastadoras con Fire Prisms y Night Spinners desde posiciones fuertes.",
+        "Wave Serpents y Falcons como plataformas de disparo mejoradas ofrecen versatilidad tanto ofensiva como transportadora simultáneamente, maximizando el valor por punto."
+      ],
+      "weaknesses": [
+        "Los vehículos Aeldari son relativamente frágiles para su coste en puntos; Skilled Crews no compensa las pérdidas masivas ante listas anti-vehículo muy especializadas.",
+        "El bono por permanecer estacionario contradice parcialmente la naturaleza ágil de los Aeldari; los vehículos que no se muevan quedan más expuestos a cargas enemigas.",
+        "Dependiente de mantener múltiples vehículos vivos, lo que es un desafío real contra listas con mucho anti-vehículo de alta potencia como Fusion Guns o lanzacohetes."
+      ]
+    },
+    "Fateful Performance": {
+      "overview": "Fateful Performance (nuevo en 11ª edición) es un destacamento Harlequin centrado en la actuación ritual de la mascarada sagrada de Cegorach. Las unidades Harlequin usan performances coreografiadas para confundir, desmoralizar y destruir al enemigo.",
+      "abilities": [
+        {
+          "name": "The Great Masquerade",
+          "flavor": "Cada batalla es una actuación del Gran Masquerade de Cegorach, y cada guerrero un actor en la tragedia cósmica del Universo eterno.",
+          "rule": "Las unidades HARLEQUINS pueden ejecutar Performances que otorgan efectos únicos de combate. Cada actuación tiene un coste en tokens de Performance y un efecto específico. Las unidades que completen una Performance antes del final del turno ganan bonos adicionales acumulables."
+        }
+      ],
+      "strengths": [
+        "El sistema de Performances crea múltiples herramientas tácticas dentro de un solo destacamento, adaptándose dinámicamente a diferentes situaciones de juego durante la partida.",
+        "Los Harlequins con Performances activas son muy difíciles de predecir para el rival, creando ventajas psicológicas y tácticas que se traducen en mejores posiciones de control.",
+        "Excelente para partidas de objetivos complejos: las Performances pueden diseñarse específicamente para facilitar el control de marcadores clave en momentos precisos."
+      ],
+      "weaknesses": [
+        "Alta complejidad de juego: gestionar tokens de Performance, posicionamiento Harlequin y el resto de las mecánicas simultáneamente requiere mucha práctica previa con la facción.",
+        "Los Harlequins son inherentemente frágiles (Sv 6+); perder unidades antes de completar sus Performances desperdicia completamente el potencial del destacamento.",
+        "Menos efectivo en juego directo de eliminación; el destacamento premia la planificación meticulosa y puede ser muy difícil de ejecutar correctamente bajo presión intensa."
+      ]
+    },
+    "Path of the Outcast": {
+      "overview": "Path of the Outcast (nuevo en 11ª edición) destaca el papel de los Rangers y exploradores Aeldari que abandonaron el camino del Craftworld. Ideal para partidas de reconocimiento y control, usando infiltradores entrenados para dominar el campo desde el primer turno.",
+      "abilities": [
+        {
+          "name": "Assassins' Eye",
+          "flavor": "Los Rangers que han abandonado el camino del Craftworld ven el campo de batalla con los ojos fríos y calculadores de predadores solitarios perfectos.",
+          "rule": "Las unidades RANGERS en este destacamento pueden desplegar usando la regla Infiltrar. Los Rangers ganan bonificaciones adicionales para disparar contra objetivos que estén en cobertura. Unidades con la mejora Camouflaged Snipers pueden atacar sin revelar su posición de francotirador."
+        }
+      ],
+      "strengths": [
+        "La infiltración de Rangers desde el inicio presiona los objetivos rivales y perturba el despliegue enemigo antes de que la partida empiece, generando ventaja posicional temprana.",
+        "Los Rangers con bonos contra objetivos en cobertura eliminan una de sus mayores limitaciones tradicionales, volviéndolos mucho más versátiles en terrenos densos y complejos.",
+        "El sistema de francotiradores ocultos crea amenazas persistentes que el rival debe dedicar recursos significativos para neutralizar, distreyendo del plan principal."
+      ],
+      "weaknesses": [
+        "Los Rangers son infantería ligera (T3 Sv5+); el destacamento no los hace más resistentes, solo más hábiles ofensivamente, manteniéndolos vulnerables al fuego concentrado.",
+        "Si el rival neutraliza o elimina los Rangers en los turnos 1-2, el destacamento pierde gran parte de su valor táctico y queda con muy pocos recursos alternativos.",
+        "Menos efectivo en escenarios sin cobertura abundante o contra rivales con mucho fuego de área que ignora las posiciones de infiltración de los Rangers."
+      ]
+    },
+    "Twilight Flickers": {
+      "overview": "Twilight Flickers (nuevo en 11ª edición) es un destacamento Harlequin especializado en combates de resistencia y control de objetivos en los turnos finales. Las unidades Harlequin aprovechan la oscuridad metafórica del crepúsculo para dominar cuando más importa.",
+      "abilities": [
+        {
+          "name": "Prelude Performance",
+          "flavor": "Cuando el crepúsculo desciende sobre el campo de batalla, los Arlequines ejecutan el preludio que precede al caos absoluto y la victoria final.",
+          "rule": "Las unidades HARLEQUINS en este destacamento ganan bonos adicionales en los turnos 4 y 5 de la partida. Al inicio del turno 4, todas las unidades HARLEQUINS amigas que estén en el campo de batalla pueden realizar inmediatamente un movimiento gratuito de 3\" ignorando el terreno."
+        }
+      ],
+      "strengths": [
+        "El movimiento gratuito de 3\" en turno 4 puede cambiar el resultado de una partida reñida, alcanzando objetivos fuera de rango normal o escapando de posiciones peligrosas con facilidad.",
+        "Los bonos en turnos tardíos son ideales para una estrategia de aguante y paciencia: sobrevivir para dar el golpe de gracia definitivo cuando el rival ya haya gastado sus recursos.",
+        "Combinado con la velocidad natural de los Harlequins (M8), crea una amenaza de último turno casi imposible de neutralizar sin haber dedicado recursos preventivos enormes."
+      ],
+      "weaknesses": [
+        "Sin bonos significativos en turnos tempranos, el destacamento puede quedarse muy atrás en puntos de victoria en los primeros 3 turnos, creando una brecha difícil de cerrar.",
+        "Si el rival gana en los turnos 1-3 por un margen amplio de puntos, los bonos tardíos y el movimiento de turno 4 pueden no ser suficientes para remontar la diferencia.",
+        "Los Harlequins deben sobrevivir hasta el turno 4 para aprovechar el movimiento gratuito, lo cual es un desafío real ante listas con alto volumen de fuego de élite."
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "avatar-of-khaine",
+      "name": "Avatar of Khaine",
+      "pts": 280,
+      "type": "monster",
+      "role": "Dios de la Guerra",
+      "keywords": ["Monster", "Character", "Faction: Aeldari", "Faction: Asuryani", "Avatar of Khaine"],
+      "stats": { "m": 10, "t": 11, "sv": 2, "w": 14, "ld": 6, "oc": 5 },
+      "ranged": [
+        {
+          "name": "Spear of Khaine",
+          "range": "18\"",
+          "a": "3",
+          "skill": "2+",
+          "s": 12,
+          "ap": -3,
+          "d": "D6",
+          "keywords": ["Devastating Wounds"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "The Wailing Doom",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 14,
+          "ap": -4,
+          "d": "3",
+          "keywords": ["Devastating Wounds"]
+        }
+      ],
+      "abilities": [
+        "Invulnerable Save 4+",
+        "Fires of Khaine (FNP 5+)",
+        "Molten Body (ataques recibidos pierden 1 AP)",
+        "Ancient Evil (unidades enemigos a 12\" deben superar Ld o sufrir penalizadores)",
+        "Khaine Incarnate (aura de Battle Shock immunity a unidades AELDARI cercanas)"
+      ],
+      "considerations": "El Avatar es el guerrero definitivo del Craftworld: T11, W14, Sv2+ con invuln 4+ y FNP 5+ lo hacen casi indestructible ante el fuego normal. Molten Body reduce el AP de todos los ataques recibidos en 1, complicando enormemente al rival. Su Spear of Khaine a 18\" permite amenazar a vehículos ligeros y personajes con 3 ataques Devastating Wounds. Ancient Evil es una herramienta de control que puede perturbar el funcionamiento de unidades enemigas cercanas.",
+      "recommendations": "Usalo como tu ancla ofensiva principal: avanza hacia las unidades rivales más costosas y úsalo para fijar vehículos pesados o unidades de élite que nadie más puede confrontar. Su aura de inmunidad a Battle Shock es valiosa para mantener la cohesión de unidades cercanas bajo presión. Combina bien con un Spiritseer para synergias en destacamentos Spirit Conclave, o solo como amenaza autónoma en el Warhost."
+    },
+    {
+      "id": "autarch",
+      "name": "Autarch",
+      "pts": 90,
+      "type": "character",
+      "role": "Comandante Táctico",
+      "keywords": ["Infantry", "Character", "Faction: Aeldari", "Faction: Asuryani", "Autarch"],
+      "stats": { "m": 7, "t": 3, "sv": 3, "w": 5, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Fusion Pistol",
+          "range": "9\"",
+          "a": "1",
+          "skill": "2+",
+          "s": 8,
+          "ap": -4,
+          "d": "D6",
+          "keywords": ["Melta 4", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Star Glaive",
+          "range": "Melee",
+          "a": "5",
+          "skill": "2+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        },
+        {
+          "name": "Scorpion Chainsword",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Fieldcraft",
+        "Path of Command (Strategic Ploy once per battle)"
+      ],
+      "considerations": "El Autarch es el comandante táctico del Craftworld, con WS2+/BS2+ que lo hacen letalmente preciso. Su Fusion Pistol representa una amenaza anti-vehículo real incluso desde un personaje de infantería. Path of Command otorga una Strategem gratuita una vez por batalla, multiplica su valor de puntos notablemente. Como Leader puede unirse a Aspect Warriors para potenciarlos directamente.",
+      "recommendations": "Unilo a una unidad de Aspect Warriors afín a su rol (Striking Scorpions para CC, Fire Dragons para anti-tank). La Fusion Pistol es tu mejor arma en su rango corto, úsala en el momento de la carga. Path of Command debe reservarse para Stratagems de alto impacto que cambien el resultado de una fase completa de combate."
+    },
+    {
+      "id": "autarch-skyrunner",
+      "name": "Autarch Skyrunner",
+      "pts": 100,
+      "type": "character",
+      "role": "Comandante Montado",
+      "keywords": ["Mounted", "Character", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Autarch", "Skyrunner"],
+      "stats": { "m": 14, "t": 4, "sv": 3, "w": 5, "ld": 6, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Fusion Pistol",
+          "range": "9\"",
+          "a": "1",
+          "skill": "2+",
+          "s": 8,
+          "ap": -4,
+          "d": "D6",
+          "keywords": ["Melta 4", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Star Glaive",
+          "range": "Melee",
+          "a": "5",
+          "skill": "2+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Fieldcraft",
+        "Path of Command (Strategic Ploy once per battle)"
+      ],
+      "considerations": "La versión montada del Autarch combina la velocidad de la moto estelar (M14, Fly) con el mismo liderazgo táctico. Con T4 es algo más resistente que la versión de infantería, y OC2 le permite contestar objetivos. El Twin Shuriken Catapult con BS2+ produce un output de impactos Lethal Hits que es peligroso incluso contra infantería. Puede unirse a unidades MOUNTED como Windriders o Shining Spears.",
+      "recommendations": "En el Windrider Host es el líder ideal para una unidad de Shining Spears, dando Path of Command para Stratagems clave al mismo tiempo que opera como amenaza individual. Aprovechá M14 y Fly para reposicionarte entre turnos usando Battle Focus, cubriendo el tablero con mucha más eficiencia que el Autarch de infantería."
+    },
+    {
+      "id": "farseer",
+      "name": "Farseer",
+      "pts": 70,
+      "type": "character",
+      "role": "Vidente Psíquico",
+      "keywords": ["Infantry", "Character", "Psyker", "Faction: Aeldari", "Faction: Asuryani", "Farseer"],
+      "stats": { "m": 7, "t": 3, "sv": 6, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Witchblade",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Ghosthelm",
+        "Psychic Channelling (guide, doom, fortune)",
+        "Master Psyker"
+      ],
+      "considerations": "El Farseer es el psíquico de apoyo fundamental del Craftworld, capaz de otorgar Guide (+1 a Impactar) a una unidad aliada y Doom (-1 a Salvación) a una unidad rival por turno. Con Sv6+ e Invuln4+ no es un combatiente frontal; su rol es estar en posición segura maximizando los poderes psíquicos. A 70 puntos es uno de los mejores multiplicadores de valor de la facción. Ghosthelm lo protege de ataques psíquicos.",
+      "recommendations": "Siempre combinalo con Guide en tu unidad de mayor output de disparo (Fire Dragons, Dark Reapers) y Doom en el objetivo más resistente. Como Leader puede unirse a una escuadra de Dire Avengers para protegerlo mientras usa sus poderes. En el Seer Council es esencial para gestionar los dados de Strands of Fate con sabiduría estratégica."
+    },
+    {
+      "id": "farseer-skyrunner",
+      "name": "Farseer Skyrunner",
+      "pts": 90,
+      "type": "character",
+      "role": "Vidente Montado",
+      "keywords": ["Mounted", "Character", "Psyker", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Farseer", "Skyrunner"],
+      "stats": { "m": 14, "t": 4, "sv": 6, "w": 4, "ld": 6, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Witchblade",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Ghosthelm",
+        "Psychic Channelling (guide, doom, fortune)",
+        "Master Psyker"
+      ],
+      "considerations": "La versión montada del Farseer combina los mismos poderes psíquicos con M14 y Fly, permitiéndole reposicionarse con mucha libertad para que Guide y Doom alcancen las unidades correctas en cada turno. Con T4 es algo más resistente que la versión de infantería, y OC2 le permite contestar objetivos en emergencias. Puede unirse a Windriders como Leader, creando una escuadra rápida y apoyada psíquicamente.",
+      "recommendations": "Ideal en el Windrider Host donde la movilidad de M14 maximiza su alcance para usar Guide en las unidades de disparo más importantes. Combinalo con una escuadra de Windriders para tener un grupo de Battleline veloz y respaldado psíquicamente. Usá Doom en las unidades enemigas más resistentes que tus Windriders o vehículos necesitan atravesar para ganar el turno."
+    },
+    {
+      "id": "spiritseer",
+      "name": "Spiritseer",
+      "pts": 55,
+      "type": "character",
+      "role": "Guía de los Muertos",
+      "keywords": ["Infantry", "Character", "Psyker", "Faction: Aeldari", "Faction: Asuryani", "Spiritseer"],
+      "stats": { "m": 7, "t": 3, "sv": 6, "w": 4, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Spirit Staff",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Invulnerable Save 5+",
+        "Battle Focus",
+        "Spirit Mark (debuffs enemy for Wraith units)",
+        "Shepherd of Souls (aura WRAITH +1 to Wound)",
+        "Ghosthelm"
+      ],
+      "considerations": "El Spiritseer es el líder especializado de los constructos Wraith, con un precio muy competitivo de 55pts. Su Spirit Mark debilita unidades enemigas para que las unidades WRAITH cercanas las heran más fácilmente, y Shepherd of Souls otorga +1 para Herir a esas unidades en su aura. En el Spirit Conclave este personaje es indispensable: activa Shepherds of the Dead y multiplica el valor de toda la lista Wraith. Su invuln es de 5+ (no 4+ como el Farseer), así que hay que protegerlo.",
+      "recommendations": "Siempre poné al Spiritseer como Leader de una unidad de Wraithguard o Wraithblades en el Spirit Conclave. La combinación de Spirit Mark + Shepherd of Souls + los tokens de Vengeful Dead genera un output devastador. En otros destacamentos sigue siendo útil como soporte barato para listas con Wraithlord o Wraithknight. Protegelo detrás de los constructos que lidera."
+    },
+    {
+      "id": "warlock",
+      "name": "Warlock",
+      "pts": 50,
+      "type": "character",
+      "role": "Psíquico de Apoyo",
+      "keywords": ["Infantry", "Character", "Psyker", "Faction: Aeldari", "Faction: Asuryani", "Warlock"],
+      "stats": { "m": 7, "t": 3, "sv": 6, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Singing Spear",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "3",
+          "keywords": ["Assault"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Singing Spear",
+          "range": "Melee",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "3",
+          "keywords": []
+        },
+        {
+          "name": "Witchblade",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Conceal/Reveal (psychic power)",
+        "Ghosthelm"
+      ],
+      "considerations": "El Warlock es el psíquico de apoyo económico de la facción: solo 50pts con Invuln 4+ y dos poderes psíquicos clave. Conceal otorga cobertura a su unidad (Sv mejorada), mientras que Reveal elimina la cobertura del objetivo para que tus unidades de disparo lo atraviesen sin penalizadores. Puede tomar Singing Spear (mejor contra vehículos ligeros) o Witchblade (mejor contra infantería). Como Leader puede unirse a Guardian Defenders o Aspect Warriors para darles soporte psíquico directo.",
+      "recommendations": "Usá Conceal en unidades de élite que necesiten avanzar bajo fuego (Howling Banshees, Striking Scorpions), y Reveal para preparar el objetivo a ser destruido por tu unidad de mayor output de disparo. En el Seer Council, múltiples Warlocks crean un pool de poderes psíquicos que da mucha versatilidad táctica por turno. Muy eficiente en puntos para lo que aporta."
+    },
+    {
+      "id": "warlock-conclave",
+      "name": "Warlock Conclave",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Cónclave Psíquico",
+      "keywords": ["Infantry", "Psyker", "Faction: Aeldari", "Faction: Asuryani", "Warlock"],
+      "stats": { "m": 7, "t": 3, "sv": 6, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Singing Spear",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "3",
+          "keywords": ["Assault"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Singing Spear",
+          "range": "Melee",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -1,
+          "d": "3",
+          "keywords": []
+        },
+        {
+          "name": "Witchblade",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Ghosthelm",
+        "Conclave Powers (multiple psychic abilities per turn)",
+        "Psyker Conclave (can use more powers than solo Warlock)"
+      ],
+      "considerations": "El Warlock Conclave es una unidad de 3 Warlocks que opera como una sola unidad independiente (no como Leader). La clave es que puede usar múltiples poderes psíquicos por turno, superando al Warlock individual en versatilidad psíquica. Con 3 modelos de W3 e Invuln4+ tiene algo de resistencia. Ideal para el Seer Council donde los poderes psíquicos masivos son el motor del destacamento. A 75pts por 3 Warlocks es una propuesta eficiente.",
+      "recommendations": "En el Seer Council, esta unidad junto al Farseer crea un motor psíquico que puede usar Guide, Doom, Conceal y Reveal en el mismo turno sobre diferentes objetivos. Mantela protegida en cobertura o detrás de unidades más resistentes. En el Serpent's Brood recibe Dones de la Serpiente por ser PSYKER, potenciando aún más su output de poderes. Evitá exponerla al fuego directo."
+    },
+    {
+      "id": "eldrad-ulthran",
+      "name": "Eldrad Ulthran",
+      "pts": 140,
+      "type": "character",
+      "role": "Vidente Supremo",
+      "keywords": ["Infantry", "Character", "Psyker", "Epic Hero", "Faction: Aeldari", "Faction: Asuryani", "Farseer", "Eldrad Ulthran"],
+      "stats": { "m": 7, "t": 3, "sv": 6, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Singing Spear",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 6,
+          "ap": -1,
+          "d": "3",
+          "keywords": ["Assault"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Singing Spear",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 6,
+          "ap": -1,
+          "d": "3",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader",
+        "Epic Hero",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Ghosthelm",
+        "Fateful Foreknowledge (re-roll one hit/wound/save per phase)",
+        "Guide",
+        "Doom",
+        "Fortune (5+ FNP aura to friendly unit)",
+        "Ulthran's Blessing (additional psychic power)"
+      ],
+      "considerations": "Eldrad es el mejor psíquico de la facción y uno de los más poderosos del juego. Epic Hero significa que solo puede ir en una lista y es único, pero su output es enorme: Guide, Doom Y Fortune en el mismo turno, más Fateful Foreknowledge para re-tirar una tirada por fase. Fortune otorga FNP5+ a una unidad aliada, algo que los Farseers normales no pueden hacer. Su Singing Spear es también más poderosa (S6 vs S5 del Warlock). A 140pts es un gasto significativo pero absolutamente justificado en listas psíquicas.",
+      "recommendations": "Colocalo en el centro de tu estrategia psíquica: Guide en tu unidad de mayor output (Fire Dragons, Dark Reapers), Doom en el objetivo más resistente, y Fortune en la unidad más costosa que necesita protección. Fateful Foreknowledge debe reservarse para re-tirar una salvaguarda fallida de una unidad cara. En el Seer Council es la pieza central ideal alrededor de la cual construís el pool de dados de Destino."
+    },
+    {
+      "id": "illic-nightspear",
+      "name": "Illic Nightspear",
+      "pts": 80,
+      "type": "character",
+      "role": "Francotirador Legendario",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Ranger", "Faction: Aeldari", "Faction: Asuryani", "Illic Nightspear"],
+      "stats": { "m": 7, "t": 3, "sv": 6, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Voidbringer",
+          "range": "36\"",
+          "a": "3",
+          "skill": "2+",
+          "s": 5,
+          "ap": -3,
+          "d": "3",
+          "keywords": ["Devastating Wounds", "Heavy", "Precision", "Ignores Cover"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Ranger's Blade",
+          "range": "Melee",
+          "a": "5",
+          "skill": "3+",
+          "s": 3,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits"]
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Lone Operative",
+        "Battle Focus",
+        "Fieldcraft",
+        "Veil of Twilight (always in cover when not in the open)",
+        "Master Pathfinder (friendly RANGERS can re-deploy before battle)"
+      ],
+      "considerations": "Illic es el maestro francotirador Aeldari: BS2+, Precision (puede apuntar a Líderes dentro de unidades), Devastating Wounds (6s para herir = Heridas Mortales), Ignores Cover, y 36\" de alcance. Esta combinación lo hace el asesino de personajes más eficiente de la facción. Lone Operative lo protege mientras esté a más de 12\" de otra unidad. Master Pathfinder permite redesplegar Rangers aliados antes del inicio de la batalla, mejorando el posicionamiento inicial. Epic Hero significa que solo puede ir uno por lista.",
+      "recommendations": "Posicionalo en cobertura a 36\" de los líderes enemigos más valiosos desde el primer turno. Con Precision puede apuntar directamente al personaje que lidera una unidad; 3 ataques con Devastating Wounds BS2+ eliminarán a la mayoría de los personajes medianos en un turno. En el Path of the Outcast es el líder natural que potencia toda la estrategia de Rangers con Master Pathfinder. Usá Veil of Twilight para mantenerlo siempre en cobertura efectiva."
+    },
+    {
+      "id": "jain-zar",
+      "name": "Jain Zar",
+      "pts": 115,
+      "type": "character",
+      "role": "Phoenix Lord — Banshees",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Aspect Warrior", "Howling Banshee", "Phoenix Lord", "Faction: Aeldari", "Faction: Asuryani", "Jain Zar"],
+      "stats": { "m": 7, "t": 4, "sv": 2, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Silent Death",
+          "range": "12\"",
+          "a": "5",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "The Blade of Destruction",
+          "range": "Melee",
+          "a": "7",
+          "skill": "2+",
+          "s": 5,
+          "ap": -3,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader (Howling Banshees)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Fights First",
+        "War Shout (enemies fight last on charge turn)",
+        "Storm of Silence"
+      ],
+      "considerations": "Jain Zar es la Phoenix Lord de las Howling Banshees: Fights First, War Shout que hace que las unidades cargadas luchen las últimas, y 7 ataques con The Blade of Destruction a WS2+ AP-3. A 115pts es cara pero absolutamente demoledora en cuerpo a cuerpo. Silent Death a 12\" con 5 ataques Assault permite hostigar mientras se acerca. Como Leader de Howling Banshees, la unidad entera se beneficia de Fights First y sus habilidades de disrupción.",
+      "recommendations": "Siempre liderá Howling Banshees. La combinación Fights First + War Shout significa que en el turno de carga, Jain Zar y sus Banshees golpean antes que cualquier unidad, y luego la unidad cargada lucha última. Ideal contra unidades de cuerpo a cuerpo enemigas de élite que normalmente serían una amenaza: neutralizalas antes de que puedan responder."
+    },
+    {
+      "id": "karandras",
+      "name": "Karandras",
+      "pts": 130,
+      "type": "character",
+      "role": "Phoenix Lord — Scorpions",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Aspect Warrior", "Striking Scorpion", "Phoenix Lord", "Faction: Aeldari", "Faction: Asuryani", "Karandras"],
+      "stats": { "m": 6, "t": 4, "sv": 2, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Scorpion's Claw",
+          "range": "12\"",
+          "a": "1",
+          "skill": "2+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Scorpion's Claw",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        },
+        {
+          "name": "Biting Blade",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 5,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Lethal Hits"]
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader (Striking Scorpions)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Infiltrate",
+        "Stealth",
+        "Sustained Hits 1",
+        "Shadow Strike"
+      ],
+      "considerations": "Karandras es el cazador silencioso: Infiltrate le permite desplegarse adelantado junto a sus Striking Scorpions, y Stealth da cobertura a la unidad. Dos perfiles de cuerpo a cuerpo — Scorpion's Claw (S8, demoledor contra vehículos medianos) y Biting Blade (volumen alto con Lethal Hits). Sustained Hits 1 en alguna de sus habilidades multiplica el output. A 130pts es una inversión seria pero correcta para listas de Aspect Host.",
+      "recommendations": "Usalo en Infiltración con Striking Scorpions: desplegalos en posición avanzada a 12\" del objetivo. En turno 1 podés cargarlo y desatar ambos perfiles de melee. La Scorpion's Claw como pistola también permite disparar antes de la carga. En el Aspect Host su Infiltrate se vuelve una herramienta táctica poderosa para sorprender al rival desde el primer turno."
+    },
+    {
+      "id": "fuegan",
+      "name": "Fuegan",
+      "pts": 130,
+      "type": "character",
+      "role": "Phoenix Lord — Fire Dragons",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Aspect Warrior", "Fire Dragon", "Phoenix Lord", "Faction: Aeldari", "Faction: Asuryani", "Fuegan"],
+      "stats": { "m": 6, "t": 4, "sv": 2, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "The Firepike",
+          "range": "18\"",
+          "a": "1",
+          "skill": "2+",
+          "s": 9,
+          "ap": -4,
+          "d": "D6+2",
+          "keywords": ["Melta 4", "Ignores Cover"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "The Firesabre",
+          "range": "Melee",
+          "a": "5",
+          "skill": "2+",
+          "s": 6,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Devastating Wounds"]
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader (Fire Dragons)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Toughened by Fire (FNP 4+)",
+        "Last to Fall (gains +1A for each wound suffered, max +3)",
+        "Tank Hunter"
+      ],
+      "considerations": "Fuegan es el cazatanques definitivo de la facción. The Firepike (S9 AP-4 D D6+2 Melta 4 Ignores Cover) destruye cualquier vehículo del juego en uno o dos disparos con BS2+. FNP 4+ lo hace sorprendentemente resistente para ser T4 Sv2+. Last to Fall lo hace MÁS peligroso cuanto más daño recibe (hasta +3 ataques), creando una situación desastrosa si el rival no lo elimina de golpe. Lidera Fire Dragons para un grupo de demolición anti-vehículo masivo.",
+      "recommendations": "Poné a Fuegan con 4 Fire Dragons y apuntálos al vehículo más amenazante del rival. Con Guide del Farseer encima, es prácticamente imposible que sobreviva cualquier vehículo del juego. Dejá que reciba daño si podés — Last to Fall lo convierte en una amenaza escalonada. En el Aspect Host es la pieza central del plan antitanque."
+    },
+    {
+      "id": "asurmen",
+      "name": "Asurmen",
+      "pts": 130,
+      "type": "character",
+      "role": "Phoenix Lord — Dire Avengers",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Aspect Warrior", "Dire Avenger", "Phoenix Lord", "Faction: Aeldari", "Faction: Asuryani", "Asurmen"],
+      "stats": { "m": 6, "t": 4, "sv": 2, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Avenger Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Diresword",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 5,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Lethal Hits"]
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader (Dire Avengers)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Sustained Hits 1",
+        "Lord of the Dire Avengers (Dire Avengers en su unidad ganan +1 OC)",
+        "The Hand of Asuryan"
+      ],
+      "considerations": "Asurmen es el Phoenix Lord más versátil: excelente en disparo (4 ataques Assault Lethal Hits con BS2+) Y en cuerpo a cuerpo (6 ataques Diresword AP-3 Lethal Hits). Su habilidad Lord of the Dire Avengers otorga +1 OC a los Dire Avengers de su unidad, convirtiéndolos en una fuerza de control de objetivos poderosa. En el Guardian Battlehost, junto al bono de +1 para Impactar cerca de objetivos, la unidad se vuelve devastadoramente eficiente.",
+      "recommendations": "Liderá Dire Avengers sobre un objetivo central y usá el bono de OC para mantenerlo de forma casi inamovible. El combo Lord of the Dire Avengers + Defend at All Costs (Guardian Battlehost) convierte una unidad modesta en una máquina de control de puntos con capacidad ofensiva real. Alternativamente en el Aspect Host, sus Sustained Hits y la unidad de Dire Avengers son una herramienta de disparo flexible."
+    },
+    {
+      "id": "maugan-ra",
+      "name": "Maugan Ra",
+      "pts": 130,
+      "type": "character",
+      "role": "Phoenix Lord — Dark Reapers",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Aspect Warrior", "Dark Reaper", "Phoenix Lord", "Faction: Aeldari", "Faction: Asuryani", "Maugan Ra"],
+      "stats": { "m": 6, "t": 4, "sv": 2, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "The Maugetar",
+          "range": "36\"",
+          "a": "4",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Heavy", "Ignores Cover", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "The Maugetar",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader (Dark Reapers)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Relentless (no penalty to Heavy when moving)",
+        "Storm of Blades",
+        "Harvester of Souls"
+      ],
+      "considerations": "Maugan Ra tiene el arma más devastadora de todos los Phoenix Lords para largo alcance: The Maugetar a 36\" con 4 ataques BS2+ S7 AP-2 D2, Ignores Cover y Lethal Hits. Relentless elimina el penalizador de Heavy cuando se mueve, permitiéndole avanzar con Battle Focus y seguir disparando al máximo. Lidera Dark Reapers para una plataforma de fuego de largo alcance aterradora que el rival no puede ignorar.",
+      "recommendations": "Posicionalo con Dark Reapers en un flanco seguro a 36\" del rival. Su combo de alcance + Ignores Cover + Lethal Hits BS2+ significa que prácticamente no hay objetivo que pueda esconderse de él efectivamente. En el Aspect Host es la artillería pesada ideal. Usá Relentless para reposicionarte con Battle Focus sin perder potencia de fuego, cubriendo objetivos cambiantes durante la partida."
+    },
+    {
+      "id": "baharroth",
+      "name": "Baharroth",
+      "pts": 115,
+      "type": "character",
+      "role": "Phoenix Lord — Swooping Hawks",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Aspect Warrior", "Swooping Hawk", "Phoenix Lord", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Baharroth"],
+      "stats": { "m": 12, "t": 4, "sv": 2, "w": 6, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Swooping Hawk Lasblaster",
+          "range": "24\"",
+          "a": "5",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Sunburst Grenade",
+          "range": "6\"",
+          "a": "D6",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Blast", "Ignores Cover", "One use"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Hawk's Talon",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader (Swooping Hawks)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Fly",
+        "Deep Strike",
+        "Cry of the Wind (enemies within 6\" have -1 to hit)",
+        "The Cry of the Wind"
+      ],
+      "considerations": "Baharroth es el más veloz de todos los Phoenix Lords: M12 con Fly y Deep Strike. Puede entrar desde reservas junto a sus Swooping Hawks para golpear en cualquier punto del tablero. Cry of the Wind da -1 para Impactar a las unidades enemigas en 6\", lo que en combinación con la movilidad lo hace difícil de contrarrestar. El Sunburst Grenade (D6 ataques Blast Ignores Cover) es excelente para limpiar infantería apilada en un objetivo.",
+      "recommendations": "Usalo en Deep Strike con Swooping Hawks: entrá a 9\" del objetivo en turno 2 o 3, lanzá el Sunburst Grenade sobre la infantería enemiga apilada, y usá Cry of the Wind para proteger la unidad del fuego de respuesta. En el Windrider Host, la combinación de Fly con Battle Focus permite cubrir el tablero con una agilidad imposible de replicar. Su amenaza de Deep Strike obliga al rival a proteger retaguardia."
+    },
+    {
+      "id": "yvraine",
+      "name": "Yvraine",
+      "pts": 95,
+      "type": "character",
+      "role": "Emisaria de Ynnead",
+      "keywords": ["Infantry", "Character", "Psyker", "Epic Hero", "Faction: Aeldari", "Faction: Ynnari", "Yvraine"],
+      "stats": { "m": 6, "t": 3, "sv": 6, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Cronesword",
+          "range": "Melee",
+          "a": "5",
+          "skill": "2+",
+          "s": 5,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Devastating Wounds"]
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader",
+        "Invulnerable Save 4+",
+        "Word of the Phoenix (restores D3 wounds a una unidad YNNARI amiga)",
+        "Strength from Death (Warlord requirement para Devoted of Ynnead)",
+        "Psychic Powers (Doom, Executioner)"
+      ],
+      "considerations": "Yvraine es la pieza central del Devoted of Ynnead — sin ella (o La Yncarne) como Warlord, el destacamento no funciona. Además de activar la regla de destacamento, Word of the Phoenix restaura D3 heridas a una unidad YNNARI por turno, lo que en unidades de alto valor es un ahorro enorme en puntos de victoria. Su Cronesword con Devastating Wounds puede eliminar personajes mediocres. Psíquica con acceso a Doom.",
+      "recommendations": "Mantela protegida detrás de una unidad de Aspect Warriors o Dire Avengers en el Devoted of Ynnead. Word of the Phoenix cada turno en tu unidad más dañada puede conservar piezas clave durante toda la partida. Usá Doom en el objetivo más resistente para facilitar el trabajo de tus unidades ofensivas. Combinala con The Visarch como escort para máxima protección."
+    },
+    {
+      "id": "the-visarch",
+      "name": "The Visarch",
+      "pts": 80,
+      "type": "character",
+      "role": "Guardaespaldas de Ynnead",
+      "keywords": ["Infantry", "Character", "Epic Hero", "Faction: Aeldari", "Faction: Ynnari", "The Visarch"],
+      "stats": { "m": 6, "t": 3, "sv": 2, "w": 5, "ld": 6, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Sword of Silent Screams",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 5,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Lethal Hits"]
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Leader",
+        "Invulnerable Save 4+",
+        "Fights First",
+        "Bodyguard (puede interceptar heridas a personajes YNNARI cercanos)",
+        "Strength from Death"
+      ],
+      "considerations": "The Visarch es el guardaespaldas perfecto de Yvraine: Sv2+ con Invuln 4+, Fights First, y Bodyguard para interceptar ataques dirigidos a personajes YNNARI cercanos. Con 6 ataques WS2+ S5 AP-3 Lethal Hits y Fights First, cualquier unidad que lo cargue se lleva una respuesta devastadora antes de poder atacar. A 80pts es la escolta más eficiente en puntos de la facción para proteger piezas centrales.",
+      "recommendations": "Siempre poné The Visarch junto a Yvraine o La Yncarne en el Devoted of Ynnead. Bodyguard protege al Warlord de ataques de Precision o disparos concentrados. Su Fights First disuade las cargas enemigas: el rival sabe que The Visarch golpea primero con 6 ataques letales. Combinado con Yvraine crea un dúo casi imposible de eliminar sin una inversión enorme de recursos del rival."
+    },
+    {
+      "id": "the-yncarne",
+      "name": "The Yncarne",
+      "pts": 215,
+      "type": "monster",
+      "role": "Avatar de Ynnead",
+      "keywords": ["Monster", "Character", "Epic Hero", "Psyker", "Faction: Aeldari", "Faction: Ynnari", "The Yncarne"],
+      "stats": { "m": 8, "t": 6, "sv": 5, "w": 9, "ld": 6, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Vilith-zhar, the Sword of Souls",
+          "range": "Melee",
+          "a": "8",
+          "skill": "2+",
+          "s": 7,
+          "ap": -3,
+          "d": "D6",
+          "keywords": ["Devastating Wounds"]
+        }
+      ],
+      "abilities": [
+        "Epic Hero",
+        "Invulnerable Save 4+",
+        "Fights First",
+        "Strength from Death (Warlord option para Devoted of Ynnead)",
+        "Whispering Death (unidades enemigas a 6\" sufren -1 a Ld y OC)",
+        "Revenant (si es destruida, puede reaparecer junto a una unidad aliada que acabe de destruir una enemiga)",
+        "Psychic Powers (Execration, Unbind)"
+      ],
+      "considerations": "La Yncarne es una amenaza única: T6 Sv5+ Invuln4+ con FNP implícito via Revenant — si es destruida, puede reaparecer junto a otra unidad que acabe de matar algo. Esto la hace casi imposible de eliminar permanentemente en una lista que destruye unidades regularmente. 8 ataques WS2+ S7 AP-3 D D6 Devastating Wounds destruyen prácticamente cualquier cosa en un turno. Whispering Death debilita a las unidades enemigas cercanas. Puede ser Warlord del Devoted of Ynnead en lugar de Yvraine.",
+      "recommendations": "En el Devoted of Ynnead, usá La Yncarne como Warlord para maximizar Strength from Death. Revenant es tu seguro de vida: mantené unidades activas que puedan destruir enemigos para re-invocarla si cae. Whispering Death combinado con Battle-shock es devastador en el centro del tablero. En el Devoted, los tokens de Surge generados por sus muertes la hacen progresivamente más poderosa durante la partida."
+    },
+    {
+      "id": "shadowseer",
+      "name": "Shadowseer",
+      "pts": 85,
+      "type": "character",
+      "role": "Psíquico Harlequin",
+      "keywords": ["Infantry", "Character", "Psyker", "Faction: Aeldari", "Faction: Harlequins", "Shadowseer"],
+      "stats": { "m": 8, "t": 3, "sv": 6, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        },
+        {
+          "name": "Hallucinogen Grenade Launcher",
+          "range": "18\"",
+          "a": "D3",
+          "skill": "3+",
+          "s": 2,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Blast", "Psychic"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Miststave",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "D3",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader (Troupe)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Veil of Tears (-1 a Impactar ataques de disparo contra su unidad si está a más de 12\")",
+        "Shimmering Doom (psychic power — Battle-shock test para unidad enemiga)",
+        "Laugh of Somnolance"
+      ],
+      "considerations": "El Shadowseer es el psíquico de los Harlequins: Veil of Tears (-1 para Impactar a distancia si a más de 12\") hace a la Troupe que lidera extremadamente difícil de matar con disparo. Shimmering Doom puede forzar un Battle-shock en una unidad enemiga por turno. El Hallucinogen Grenade Launcher con Blast es útil para poner marcadores de debilidad. A 85pts es el escudo defensivo ideal para una Troupe agresiva.",
+      "recommendations": "Liderá una Troupe de 6 y avanzá bajo el paraguas de Veil of Tears — el -1 para Impactar a distancia dificulta enormemente que el rival te destruya antes de llegar al cuerpo a cuerpo. Usá Shimmering Doom en la unidad enemiga que vas a cargar para disminuir su OC y facilitar el control del objetivo. En Ghosts of the Webway el combo Shadowseer + Troupe BATTLELINE OC2 es la sinergia central del destacamento."
+    },
+    {
+      "id": "troupe-master",
+      "name": "Troupe Master",
+      "pts": 80,
+      "type": "character",
+      "role": "Líder Harlequin",
+      "keywords": ["Infantry", "Character", "Faction: Aeldari", "Faction: Harlequins", "Troupe Master"],
+      "stats": { "m": 8, "t": 3, "sv": 6, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Harlequin's Caress",
+          "range": "Melee",
+          "a": "5",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Lethal Hits"]
+        },
+        {
+          "name": "Harlequin's Kiss",
+          "range": "Melee",
+          "a": "3",
+          "skill": "2+",
+          "s": 5,
+          "ap": -2,
+          "d": "D3",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Leader (Troupe)",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Choreographer of War (+1 a Impactar a su unidad en la fase de combate)",
+        "Harlequin's Embrace"
+      ],
+      "considerations": "El Troupe Master es el líder ofensivo de los Harlequins. Choreographer of War otorga +1 para Impactar a toda su Troupe en la fase de combate, elevando el WS de modelos de 3+ a 2+. Con dos perfiles de melee (Caress para volumen, Kiss para daño por ataque), es flexible contra cualquier objetivo. WS2+/BS2+ con Invuln4+ a 80pts es competitivo. Líder natural de Troupe en cualquier destacamento Harlequin.",
+      "recommendations": "Liderá una Troupe de 6 en el Ghosts of the Webway y aprovechá Choreographer of War para convertir los ataques de la Troupe en WS2+ efectivo. Kiss es tu perfil contra blindaje y monstruos (D3 daño), Caress contra infantería de élite. La combinación Troupe Master + Shadowseer en la misma unidad de Troupe es posible en algunos destacamentos, creando un paquete de élite con Veil of Tears + Choreographer simultáneos."
+    },
+    {
+      "id": "death-jester",
+      "name": "Death Jester",
+      "pts": 65,
+      "type": "character",
+      "role": "Francotirador Harlequin",
+      "keywords": ["Infantry", "Character", "Faction: Aeldari", "Faction: Harlequins", "Death Jester"],
+      "stats": { "m": 8, "t": 3, "sv": 6, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Shrieker Cannon",
+          "range": "24\"",
+          "a": "3",
+          "skill": "2+",
+          "s": 6,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Lethal Hits", "Precision"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Shrieker Cannon (butt)",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Lone Operative",
+        "Invulnerable Save 4+",
+        "Battle Focus",
+        "Favour of Cegorach (re-roll one hit roll per shooting phase)",
+        "Shrieker Rounds (enemies that lose models to Shrieker Cannon must take Battle-shock test)"
+      ],
+      "considerations": "El Death Jester opera solo (Lone Operative = difícil de targetear) como un francotirador de élite. Su Shrieker Cannon tiene Precision para apuntar a Líderes, y Shrieker Rounds fuerza un test de Battle-shock en la unidad que pierde modelos — una herramienta de disrupción muy poderosa que puede inutilizar unidades enteras. A 65pts es barato por lo que aporta. Favour of Cegorach permite re-tirar un impacto por turno de disparo.",
+      "recommendations": "Posicionalo como operativo solitario a 24\" de unidades enemigas lideradas por personajes importantes. Precision + BS2+ hace casi inevitable que el disparo llegue al Líder. Shrieker Rounds en turno 1-2 sobre una unidad grande puede generar un Battle-shock que la paralice antes de que actúe. En el Fateful Performance es una pieza de disruption ideal que opera independientemente del resto de la lista."
+    },
+    {
+      "id": "solitaire",
+      "name": "Solitaire",
+      "pts": 100,
+      "type": "character",
+      "role": "Asesino Harlequin",
+      "keywords": ["Infantry", "Character", "Faction: Aeldari", "Faction: Harlequins", "Solitaire"],
+      "stats": { "m": 8, "t": 3, "sv": 6, "w": 5, "ld": 6, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Harlequin's Caress",
+          "range": "Melee",
+          "a": "6",
+          "skill": "2+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Sustained Hits 1"]
+        },
+        {
+          "name": "Harlequin's Kiss",
+          "range": "Melee",
+          "a": "4",
+          "skill": "2+",
+          "s": 5,
+          "ap": -3,
+          "d": "D3",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Lone Operative",
+        "Invulnerable Save 4+",
+        "Fights First",
+        "Battle Focus",
+        "Blitz (puede cargar aunque haya avanzado)",
+        "Blur of Movement (-1 a Impactar en ataques de disparo contra él)"
+      ],
+      "considerations": "El Solitaire es el asesino de personajes definitivo de los Harlequins: Lone Operative, Fights First, -1 para Impactar con disparo, Blitz (puede cargar después de avanzar), y dos perfiles de melee brutales. La combinación de M8 + Blitz + Battle Focus le da un alcance de carga efectivo desde posiciones muy alejadas. Con Sustained Hits 1 en Caress y Kiss para daño pesado, puede destruir personajes de W4-6 con relativa facilidad.",
+      "recommendations": "Usalo como depredador de personajes solitarios: Lone Operative lo protege, Fights First garantiza que golpea primero, y Blitz lo hace impredecible en alcance de carga. En el Ghosts of the Webway puede cargar atravesando unidades enemigas (Acrobatic Onslaught), llegando directamente al personaje objetivo detrás de la línea de pantalla rival. Es tu mejor herramienta contra Warlords y Epic Heroes de valor moderado."
+    },
+    {
+      "id": "guardian-defenders",
+      "name": "Guardian Defenders",
+      "pts": 100,
+      "type": "infantry",
+      "role": "Guardianes de Línea",
+      "keywords": ["Infantry", "Battleline", "Grenades", "Faction: Aeldari", "Faction: Asuryani", "Guardian", "Guardian Defender"],
+      "stats": { "m": 7, "t": 3, "sv": 4, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Shuriken Catapult",
+          "range": "18\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Bright Lance (Heavy Weapon Platform)",
+          "range": "36\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 14,
+          "ap": -3,
+          "d": "D6+2",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Starcannon (Heavy Weapon Platform)",
+          "range": "36\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 6,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Heavy"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Close Combat Weapon",
+          "range": "Melee",
+          "a": "1",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Heavy Weapon Platform (W2 OC0, opera como modelo separado)",
+        "Defenders of the Craftworld"
+      ],
+      "considerations": "Los Guardian Defenders son la Battleline estándar del Craftworld: 10 Guardianes + 1 Plataforma de Arma Pesada. Con OC2 por modelo son excelentes para contestar objetivos con masa. El Shuriken Catapult es Assault + Lethal Hits, pudiendo avanzar y disparar. La Plataforma de Arma Pesada es lo que hace a la unidad versátil: Bright Lance para antitanque o Starcannon para anti-élite. La unidad de 11 modelos en total cuesta solo 100pts.",
+      "recommendations": "En el Guardian Battlehost son la pieza central: con +1 para Impactar cerca de objetivos, el Shuriken Catapult de 10 Guardianes genera hits letales en masa. Optá por Bright Lance si necesitás antitanque económico, o Starcannon si el rival tiene mucha infantería de élite. Siempre usá Battle Focus para reposicionarte tras disparar y nunca quedarte expuesto al cuerpo a cuerpo rival."
+    },
+    {
+      "id": "storm-guardians",
+      "name": "Storm Guardians",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Guardias de Asalto",
+      "keywords": ["Infantry", "Battleline", "Grenades", "Faction: Aeldari", "Faction: Asuryani", "Guardian", "Storm Guardian"],
+      "stats": { "m": 7, "t": 3, "sv": 4, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        },
+        {
+          "name": "Fusion Gun (2 modelos)",
+          "range": "12\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 8,
+          "ap": -4,
+          "d": "D6",
+          "keywords": ["Assault", "Melta 4"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Chainsword",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Defenders of the Craftworld"
+      ],
+      "considerations": "Los Storm Guardians son la versión de asalto de los Guardianes: pistolas + espadas para el cuerpo a cuerpo, con 2 modelos portando Fusion Guns que dan un mínimo de capacidad antitanque a la unidad. A 75pts por 10 modelos son baratos como relleno de Battleline con OC2. No son tan eficientes en disparo como los Defenders (sin Catapults ni Plataforma), pero son útiles para ocupar objetivos y tener Fusion Guns accesibles.",
+      "recommendations": "Usá los Storm Guardians para tomar objetivos en el flanco y usar los 2 Fusion Guns oportunistamente contra vehículos ligeros o monstruos que se acerquen. Como unidad de 10 modelos con OC2, generan 20 OC total en un objetivo — difícil de contestar sin una unidad grande. En el Guardian Battlehost son una opción económica de Battleline que libera puntos para unidades más especializadas."
+    },
+    {
+      "id": "dire-avengers",
+      "name": "Dire Avengers",
+      "pts": 65,
+      "type": "infantry",
+      "role": "Aspect Warrior — Disparo",
+      "keywords": ["Infantry", "Battleline", "Aspect Warrior", "Dire Avenger", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 7, "t": 3, "sv": 4, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Avenger Shuriken Catapult",
+          "range": "18\"",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Diresword",
+          "range": "Melee",
+          "a": "2",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Defenders of the Craftworld"
+      ],
+      "considerations": "Los Dire Avengers son la Battleline de élite del Craftworld: BS3+ con Avenger Shuriken Catapult (3 ataques AP-2 Assault Lethal Hits por modelo). 5 modelos a 65pts generan un output de disparo que supera al de muchas unidades más caras. Su Diresword AP-2 es decente en cuerpo a cuerpo para ser Battleline. Con Asurmen como Leader ganan +1 OC. En el Guardian Battlehost con +1 para Impactar, su Catapult pasa a BS efectivo 2+.",
+      "recommendations": "Son tu Battleline de disparo de mejor relación calidad-precio. 5 modelos ocupan un objetivo y amenazan todo lo que se acerque. En el Guardian Battlehost, 3 unidades de Dire Avengers con Asurmen en una de ellas crean una línea defensiva de disparo brutalmente eficiente. Usá Battle Focus para reposicionarte tras cada fase de disparo y nunca quedarte fijo al alcance del cuerpo a cuerpo rival."
+    },
+    {
+      "id": "rangers",
+      "name": "Rangers",
+      "pts": 85,
+      "type": "infantry",
+      "role": "Exploradores Francotiradores",
+      "keywords": ["Infantry", "Scouts", "Ranger", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 7, "t": 3, "sv": 5, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Ranger Long Rifle",
+          "range": "36\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Heavy", "Lethal Hits", "Precision"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Ranger Blade",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Infiltrate",
+        "Stealth",
+        "Fieldcraft (siempre cuentan como en cobertura cuando no están en terreno abierto)"
+      ],
+      "considerations": "Los Rangers son los exploradores de élite del Craftworld: Infiltrate para despliegue adelantado, Stealth para -1 a Impactar, Fieldcraft para cobertura constante, y Ranger Long Rifles con Precision para apuntar a Líderes. A 85pts por 5 modelos tienen OC2 por modelo (total OC10 en un objetivo). El rifle a 36\" con Lethal Hits y Precision es perfecto para hostigar personajes y eliminar élites clave.",
+      "recommendations": "Siempre desplegálos con Infiltrate en posiciones avanzadas: 5 Rangers en un objetivo central en turno 0 es una ventaja táctica enorme. En el Path of the Outcast su Infiltrate se combina con los bonos del destacamento. Usálos para hostigar Líderes con Precision + Lethal Hits desde alcance seguro detrás de cobertura donde Fieldcraft activa. Con Illic Nightspear como Leader la unidad se vuelve el grupo de élite de francotiradores más peligroso de la facción."
+    },
+    {
+      "id": "howling-banshees",
+      "name": "Howling Banshees",
+      "pts": 70,
+      "type": "infantry",
+      "role": "Aspect Warrior — Cuerpo a Cuerpo",
+      "keywords": ["Infantry", "Aspect Warrior", "Howling Banshee", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 8, "t": 3, "sv": 4, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Power Sword",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Fights First",
+        "Acrobatic (pueden cargar aunque hayan avanzado)",
+        "Banshee Mask (unidades cargadas por Banshees no pueden usar Overwatch)"
+      ],
+      "considerations": "Las Howling Banshees son el Aspect Warrior de combate más disruptivo: Fights First garantizan que golpean primero, Banshee Mask elimina el Overwatch del rival cuando las cargas (enorme ventaja), y Acrobatic permite cargar después de avanzar ampliando el rango de carga efectivo. Con Jain Zar como Leader y War Shout, la unidad se vuelve literalmente imposible de responder en el turno de carga. M8 es el movimiento más alto de la infantería de línea.",
+      "recommendations": "Usá Acrobatic para avanzar 4\" adicionales con Battle Focus y luego cargar — alcanzás objetivos a 8+4+3+2D6\" de tu posición de inicio. Banshee Mask es crítico: seleccioná siempre la unidad más peligrosa en Overwatch para atacar primero. Con Jain Zar el output de melee se duplica. En el Aspect Host son perfectas para eliminar unidades de élite enemigas en cuerpo a cuerpo sin sufrir represalias del Overwatch."
+    },
+    {
+      "id": "striking-scorpions",
+      "name": "Striking Scorpions",
+      "pts": 70,
+      "type": "infantry",
+      "role": "Aspect Warrior — Infiltración",
+      "keywords": ["Infantry", "Aspect Warrior", "Striking Scorpion", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 6, "t": 4, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Scorpion Chainsword",
+          "range": "Melee",
+          "a": "4",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits"]
+        },
+        {
+          "name": "Scorpion's Claw (Exarch)",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Infiltrate",
+        "Stealth",
+        "Mandiblasters (al comienzo del combate, infligen D3 Heridas Mortales a la unidad trabada)"
+      ],
+      "considerations": "Los Striking Scorpions son los Aspect Warriors de infiltración más resistentes: T4 Sv3+ los hace notablemente más duros que otros Aspects. Infiltrate permite desplegarlos adelantados. Mandiblasters infligen D3 Heridas Mortales automáticamente al inicio del combate — antes de que nadie tire para impactar. Con Karandras, toda esta sinergia se amplifica con su Scorpion's Claw de S8 y Shadow Strike. Son el Aspect Warrior más robusto y versátil.",
+      "recommendations": "Infiltrálos detrás de una unidad de élite enemiga y cargálos en turno 1: los Mandiblasters garantizan D3 Heridas Mortales antes de cualquier ataque. Con Karandras, el output de daño se vuelve realmente peligroso hasta para vehículos medianos. En el Aspect Host su T4 Sv3+ los hace sobrevivir mejor que cualquier otro Aspect, dándote más presencia en el campo. Ideales también para asegurar objetivos en flancos mientras el resto de la lista presiona al frente."
+    },
+    {
+      "id": "fire-dragons",
+      "name": "Fire Dragons",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Aspect Warrior — Antitanque",
+      "keywords": ["Infantry", "Aspect Warrior", "Fire Dragon", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 6, "t": 3, "sv": 4, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Fusion Gun",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 8,
+          "ap": -4,
+          "d": "D6",
+          "keywords": ["Assault", "Melta 4"]
+        },
+        {
+          "name": "Fire Pike (Exarch)",
+          "range": "18\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 9,
+          "ap": -4,
+          "d": "D6+2",
+          "keywords": ["Melta 3", "Ignores Cover"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Close Combat Weapon",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Tank Hunters (re-roll wound rolls of 1 against VEHICLE)",
+        "Melta Bombs"
+      ],
+      "considerations": "Los Fire Dragons son el Aspect Warrior antitanque puro: 5 Fusion Guns a 12\" con Melta 4 (D6+4 de daño dentro de 6\") y Tank Hunters para re-tirar 1s para herir contra vehículos. Una sola descarga de los 5 modelos puede destruir prácticamente cualquier vehículo del juego incluso sin Guide. El Exarch con Fire Pike extiende el alcance a 18\" con D6+2 daño base. Son frágiles (T3 Sv4+) pero absolutamente esenciales en cualquier lista competitiva.",
+      "recommendations": "Siempre transportalos en un Wave Serpent para acercarlos a 12\" del objetivo en un turno seguro. Con Guide del Farseer (re-tirar impactos fallidos) + Tank Hunters (re-tirar 1s para herir), la eficiencia se vuelve implacable. Fuegan como Leader añade FNP4+ a la unidad y Last to Fall. Prioridad absoluta de disparo: identificá el vehículo más amenazante del rival y concentrá toda la unidad sobre él cada turno."
+    },
+    {
+      "id": "swooping-hawks",
+      "name": "Swooping Hawks",
+      "pts": 75,
+      "type": "infantry",
+      "role": "Aspect Warrior — Aéreo",
+      "keywords": ["Infantry", "Aspect Warrior", "Swooping Hawk", "Fly", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 12, "t": 3, "sv": 4, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Swooping Hawk Lasblaster",
+          "range": "24\"",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Swooping Hawk Grenade Pack",
+          "range": "6\"",
+          "a": "D6",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Blast"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Lasblaster Butt",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Fly",
+        "Deep Strike",
+        "Skyleap (podés mover la unidad a Reservas Estratégicas en la fase de movimiento)"
+      ],
+      "considerations": "Los Swooping Hawks son los más móviles de los Aspect Warriors: M12 con Fly, Deep Strike para entrar desde reservas, y Skyleap para volver a las reservas en cualquier turno. Esta combinación los hace imposibles de silenciar: siempre pueden escapar y volver. El Grenade Pack (D6 Blast) es su herramienta principal para limpiar infantería apilada en objetivos. Son frágiles pero increíblemente molesta para el rival gestionar.",
+      "recommendations": "Usá el ciclo Deep Strike → Grenade Pack → Skyleap cada 2 turnos para hostigar al rival sin exponerte. Entrá en turno 2, lanzá el Grenade Pack sobre la unidad más concentrada, disparálos con el Lasblaster, y si sobreviven usá Skyleap para retirarte a reservas y repetirlo. Con Baharroth el Sunburst Grenade añade aún más capacidad de daño en área. Excelentes para misiones de secundarias que requieren aparición en zonas específicas del mapa."
+    },
+    {
+      "id": "warp-spiders",
+      "name": "Warp Spiders",
+      "pts": 80,
+      "type": "infantry",
+      "role": "Aspect Warrior — Movilidad",
+      "keywords": ["Infantry", "Aspect Warrior", "Warp Spider", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 7, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Death Spinner",
+          "range": "12\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 6,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits", "Sustained Hits 1"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Close Combat Weapon",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Flickerjump (en la fase del enemigo, podés mover la unidad D6\" ignorando terreno — Stratagem gratuita una vez por turno)",
+        "Warp Jump Generator"
+      ],
+      "considerations": "Los Warp Spiders son los Aspect Warriors de golpear-y-huir: Death Spinner (S6 AP-2 Sustained Hits 1 Lethal Hits Assault) es devastador contra infantería de élite y monstruos ligeros. Flickerjump les permite teleportarse D6\" en el turno del rival para esquivar ataques o cargarse de encima. Sv3+ es inusualmente duro para Aspect Warriors. A 80pts son excelentes en términos de potencia por punto. El máximo potencial llega con Battle Focus: disparán, saltan con Flickerjump y evitan la represalia.",
+      "recommendations": "Usálos como cazadores de élite: el Death Spinner con Sustained Hits 1 + Lethal Hits + 2 ataques por modelo (10 ataques totales BS3+) diezma escuadras de Terminator o similares eficientemente. Flickerjump es tu salvavidas: si el rival los carga, saltálos fuera del engagement. En el Aspect Host son uno de los mejores Aspects por puntos. Combiná con Doom del Farseer para garantizar heridas contra objetivos de alta Dureza."
+    },
+    {
+      "id": "dark-reapers",
+      "name": "Dark Reapers",
+      "pts": 85,
+      "type": "infantry",
+      "role": "Aspect Warrior — Artillería",
+      "keywords": ["Infantry", "Aspect Warrior", "Dark Reaper", "Faction: Aeldari", "Faction: Asuryani"],
+      "stats": { "m": 5, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Reaper Launcher (frag)",
+          "range": "36\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Ignores Cover", "Heavy", "Lethal Hits"]
+        },
+        {
+          "name": "Reaper Launcher (starswarm)",
+          "range": "36\"",
+          "a": "4",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Ignores Cover", "Heavy", "Lethal Hits"]
+        },
+        {
+          "name": "Tempest Launcher (Exarch)",
+          "range": "36\"",
+          "a": "2D6",
+          "skill": "3+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Blast", "Ignores Cover", "Indirect Fire"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Close Combat Weapon",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 3,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Implacable (sin penalizador Heavy al moverse)"
+      ],
+      "considerations": "Los Dark Reapers son la artillería de Aspect Warriors: alcance de 36\", Ignores Cover en todos sus perfiles, y Lethal Hits. El Reaper Launcher en modo frag (S5 AP-2 D2) destruye infantería de élite; en modo starswarm (4 ataques AP-1) limpia infantería ligera. El Exarch con Tempest Launcher (2D6 Blast Indirect Fire) puede disparar sin línea de visión. Implacable elimina el penalizador de Heavy al moverse. Son lentos (M5) pero su alcance compensa.",
+      "recommendations": "Posicionálos en un ángulo con vista de 36\" al centro del tablero. Ignores Cover significa que ningún edificio protege al rival de su fuego. Con Maugan Ra como Leader el output se vuelve devastador. Usá el modo correcto según el objetivo: frag para Terminators y similares, starswarm para infantería básica. El Tempest Launcher del Exarch es perfecto para disparar a unidades escondidas detrás de línea de visión bloqueada sin penalizador."
+    },
+    {
+      "id": "wraithguard",
+      "name": "Wraithguard",
+      "pts": 130,
+      "type": "infantry",
+      "role": "Constructo Wraith — Antitanque",
+      "keywords": ["Infantry", "Wraith", "Faction: Aeldari", "Faction: Asuryani", "Wraithguard"],
+      "stats": { "m": 6, "t": 7, "sv": 3, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        {
+          "name": "Wraithcannon",
+          "range": "12\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 8,
+          "ap": -4,
+          "d": "D3+3",
+          "keywords": ["Devastating Wounds"]
+        },
+        {
+          "name": "D-Scythe (alternate)",
+          "range": "8\"",
+          "a": "D6",
+          "skill": "4+",
+          "s": 10,
+          "ap": -4,
+          "d": "1",
+          "keywords": ["Ignores Cover", "Torrent"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithguard Fists",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 8,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Guided by Ghosts (re-roll hit rolls of 1 when near Spiritseer)"
+      ],
+      "considerations": "Los Wraithguard son tanques de infantería: T7 Sv3+ con W3 cada uno en una unidad de 5 (15 heridas totales). El Wraithcannon (S8 AP-4 D D3+3 Devastating Wounds) destruye cualquier vehículo pesado en un turno — 6s para herir son Heridas Mortales adicionales con D3+3 de daño base. El D-Scythe (Torrent, auto impacta D6 veces) es excelente para limpiar infantería compacta. Con un Spiritseer al lado, Guided by Ghosts da re-tirar 1s para impactar.",
+      "recommendations": "Siempre acompañalos de un Spiritseer en el Spirit Conclave para maximizar las sinergias de Sheperd of Souls + Vengeful Dead. El Wraithcannon a 12\" es devastador pero requiere acercarse al objetivo — usá un Wave Serpent para transportarlos de forma segura. Optá por D-Scythes si el rival trae mucha infantería compacta y poco vehículo. En el Serpent's Brood pueden recibir Dones de la Serpiente por ser WRAITH, otorgándoles capacidades adicionales."
+    },
+    {
+      "id": "wraithblades",
+      "name": "Wraithblades",
+      "pts": 130,
+      "type": "infantry",
+      "role": "Constructo Wraith — Cuerpo a Cuerpo",
+      "keywords": ["Infantry", "Wraith", "Faction: Aeldari", "Faction: Asuryani", "Wraithblade"],
+      "stats": { "m": 6, "t": 7, "sv": 3, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        {
+          "name": "Ghostaxe and Forceshield",
+          "range": "Melee",
+          "a": "4",
+          "skill": "4+",
+          "s": 10,
+          "ap": -3,
+          "d": "2",
+          "keywords": []
+        },
+        {
+          "name": "Wraithsword (alternate)",
+          "range": "Melee",
+          "a": "5",
+          "skill": "4+",
+          "s": 8,
+          "ap": -4,
+          "d": "2",
+          "keywords": ["Lethal Hits"]
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 4+ (con Ghostaxe y Forceshield)",
+        "Guided by Ghosts (re-roll hit rolls of 1 when near Spiritseer)"
+      ],
+      "considerations": "Los Wraithblades son el contrapeso cuerpo a cuerpo de los Wraithguard: misma durabilidad base (T7 Sv3+ W3) pero orientados al combate. Con Ghostaxe tienen Invuln4+ adicional — 5 modelos con T7 Sv3+ Invuln4+ son casi indestructibles en cuerpo a cuerpo. Ghostaxe (S10 AP-3 D2) y Wraithsword (S8 AP-4 D2 Lethal Hits) destruyen cualquier cosa en melee. Son lentos (M6) pero imparables una vez que llegan al objetivo.",
+      "recommendations": "Transportalos en Wave Serpent para acercarlos y lanzálos a la unidad más amenazante del rival en turno 2. La Invuln4+ de la Ghostaxe los hace resistentes incluso en combates prolongados. En el Spirit Conclave, los tokens Vengeful Dead + Shepherd of Souls del Spiritseer + Guided by Ghosts crean una unidad de CaC prácticamente irrefrenable. Son tu respuesta definitiva a élites de cuerpo a cuerpo rivales que ninguna otra unidad puede manejar."
+    },
+    {
+      "id": "corsair-voidscarred",
+      "name": "Corsair Voidscarred",
+      "pts": 100,
+      "type": "infantry",
+      "role": "Corsarios de Élite",
+      "keywords": ["Infantry", "Battleline", "Grenades", "Faction: Aeldari", "Faction: Anhrathe", "Corsair", "Voidscarred"],
+      "stats": { "m": 8, "t": 3, "sv": 4, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Shuriken Catapult",
+          "range": "18\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Bladestorm Sabre",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Lethal Hits"]
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Fieldcraft",
+        "Void Hardened (sin penalizadores por terrain en movimiento)",
+        "Expertise: múltiples modelos con opciones de wargear especializadas"
+      ],
+      "considerations": "Los Corsair Voidscarred son la Battleline de los Corsarios: M8 (más rápidos que los Guardianes), BS3+ mejor, OC2, y con Fieldcraft siempre en cobertura efectiva fuera del terreno abierto. Como Corsairs, son el núcleo del Corsair Coterie y Eldritch Raiders. Cada modelo puede llevar equipamiento especializado, haciendo a la unidad notablemente versátil. A 100pts por 5 modelos son más caros que los Guardianes pero ofrecen mayor calidad individual.",
+      "recommendations": "En el Corsair Coterie usálos para infiltración agresiva: la combinación de M8 + Fieldcraft + las reglas del destacamento los hace ideales para presionar objetivos desde el inicio. En el Eldritch Raiders, Veterans of the Void los potencia con el tiempo, así que intenta mantenerlos vivos en los primeros turnos aunque tengas que jugarlos conservativamente. Combinalos con un Autarch como Leader para maximizar su efectividad táctica."
+    },
+    {
+      "id": "troupe",
+      "name": "Troupe",
+      "pts": 80,
+      "type": "infantry",
+      "role": "Arlequines de Combate",
+      "keywords": ["Infantry", "Battleline", "Faction: Aeldari", "Faction: Harlequins", "Troupe"],
+      "stats": { "m": 8, "t": 3, "sv": 6, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Shuriken Pistol",
+          "range": "12\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Lethal Hits", "Pistol"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Harlequin's Caress",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 4,
+          "ap": -2,
+          "d": "1",
+          "keywords": ["Lethal Hits"]
+        },
+        {
+          "name": "Harlequin's Kiss",
+          "range": "Melee",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "D3",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 4+",
+        "Flip Belts (pueden moverse a través de terreno y modelos)"
+      ],
+      "considerations": "La Troupe es la unidad central de los Harlequins: Invuln4+ compensa su Sv6+, M8 los hace increíblemente veloces, y con dos perfiles de melee (Caress para volumen, Kiss para daño) son amenaza real para cualquier objetivo. En el Ghosts of the Webway son BATTLELINE con OC2, convirtiéndose en la Battleline más letal del juego. Flip Belts permite moverse a través de terreno y modelos, dando libertad de movimiento total. Con Shadowseer liderando ganan Veil of Tears.",
+      "recommendations": "En Ghosts of the Webway, una Troupe de 6 con Shadowseer Leader es OC12 en el objetivo, M8 para llegar a cualquier punto, y con Veil of Tears (-1 para Impactar a distancia a más de 12\") es muy difícil de eliminar con disparo. Combiná Caress y Kiss según el objetivo: Caress contra infantería de élite (volumen + Lethal Hits), Kiss contra monstruos/vehículos (D3 daño). Usá Flip Belts para cargar desde posiciones que otras unidades no podrían alcanzar."
+    },
+    {
+      "id": "windriders",
+      "name": "Windriders",
+      "pts": 60,
+      "type": "vehicle",
+      "role": "Jinetes de Motos Estelares",
+      "keywords": ["Mounted", "Battleline", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Skyrunner", "Windrider"],
+      "stats": { "m": 16, "t": 4, "sv": 3, "w": 2, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Scatter Laser (upgrade)",
+          "range": "36\"",
+          "a": "6",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Sustained Hits 1"]
+        },
+        {
+          "name": "Shuriken Cannon (upgrade)",
+          "range": "24\"",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Close Combat Weapon",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Fly"
+      ],
+      "considerations": "Los Windriders son la Battleline montada del Craftworld: M16 con Fly para cubrir el tablero en un turno, T4 Sv3+ W2, y OC2. A 60pts por 3 modelos (20pts/moto) son muy económicos para lo que aportan. El Twin Shuriken Catapult (4 ataques Assault Lethal Hits por moto) es decente. Las opciones de upgrade — Scatter Laser (6 ataques Sustained) o Shuriken Cannon (S6 D2) — dan flexibilidad. En el Windrider Host son la pieza central de la estrategia de redespliegue.",
+      "recommendations": "En el Windrider Host, el Farseer Skyrunner o Autarch Skyrunner como Leader los hace un paquete de élite muy efectivo. Optá por Scatter Lasers para máximo volumen contra infantería ligera, o Shuriken Cannons para versatilidad anti-élite. Aprovechá M16+Fly para cubrir el tablero y contestar múltiples objetivos en el mismo turno. Usá la regla Ride the Wind para sacarlos de situaciones comprometidas y redesplegarlos en posiciones más convenientes."
+    },
+    {
+      "id": "shining-spears",
+      "name": "Shining Spears",
+      "pts": 110,
+      "type": "vehicle",
+      "role": "Lanceros Montados de Élite",
+      "keywords": ["Mounted", "Aspect Warrior", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Shining Spear"],
+      "stats": { "m": 16, "t": 5, "sv": 3, "w": 3, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Star Lance (charge)",
+          "range": "Melee",
+          "a": "2",
+          "skill": "2+",
+          "s": 10,
+          "ap": -4,
+          "d": "D3+2",
+          "keywords": ["Lance"]
+        },
+        {
+          "name": "Star Lance (subsequent)",
+          "range": "Melee",
+          "a": "2",
+          "skill": "2+",
+          "s": 6,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Fly",
+        "Invulnerable Save 5+",
+        "Laser Lance (primer turno de carga: S10 AP-4 D D3+2)"
+      ],
+      "considerations": "Los Shining Spears son los Aspect Warriors montados definitivos: T5 Sv3+ Invuln5+ W3 a M16 con Fly. La Star Lance en turno de carga (S10 AP-4 D D3+2 con Lance) puede destruir vehículos medianos en un solo charge. Con BS/WS3+, M16, y la capacidad de avanzar con Battle Focus son increíblemente versátiles. A 110pts por 3 modelos son una de las mejores unidades de la facción en términos de calidad/precio. Con Autarch Skyrunner o Jain Zar como Leader alcanzan su máximo potencial.",
+      "recommendations": "Úsalos como la unidad de carga de élite: avanzá con Battle Focus, cargá con la Star Lance en carga (S10 AP-4), y después retrocedé con Fly para evitar represalias. En el Windrider Host el redespliegue de Ride the Wind permite sacarlos de situaciones peligrosas tras la carga. Con el Autarch Skyrunner como Leader tienen Path of Command además de la potencia de combate. Son idealmente para eliminar vehículos medianos o unidades de élite enemigas de alto coste."
+    },
+    {
+      "id": "skyweavers",
+      "name": "Skyweavers",
+      "pts": 80,
+      "type": "vehicle",
+      "role": "Arlequines Montados",
+      "keywords": ["Mounted", "Fly", "Faction: Aeldari", "Faction: Harlequins", "Skyweaver"],
+      "stats": { "m": 16, "t": 5, "sv": 4, "w": 2, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Zephyrglaive",
+          "range": "12\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 5,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Assault"]
+        },
+        {
+          "name": "Haywire Cannon",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Haywire"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Zephyrglaive",
+          "range": "Melee",
+          "a": "3",
+          "skill": "3+",
+          "s": 6,
+          "ap": -3,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Fly",
+        "Invulnerable Save 4+",
+        "Star Bolas (Stratagem de lanzamiento al mover a través de unidades)"
+      ],
+      "considerations": "Los Skyweavers son los vehículos ligeros de los Harlequins: M16 Fly T5 Invuln4+ — sorprendentemente resistentes para ser Harlequins. El Haywire Cannon es excelente contra vehículos (Haywire inflige Heridas Mortales en una escala según el resultado de la herida). El Zephyrglaive en melee (S6 AP-3 D2) es decente. La Invuln4+ combinada con M16 los hace difíciles de eliminar. En el Ghosts of the Webway son un complemento veloz para las Troupes.",
+      "recommendations": "Usá el Haywire Cannon para hostigar vehículos ligeros y medianos que tus Troupes no pueden eliminar eficientemente. En el Ghosts of the Webway su M16 Fly + Acrobatic Onslaught (Harlequins) los hace capaces de cargar desde posiciones imposibles para otras unidades. La Invuln4+ les da resiliencia inusual para el Warband Harlequin. En el Fateful Performance pueden integrarse en mecánicas de actuación para bonos adicionales."
+    },
+    {
+      "id": "war-walker",
+      "name": "War Walker",
+      "pts": 55,
+      "type": "vehicle",
+      "role": "Walker de Apoyo",
+      "keywords": ["Vehicle", "Walker", "Faction: Aeldari", "Faction: Asuryani", "War Walker"],
+      "stats": { "m": 10, "t": 7, "sv": 3, "w": 6, "ld": 7, "oc": 3 },
+      "ranged": [
+        {
+          "name": "Scatter Laser",
+          "range": "36\"",
+          "a": "6",
+          "skill": "4+",
+          "s": 5,
+          "ap": 0,
+          "d": "1",
+          "keywords": ["Sustained Hits 1"]
+        },
+        {
+          "name": "Bright Lance",
+          "range": "36\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 14,
+          "ap": -3,
+          "d": "D6+2",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Starcannon",
+          "range": "36\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 6,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Heavy"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "War Walker Legs",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 5+",
+        "Scout (puede mover antes del inicio de la batalla)"
+      ],
+      "considerations": "El War Walker es la plataforma de armas económica del Craftworld: dos armas pesadas de largo alcance en un chasis T7 Sv3+ W6 con Scout para ganar posición antes de que empiece la partida. Cada War Walker lleva DOS armas (combinación libre de Scatter Laser, Bright Lance, Starcannon, Shuriken Cannon). Scout permite avanzar 9\" antes del turno 1. En el Guardian Battlehost gana +1 para Impactar cerca de objetivos. A 55pts es uno de los valores más baratos en vehículos.",
+      "recommendations": "Usá Scout para adelantarlos y maximizar las líneas de fuego desde el inicio. El combo de dos Bright Lances por War Walker (S14 AP-3 D D6+2 cada una) crea una amenaza antitanque de 36\" que solo cuesta 55pts — es increíblemente eficiente. En el Guardian Battlehost con +1 para Impactar, la Scatter Laser pasa a generar 6 ataques Sustained Hits 1 BS3+ efectivo. Usá 2-3 War Walkers para saturar las salvaguardas del rival con volumen de fuego variado."
+    },
+    {
+      "id": "wraithlord",
+      "name": "Wraithlord",
+      "pts": 130,
+      "type": "monster",
+      "role": "Constructo Wraith Gigante",
+      "keywords": ["Monster", "Walker", "Wraith", "Faction: Aeldari", "Faction: Asuryani", "Wraithlord"],
+      "stats": { "m": 8, "t": 9, "sv": 3, "w": 10, "ld": 7, "oc": 4 },
+      "ranged": [
+        {
+          "name": "Bright Lance",
+          "range": "36\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 14,
+          "ap": -3,
+          "d": "D6+2",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Missile Launcher (krak)",
+          "range": "48\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 9,
+          "ap": -2,
+          "d": "D6",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Shuriken Catapult x2",
+          "range": "18\"",
+          "a": "4",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Ghostglaive",
+          "range": "Melee",
+          "a": "5",
+          "skill": "4+",
+          "s": 12,
+          "ap": -3,
+          "d": "D3+2",
+          "keywords": ["Devastating Wounds"]
+        },
+        {
+          "name": "Wraithbone Fists",
+          "range": "Melee",
+          "a": "4",
+          "skill": "4+",
+          "s": 10,
+          "ap": -2,
+          "d": "2",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Guided by Ghosts (re-roll hit rolls of 1 when near Spiritseer)"
+      ],
+      "considerations": "El Wraithlord es el Monstruo de infantería de los Craftworlds: T9 Sv3+ W10 con OC4 — un muro difícil de eliminar que además puede disparar con dos armas pesadas de largo alcance Y atacar en cuerpo a cuerpo. El Ghostglaive (Devastating Wounds S12) y Wraithbone Fists (S10 AP-2) lo hacen peligroso en melee. En el Spirit Conclave los tokens Vengeful Dead lo convierten en una bestia de daño con +1H+1W. OC4 es enorme para contestar objetivos con presencia aplastante.",
+      "recommendations": "Úsalo como ancla defensiva en el centro del tablero: su presencia sola obliga al rival a dedicar múltiples unidades para eliminarlo. Con un Spiritseer cerca (Guided by Ghosts + Shepherd of Souls), su output combinado de disparo y melee se vuelve devastador. En el Spirit Conclave marcá un objetivo como Vengeful Dead en turno 1 y enfocá toda la presión del Wraithlord sobre él los turnos siguientes. Combina bien con Wraithguard/Wraithblades para crear un bloque Wraith prácticamente inamovible."
+    },
+    {
+      "id": "wraithknight",
+      "name": "Wraithknight",
+      "pts": 435,
+      "type": "monster",
+      "role": "Titán Wraith",
+      "keywords": ["Monster", "Walker", "Titanic", "Wraith", "Faction: Aeldari", "Faction: Asuryani", "Wraithknight"],
+      "stats": { "m": 12, "t": 12, "sv": 2, "w": 18, "ld": 6, "oc": 10 },
+      "ranged": [
+        {
+          "name": "Heavy Wraithcannons x2",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 14,
+          "ap": -4,
+          "d": "D6+4",
+          "keywords": ["Devastating Wounds"]
+        },
+        {
+          "name": "Suncannon",
+          "range": "36\"",
+          "a": "3D6",
+          "skill": "3+",
+          "s": 8,
+          "ap": -3,
+          "d": "2",
+          "keywords": ["Blast", "Heavy"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Titanic Ghostglaive",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 16,
+          "ap": -4,
+          "d": "D6+4",
+          "keywords": ["Devastating Wounds"]
+        },
+        {
+          "name": "Wraithbone Fists",
+          "range": "Melee",
+          "a": "6",
+          "skill": "3+",
+          "s": 12,
+          "ap": -2,
+          "d": "D3+3",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Invulnerable Save 4+ (con Scattershield)",
+        "Battle Focus",
+        "Titanic (no puede ser transportado)",
+        "Towering (dispara en medio de combates)",
+        "Guided by Ghosts"
+      ],
+      "considerations": "El Wraithknight es el Lord of War de los Aeldari: T12 Sv2+ Invuln4+ W18 OC10 — es prácticamente imposible de matar en un solo turno para la mayoría de los ejércitos. Los Heavy Wraithcannons (Devastating Wounds D6+4) destruyen cualquier vehículo/monstruo del juego de un disparo. OC10 en un objetivo es devastador para la mecánica de control. El Suncannon (3D6 Blast S8 AP-3) es excelente contra infantería concentrada. A 435pts es la mayor inversión de la facción.",
+      "recommendations": "El Wraithknight obliga al rival a dedicar la mayoría de sus recursos a eliminarlo, liberando al resto de tu ejército para ganar objetivos. Mantené el Scattershield (Invuln4+) y nunca lo expongas a múltiples fuentes de anti-vehículo en el mismo turno. En el Spirit Conclave con Vengeful Dead + Shepherd of Souls se vuelve una máquina de destrucción con +1H+1W adicional. Úsalo para anclar el centro del tablero con sus 10 OC y su amenaza proyectada a 24\" con los Heavy Wraithcannons."
+    },
+    {
+      "id": "wave-serpent",
+      "name": "Wave Serpent",
+      "pts": 125,
+      "type": "vehicle",
+      "role": "Transporte Blindado",
+      "keywords": ["Vehicle", "Transport", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Wave Serpent"],
+      "stats": { "m": 14, "t": 9, "sv": 3, "w": 13, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Wave Serpent Shield",
+          "range": "18\"",
+          "a": "D6",
+          "skill": "4+",
+          "s": 8,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "One use per battle"]
+        },
+        {
+          "name": "Twin Bright Lance (upgrade)",
+          "range": "36\"",
+          "a": "2",
+          "skill": "4+",
+          "s": 14,
+          "ap": -3,
+          "d": "D6+2",
+          "keywords": ["Heavy"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithbone Hull",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 5+",
+        "Transport (capacidad 12 INFANTRY)",
+        "Serpent Shield (descarga de emergencia)"
+      ],
+      "considerations": "El Wave Serpent es el transporte más icónico del Craftworld: T9 Sv3+ Invuln5+ W13 con M14 Fly — rápido, resistente y capaz de entregar preciosas unidades de élite en posición segura. El Wave Serpent Shield (D6 ataques S8 AP-1 Assault) es una descarga defensiva única por batalla pero muy útil. La opción de Twin Bright Lance (2 ataques S14 AP-3 D D6+2) lo convierte también en plataforma antitanque secundaria. Transporta 12 modelos INFANTRY.",
+      "recommendations": "Transporta Fire Dragons, Wraithguard o Howling Banshees a 12\" del objetivo en turno 2. El Fly + M14 + Battle Focus le da libertad de movimiento total. En el Armoured Warhost, si permanece estacionario dispara el Wave Serpent Shield con bono adicional. Con Twin Bright Lance puede operar también como cazatanques secundario cuando está vacío. Esencial en cualquier lista Aeldari competitiva: el coste de llevar unidades de élite a posición sin que sean destruidas es incalculable."
+    },
+    {
+      "id": "falcon",
+      "name": "Falcon",
+      "pts": 135,
+      "type": "vehicle",
+      "role": "Tanque Rápido",
+      "keywords": ["Vehicle", "Transport", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Falcon"],
+      "stats": { "m": 14, "t": 9, "sv": 3, "w": 12, "ld": 7, "oc": 3 },
+      "ranged": [
+        {
+          "name": "Pulse Laser",
+          "range": "36\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 14,
+          "ap": -3,
+          "d": "D6+1",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Shuriken Cannon",
+          "range": "24\"",
+          "a": "3",
+          "skill": "3+",
+          "s": 6,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithbone Hull",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 5+",
+        "Transport (capacidad 6 INFANTRY)",
+        "Holo-fields (additional protection mechanic)"
+      ],
+      "considerations": "El Falcon es el tanque rápido de los Aeldari: combina capacidad de transporte (6 modelos) con un poderoso Pulse Laser (S14 AP-3 D D6+1) y una plataforma de disparo secundaria. BS3+ lo hace más preciso que el Wave Serpent. T9 Sv3+ Invuln5+ con W12 es sólido aunque un poco menos resistente que el Wave Serpent. A 135pts ofrece la combinación de transporte + potencia de fuego en un solo slot. OC3 es bueno para contestar objetivos.",
+      "recommendations": "Usalo como transporte de élite con potencia de fuego propia: llevá 6 Howling Banshees o Fire Dragons dentro, desplegálos y usá el Pulse Laser en el mismo turno contra el objetivo antitanque prioritario. En el Armoured Warhost con Skilled Crews, si permanece estacionario el Pulse Laser gana aún más efectividad. Contra listas sin mucho antitanque, el Falcon puede simplemente operar como tanque independiente todo el juego con el Pulse Laser."
+    },
+    {
+      "id": "fire-prism",
+      "name": "Fire Prism",
+      "pts": 145,
+      "type": "vehicle",
+      "role": "Artillería Antitanque",
+      "keywords": ["Vehicle", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Fire Prism"],
+      "stats": { "m": 14, "t": 10, "sv": 3, "w": 12, "ld": 7, "oc": 3 },
+      "ranged": [
+        {
+          "name": "Prism Cannon (focused)",
+          "range": "60\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 14,
+          "ap": -4,
+          "d": "D6+4",
+          "keywords": ["Heavy", "Ignores Cover"]
+        },
+        {
+          "name": "Prism Cannon (dispersed)",
+          "range": "60\"",
+          "a": "D6",
+          "skill": "3+",
+          "s": 7,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Blast", "Heavy", "Ignores Cover"]
+        },
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithbone Hull",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 5+",
+        "Linked Fire (dos Fire Prisms pueden combinar disparos para mayor potencia)"
+      ],
+      "considerations": "El Fire Prism es el cañón antitanque definitivo de los Aeldari: el Prism Cannon en modo focused (S14 AP-4 D D6+4 a 60\") destruye Titánicos de un disparo con algo de suerte. En modo dispersed (D6 Blast S7 AP-2 D2 a 60\") barre infantería de élite en área. T10 Sv3+ Invuln5+ lo hace muy resistente. Linked Fire permite combinar dos Fire Prisms para un disparo combinado de potencia devastadora. Con Skilled Crews en el Armoured Warhost, si permanece estacionario su potencia de fuego se amplifica.",
+      "recommendations": "Llevá dos Fire Prisms: Linked Fire combinado crea una herramienta de disparo que puede amenazar prácticamente cualquier objetivo del juego. En el Armoured Warhost, posicionálos estáticos en tu zona de despliegue y aprovechá los 60\" de alcance para alcanzar cualquier punto del tablero. Usá focused contra vehículos/monstruos pesados y dispersed contra concentraciones de infantería de élite. El Guide del Farseer (re-tirar impactos) hace el Prism Cannon casi infalible."
+    },
+    {
+      "id": "night-spinner",
+      "name": "Night Spinner",
+      "pts": 135,
+      "type": "vehicle",
+      "role": "Artillería de Área",
+      "keywords": ["Vehicle", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Night Spinner"],
+      "stats": { "m": 14, "t": 9, "sv": 3, "w": 12, "ld": 7, "oc": 3 },
+      "ranged": [
+        {
+          "name": "Doomweaver (normal)",
+          "range": "48\"",
+          "a": "2D6",
+          "skill": "4+",
+          "s": 7,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Blast", "Heavy", "Indirect Fire"]
+        },
+        {
+          "name": "Doomweaver (monofilament)",
+          "range": "48\"",
+          "a": "D6",
+          "skill": "4+",
+          "s": 8,
+          "ap": -4,
+          "d": "2",
+          "keywords": ["Blast", "Heavy", "Indirect Fire", "Lethal Hits"]
+        },
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithbone Hull",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 5+",
+        "Ensnaring Monofilament (unidades dañadas tienen movimiento reducido)"
+      ],
+      "considerations": "El Night Spinner es la artillería de área del Craftworld: Doomweaver con Indirect Fire dispara sin línea de visión a 48\", haciendo casi imposible que el rival se esconda de su fuego. El modo normal (2D6 Blast S7 AP-1 D2) barre infantería; el modo monofilament (D6 Blast S8 AP-4 D2 Lethal Hits) tiene opciones anti-élite decentes. Ensnaring Monofilament ralentiza las unidades dañadas. En el Armoured Warhost con Skilled Crews es particularmente potente permaneciendo estacionario.",
+      "recommendations": "Colocálo en tu zona de despliegue y disparálo sin línea de visión durante toda la partida. El rival no puede esconderse de él detrás de edificios — obliga a toda infantería a moverse constantemente. El modo monofilament tiene usos contra Terminators y similares con D2 + Lethal Hits. En listas competitivas, un Night Spinner complementa perfectamente al Fire Prism: uno barre infantería por área (Night Spinner) y el otro elimina vehículos/monstruos (Fire Prism)."
+    },
+    {
+      "id": "hemlock-wraithfighter",
+      "name": "Hemlock Wraithfighter",
+      "pts": 175,
+      "type": "vehicle",
+      "role": "Cazabombardero Wraith",
+      "keywords": ["Vehicle", "Aircraft", "Fly", "Psyker", "Wraith", "Faction: Aeldari", "Faction: Asuryani", "Hemlock Wraithfighter"],
+      "stats": { "m": 20, "t": 9, "sv": 3, "w": 10, "ld": 7, "oc": 0 },
+      "ranged": [
+        {
+          "name": "Twin D-Scythe",
+          "range": "18\"",
+          "a": "2D6",
+          "skill": "3+",
+          "s": 10,
+          "ap": -4,
+          "d": "1",
+          "keywords": ["Ignores Cover", "Torrent"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithbone Hull",
+          "range": "Melee",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Invulnerable Save 5+",
+        "Fly",
+        "Aircraft (reglas especiales de avión — solo puede ser impactado por ciertos ataques)",
+        "Supersonic (movimiento mínimo de 20\")",
+        "Mindshock Pod (unidades en 12\" al final de su movimiento deben hacer Battle-shock test)",
+        "Psychic Powers"
+      ],
+      "considerations": "El Hemlock Wraithfighter es único: un avión Psíquico con Twin D-Scythes (2D6 ataques Torrent S10 AP-4 Ignores Cover — auto impacta) y Mindshock Pod que fuerza tests de Battle-shock en unidades cercanas tras cada movimiento. Como Aircraft solo puede ser disparado por ciertos ataques, dándole supervivencia especial. El D-Scythe auto-impacta con Torrent, haciéndolo devastador contra infantería concentrada independientemente del BS. En el Spirit Conclave recibe bonos de Wraith.",
+      "recommendations": "Usalo para castigar concentraciones de infantería de élite: los 2D6 ataques Torrent S10 AP-4 Ignores Cover destruyen Terminators, Custodes, o cualquier élite apilada en un objetivo. Mindshock Pod en combinación con tu presión de Battle-shock puede paralizar unidades enemigas cada turno. Su OC0 significa que no puede contestar objetivos solo, así que combinalo con unidades de infantería para el control mientras él hace el daño. En el Armoured Warhost es la pieza más agresiva del destacamento."
+    },
+    {
+      "id": "vyper",
+      "name": "Vyper",
+      "pts": 55,
+      "type": "vehicle",
+      "role": "Vehículo de Reconocimiento",
+      "keywords": ["Vehicle", "Fly", "Faction: Aeldari", "Faction: Asuryani", "Vyper"],
+      "stats": { "m": 14, "t": 5, "sv": 4, "w": 6, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Shuriken Cannon",
+          "range": "24\"",
+          "a": "3",
+          "skill": "4+",
+          "s": 6,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Assault", "Lethal Hits"]
+        },
+        {
+          "name": "Bright Lance (upgrade)",
+          "range": "36\"",
+          "a": "1",
+          "skill": "4+",
+          "s": 14,
+          "ap": -3,
+          "d": "D6+2",
+          "keywords": ["Heavy"]
+        },
+        {
+          "name": "Twin Shuriken Catapult",
+          "range": "18\"",
+          "a": "4",
+          "skill": "4+",
+          "s": 4,
+          "ap": -1,
+          "d": "1",
+          "keywords": ["Assault", "Lethal Hits"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithbone Hull",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 4,
+          "ap": 0,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 5+",
+        "Fly",
+        "Scout"
+      ],
+      "considerations": "El Vyper es el vehículo de reconocimiento más económico del Craftworld: 55pts por M14 Fly Sv4+ Invuln5+ W6 con Scout para adelantarse antes del turno 1. El Shuriken Cannon (Assault Lethal Hits) es su armamento estándar eficiente, mientras que la Bright Lance lo convierte en un cazatanques ligero de largo alcance. En el Windrider Host el redespliegue de Ride the Wind se aplica al Vyper (tiene la keyword VYPER). Es el vehículo de reconocimiento más eficiente en puntos de la facción.",
+      "recommendations": "Usá Scout para adelantar el Vyper antes del turno 1 y presionar puntos de objetivo tempranamente. Con Bright Lance tiene una amenaza antitanque real a 36\" que el rival no puede ignorar. En el Windrider Host, el Vyper es ideal para el ciclo de aparición-disparo-redespliegue que hace del destacamento una pesadilla táctica. A 55pts, incluso si lo pierdes en turno 1, habrá cumplido su función de distracción y Scout inicial."
+    },
+    {
+      "id": "voidweaver",
+      "name": "Voidweaver",
+      "pts": 95,
+      "type": "vehicle",
+      "role": "Tanque Ligero Harlequin",
+      "keywords": ["Vehicle", "Fly", "Faction: Aeldari", "Faction: Harlequins", "Voidweaver"],
+      "stats": { "m": 14, "t": 6, "sv": 4, "w": 6, "ld": 7, "oc": 2 },
+      "ranged": [
+        {
+          "name": "Prismatic Cannon (dispersed)",
+          "range": "24\"",
+          "a": "D6",
+          "skill": "3+",
+          "s": 6,
+          "ap": -2,
+          "d": "2",
+          "keywords": ["Blast"]
+        },
+        {
+          "name": "Prismatic Cannon (focused)",
+          "range": "24\"",
+          "a": "1",
+          "skill": "3+",
+          "s": 12,
+          "ap": -4,
+          "d": "D6+2",
+          "keywords": []
+        },
+        {
+          "name": "Haywire Cannon",
+          "range": "24\"",
+          "a": "2",
+          "skill": "3+",
+          "s": 4,
+          "ap": -1,
+          "d": "2",
+          "keywords": ["Haywire"]
+        }
+      ],
+      "melee": [
+        {
+          "name": "Wraithbone Hull",
+          "range": "Melee",
+          "a": "2",
+          "skill": "4+",
+          "s": 5,
+          "ap": -1,
+          "d": "1",
+          "keywords": []
+        }
+      ],
+      "abilities": [
+        "Battle Focus",
+        "Invulnerable Save 4+",
+        "Fly",
+        "Mirage Launchers (una vez por batalla, ignora todos los ataques en el turno del rival)"
+      ],
+      "considerations": "El Voidweaver es el vehículo de apoyo de los Harlequins: Invuln4+ inusual para un vehículo ligero, y el Prismatic Cannon con dos modos (dispersed para área, focused para antitanque). El Haywire Cannon inflige Heridas Mortales en escala contra vehículos. Mirage Launchers (una vez por batalla ignora todos los ataques) es un salvavidas perfecto para un turno crítico. BS3+ lo hace más preciso que sus equivalentes de Craftworld. En Ghosts of the Webway complementa a las Troupes con potencia de fuego que ellas no tienen.",
+      "recommendations": "En el Ghosts of the Webway el Voidweaver es el apoyo de fuego que complementa las Troupes en melee: mientras las Troupes toman el cuerpo a cuerpo, el Voidweaver hostigar con Prismatic Cannon y Haywire desde posición segura. Mirage Launchers en el turno más peligroso puede salvarle la vida en un momento decisivo. En el Fateful Performance puede integrarse en mecánicas de Performance para bonos adicionales. Su Invuln4+ lo hace sorprendentemente durable para el soporte de fuego que necesita proveer."
+    }
+  ]
 }
