@@ -226,6 +226,7 @@ export default function App() {
             onCreateList={() => navigate('create-list')}
             listStore={listStore}
             onGoMatchup={(list: SavedList) => { setActiveList(list); setActiveTab(2); navigate('matchup-config'); }}
+            onBack={() => { setActiveTab(0); navigate('home'); }}
           />
         );
       case 'create-list':

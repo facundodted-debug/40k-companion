@@ -101,7 +101,7 @@ function formatWeapon(w: WeaponProfile): UnitWeapon {
   };
 }
 
-function toOpponentUnit(u: DataUnit): OpponentUnit {
+export function toOpponentUnit(u: DataUnit): OpponentUnit {
   return {
     name: u.name,
     pts: u.pts,
@@ -145,6 +145,19 @@ function findDangerousKeywords(unit: DataUnit): string[] {
     if (DANGEROUS_KEYWORDS.some(d => upper.includes(d))) found.add(a);
   }
   return [...found];
+}
+
+// Busca la datasheet real de una unidad dentro de una facción, por id exacto
+// (unidades de ArmyList, donde Unit.id === DataUnit.id) o por nombre aproximado
+// (unidades de listas importadas). Usado por Mis Listas para mostrar el detalle
+// de stats/armas/habilidades al tocar una unidad.
+export function findUnitInFaction(factionId: string | undefined, idOrName: string): DataUnit | undefined {
+  if (!factionId) return undefined;
+  const data = getFactionData(factionId);
+  if (!data) return undefined;
+  const byId = data.units.find(u => u.id === idOrName);
+  if (byId) return byId;
+  return matchUnitsByName(data.units, [idOrName])[0];
 }
 
 export function analyzeMatchup(input: MatchupInput): MatchupOutput {
