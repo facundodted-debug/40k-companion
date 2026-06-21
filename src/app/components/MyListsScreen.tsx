@@ -1,9 +1,8 @@
 import { useState } from 'react';
-import { ChevronRight, BookOpen, Code2, X, CheckCircle, AlertCircle, ChevronDown, Crown, Sparkles, Zap, Skull } from 'lucide-react';
+import { ChevronRight, BookOpen, Code2, X, CheckCircle, AlertCircle, ChevronDown, Crown, Sparkles, Zap } from 'lucide-react';
 import { ArmyList, OpponentUnit } from './shared';
 import { ScreenHeader } from './ScreenHeader';
 import { FactionBadge } from './ScreenHeader';
-import { UnitStatsPanel } from './UnitStatsPanel';
 import { isArmyListText, parseArmyListText, isBracketListText, parseBracketListText, ImportedList, ParsedUnit } from '../lib/armyListParser';
 import { findUnitInFaction, toOpponentUnit } from '../../engine/matchup';
 import { SavedList, useListStore } from '../../store/lists';
@@ -450,47 +449,6 @@ function ModalShell({ title, source, onClose, children }: {
   );
 }
 
-// ── Unit detail modal (reutiliza el diseño de stats del Matchup) ────────────────
-function UnitDetailModal({ unit, unitName, onClose }: { unit: OpponentUnit | null; unitName: string; onClose: () => void }) {
-  return (
-    <div
-      style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.65)', zIndex: 60, display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}
-      onClick={onClose}
-    >
-      <div
-        style={{ background: 'var(--card)', borderTop: '1px solid rgba(232,64,64,0.3)', borderRadius: '18px 18px 0 0', padding: '0 16px 36px', maxHeight: '85%', overflowY: 'auto', boxShadow: '0 -12px 40px rgba(0,0,0,0.65)' }}
-        onClick={e => e.stopPropagation()}
-      >
-        <div style={{ width: 36, height: 4, background: 'rgba(255,255,255,0.15)', borderRadius: 2, margin: '14px auto 20px' }} />
-        <div className="flex items-center justify-between mb-5">
-          <div className="flex items-center gap-2.5 min-w-0">
-            <Skull size={16} style={{ color: '#e84040', flexShrink: 0 }} />
-            <div className="min-w-0">
-              <h3 style={{ fontSize: 17, color: 'var(--foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase' }}>
-                {unit?.name ?? unitName}
-              </h3>
-              {unit && (
-                <p style={{ fontSize: 11, color: 'var(--muted-foreground)' }}>{unit.keywords.slice(0, 3).join(' · ')} · {unit.pts} pts</p>
-              )}
-            </div>
-          </div>
-          <button onClick={onClose} style={{ color: 'var(--muted-foreground)', padding: 6, flexShrink: 0 }}>
-            <X size={16} />
-          </button>
-        </div>
-
-        {unit ? (
-          <UnitStatsPanel unit={unit} />
-        ) : (
-          <p style={{ fontSize: 13, color: 'var(--muted-foreground)', lineHeight: 1.5, padding: '4px 0 12px' }}>
-            De momento no hay información sobre {unitName}.
-          </p>
-        )}
-      </div>
-    </div>
-  );
-}
-
 // ── Imported list card ─────────────────────────────────────────────────────────
 function ImportedListCard({ list, onMatchup, onSelectUnit }: { list: ImportedList; onMatchup: () => void; onSelectUnit: (factionId: string | undefined, idOrName: string, displayName: string) => void }) {
   const [expanded, setExpanded] = useState(false);
@@ -639,20 +597,15 @@ interface MyListsScreenProps {
   onCreateList: () => void;
   onGoMatchup: (list: SavedList) => void;
   onBack: () => void;
+  onSelectUnit: (unit: OpponentUnit | null, displayName: string) => void;
   listStore: ReturnType<typeof useListStore>;
 }
 
 type ModalType = 'html' | null;
 
-interface UnitQuery {
-  unit: OpponentUnit | null;
-  displayName: string;
-}
-
-export function MyListsScreen({ onGoMatchup, onBack, listStore }: MyListsScreenProps) {
+export function MyListsScreen({ onGoMatchup, onBack, onSelectUnit, listStore }: MyListsScreenProps) {
   const { lists, loading, addList } = listStore;
   const [modal, setModal] = useState<ModalType>(null);
-  const [unitQuery, setUnitQuery] = useState<UnitQuery | null>(null);
 
   const handleImport = (list: ImportedList) => {
     addList(list);
@@ -660,7 +613,7 @@ export function MyListsScreen({ onGoMatchup, onBack, listStore }: MyListsScreenP
 
   const handleSelectUnit = (factionId: string | undefined, idOrName: string, displayName: string) => {
     const data = findUnitInFaction(factionId, idOrName);
-    setUnitQuery({ unit: data ? toOpponentUnit(data) : null, displayName });
+    onSelectUnit(data ? toOpponentUnit(data) : null, displayName);
   };
 
   return (
@@ -708,10 +661,6 @@ export function MyListsScreen({ onGoMatchup, onBack, listStore }: MyListsScreenP
 
       {modal === 'html' && (
         <HtmlImportModal onImport={handleImport} onClose={() => setModal(null)} />
-      )}
-
-      {unitQuery && (
-        <UnitDetailModal unit={unitQuery.unit} unitName={unitQuery.displayName} onClose={() => setUnitQuery(null)} />
       )}
     </div>
   );

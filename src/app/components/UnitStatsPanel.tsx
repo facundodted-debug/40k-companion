@@ -49,9 +49,11 @@ function WeaponTable({ weapons, type }: { weapons: UnitWeapon[]; type: 'ranged' 
   );
 }
 
-// Panel completo de stats/armas/habilidades/consideraciones de una unidad — usado
-// tanto dentro del accordion de MatchupResultScreen como en el modal de Mis Listas.
-export function UnitStatsPanel({ unit }: { unit: OpponentUnit }) {
+// Panel de stats/armas/habilidades/keywords de una unidad — usado tanto dentro
+// del accordion de MatchupResultScreen como en la pantalla de detalle de Mis Listas.
+// showAnalysis controla si se muestran Consideraciones/Recomendaciones (pensadas
+// para el contexto de matchup, no para la ficha de unidad "pura" en Mis Listas).
+export function UnitStatsPanel({ unit, showAnalysis = true }: { unit: OpponentUnit; showAnalysis?: boolean }) {
   return (
     <div>
       <div
@@ -84,31 +86,50 @@ export function UnitStatsPanel({ unit }: { unit: OpponentUnit }) {
         </div>
       )}
 
-      <div
-        className="p-3 rounded-lg mb-2"
-        style={{ background: 'rgba(232,64,64,0.07)', border: '1px solid rgba(232,64,64,0.18)' }}
-      >
-        <div className="flex items-center gap-1.5 mb-1.5">
-          <AlertTriangle size={11} style={{ color: '#e84040' }} />
-          <span style={{ fontSize: 10, fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#e84040' }}>
-            Consideraciones
+      {unit.keywords.length > 0 && (
+        <div className="mb-4">
+          <span style={{ fontSize: 9, color: 'var(--muted-foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            Keywords
           </span>
+          <div className="flex flex-wrap gap-1 mt-1.5">
+            {unit.keywords.map((k, i) => (
+              <span key={i} style={{ fontSize: 10, padding: '2px 7px', borderRadius: 4, background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.12)', color: 'var(--foreground)', fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 600, textTransform: 'uppercase' }}>
+                {k}
+              </span>
+            ))}
+          </div>
         </div>
-        <p style={{ fontSize: 12, color: 'var(--foreground)', lineHeight: 1.55 }}>{unit.considerations}</p>
-      </div>
+      )}
 
-      <div
-        className="p-3 rounded-lg"
-        style={{ background: 'rgba(110,69,226,0.09)', border: '1px solid rgba(110,69,226,0.25)' }}
-      >
-        <div className="flex items-center gap-1.5 mb-1.5">
-          <Target size={11} style={{ color: '#6e45e2' }} />
-          <span style={{ fontSize: 10, fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#a78bfa' }}>
-            Recomendaciones
-          </span>
-        </div>
-        <p style={{ fontSize: 12, color: 'var(--foreground)', lineHeight: 1.55 }}>{unit.recommendations}</p>
-      </div>
+      {showAnalysis && (
+        <>
+          <div
+            className="p-3 rounded-lg mb-2"
+            style={{ background: 'rgba(232,64,64,0.07)', border: '1px solid rgba(232,64,64,0.18)' }}
+          >
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <AlertTriangle size={11} style={{ color: '#e84040' }} />
+              <span style={{ fontSize: 10, fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#e84040' }}>
+                Consideraciones
+              </span>
+            </div>
+            <p style={{ fontSize: 12, color: 'var(--foreground)', lineHeight: 1.55 }}>{unit.considerations}</p>
+          </div>
+
+          <div
+            className="p-3 rounded-lg"
+            style={{ background: 'rgba(110,69,226,0.09)', border: '1px solid rgba(110,69,226,0.25)' }}
+          >
+            <div className="flex items-center gap-1.5 mb-1.5">
+              <Target size={11} style={{ color: '#6e45e2' }} />
+              <span style={{ fontSize: 10, fontFamily: "'Barlow Condensed', sans-serif", fontWeight: 700, letterSpacing: '0.07em', textTransform: 'uppercase', color: '#a78bfa' }}>
+                Recomendaciones
+              </span>
+            </div>
+            <p style={{ fontSize: 12, color: 'var(--foreground)', lineHeight: 1.55 }}>{unit.recommendations}</p>
+          </div>
+        </>
+      )}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { OnboardingScreen } from './components/OnboardingScreen';
 import { HomeScreen } from './components/HomeScreen';
 import { MyListsScreen } from './components/MyListsScreen';
+import { UnitDetailScreen } from './components/UnitDetailScreen';
 import { CreateListScreen } from './components/CreateListScreen';
 import { MatchupConfigScreen } from './components/MatchupConfigScreen';
 import { MatchupResultScreen } from './components/MatchupResultScreen';
@@ -12,7 +13,7 @@ import { MissionSelectScreen } from './components/MissionSelectScreen';
 import { DeploymentBoardScreen } from './components/DeploymentBoardScreen';
 import { TurnSimulationScreen } from './components/TurnSimulationScreen';
 import { BottomNav } from './components/BottomNav';
-import { Mission } from './components/shared';
+import { Mission, OpponentUnit } from './components/shared';
 import { PlaceableItem } from './components/DeploymentBoardScreen';
 import { SavedList, useListStore } from '../store/lists';
 import { ArmyList } from './components/shared';
@@ -35,7 +36,8 @@ type Screen =
   | 'mission-select'
   | 'deployment-board'
   | 'turn-simulation'
-  | 'profile';
+  | 'profile'
+  | 'unit-detail';
 
 const TAB_DEFAULT_SCREEN: Record<ActiveTab, Screen> = {
   0: 'home',
@@ -192,6 +194,7 @@ export default function App() {
   const [selectedMission, setSelectedMission] = useState<Mission | null>(null);
   const [boardItems, setBoardItems] = useState<PlaceableItem[]>([]);
   const [activeList, setActiveList] = useState<SavedList | null>(null);
+  const [unitDetail, setUnitDetail] = useState<{ unit: OpponentUnit | null; displayName: string } | null>(null);
 
   const listStore = useListStore();
   const matchupStore = useMatchupHistory();
@@ -227,6 +230,15 @@ export default function App() {
             listStore={listStore}
             onGoMatchup={(list: SavedList) => { setActiveList(list); setActiveTab(2); navigate('matchup-config'); }}
             onBack={() => { setActiveTab(0); navigate('home'); }}
+            onSelectUnit={(unit, displayName) => { setUnitDetail({ unit, displayName }); navigate('unit-detail'); }}
+          />
+        );
+      case 'unit-detail':
+        return (
+          <UnitDetailScreen
+            unit={unitDetail?.unit ?? null}
+            unitName={unitDetail?.displayName ?? ''}
+            onBack={() => navigate('my-lists')}
           />
         );
       case 'create-list':
@@ -315,7 +327,7 @@ export default function App() {
     }
   })();
 
-  const showBottomNav = screen !== 'create-list' && screen !== 'matchup-result' && screen !== 'turn-simulation';
+  const showBottomNav = screen !== 'create-list' && screen !== 'matchup-result' && screen !== 'turn-simulation' && screen !== 'unit-detail';
 
   return (
     /* Outer centering wrapper — shows a phone frame on desktop */
