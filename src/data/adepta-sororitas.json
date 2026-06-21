@@ -1,10 +1,803 @@
 {
-    "id":  "adepta-sororitas",
-    "name":  "Adepta Sororitas",
-    "detachments":  {
-
-                    },
-    "units":  [
-
-              ]
+  "id": "adepta-sororitas",
+  "name": "Adepta Sororitas",
+  "detachments": {
+    "Hallowed Martyrs": {
+      "overview": "El destacamento de las mártires caídas. Cuanto más castigo reciban las Hermanas, más letales se vuelven — reflejando que la sangre de los mártires es la fuerza vital del Imperio.",
+      "abilities": [
+        {
+          "name": "The Blood of Martyrs",
+          "flavor": "La sangre de los mártires es la fuerza vital del Imperio. En su hora más oscura, el sacrificio de las Hermanas caídas brilla con más intensidad.",
+          "rule": "Cada vez que un modelo ADEPTA SORORITAS realiza un ataque, añadí 1 a la tirada de impacto si su unidad está por debajo de su Potencia Inicial, y también añadí 1 a la tirada de herida si está Por Debajo de Media Potencia."
+        }
+      ],
+      "strengths": [
+        "Las unidades dañadas se vuelven más letales, creando una curva inversa de potencia que premia al rival por no eliminarlas completamente.",
+        "Sinergia con unidades resistentes como Celestian Sacresants y Paragon Warsuits que acumulan daño gradual.",
+        "No requiere Miracle dice ni activaciones — el bonus es permanente durante el combate."
+      ],
+      "weaknesses": [
+        "Requiere sufrir bajas para activar el bonus, lo que puede ser contraproducente en estrategias de preservación.",
+        "El bonus a impacto sólo aplica por debajo de Potencia Inicial, no desde el inicio de la batalla.",
+        "Menos efectivo con unidades de modelos individuales o con pocas heridas por modelo."
+      ]
+    },
+    "Penitent Host": {
+      "overview": "El destacamento de los penitentes. Las masas de pecadores que buscan redención en combate — Arco-flagellants, Repentia, Mortifiers y Penitent Engines son el centro de esta fuerza.",
+      "abilities": [
+        {
+          "name": "Desperate for Redemption",
+          "flavor": "Las masas penitentes juran lavar su deshonra con la sangre de sus enemigos.",
+          "rule": "Al inicio de cada ronda de batalla, podés seleccionar uno de los siguientes Votos de Expiación (usable sólo una vez por batalla cada uno): 'The Path of the Penitent' (+3\" de Movimiento a modelos PENITENT), 'Absolution in Battle' (+1A y +1S a armas de combate PENITENT que hayan cargado), 'Death Before Disgrace' (modelos PENITENT destruidos en CC pueden contraatacar antes de ser retirados en 2+)."
+        }
+      ],
+      "strengths": [
+        "Los Votos de Expiación son muy flexibles y se adaptan a cada ronda según la situación táctica.",
+        "Path of the Penitent + Endless Suffering permite a Penitent Engines cargar en turno 1 desde zonas de despliegue profundo.",
+        "Death Before Disgrace convierte a los modelos destruidos en un castigo adicional al oponente."
+      ],
+      "weaknesses": [
+        "Cada Voto sólo puede usarse una vez por batalla — requiere buena planificación táctica.",
+        "El destacamento depende de unidades PENITENT, que en general tienen baja salvación base.",
+        "Sin Acts of Faith especiales, la generación de Miracle dice sigue siendo limitada."
+      ]
+    },
+    "Bringers of Flame": {
+      "overview": "El destacamento del fuego purificador. Todas las armas a distancia ganan ASSAULT y mayor potencia a corta distancia — perfecto para Hermanas agresivas que avanzan disparando.",
+      "abilities": [
+        {
+          "name": "Fervent Purgation",
+          "flavor": "Estas guerreras llevan la ira flamígera del Emperador a los rincones más oscuros de su reino. Con bólters, flamers y meltas son purificados los enemigos.",
+          "rule": "Las armas a distancia equipadas por modelos ADEPTA SORORITAS de tu ejército tienen la habilidad ASSAULT, y cada vez que un ataque con dichas armas impacta a una unidad dentro de 6\", añadí 1 a la característica de Fuerza de ese ataque."
+        }
+      ],
+      "strengths": [
+        "ASSAULT en todas las armas permite avanzar y disparar sin penalizador — enormemente potente con Dominion Squad.",
+        "+1 Fuerza a 6\" hace que los flamers y bólters sean devastadores a corta distancia.",
+        "Sinergia perfecta con Immolator y transporte de asalto — desembarcá y dispará con bonus."
+      ],
+      "weaknesses": [
+        "Requiere acercarse al enemigo, lo que expone la infantería blanda a disparo y cargas.",
+        "Menos efectivo a largo alcance — el bonus de Fuerza sólo aplica a 6\".",
+        "No otorga ventajas en combate cuerpo a cuerpo, lo que limita la durabilidad del ejército en el Fight phase."
+      ]
+    },
+    "Army of Faith": {
+      "overview": "El destacamento de la fe pura. Cada unidad puede realizar dos Actos de Fe por fase en lugar de uno, multiplicando enormemente el potencial de los Miracle dice.",
+      "abilities": [
+        {
+          "name": "Sacred Rites",
+          "flavor": "En tiempos de guerra, la Adepta Sororitas hace ofrendas al Emperador en oración, incienso y sangre. En su devoción piadosa, pueden atraer sus bendiciones.",
+          "rule": "Cada unidad ADEPTA SORORITAS de tu ejército puede realizar hasta dos Actos de Fe por fase, en lugar de sólo uno."
+        }
+      ],
+      "strengths": [
+        "Duplica el aprovechamiento de los Miracle dice, haciendo que cada dado cuente el doble.",
+        "Permite activar múltiples habilidades por turno que normalmente requerirían múltiples turnos.",
+        "Synergiza perfectamente con generadores de Miracle dice como Retributors (Cherubs), Imagifier y Triumph of Saint Katherine."
+      ],
+      "weaknesses": [
+        "Depende fuertemente de tener suficientes Miracle dice — sin ellos el bonus no sirve de nada.",
+        "Requiere construir el ejército en torno a la generación de Miracle dice para aprovecharlo.",
+        "No otorga durabilidad extra ni bonificaciones directas al combate o disparo."
+      ]
+    },
+    "Champions of Faith": {
+      "overview": "El destacamento de la élite de la fe. Hasta 3 unidades por turno se vuelven 'Righteous', mejorando su movimiento, liderazgo y habilidades de combate.",
+      "abilities": [
+        {
+          "name": "Righteous Purpose",
+          "flavor": "Estas guerreras saben que fallar después de prometer la victoria al Dios-Emperador sería infinitamente peor que la muerte — esto las llena de propósito y voluntad inquebrantable.",
+          "rule": "En tu fase de mando, podés seleccionar hasta 3 unidades ADEPTA SORORITAS de tu ejército para que sean 'Righteous' hasta el inicio de tu próxima fase de mando. Las unidades Righteous obtienen: +1\" de Movimiento, +1 Liderazgo, y mejora de WS y BS para modelos de Battle Sisters Squad, Celestian Sacresants y Paragon Warsuits."
+        }
+      ],
+      "strengths": [
+        "La mejora de WS/BS para Celestian Sacresants y Paragon Warsuits los convierte en unidades de élite verdaderas.",
+        "Funciona cada turno sin coste de Miracle dice ni restricciones de uso.",
+        "Flexible — podés cambiar las 3 unidades Righteous cada turno según la situación táctica."
+      ],
+      "weaknesses": [
+        "Limitado a 3 unidades por turno — en ejércitos grandes no podés potenciar a todos.",
+        "La mejora de WS/BS sólo aplica a Battle Sisters Squad, Celestian Sacresants y Paragon Warsuits.",
+        "No otorga durabilidad adicional ni genera Miracle dice, por lo que dependés de otras fuentes de resiliencia."
+      ]
+    }
+  },
+  "units": [
+    {
+      "id": "canoness",
+      "name": "Canoness",
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Grenades", "Imperium", "Canoness"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 4, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "2+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Brazier of holy fire", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "2", "keywords": ["Ignores Cover", "One Shot", "Torrent"] },
+        { "name": "Condemnor boltgun", "range": "24\"", "a": "1", "skill": "2+", "s": 4, "ap": 0, "d": "1", "keywords": ["Anti-Psyker 2+", "Devastating Wounds", "Precision", "Rapid Fire 1"] },
+        { "name": "Inferno pistol", "range": "6\"", "a": "1", "skill": "2+", "s": 8, "ap": -4, "d": "D3", "keywords": ["Melta 2", "Pistol"] },
+        { "name": "Plasma pistol (standard)", "range": "12\"", "a": "1", "skill": "2+", "s": 7, "ap": -2, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Plasma pistol (supercharge)", "range": "12\"", "a": "1", "skill": "2+", "s": 8, "ap": -3, "d": "2", "keywords": ["Hazardous", "Pistol"] }
+      ],
+      "melee": [
+        { "name": "Hallowed chainsword", "range": "Melee", "a": "5", "skill": "2+", "s": 3, "ap": -1, "d": "1", "keywords": [] },
+        { "name": "Blessed blade", "range": "Melee", "a": "4", "skill": "2+", "s": 6, "ap": -2, "d": "2", "keywords": ["Lethal Hits"] },
+        { "name": "Power weapon", "range": "Melee", "a": "4", "skill": "2+", "s": 4, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 4+", "Sacred Command", "The Emperor's Grace"],
+      "considerations": "Líder versátil que puede encabezar la mayoría de las escuadras de Sororitas. Sacred Command reduce el coste de Strategemas en 1CP, lo que la hace muy eficiente cuando está activa.",
+      "recommendations": "Equipá con inferno pistol y blessed blade para máximo daño. Liderá una Battle Sisters Squad o Celestian Sacresants para protegerla y aprovechar Sacred Command en cada ronda."
+    },
+    {
+      "id": "canoness-with-jump-pack",
+      "name": "Canoness with Jump Pack",
+      "type": "character",
+      "role": "Líder de Asalto",
+      "keywords": ["Infantry", "Character", "Jump Pack", "Fly", "Grenades", "Imperium", "Canoness"],
+      "stats": { "m": 12, "t": 3, "sv": 3, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Ministorum hand flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 4, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Pistol", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Blessed halberd", "range": "Melee", "a": "5", "skill": "2+", "s": 5, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Holy Eviscerator", "range": "Melee", "a": "3", "skill": "2+", "s": 6, "ap": -2, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Power weapon", "range": "Melee", "a": "4", "skill": "2+", "s": 4, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Deep Strike", "Leader", "Acts of Faith", "Invulnerable Save 4+", "Sacred Command", "Divine Deliverance"],
+      "considerations": "Versión voladora de la Canoness, exclusiva para liderar escuadras de Jump Pack. Divine Deliverance le permite una vez por batalla añadir +3 Ataques y Devastating Wounds a sus armas cuerpo a cuerpo.",
+      "recommendations": "Liderá una Seraphim Squad o Zephyrim Squad. Usá Divine Deliverance en el turno de carga para devastar unidades enemigas con el Holy Eviscerator."
+    },
+    {
+      "id": "aestred-thurga-and-agathae-dolan",
+      "name": "Aestred Thurga and Agathae Dolan",
+      "type": "character",
+      "role": "Héroe Épico",
+      "keywords": ["Infantry", "Grenades", "Character", "Epic Hero", "Imperium", "Aestred Thurga", "Agathae Dolan"],
+      "stats": { "m": 6, "t": 3, "sv": 2, "w": 4, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Blade of Vigil", "range": "Melee", "a": "4", "skill": "2+", "s": 5, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Scribe's staff", "range": "Melee", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 4+", "Auto-Tapestry of the Emperor's Judgement", "Recount the Deeds of the Saints"],
+      "considerations": "Dúo único: Aestred otorga Devastating Wounds a toda la escuadra que lidera, mientras Agathae genera 1 Miracle dice por cada unidad enemiga destruida (y D3 al morir).",
+      "recommendations": "Liderá una Battle Sisters Squad o Retributor Squad para maximizar el valor de Devastating Wounds en los disparos. Priorizá mantener a Agathae con vida para la generación de Miracle dice."
+    },
+    {
+      "id": "celestian-sacresant-aveline",
+      "name": "Celestian Sacresant Aveline",
+      "type": "character",
+      "role": "Héroe Épico",
+      "keywords": ["Infantry", "Character", "Grenades", "Epic Hero", "Celestian Sacresant Aveline"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 4, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Ministorum hand flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 4, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Pistol", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "The Thorn of the White Rose", "range": "Melee", "a": "4", "skill": "3+", "s": 5, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Feel No Pain 6+", "Lone Operative", "Acts of Faith", "Invulnerable Save 4+", "Instrument of the Emperor's Wrath", "Daemonbreaker"],
+      "considerations": "Personaje independiente de bajo coste con Lone Operative. Una vez por batalla puede obtener +3A y Devastating Wounds en cuerpo a cuerpo. Re-rolls contra DAEMON.",
+      "recommendations": "Usala como unidad independiente que opera sola gracias a Lone Operative. Guardá Instrument of the Emperor's Wrath para un combate clave contra unidades élite o demonios."
+    },
+    {
+      "id": "daemonifuge",
+      "name": "Daemonifuge",
+      "type": "character",
+      "role": "Héroe Épico",
+      "keywords": ["Infantry", "Grenades", "Character", "Epic Hero", "Imperium", "Daemonifuge"],
+      "stats": { "m": 8, "t": 3, "sv": 3, "w": 5, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Sanctity", "range": "Melee", "a": "4", "skill": "2+", "s": 6, "ap": -2, "d": "2", "keywords": ["Anti-Chaos 2+", "Precision"] },
+        { "name": "The Outcast's Weapons", "range": "Melee", "a": "6", "skill": "2+", "s": 4, "ap": -2, "d": "1", "keywords": ["Precision"] }
+      ],
+      "abilities": ["Deep Strike", "Fights First", "Lone Operative", "Acts of Faith", "Invulnerable Save 4+", "Holy Judgement", "Mysterious Saviours"],
+      "considerations": "Dúo con Fights First y Lone Operative. Holy Judgement puede forzar un Battle-shock test (con penalizador -2 contra CHAOS) e infligir 3 heridas mortales al inicio del turno de disparo.",
+      "recommendations": "Desplegá en Deep Strike para aparecer junto a unidades CHAOS. Usá Holy Judgement antes de combatir para debilitar al objetivo. Ideal contra ejércitos de demonios o Heretic Astartes."
+    },
+    {
+      "id": "dialogus",
+      "name": "Dialogus",
+      "type": "character",
+      "role": "Líder de Apoyo",
+      "keywords": ["Infantry", "Character", "Imperium", "Dialogus"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 3, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Dialogus staff", "range": "Melee", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 4+", "Laud Hailer", "Stirring Rhetoric"],
+      "considerations": "Soporte económico que permite recuperar unidades de Battle-shock una vez por batalla y convertir un Miracle dice en un 6 al realizar Acts of Faith.",
+      "recommendations": "Podés combinarla con otra líder en una Battle Sisters Squad (regla especial de doble líder). Stirring Rhetoric garantiza un 6 en Acts of Faith, muy útil para efectos que requieren valores altos."
+    },
+    {
+      "id": "dogmata",
+      "name": "Dogmata",
+      "type": "character",
+      "role": "Líder de Control",
+      "keywords": ["Infantry", "Grenades", "Character", "Imperium", "Dogmata"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 3, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Mace of the righteous", "range": "Melee", "a": "4", "skill": "3+", "s": 5, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 6+", "Executioner of Heretics", "Unflinching Determination"],
+      "considerations": "Otorga +1 OC a la escuadra que lidera y penaliza el Liderazgo enemigo en 6\" con un aura. Ideal para misiones de control de objetivos.",
+      "recommendations": "Liderá una Celestian Sacresants o Battle Sisters Squad sobre un objetivo clave. El +1 OC combinado con Sworn Protectors hace a los Sacresants prácticamente inamovibles."
+    },
+    {
+      "id": "hospitaller",
+      "name": "Hospitaller",
+      "type": "character",
+      "role": "Líder Médico",
+      "keywords": ["Infantry", "Character", "Imperium", "Hospitaller"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Chirurgeon's tools", "range": "Melee", "a": "3", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 6+", "Medicus Ministorum", "Sacred Healing"],
+      "considerations": "Otorga Feel No Pain 5+ a la escuadra que lidera y permite devolver modelos destruidos en la fase de mando. Con un Miracle dice podés recuperar hasta D3+1 modelos.",
+      "recommendations": "Liderá una Battle Sisters Squad grande para maximizar el valor de los resurrectos. Guardá Miracle dice para recuperar múltiples modelos cuando la escuadra sufra bajas."
+    },
+    {
+      "id": "imagifier",
+      "name": "Imagifier",
+      "type": "character",
+      "role": "Líder Defensivo",
+      "keywords": ["Infantry", "Grenades", "Character", "Imperium", "Imagifier"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 3, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Boltgun", "range": "24\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 1"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "3", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 4+", "Litany of Deeds", "Stanchion of Holy Martyrs"],
+      "considerations": "Mejora la tirada de salvación de la escuadra a 2+ con salvación invulnerable 4+. Litany of Deeds permite relanzar Miracle dice obtenidos al destruir unidades cercanas.",
+      "recommendations": "Ideal para escuadras expuestas al fuego enemigo pesado. Liderá Celestian Sacresants o Retributors. La combinación de 2+ y 4+ inv hace a la escuadra extremadamente resistente."
+    },
+    {
+      "id": "intranzia-fraye",
+      "name": "Intranzia Fraye",
+      "type": "character",
+      "role": "Héroe Épico",
+      "keywords": ["Vehicle", "Walker", "Character", "Epic Hero", "Imperium", "Penitent", "Intranzia Fraye"],
+      "stats": { "m": 8, "t": 7, "sv": 3, "w": 8, "ld": 6, "oc": 3 },
+      "ranged": [
+        { "name": "Heavy bolter", "range": "36\"", "a": "3", "skill": "2+", "s": 5, "ap": -1, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Melta missile array", "range": "24\"", "a": "2", "skill": "2+", "s": 9, "ap": -2, "d": "D3", "keywords": ["Melta 2"] },
+        { "name": "Ministorum heavy flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Mace of Saint Praxedes", "range": "Melee", "a": "4", "skill": "2+", "s": 6, "ap": -2, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Throne of Blame", "range": "Melee", "a": "4", "skill": "4+", "s": 6, "ap": 0, "d": "1", "keywords": ["Extra Attacks"] }
+      ],
+      "abilities": ["Deadly Demise 1", "Feel No Pain 5+", "Acts of Faith", "Invulnerable Save 4+", "Righteous Denunciation", "Judged for Execution"],
+      "considerations": "Walker de penitencia con perfil ofensivo sólido y excelente durabilidad. Righteous Denunciation fuerza chequeos de Battle-shock en zona de combate. Judged for Execution marca un enemigo para recibir Lethal Hits.",
+      "recommendations": "Operá como apoyo de fuego y control. Marcá con Judged for Execution a vehículos o personajes prioritarios para que todo el ejército se beneficie del Lethal Hits contra ellos."
+    },
+    {
+      "id": "junith-eruita",
+      "name": "Junith Eruita",
+      "type": "character",
+      "role": "Héroe Épico",
+      "keywords": ["Mounted", "Character", "Fly", "Epic Hero", "Imperium", "Junith Eruita"],
+      "stats": { "m": 8, "t": 5, "sv": 2, "w": 8, "ld": 6, "oc": 2 },
+      "ranged": [
+        { "name": "Twin Ministorum heavy flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent", "Twin-linked"] }
+      ],
+      "melee": [
+        { "name": "Mace of Castigation", "range": "Melee", "a": "4", "skill": "2+", "s": 6, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Deadly Demise 1", "Leader", "Acts of Faith", "Invulnerable Save 4+", "The Pulpit of Saint Holline's Basilica", "Fiery Conviction"],
+      "considerations": "Personaje montado muy resistente que otorga -1 a los rolls de impacto contra la escuadra. Fiery Conviction genera CP cada ronda, siendo una de las pocas fuentes de CP adicionales en el ejército.",
+      "recommendations": "Liderá una Battle Sisters Squad para hacerla casi impactable. Usá Fiery Conviction cada turno para ganar CP extra — es uno de los pocos líderes que regenera CP activamente."
+    },
+    {
+      "id": "ministorum-priest",
+      "name": "Ministorum Priest",
+      "type": "character",
+      "role": "Líder de Asalto",
+      "keywords": ["Infantry", "Character", "Imperium", "Penitent", "Ministorum Priest"],
+      "stats": { "m": 6, "t": 3, "sv": 6, "w": 3, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Holy pistol", "range": "12\"", "a": "3", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Zealot's vindictor", "range": "12\"", "a": "D6", "skill": "N/A", "s": 5, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Power weapon", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -2, "d": "1", "keywords": [] },
+        { "name": "Zealot's vindictor", "range": "Melee", "a": "3", "skill": "4+", "s": 5, "ap": -1, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 4+", "Righteous Smiting", "Zealot", "Holy Mission"],
+      "considerations": "Líder económico que otorga +1 a las tiradas de herida cuerpo a cuerpo a la escuadra. Funciona bien con Arco-flagellants y Sanctifiers. Con Dominion Squad gana Scouts 6\", y con Novitiate Squad gana Infiltrators.",
+      "recommendations": "Liderá Arco-flagellants en Penitent Host para devastar líneas enemigas. También es excelente liderando Sanctifiers con Scouts 6\" activado."
+    },
+    {
+      "id": "morvenn-vahl",
+      "name": "Morvenn Vahl",
+      "type": "character",
+      "role": "Comandante Supremo",
+      "keywords": ["Vehicle", "Walker", "Character", "Epic Hero", "Imperium", "Morvenn Vahl"],
+      "stats": { "m": 8, "t": 7, "sv": 2, "w": 8, "ld": 6, "oc": 3 },
+      "ranged": [
+        { "name": "Fidelis", "range": "36\"", "a": "3", "skill": "2+", "s": 6, "ap": -1, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Paragon missile launcher (prioris)", "range": "36\"", "a": "2", "skill": "2+", "s": 9, "ap": -2, "d": "D6", "keywords": [] },
+        { "name": "Paragon missile launcher (sanctorum)", "range": "36\"", "a": "2D6", "skill": "2+", "s": 4, "ap": 0, "d": "1", "keywords": ["Blast"] }
+      ],
+      "melee": [
+        { "name": "Lance of Illumination (strike)", "range": "Melee", "a": "5", "skill": "2+", "s": 8, "ap": -2, "d": "3", "keywords": ["Devastating Wounds"] },
+        { "name": "Lance of Illumination (sweep)", "range": "Melee", "a": "10", "skill": "2+", "s": 5, "ap": -1, "d": "1", "keywords": ["Devastating Wounds"] }
+      ],
+      "abilities": ["Deadly Demise 1", "Leader", "Acts of Faith", "Invulnerable Save 4+", "Abbess Sanctorum", "Righteous Repugnance", "Supreme Commander"],
+      "considerations": "El Warlord obligatorio de Sororitas. Abbess Sanctorum permite relanzar hits y wounds de toda la escuadra liderada. Righteous Repugnance puede añadir +3A a sus armas gastando Miracle dice.",
+      "recommendations": "Liderá los Paragon Warsuits para que todo el grupo relance hits y heridas. Es un bloque muy caro pero extremadamente eficiente. Sólo válida si es Warlord."
+    },
+    {
+      "id": "palatine",
+      "name": "Palatine",
+      "type": "character",
+      "role": "Líder",
+      "keywords": ["Infantry", "Character", "Grenades", "Imperium", "Palatine"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 4, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "2+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Plasma pistol (standard)", "range": "12\"", "a": "1", "skill": "2+", "s": 7, "ap": -2, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Plasma pistol (supercharge)", "range": "12\"", "a": "1", "skill": "2+", "s": 8, "ap": -3, "d": "2", "keywords": ["Hazardous", "Pistol"] }
+      ],
+      "melee": [
+        { "name": "Palatine blade", "range": "Melee", "a": "4", "skill": "2+", "s": 4, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 4+", "Fury of the Righteous", "Rapturous Blows"],
+      "considerations": "Líder de bajo coste con Lethal Hits para toda la escuadra. Rapturous Blows inflige heridas mortales adicionales al gastar Miracle dice en combate.",
+      "recommendations": "Alternativa económica a la Canoness. Liderá Celestian Sacresants para combinar Lethal Hits con Sworn Protectors — ambas habilidades hacen al grupo muy resistente y letal."
+    },
+    {
+      "id": "saint-celestine",
+      "name": "Saint Celestine",
+      "type": "character",
+      "role": "Héroe Épico",
+      "keywords": ["Infantry", "Jump Pack", "Fly", "Grenades", "Imperium", "Character", "Epic Hero", "Saint Celestine"],
+      "stats": { "m": 12, "t": 3, "sv": 2, "w": 5, "ld": 6, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "The Ardent Blade", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -2, "d": "1", "keywords": ["Ignores Cover", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "The Ardent Blade", "range": "Melee", "a": "5", "skill": "2+", "s": 6, "ap": -3, "d": "2", "keywords": ["Devastating Wounds"] },
+        { "name": "Power weapon (Geminae)", "range": "Melee", "a": "4", "skill": "3+", "s": 4, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deep Strike", "Leader", "Acts of Faith", "Invulnerable Save 4+", "Healing Tears", "Lifewards", "Miraculous Intervention"],
+      "considerations": "Ícono del ejército con resurreción integrada: al ser destruida, en un 2+ regresa con todos sus puntos de vida. Las Geminae Superia le otorgan Feel No Pain 4+ mientras vivan.",
+      "recommendations": "Liderá Seraphim o Zephyrim Squad para Deep Strike y cargas quirúrgicas. La combinación de FNP 4+, inv 4+ y resurrección la hace increíblemente difícil de eliminar permanentemente."
+    },
+    {
+      "id": "triumph-of-saint-katherine",
+      "name": "Triumph of Saint Katherine",
+      "type": "character",
+      "role": "Héroe Épico",
+      "keywords": ["Infantry", "Grenades", "Character", "Epic Hero", "Imperium", "Triumph of Saint Katherine"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 18, "ld": 6, "oc": 6 },
+      "ranged": [
+        { "name": "Bolt pistols", "range": "12\"", "a": "6", "skill": "2+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Relic weapons", "range": "Melee", "a": "18", "skill": "2+", "s": 5, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Leader", "Acts of Faith", "Invulnerable Save 4+", "Relics of the Matriarchs", "Solemn Procession"],
+      "considerations": "El modelo más costoso del ejército. Otorga dos auras por ronda de las 6 disponibles (Relics of the Matriarchs). Solemn Procession garantiza que el primer Miracle dice de cada ronda vale 6.",
+      "recommendations": "Liderá una Battle Sisters Squad en el centro del despliegue para proyectar sus auras a múltiples unidades. Seleccioná Fiery Heart y Simulacrum of the Argent Shroud como auras predeterminadas."
+    },
+    {
+      "id": "battle-sisters-squad",
+      "name": "Battle Sisters Squad",
+      "type": "battleline",
+      "role": "Línea de Batalla",
+      "keywords": ["Infantry", "Grenades", "Battleline", "Imperium", "Battle Sisters Squad"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Boltgun", "range": "24\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 1"] },
+        { "name": "Meltagun", "range": "12\"", "a": "1", "skill": "3+", "s": 9, "ap": -4, "d": "D6", "keywords": ["Melta 2"] },
+        { "name": "Ministorum flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 5, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Torrent"] },
+        { "name": "Multi-melta", "range": "18\"", "a": "2", "skill": "4+", "s": 9, "ap": -4, "d": "D6", "keywords": ["Heavy", "Melta 2"] },
+        { "name": "Heavy bolter", "range": "36\"", "a": "3", "skill": "4+", "s": 5, "ap": -1, "d": "2", "keywords": ["Heavy", "Sustained Hits 1"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": [] },
+        { "name": "Chainsword", "range": "Melee", "a": "3", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": [] },
+        { "name": "Power weapon", "range": "Melee", "a": "2", "skill": "4+", "s": 4, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Acts of Faith", "Invulnerable Save 6+", "Cherub", "Defenders of the Faith"],
+      "considerations": "La unidad battleline principal del ejército. Defenders of the Faith permite retener objetivos sin necesitar modelos en rango. Cherub genera 1 Miracle dice gratis una vez por batalla.",
+      "recommendations": "Equipá con 2 meltaguns o flamers según el rol. Combiná con un líder como Canoness o Hospitaller. Con Triumph of Saint Katherine generan Miracle dice constantemente."
+    },
+    {
+      "id": "arco-flagellants",
+      "name": "Arco-flagellants",
+      "type": "infantry",
+      "role": "Asalto Penitente",
+      "keywords": ["Infantry", "Imperium", "Penitent", "Arco-flagellants"],
+      "stats": { "m": 7, "t": 3, "sv": 7, "w": 2, "ld": 8, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Arco-flails", "range": "Melee", "a": "4", "skill": "4+", "s": 5, "ap": 0, "d": "1", "keywords": ["Sustained Hits 1"] }
+      ],
+      "abilities": ["Feel No Pain 5+", "Acts of Faith", "Invulnerable Save 6+", "Extremis Trigger Word"],
+      "considerations": "Unidad de asalto masiva y barata. Extremis Trigger Word sube los ataques a 6 (pero con Hazardous). FNP 5+ compensa la salvación de 7+. Escala bien a 10 modelos.",
+      "recommendations": "En Penitent Host son devastadores. Usá el Trigger Word cuando estés en combate contra unidades blandas sin arriesgar demasiado contra las heridas de Hazardous. Lideralos con un Ministorum Priest."
+    },
+    {
+      "id": "celestian-insidiants",
+      "name": "Celestian Insidiants",
+      "type": "infantry",
+      "role": "Cazadores de Objetivos",
+      "keywords": ["Infantry", "Grenades", "Imperium", "Celestian Insidiants"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Condemnor bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Anti-Psyker 4+", "Devastating Wounds", "Pistol"] },
+        { "name": "Ministorum hand flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 4, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Pistol", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Null mace", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -1, "d": "1", "keywords": ["Anti-Psyker 4+", "Devastating Wounds"] },
+        { "name": "Blessed sword", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -2, "d": "2", "keywords": ["Lethal Hits"] },
+        { "name": "Virge of admonition", "range": "Melee", "a": "3", "skill": "4+", "s": 6, "ap": -2, "d": "3", "keywords": ["Anti-Psyker 4+", "Devastating Wounds"] }
+      ],
+      "abilities": ["Acts of Faith", "Invulnerable Save 5+", "Rituale Nullificatus", "Virtue of Intolerance"],
+      "considerations": "Unidad de élite especializada en eliminar un objetivo de alto valor designado (quarry). FNP 4+ contra daño psíquico y heridas mortales las hace muy resistentes contra esos vectores.",
+      "recommendations": "Designá como quarry al personaje más peligroso del oponente. Cada ataque contra su objetivo tiene Precision y re-roll de hit. La virge de admonición es devastadora contra personajes psíquicos."
+    },
+    {
+      "id": "celestian-sacresants",
+      "name": "Celestian Sacresants",
+      "type": "infantry",
+      "role": "Guardia de Objetivos",
+      "keywords": ["Infantry", "Grenades", "Imperium", "Celestian Sacresants"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Hallowed mace", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -1, "d": "2", "keywords": ["Lethal Hits"] },
+        { "name": "Anointed halberd", "range": "Melee", "a": "3", "skill": "3+", "s": 5, "ap": -2, "d": "1", "keywords": ["Sustained Hits 1"] },
+        { "name": "Spear of the faithful", "range": "Melee", "a": "3", "skill": "3+", "s": 5, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Acts of Faith", "Invulnerable Save 4+", "Sworn Protectors"],
+      "considerations": "Guardias de élite con inv 4+ y -1 a las tiradas de herida cuando llevan un líder CHARACTER. Sworn Protectors las hace increíblemente duraderas mientras tengan un personaje.",
+      "recommendations": "Combiná con Dogmata (+1 OC) y Palatine (Lethal Hits) para un bloque de objetivos impenetrable. En Champions of Faith la mejora de WS las convierte en una amenaza ofensiva real."
+    },
+    {
+      "id": "crusaders",
+      "name": "Crusaders",
+      "type": "infantry",
+      "role": "Guardia",
+      "keywords": ["Infantry", "Imperium", "Crusaders"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 2, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Power weapon", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -2, "d": "2", "keywords": [] }
+      ],
+      "abilities": ["Acts of Faith", "Invulnerable Save 4+", "Spiritual Fortitude"],
+      "considerations": "Unidad de escolta barata con 2 heridas, inv 4+ y FNP 4+ contra daño psíquico y heridas mortales. Puede adjuntarse a cualquier escuadra que pueda llevar un líder CHARACTER.",
+      "recommendations": "Úsalos como relleno barato en escuadras que necesiten resistencia extra. Ideal en Champions of Faith para controlar objetivos con su OC combinada."
+    },
+    {
+      "id": "death-cult-assassins",
+      "name": "Death Cult Assassins",
+      "type": "infantry",
+      "role": "Asesinos",
+      "keywords": ["Infantry", "Imperium", "Death Cult Assassins"],
+      "stats": { "m": 7, "t": 3, "sv": 5, "w": 2, "ld": 7, "oc": 1 },
+      "ranged": [],
+      "melee": [
+        { "name": "Death Cult power blades", "range": "Melee", "a": "4", "skill": "2+", "s": 4, "ap": -2, "d": "1", "keywords": ["Precision"] }
+      ],
+      "abilities": ["Fights First", "Infiltrators", "Lone Operative", "Acts of Faith", "Invulnerable Save 5+", "Death Cult"],
+      "considerations": "Asesinos de personajes con WS 2+, Precision, Fights First e Infiltrators. Re-rolls de herida contra CHARACTER. Lone Operative los protege de ser disparados.",
+      "recommendations": "Infiltrá cerca del cuartel general enemigo. Fights First los hace golpear antes que casi cualquier unidad. Re-rolls contra personajes los convierte en una amenaza seria para cualquier líder."
+    },
+    {
+      "id": "dominion-squad",
+      "name": "Dominion Squad",
+      "type": "infantry",
+      "role": "Vanguardia",
+      "keywords": ["Infantry", "Grenades", "Imperium", "Dominion Squad"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Boltgun", "range": "24\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Assault", "Rapid Fire 1"] },
+        { "name": "Meltagun", "range": "12\"", "a": "1", "skill": "3+", "s": 9, "ap": -4, "d": "D6", "keywords": ["Assault", "Melta 2"] },
+        { "name": "Ministorum flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 5, "ap": 0, "d": "1", "keywords": ["Assault", "Ignores Cover", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Scouts 6\"", "Acts of Faith", "Invulnerable Save 6+", "Cherub", "Righteous Awareness"],
+      "considerations": "Scouts 6\" les permite adelantarse antes del primer turno. Todas sus armas tienen ASSAULT, permitiendo avanzar y disparar sin penalizador. Righteous Awareness les otorga una mini-marcha reactiva.",
+      "recommendations": "Equipá con 4 meltaguns para una escuadra especializada en cazar vehículos. El Scouts 6\" les permite acercarse a rango de Melta desde el inicio. Ideal en Bringers of Flame para disparar tras avanzar."
+    },
+    {
+      "id": "repentia-squad",
+      "name": "Repentia Squad",
+      "type": "infantry",
+      "role": "Asalto Penitente",
+      "keywords": ["Infantry", "Grenades", "Imperium", "Penitent", "Repentia Squad"],
+      "stats": { "m": 7, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Penitent eviscerator", "range": "Melee", "a": "2", "skill": "4+", "s": 6, "ap": -2, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Neural whips", "range": "Melee", "a": "4", "skill": "3+", "s": 3, "ap": -1, "d": "1", "keywords": ["Anti-Infantry 4+"] }
+      ],
+      "abilities": ["Feel No Pain 5+", "Acts of Faith", "Invulnerable Save 6+", "Overseer of Redemption"],
+      "considerations": "Unidad de asalto barata con S6 AP-2 y Sustained Hits 1. La Repentia Superior permite relanzar hits Y heridas de todas las Sisters Repentia mientras viva.",
+      "recommendations": "Escalá a 10 modelos en Penitent Host para máximo impacto. Overseer of Redemption hace que los re-rolls de hit y wound sean automáticos. Ideales para cargos flanqueantes."
+    },
+    {
+      "id": "retributor-squad",
+      "name": "Retributor Squad",
+      "type": "infantry",
+      "role": "Fuego de Apoyo",
+      "keywords": ["Infantry", "Grenades", "Imperium", "Retributor Squad"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Heavy bolter", "range": "36\"", "a": "3", "skill": "4+", "s": 5, "ap": -1, "d": "2", "keywords": ["Heavy", "Sustained Hits 1"] },
+        { "name": "Ministorum heavy flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent"] },
+        { "name": "Multi-melta", "range": "18\"", "a": "2", "skill": "4+", "s": 9, "ap": -4, "d": "D6", "keywords": ["Heavy", "Melta 2"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Acts of Faith", "Invulnerable Save 6+", "Cherubs", "Storm of Retribution"],
+      "considerations": "Especialistas en fuego pesado. Storm of Retribution otorga +1 hit y +1 wound contra unidades que hayan destruido Sororitas aliadas. Cherubs genera 2 Miracle dice durante la batalla.",
+      "recommendations": "Equipá con 4 multi-meltas para máximo daño antivehículo. Storm of Retribution se activa fácilmente en cualquier partida. Lideralas con Aestred Thurga para Devastating Wounds adicionales."
+    },
+    {
+      "id": "sanctifiers",
+      "name": "Sanctifiers",
+      "type": "infantry",
+      "role": "Vanguardia Mixta",
+      "keywords": ["Infantry", "Grenades", "Imperium", "Sanctifiers"],
+      "stats": { "m": 6, "t": 3, "sv": 6, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Ministorum hand flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 4, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Pistol", "Torrent"] },
+        { "name": "Plasma gun (standard)", "range": "24\"", "a": "1", "skill": "4+", "s": 7, "ap": -2, "d": "1", "keywords": ["Rapid Fire 1"] },
+        { "name": "Holy fire", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "2", "keywords": ["Ignores Cover", "One Shot", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Death Cult blades", "range": "Melee", "a": "4", "skill": "2+", "s": 4, "ap": -2, "d": "1", "keywords": ["Precision"] },
+        { "name": "Burning hands", "range": "Melee", "a": "1", "skill": "2+", "s": 6, "ap": -2, "d": "3", "keywords": ["Devastating Wounds"] }
+      ],
+      "abilities": ["Scouts 6\"", "Acts of Faith", "Invulnerable Save 5+", "Cherub", "Ministorum Sermon"],
+      "considerations": "Unidad mixta con Scouts 6\" compuesta por múltiples sub-perfiles. Con un Ministorum Priest todas sus armas cuerpo a cuerpo ganan Sustained Hits 1. La Miraculist tiene la devastadora Holy Fire de un solo uso.",
+      "recommendations": "Usá el Scouts 6\" para posicionarte agresivamente. Con un Priest adjunto y Sustained Hits 1, los Death Cult Assassins internos son aún más letales. Guardá Holy Fire para un momento de alto impacto."
+    },
+    {
+      "id": "seraphim-squad",
+      "name": "Seraphim Squad",
+      "type": "infantry",
+      "role": "Asalto Aéreo",
+      "keywords": ["Infantry", "Jump Pack", "Fly", "Grenades", "Imperium", "Seraphim Squad"],
+      "stats": { "m": 12, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol (x2)", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] },
+        { "name": "Inferno pistol (x2)", "range": "6\"", "a": "1", "skill": "3+", "s": 8, "ap": -4, "d": "D3", "keywords": ["Melta 2", "Pistol"] },
+        { "name": "Ministorum hand flamer (x2)", "range": "12\"", "a": "D6", "skill": "N/A", "s": 4, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Pistol", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "2", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": [] },
+        { "name": "Chainsword", "range": "Melee", "a": "4", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": [] },
+        { "name": "Power weapon", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deep Strike", "Acts of Faith", "Invulnerable Save 5+", "Angelic Ascent"],
+      "considerations": "Infantería de jump pack con Deep Strike y movimiento post-disparo (Angelic Ascent). Pueden disparar y luego retroceder 6\" sin poder cargar, lo que las convierte en excelentes hostigadoras.",
+      "recommendations": "Equipá con 2 pares de inferno pistols para una escuadra anti-tanque de alta movilidad. Angelic Ascent permite golpear y retirarse evitando el combate. Lideralas con Saint Celestine o Canoness con Jump Pack."
+    },
+    {
+      "id": "sisters-novitiate-squad",
+      "name": "Sisters Novitiate Squad",
+      "type": "infantry",
+      "role": "Infiltradores",
+      "keywords": ["Infantry", "Grenades", "Imperium", "Sisters Novitiate Squad"],
+      "stats": { "m": 6, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Autogun", "range": "24\"", "a": "1", "skill": "3+", "s": 3, "ap": 0, "d": "1", "keywords": ["Rapid Fire 1"] },
+        { "name": "Boltgun", "range": "24\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 1"] },
+        { "name": "Ministorum flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 5, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Close combat weapon", "range": "Melee", "a": "1", "skill": "4+", "s": 3, "ap": 0, "d": "1", "keywords": [] },
+        { "name": "Novitiate melee weapons", "range": "Melee", "a": "2", "skill": "4+", "s": 4, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Infiltrators", "Acts of Faith", "Invulnerable Save 6+", "Impetuous Fervour"],
+      "considerations": "OC 2 con Infiltrators las convierte en excelentes tomadoras de objetivos desde el principio. Impetuous Fervour otorga re-roll de hit 1, o re-roll completo contra objetivos en zona controlada.",
+      "recommendations": "Infiltrá en objetivos del centro del tablero. Son una alternativa económica a Battle Sisters Squad con mayor movilidad inicial y OC 2 para controlar puntos."
+    },
+    {
+      "id": "zephyrim-squad",
+      "name": "Zephyrim Squad",
+      "type": "infantry",
+      "role": "Asalto Aéreo de Élite",
+      "keywords": ["Infantry", "Jump Pack", "Fly", "Grenades", "Imperium", "Zephyrim Squad"],
+      "stats": { "m": 12, "t": 3, "sv": 3, "w": 1, "ld": 7, "oc": 1 },
+      "ranged": [
+        { "name": "Bolt pistol", "range": "12\"", "a": "1", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Pistol"] }
+      ],
+      "melee": [
+        { "name": "Power weapon", "range": "Melee", "a": "3", "skill": "3+", "s": 4, "ap": -2, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deep Strike", "Acts of Faith", "Invulnerable Save 5+", "Embodied Prophecy"],
+      "considerations": "Versión de asalto de las Seraphim. Embodied Prophecy permite elegir Sustained Hits 1 o Lethal Hits cada vez que combaten, o ambas si cargaron. Son mucho más letales que Seraphim en combate.",
+      "recommendations": "Usalas para cargas de Deep Strike contra unidades enemigas clave. Si cargaron, obtienen Sustained Hits 1 + Lethal Hits simultáneamente, lo que las convierte en devastadoras contra élites e infantería."
+    },
+    {
+      "id": "castigator",
+      "name": "Castigator",
+      "type": "vehicle",
+      "role": "Tanque de Línea",
+      "keywords": ["Vehicle", "Smoke", "Imperium", "Castigator"],
+      "stats": { "m": 10, "t": 10, "sv": 3, "w": 11, "ld": 7, "oc": 3 },
+      "ranged": [
+        { "name": "Castigator autocannons", "range": "48\"", "a": "4", "skill": "3+", "s": 9, "ap": -1, "d": "3", "keywords": ["Rapid Fire 4", "Twin-linked"] },
+        { "name": "Castigator battle cannon", "range": "48\"", "a": "D6+3", "skill": "3+", "s": 10, "ap": -1, "d": "3", "keywords": ["Blast", "Ignores Cover"] },
+        { "name": "Heavy bolter", "range": "36\"", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Hunter-killer missile", "range": "48\"", "a": "1", "skill": "2+", "s": 14, "ap": -3, "d": "D6", "keywords": ["One Shot"] }
+      ],
+      "melee": [
+        { "name": "Armoured tracks", "range": "Melee", "a": "3", "skill": "4+", "s": 6, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deadly Demise D3", "Acts of Faith", "Invulnerable Save 6+", "Rites of Castigation"],
+      "considerations": "Tanque de fuego directo. Rites of Castigation mejora la AP de todos los ataques Sororitas aliados contra el objetivo disparado hasta el final del turno. Elige entre autocañones (anti-élite) o battle cannon (anti-masa).",
+      "recommendations": "Equipá con battle cannon para versatilidad. Rites of Castigation hace que todo el ejército dispare más eficientemente contra un objetivo — coordiná con Retributors o Exorcist para maximizar el daño."
+    },
+    {
+      "id": "exorcist",
+      "name": "Exorcist",
+      "type": "vehicle",
+      "role": "Artillería",
+      "keywords": ["Vehicle", "Smoke", "Imperium", "Exorcist"],
+      "stats": { "m": 10, "t": 10, "sv": 3, "w": 11, "ld": 7, "oc": 3 },
+      "ranged": [
+        { "name": "Exorcist missile launcher", "range": "36\"", "a": "D6+2", "skill": "3+", "s": 10, "ap": -3, "d": "D6", "keywords": ["Indirect Fire"] },
+        { "name": "Exorcist conflagration rockets", "range": "36\"", "a": "3D6", "skill": "3+", "s": 6, "ap": -1, "d": "1", "keywords": ["Blast", "Ignores Cover", "Indirect Fire"] },
+        { "name": "Heavy bolter", "range": "36\"", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Hunter-killer missile", "range": "48\"", "a": "1", "skill": "2+", "s": 14, "ap": -3, "d": "D6", "keywords": ["One Shot"] }
+      ],
+      "melee": [
+        { "name": "Armoured tracks", "range": "Melee", "a": "3", "skill": "4+", "s": 6, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deadly Demise D3", "Acts of Faith", "Invulnerable Save 6+", "Devastating Refrain"],
+      "considerations": "Artillería Indirect Fire que puede disparar sin línea de visión. Devastating Refrain fuerza Battle-shock tests adicionales. Los cohetes de conflagración son devastadores contra infantería en cobertura.",
+      "recommendations": "Elegí missile launcher para anti-élite y anti-vehículo. Los cohetes de conflagración funcionan mejor contra hordas. Posicionalo detrás de cobertura y aprovechá el Indirect Fire para disparar con seguridad."
+    },
+    {
+      "id": "mortifiers",
+      "name": "Mortifiers",
+      "type": "vehicle",
+      "role": "Walker Penitente",
+      "keywords": ["Vehicle", "Walker", "Imperium", "Penitent", "Mortifiers"],
+      "stats": { "m": 8, "t": 6, "sv": 4, "w": 5, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Heavy bolter (x2)", "range": "36\"", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Mortifier flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 5, "ap": 0, "d": "1", "keywords": ["Ignores Cover", "Torrent", "Twin-linked"] }
+      ],
+      "melee": [
+        { "name": "Twin penitent buzz-blades", "range": "Melee", "a": "4", "skill": "3+", "s": 10, "ap": -3, "d": "2", "keywords": ["Sustained Hits 1", "Twin-linked"] },
+        { "name": "Twin penitent flails", "range": "Melee", "a": "8", "skill": "3+", "s": 5, "ap": -1, "d": "1", "keywords": ["Sustained Hits 1", "Twin-linked"] }
+      ],
+      "abilities": ["Deadly Demise 1", "Feel No Pain 5+", "Acts of Faith", "Invulnerable Save 6+", "Anguish of the Unredeemed"],
+      "considerations": "Versión mejorada de los Penitent Engines con BS 3+ y FNP 5+. Anguish of the Unredeemed permite a los modelos destruidos en cuerpo a cuerpo contraatacar antes de morir (en un 2+).",
+      "recommendations": "Privilegiá las buzz-blades contra élites/vehículos y los flails contra hordas. En Penitent Host son prácticamente imparables gracias a sus contraataques. Óptimos en parejas de 2."
+    },
+    {
+      "id": "paragon-warsuits",
+      "name": "Paragon Warsuits",
+      "type": "vehicle",
+      "role": "Walker de Élite",
+      "keywords": ["Vehicle", "Walker", "Grenades", "Imperium", "Paragon Warsuits"],
+      "stats": { "m": 8, "t": 7, "sv": 2, "w": 4, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Paragon storm bolters", "range": "24\"", "a": "2", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 2", "Twin-linked"] },
+        { "name": "Paragon grenade launchers", "range": "24\"", "a": "1", "skill": "3+", "s": 9, "ap": -2, "d": "D3", "keywords": ["Twin-linked"] },
+        { "name": "Heavy bolter", "range": "36\"", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "2", "keywords": ["Sustained Hits 1"] },
+        { "name": "Multi-melta", "range": "18\"", "a": "2", "skill": "3+", "s": 9, "ap": -4, "d": "D6", "keywords": ["Melta 2"] },
+        { "name": "Ministorum heavy flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent"] }
+      ],
+      "melee": [
+        { "name": "Paragon war blade", "range": "Melee", "a": "4", "skill": "3+", "s": 8, "ap": -2, "d": "2", "keywords": [] },
+        { "name": "Paragon war mace", "range": "Melee", "a": "3", "skill": "3+", "s": 12, "ap": -1, "d": "3", "keywords": [] }
+      ],
+      "abilities": ["Acts of Faith", "Invulnerable Save 4+", "Righteous Paragons"],
+      "considerations": "Walker de élite con +1 hit y wound contra MONSTER y VEHICLE. Combinados con Morvenn Vahl se convierten en el bloque ofensivo más poderoso del ejército. Inv 4+ los hace duraderos.",
+      "recommendations": "Equipá con multi-melta y war mace para anti-vehículo devastador. Con Morvenn Vahl liderando, relanzás hits y wounds más el +1 inherente contra vehículos. En Champions of Faith su WS/BS también mejoran."
+    },
+    {
+      "id": "penitent-engines",
+      "name": "Penitent Engines",
+      "type": "vehicle",
+      "role": "Walker Penitente",
+      "keywords": ["Vehicle", "Walker", "Imperium", "Penitent", "Penitent Engines"],
+      "stats": { "m": 8, "t": 6, "sv": 4, "w": 5, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Penitent flamers", "range": "12\"", "a": "2D6", "skill": "N/A", "s": 5, "ap": 0, "d": "1", "keywords": ["Assault", "Ignores Cover", "Torrent", "Twin-linked"] }
+      ],
+      "melee": [
+        { "name": "Twin penitent buzz-blades", "range": "Melee", "a": "4", "skill": "4+", "s": 10, "ap": -3, "d": "2", "keywords": ["Sustained Hits 1", "Twin-linked"] },
+        { "name": "Twin penitent flails", "range": "Melee", "a": "8", "skill": "4+", "s": 5, "ap": -1, "d": "1", "keywords": ["Sustained Hits 1", "Twin-linked"] }
+      ],
+      "abilities": ["Deadly Demise 1", "Feel No Pain 5+", "Acts of Faith", "Invulnerable Save 6+", "Endless Suffering"],
+      "considerations": "Pueden cargar después de Avanzar gracias a Endless Suffering. Los flamers con ASSAULT permiten avanzar y rociar antes de cargar. Más económicos que Mortifiers pero con WS 4+.",
+      "recommendations": "Avanzá + dispará flamers + cargá en el mismo turno. En Penitent Host con 'Path of the Penitent' el movimiento de 11\" los hace prácticamente imbatibles en velocidad. Ideales en parejas."
+    },
+    {
+      "id": "immolator",
+      "name": "Immolator",
+      "type": "transport",
+      "role": "Transporte Dedicado",
+      "keywords": ["Vehicle", "Smoke", "Transport", "Dedicated Transport", "Imperium", "Immolator"],
+      "stats": { "m": 12, "t": 10, "sv": 3, "w": 11, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Immolation flamers", "range": "18\"", "a": "2D6", "skill": "N/A", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent"] },
+        { "name": "Twin heavy bolter", "range": "36\"", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "2", "keywords": ["Sustained Hits 2", "Twin-linked"] },
+        { "name": "Twin multi-melta", "range": "18\"", "a": "2", "skill": "3+", "s": 9, "ap": -4, "d": "D6", "keywords": ["Melta 2", "Twin-linked"] },
+        { "name": "Heavy bolter", "range": "36\"", "a": "3", "skill": "3+", "s": 5, "ap": -1, "d": "2", "keywords": ["Sustained Hits 1"] }
+      ],
+      "melee": [
+        { "name": "Armoured tracks", "range": "Melee", "a": "3", "skill": "4+", "s": 6, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deadly Demise D3", "Acts of Faith", "Invulnerable Save 6+", "Purge and Cleanse"],
+      "considerations": "Transporte que puede partir escuadras grandes (Battle Sisters, Dominion, Novitiate) en dos mitades al desplegar. Purge and Cleanse elimina el beneficio de cobertura de las unidades que impacta.",
+      "recommendations": "Equipá con flamers de inmolación para limpiar coberturas y luego descargar la escuadra. La habilidad de dividir escuadras permite desplegar dos unidades pequeñas en diferentes transporte para mayor flexibilidad."
+    },
+    {
+      "id": "sororitas-rhino",
+      "name": "Sororitas Rhino",
+      "type": "transport",
+      "role": "Transporte Dedicado",
+      "keywords": ["Vehicle", "Transport", "Dedicated Transport", "Smoke", "Imperium", "Sororitas Rhino"],
+      "stats": { "m": 12, "t": 9, "sv": 3, "w": 10, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Storm bolter", "range": "24\"", "a": "2", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 2"] },
+        { "name": "Hunter-killer missile", "range": "48\"", "a": "1", "skill": "2+", "s": 14, "ap": -3, "d": "D6", "keywords": ["One Shot"] }
+      ],
+      "melee": [
+        { "name": "Armoured tracks", "range": "Melee", "a": "3", "skill": "4+", "s": 6, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deadly Demise D3", "Firing Deck 2", "Acts of Faith", "Invulnerable Save 6+", "Self Repair"],
+      "considerations": "Transporte económico con Self Repair (+1 herida por turno). Firing Deck 2 permite que 2 modelos embarcados disparen desde el interior. Capacidad para 12 modelos de infantería Sororitas.",
+      "recommendations": "El transporte más económico del ejército. Usalo para proteger Retributors o Battle Sisters en movimiento. Self Repair lo hace ligeramente más duradero que un Rhino estándar."
+    },
+    {
+      "id": "repressor",
+      "name": "Repressor",
+      "type": "transport",
+      "role": "Transporte de Asalto",
+      "keywords": ["Vehicle", "Smoke", "Transport", "Dedicated Transport", "Imperium", "Repressor"],
+      "stats": { "m": 12, "t": 10, "sv": 3, "w": 12, "ld": 7, "oc": 2 },
+      "ranged": [
+        { "name": "Repressor twin heavy flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent", "Twin-linked"] },
+        { "name": "Storm bolter", "range": "24\"", "a": "2", "skill": "3+", "s": 4, "ap": 0, "d": "1", "keywords": ["Rapid Fire 2"] },
+        { "name": "Heavy flamer", "range": "12\"", "a": "D6", "skill": "N/A", "s": 6, "ap": -1, "d": "1", "keywords": ["Ignores Cover", "Torrent"] },
+        { "name": "Hunter-killer missile", "range": "48\"", "a": "1", "skill": "2+", "s": 14, "ap": -3, "d": "D6", "keywords": ["One Shot"] }
+      ],
+      "melee": [
+        { "name": "Dozer ram", "range": "Melee", "a": "3", "skill": "4+", "s": 7, "ap": 0, "d": "1", "keywords": [] }
+      ],
+      "abilities": ["Deadly Demise D3", "Firing Deck 6", "Acts of Faith", "Invulnerable Save 6+", "Emergency Combat Embarkation"],
+      "considerations": "El transporte más defensivo: Firing Deck 6 permite que 6 modelos disparen desde adentro, y Emergency Combat Embarkation permite que una unidad embista dentro de él como reacción a una carga enemiga.",
+      "recommendations": "Ideal para llevar Retributors — los 6 pueden disparar sus heavy bolters o multi-meltas desde adentro. Emergency Combat Embarkation es una salvaguarda excelente para proteger escuadras de élite de cargos no deseados."
+    }
+  ]
 }

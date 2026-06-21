@@ -76,7 +76,6 @@
     {
       "id": "terminators",
       "name": "Escuadra Terminator",
-      "pts": 200,
       "type": "infantry",
       "role": "Élite",
       "keywords": ["Infantry", "Terminator", "Core", "Imperium", "Adeptus Astartes"],
@@ -94,7 +93,6 @@
     {
       "id": "intercessors",
       "name": "Intercessors",
-      "pts": 85,
       "type": "infantry",
       "role": "Tropa",
       "keywords": ["Infantry", "Battleline", "Core", "Imperium", "Adeptus Astartes"],
@@ -112,7 +110,6 @@
     {
       "id": "captain-term",
       "name": "Capitán Terminator",
-      "pts": 110,
       "type": "character",
       "role": "Líder",
       "keywords": ["Infantry", "Character", "Terminator", "Imperium", "Adeptus Astartes"],
@@ -130,7 +127,6 @@
     {
       "id": "redemptor",
       "name": "Dreadnought Redemptor",
-      "pts": 185,
       "type": "vehicle",
       "role": "Vehículo",
       "keywords": ["Vehicle", "Dreadnought", "Imperium", "Adeptus Astartes"],
@@ -149,7 +145,6 @@
     {
       "id": "aggressors",
       "name": "Aggressors",
-      "pts": 110,
       "type": "infantry",
       "role": "Élite",
       "keywords": ["Infantry", "Core", "Imperium", "Adeptus Astartes"],
@@ -168,7 +163,6 @@
     {
       "id": "impulsor",
       "name": "Impulsor",
-      "pts": 75,
       "type": "vehicle",
       "role": "Transporte",
       "keywords": ["Vehicle", "Transport", "Imperium", "Adeptus Astartes"],
@@ -184,7 +178,6 @@
     {
       "id": "librarian",
       "name": "Bibliotecario",
-      "pts": 70,
       "type": "character",
       "role": "Psíquico",
       "keywords": ["Infantry", "Character", "Psyker", "Imperium", "Adeptus Astartes"],
@@ -202,7 +195,6 @@
     {
       "id": "hellblasters",
       "name": "Hellblasters",
-      "pts": 100,
       "type": "infantry",
       "role": "Élite",
       "keywords": ["Infantry", "Core", "Imperium", "Adeptus Astartes"],

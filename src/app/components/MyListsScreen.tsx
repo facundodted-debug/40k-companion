@@ -3,7 +3,7 @@ import { ChevronRight, BookOpen, Code2, X, CheckCircle, AlertCircle, ChevronDown
 import { ArmyList } from './shared';
 import { ScreenHeader } from './ScreenHeader';
 import { FactionBadge } from './ScreenHeader';
-import { isArmyListText, parseArmyListText, ImportedList, ParsedUnit } from '../lib/armyListParser';
+import { isArmyListText, parseArmyListText, isBracketListText, parseBracketListText, ImportedList, ParsedUnit } from '../lib/armyListParser';
 import { SavedList, useListStore } from '../../store/lists';
 
 function isArmyList(list: SavedList): list is ArmyList {
@@ -21,6 +21,11 @@ function parseArmyHtml(raw: string): { list: ImportedList | null; error?: string
   // GW-style text export (header banner + unit list) — dedicated parser with base-size lookup
   if (isArmyListText(raw)) {
     return parseArmyListText(raw);
+  }
+
+  // Formato "bracket" (WarOrgan y otros exports tipo "<Unidad> [<N> points]")
+  if (isBracketListText(raw)) {
+    return parseBracketListText(raw);
   }
 
   try {

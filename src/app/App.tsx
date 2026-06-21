@@ -184,7 +184,8 @@ function ProfileScreen({ profile, loading, saveProfile }: { profile: ProfileData
 }
 
 export default function App() {
-  const [onboarded, setOnboarded] = useState(false);
+  // Onboarding oculto por ahora: arranca directo en el home de la app.
+  const [onboarded, setOnboarded] = useState(true);
   const [activeTab, setActiveTab] = useState<ActiveTab>(0);
   const [screen, setScreen] = useState<Screen>('home');
   const [rivalList, setRivalList] = useState<SavedList | null>(null);
