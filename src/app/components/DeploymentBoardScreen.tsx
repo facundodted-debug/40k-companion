@@ -12,7 +12,7 @@ const OWN_COLOR = '#3d7ef0';
 const RIVAL_COLOR = '#e84040';
 
 // ── Types ──────────────────────────────────────────────────────────────────────
-export type BaseSize = '25' | '32' | '40' | '50' | '60' | '100' | '105x70' | '75x42' | '90x52' | 'rect-s' | 'rect-l';
+export type BaseSize = '25' | '32' | '40' | '50' | '60' | '100' | '105x70' | '120x92' | '75x42' | '90x52' | 'rect-s' | 'rect-l';
 export type Side = 'own' | 'rival';
 
 export interface PlaceableItem {
@@ -42,6 +42,7 @@ const BASE_GEOMETRY: Record<BaseSize, BaseGeometry> = {
   '50': { shape: 'circle', rx: 10, ry: 10 },
   '60': { shape: 'circle', rx: 12, ry: 12 },
   '100': { shape: 'circle', rx: 20, ry: 20 },
+  '120x92': { shape: 'oval', rx: 24, ry: 18.4 },
   '105x70': { shape: 'oval', rx: 21, ry: 14 },
   '90x52': { shape: 'oval', rx: 18, ry: 10.4 },
   '75x42': { shape: 'oval', rx: 15, ry: 8.4 },
@@ -245,7 +246,8 @@ const BASE_SIZE_OPTIONS: { value: BaseSize; label: string }[] = [
   { value: '100',   label: '100mm' },
   { value: '75x42', label: '75×42mm (óvalo, motos)' },
   { value: '90x52', label: '90×52mm (óvalo, jetbikes)' },
-  { value: '105x70', label: '105×70mm (óvalo grande)' },
+  { value: '105x70', label: '105×70mm (óvalo, Carnifex)' },
+  { value: '120x92', label: '120×92mm (óvalo grande, Tyrannofex)' },
   { value: 'rect-s', label: 'Rectangular chico (Rhino, Razorback)' },
   { value: 'rect-l', label: 'Rectangular grande (Land Raider)' },
 ];

@@ -22,11 +22,13 @@ const BASE_TYPE_MAP: Record<string, { baseSize: BaseSize; useModels: boolean }> 
 
 // base_sizes.json colapsa todos los óvalos bajo baseType:"oval" — el tamaño real
 // (motos 75×42mm, jetbikes 90×52mm, etc.) está en el texto libre de baseMm.
+const KNOWN_OVAL_SIZES: BaseSize[] = ['75x42', '90x52', '105x70', '120x92'];
+
 function ovalSizeFromMm(baseMm: string | undefined): BaseSize {
   const m = baseMm?.match(/(\d+)\s*x\s*(\d+)\s*mm/i);
   if (!m) return '105x70';
   const key = `${m[1]}x${m[2]}` as BaseSize;
-  return (['75x42', '90x52', '105x70'] as BaseSize[]).includes(key) ? key : '75x42';
+  return KNOWN_OVAL_SIZES.includes(key) ? key : '105x70';
 }
 
 const UNIT_TYPE_MAP: Record<string, { baseSize: BaseSize; count: number }> = {
